@@ -11,7 +11,7 @@ import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-    <Router basename="/gridspark-website">
+    <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
