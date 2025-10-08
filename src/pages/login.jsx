@@ -1,43 +1,83 @@
 import React, { useState } from "react";
 
 const Login = () => {
-  const [isSignup, setIsSignup] = useState(false);
+  const [mode, setMode] = useState("login"); // 'login' or 'signup'
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Handle login logic (add backend later)
-    alert("Logged in (demo)!");
+    // Authentication logic here
+    setMessage("Logged in! (demo, add backend later)");
   };
 
   const handleSignup = (e) => {
     e.preventDefault();
-    // Handle signup logic
-    alert("Account created (demo)!");
+    // Sign-up logic here
+    setMessage("Account created! (demo, add backend later)");
   };
 
   return (
-    <section className="section-padding max-w-sm mx-auto">
-      <div className="card">
-        <h1 className="text-2xl font-bold text-primary mb-4">
-          {isSignup ? "Sign Up" : "Login"}
+    <section className="section-padding min-h-screen flex flex-col items-center justify-center bg-light">
+      <div className="card max-w-md w-full">
+        <h1 className="text-3xl font-bold text-primary mb-6 text-center">
+          {mode === "login" ? "Login to Gridspark Solutions" : "Sign Up for Gridspark Solutions"}
         </h1>
-        <form onSubmit={isSignup ? handleSignup : handleLogin} className="flex flex-col gap-4">
-          <input type="email" placeholder="Email" required className="p-2 border rounded" />
-          <input type="password" placeholder="Password" required className="p-2 border rounded" />
-          {isSignup && <input type="text" placeholder="Name" required className="p-2 border rounded" />}
-          <button className="btn-primary w-full" type="submit">
-            {isSignup ? "Sign Up" : "Login"}
+        {message && <div className="mb-4 text-center text-green-600">{message}</div>}
+        <form onSubmit={mode === "login" ? handleLogin : handleSignup} className="flex flex-col gap-4">
+          {mode === "signup" && (
+            <input
+              type="text"
+              placeholder="Full Name"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              required
+              className="p-3 border rounded"
+            />
+          )}
+          <input
+            type="email"
+            placeholder="Email Address"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            required
+            className="p-3 border rounded"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            required
+            className="p-3 border rounded"
+          />
+          <button type="submit" className="btn-primary w-full">
+            {mode === "login" ? "Login" : "Sign Up"}
           </button>
         </form>
-        <div className="text-center mt-4">
-          {isSignup ? (
-            <span>Already have an account?{" "}
-              <button className="text-primary underline" onClick={() => setIsSignup(false)}>Login</button>
-            </span>
+        <div className="text-center mt-6">
+          {mode === "login" ? (
+            <>
+              <span>New user?{" "}</span>
+              <button
+                onClick={() => setMode("signup")}
+                className="text-primary underline font-semibold"
+              >
+                Sign Up
+              </button>
+            </>
           ) : (
-            <span>New user?{" "}
-              <button className="text-primary underline" onClick={() => setIsSignup(true)}>Sign Up</button>
-            </span>
+            <>
+              <span>Already have an account?{" "}</span>
+              <button
+                onClick={() => setMode("login")}
+                className="text-primary underline font-semibold"
+              >
+                Login
+              </button>
+            </>
           )}
         </div>
       </div>
