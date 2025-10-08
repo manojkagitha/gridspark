@@ -6,7 +6,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSuccess(true);
-    // Integrate Netlify Forms or FormSpree for production send
+    // Integrate Netlify Forms/Formspree as needed
   };
 
   return (
@@ -23,6 +23,8 @@ const Contact = () => {
           <input required name="name" className="mb-4 p-2 border rounded w-full" />
           <label className="block mb-2 font-semibold">Email</label>
           <input required type="email" name="email" className="mb-4 p-2 border rounded w-full" />
+          <label className="block mb-2 font-semibold">Phone</label>
+          <input required type="tel" name="phone" className="mb-4 p-2 border rounded w-full" pattern="\\d{10,}" />
           <label className="block mb-2 font-semibold">Message</label>
           <textarea required name="message" className="mb-4 p-2 border rounded w-full" rows="5" />
           <button type="submit" className="btn-primary w-full">Send Message</button>
