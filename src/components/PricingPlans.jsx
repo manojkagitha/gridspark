@@ -55,7 +55,12 @@ const PricingPlans = ({ preview }) => (
             <li key={f} className="text-gray-600 mb-1">✔️ {f}</li>
           ))}
         </ul>
-        <button className={`btn-primary w-full ${plan.highlight ? "bg-primary" : "bg-secondary"}`}>
+<button
+  className={`btn-primary w-full ${plan.highlight ? "bg-primary" : "bg-secondary"}`}
+  onClick={() => window.location.href='/contact'}
+>
+  {plan.highlight ? "Get Started" : "Contact Us"}
+</button>
           {plan.highlight ? "Get Started" : "Contact Us"}
         </button>
       </div>
