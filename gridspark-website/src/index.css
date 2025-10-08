@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles using Tailwind (make sure custom colors are in your tailwind.config.js) */
+
+body {
+  @apply bg-light text-dark font-sans;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-600 transition;
+}
+
+.card {
+  @apply bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition;
+}
+
+.section-padding {
+  @apply py-16 px-4 md:px-8 lg:px-16;
+}
