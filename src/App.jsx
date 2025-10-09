@@ -22,7 +22,7 @@ import Careers from "./pages/Careers.jsx";
 // New legal/policy pages
 import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 import Terms from "./pages/Terms.jsx";
-import CookiePolicy from "./pages/CookiePolicy.jsx";
+// import CookiePolicy from "./pages/CookiePolicy.jsx";
 
 function App() {
   return (
@@ -46,7 +46,6 @@ function App() {
         {/* Legal/policy pages */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/cookie-policy" element={<CookiePolicy />} />
         {/* Fallback */}
         <Route path="*" element={<Home />} />
       </Routes>
