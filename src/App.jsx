@@ -15,7 +15,7 @@ import Login from "./pages/Login";
 // New suggested pages
 import About from "./pages/About";
 import Services from "./pages/Services";
-import AIDemos from "./pages/AI-Demos";
+import AIDemos from "./pages/AI-Demos.jsx";
 import CaseStudies from "./pages/CaseStudies";
 import Careers from "./pages/Careers";
 
