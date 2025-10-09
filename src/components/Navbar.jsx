@@ -6,12 +6,18 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  // Full menu including demo/company/AI pages
   const menuItems = [
     { path: "/", label: "Home" },
     { path: "/solutions", label: "Solutions" },
     { path: "/partner", label: "Partner With Us" },
     { path: "/portfolio", label: "Portfolio" },
     { path: "/pricing", label: "Pricing" },
+    { path: "/about", label: "About" },
+    { path: "/services", label: "Services" },
+    { path: "/ai-demos", label: "AI Demos" },
+    { path: "/case-studies", label: "Case Studies" },
+    { path: "/careers", label: "Careers" },
     { path: "/contact", label: "Contact" }
   ];
 
@@ -38,7 +44,12 @@ const Navbar = () => {
           ))}
         </div>
         <div className="hidden md:flex items-center">
-          <Link to="/login" className={`btn-secondary ml-4 ${location.pathname === "/login" ? "ring-2 ring-accent" : ""}`}>Login</Link>
+          <Link
+            to="/login"
+            className={`btn-secondary ml-4 ${location.pathname === "/login" ? "ring-2 ring-accent" : ""}`}
+          >
+            Login
+          </Link>
         </div>
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -59,7 +70,9 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <Link to="/login" className="block py-2 text-white" onClick={() => setIsOpen(false)}>Login</Link>
+          <Link to="/login" className="block py-2 text-white" onClick={() => setIsOpen(false)}>
+            Login
+          </Link>
         </div>
       )}
     </nav>
