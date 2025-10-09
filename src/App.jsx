@@ -4,25 +4,25 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 // Existing pages
-import Home from "./pages/Home";
-import Solutions from "./pages/Solutions";
-import Portfolio from "./pages/Portfolio";
-import Pricing from "./pages/Pricing";
-import Contact from "./pages/Contact";
-import Partner from "./pages/Partner";
-import Login from "./pages/Login";
+import Home from "./pages/Home.jsx";
+import Solutions from "./pages/Solutions.jsx";
+import Portfolio from "./pages/Portfolio.jsx";
+import Pricing from "./pages/Pricing.jsx";
+import Contact from "./pages/Contact.jsx";
+import Partner from "./pages/Partner.jsx";
+import Login from "./pages/Login.jsx";
 
 // New suggested pages
-import About from "./pages/About";
-import Services from "./pages/Services";
+import About from "./pages/About.jsx";
+import Services from "./pages/Services.jsx";
 import AIDemos from "./pages/AI-Demos.jsx";
-import CaseStudies from "./pages/CaseStudies";
-import Careers from "./pages/Careers";
+import CaseStudies from "./pages/CaseStudies.jsx";
+import Careers from "./pages/Careers.jsx";
 
 // New legal/policy pages
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Terms from "./pages/Terms";
-import CookiePolicy from "./pages/CookiePolicy";
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+import Terms from "./pages/Terms.jsx";
+import CookiePolicy from "./pages/CookiePolicy.jsx";
 
 function App() {
   return (
