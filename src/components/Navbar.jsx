@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-// import logo from '../assets/logo.svg'; // Optional: Use your logo path
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className="bg-dark shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-20">
         <Link to="/" className="flex items-center space-x-2 text-white font-extrabold text-2xl font-sans drop-shadow-lg">
-          {/* <img src={logo} alt="Logo" className="h-8 mr-2" /> */}
+          <img src={logo} alt="Logo" className="h-8 mr-2" />
           <span>Gridspark Solutions</span>
         </Link>
         <div className="hidden md:flex space-x-8">
