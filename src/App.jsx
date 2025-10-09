@@ -10,6 +10,13 @@ import Contact from "./pages/Contact";
 import Partner from "./pages/Partner";
 import Login from "./pages/Login";
 
+// New pages to import:
+import About from "./pages/About";
+import Services from "./pages/Services";
+import AIDemos from "./pages/AI-Demos";
+import CaseStudies from "./pages/CaseStudies";
+import Careers from "./pages/Careers";
+
 function App() {
   return (
     <Router>
@@ -22,6 +29,13 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/partner" element={<Partner />} />
         <Route path="/login" element={<Login />} />
+
+        {/* New routes */}
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/ai-demos" element={<AIDemos />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
       <Footer />
     </Router>
