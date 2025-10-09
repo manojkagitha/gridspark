@@ -2,19 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global site background and text color */
 body {
   @apply bg-light text-dark font-sans;
 }
 
+/* Core button styles (add hover/focus directly in JSX) */
 .btn-primary {
-  @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary transition shadow-lg hover:shadow-xl;
+  @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold transition shadow-lg;
 }
 .btn-secondary {
-  @apply bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary transition;
+  @apply bg-accent text-white px-6 py-3 rounded-lg font-semibold transition;
 }
+
+/* Card style */
 .card {
-  @apply bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition;
+  @apply bg-white p-6 rounded-xl shadow-md transition;
 }
+
 .section-padding {
   @apply py-16 px-4 md:px-8 lg:px-16;
 }
