@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -19,15 +19,30 @@ import AIDemos from "./pages/AI-Demos.jsx";
 import CaseStudies from "./pages/CaseStudies.jsx";
 import Careers from "./pages/Careers.jsx";
 
-// New legal/policy pages
-import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
-import Terms from "./pages/Terms.jsx";
-// import CookiePolicy from "./pages/CookiePolicy.jsx";
+// Import the new legal pages
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
+import Terms from './pages/Terms.jsx';
+import CookiePolicy from './pages/CookiePolicy.jsx';
 
 function App() {
+  const [backendMessage, setBackendMessage] = useState("Loading...");
+
+  useEffect(() => {
+    fetch('http://135.235.136.94:3000/')
+      .then(response => response.text())
+      .then(data => setBackendMessage(data))
+      .catch(error => {
+        console.error('API call error:', error);
+        setBackendMessage('Failed to fetch backend message');
+      });
+  }, []);
+
   return (
     <Router>
       <Navbar />
+      <div style={{ background: "#f6f6f6", padding: "10px", textAlign: "center" }}>
+        <strong>Backend message:</strong> {backendMessage}
+      </div>
       <Routes>
         {/* Main and legacy routes */}
         <Route path="/" element={<Home />} />
@@ -46,6 +61,7 @@ function App() {
         {/* Legal/policy pages */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
         {/* Fallback */}
         <Route path="*" element={<Home />} />
       </Routes>
