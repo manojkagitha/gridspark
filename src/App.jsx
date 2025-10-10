@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react"; // Removed unused useEffect and useState
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-// --- CORRECTED IMPORTS ---
 
 // Layout Components
 import Navbar from "./components/layout/Navbar";
@@ -13,11 +11,11 @@ import Pricing from "./pages/Pricing.jsx";
 import Contact from "./pages/Contact.jsx";
 
 // Grouped Pages (from new subfolders with correct paths)
-import About from "./pages/about/index.jsx"; // Correct path
+import About from "./pages/about/index.jsx";
 import Careers from "./pages/about/Careers.jsx";
 import Partner from "./pages/about/Partner.jsx";
 
-import Solutions from "./pages/solutions/index.jsx"; // Correct path
+import Solutions from "./pages/solutions/index.jsx";
 import Services from "./pages/solutions/Services.jsx";
 import Portfolio from "./pages/solutions/Portfolio.jsx";
 import AIDemos from "./pages/solutions/AI-Demos.jsx";
@@ -30,24 +28,14 @@ import Terms from './pages/legal/Terms.jsx';
 import CookiePolicy from './pages/legal/CookiePolicy.jsx';
 
 function App() {
-  const [backendMessage, setBackendMessage] = useState("Loading...");
-
-  useEffect(() => {
-    fetch('http://135.235.136.94:3000/')
-      .then(response => response.text())
-      .then(data => setBackendMessage(data))
-      .catch(error => {
-        console.error('API call error:', error);
-        setBackendMessage('Failed to fetch backend message');
-      });
-  }, []);
+  // The useEffect and useState for the backend message have been removed for a cleaner UI.
 
   return (
     <Router>
       <Navbar />
-      <div style={{ background: "#f6f6f6", padding: "10px", textAlign: "center" }}>
-        <strong>Backend message:</strong> {backendMessage}
-      </div>
+      
+      {/* The backend message div has been removed. */}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/solutions" element={<Solutions />} />
@@ -72,3 +60,4 @@ function App() {
 }
 
 export default App;
+
