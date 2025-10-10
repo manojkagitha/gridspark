@@ -1,24 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
-import logo from '../../assets/logo.png'; // Correct path to the logo
+import logo from '../../assets/logo.png';
 
 const Footer = () => (
   <footer className="bg-dark text-white">
     <div className="max-w-7xl mx-auto px-4 py-12">
-      {/* Main footer content grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         
-        {/* Column 1: Company Info */}
         <div>
           <Link to="/" className="flex items-center space-x-2 mb-4">
             <img src={logo} alt="Gridspark Logo" className="h-8" />
-            <span className="text-2xl font-bold">Gridspark</span>
+            {/* --- UPDATED COMPANY NAME --- */}
+            <span className="text-2xl font-bold">Gridspark Solutions</span>
           </Link>
           <p className="text-gray-400">Brighter Tech. Smarter Businesses.</p>
         </div>
 
-        {/* Column 2: Quick Links */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-gray-400">
@@ -30,7 +28,6 @@ const Footer = () => (
           </ul>
         </div>
 
-        {/* Column 3: Legal Links */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Legal</h3>
           <ul className="space-y-2 text-gray-400">
@@ -40,7 +37,6 @@ const Footer = () => (
           </ul>
         </div>
 
-        {/* Column 4: Stay Connected */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Stay Connected</h3>
           <form onSubmit={(e) => e.preventDefault()}>
@@ -54,7 +50,6 @@ const Footer = () => (
         </div>
       </div>
 
-      {/* Bottom bar for copyright and social icons */}
       <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col sm:flex-row justify-between items-center">
         <p className="text-sm text-gray-500 text-center sm:text-left mb-4 sm:mb-0">
           &copy; {new Date().getFullYear()} Gridspark Solutions. All rights reserved.

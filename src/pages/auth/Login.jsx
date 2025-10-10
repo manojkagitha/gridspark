@@ -1,88 +1,141 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
+// --- Import the phone number component and its CSS ---
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 const Login = () => {
   const [mode, setMode] = useState("login"); // 'login' or 'signup'
+  
+  // --- New State for all fields ---
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phone, setPhone] = useState(); // The phone library manages this value
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+
+  const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Authentication logic here
-    setMessage("Logged in! (demo, add backend later)");
-  };
+  // --- IMPORTANT: Replace with your Azure VM's Public IP address ---
+  const API_BASE_URL = 'http://135.235.136.94:3000/api';
 
-  const handleSignup = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Sign-up logic here
-    setMessage("Account created! (demo, add backend later)");
+    setError("");
+    setMessage("");
+    setLoading(true);
+
+    const isLogin = mode === 'login';
+    const endpoint = isLogin ? `${API_BASE_URL}/login` : `${API_BASE_URL}/register`;
+    
+    // --- Construct the body based on the mode ---
+    const body = isLogin 
+      ? { email, password } 
+      : { firstName, lastName, email, password, phone };
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || `An error occurred.`);
+
+      setMessage(data.message);
+      if (isLogin) {
+        setTimeout(() => navigate('/dashboard'), 1500);
+      } else {
+        setTimeout(() => setMode('login'), 1500);
+      }
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section className="section-padding min-h-screen flex flex-col items-center justify-center bg-light">
-      <div className="card max-w-md w-full">
-        <h1 className="text-3xl font-bold text-primary mb-6 text-center">
-          {mode === "login" ? "Login to Gridspark Solutions" : "Sign Up for Gridspark Solutions"}
+    <section className="bg-dark min-h-screen flex items-center justify-center py-12 px-4">
+      <div className="w-full max-w-md bg-gray-800 p-8 rounded-lg shadow-2xl">
+        <h1 className="text-3xl font-extrabold text-white text-center mb-8">
+          {mode === "login" ? "Login to Gridspark" : "Create Your Account"}
         </h1>
-        {message && <div className="mb-4 text-center text-green-600">{message}</div>}
-        <form onSubmit={mode === "login" ? handleLogin : handleSignup} className="flex flex-col gap-4">
+
+        {error && <div className="mb-4 text-center bg-red-500 text-white p-3 rounded">{error}</div>}
+        {message && <div className="mb-4 text-center bg-green-500 text-white p-3 rounded">{message}</div>}
+        
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          {/* --- Conditional rendering for Sign Up fields --- */}
           {mode === "signup" && (
-            <input
-              type="text"
-              placeholder="Full Name"
-              value={name}
-              onChange={e => setName(e.target.value)}
-              required
-              className="p-3 border rounded"
+            <>
+              <div className="flex gap-4">
+                <input type="text" placeholder="First Name" value={firstName} onChange={e => setFirstName(e.target.value)} required className="w-1/2 p-3 bg-gray-700 rounded border border-gray-600 text-white focus:ring-accent focus:border-accent" />
+                <input type="text" placeholder="Last Name" value={lastName} onChange={e => setLastName(e.target.value)} required className="w-1/2 p-3 bg-gray-700 rounded border border-gray-600 text-white focus:ring-accent focus:border-accent" />
+              </div>
+            </>
+          )}
+
+          <input type="email" placeholder="Email Address" value={email} onChange={e => setEmail(e.target.value)} required className="w-full p-3 bg-gray-700 rounded border border-gray-600 text-white focus:ring-accent focus:border-accent" />
+          
+          {mode === "signup" && (
+            <PhoneInput
+              placeholder="Phone Number (Optional)"
+              value={phone}
+              onChange={setPhone}
+              className="phone-input-container" // Custom class for styling
             />
           )}
-          <input
-            type="email"
-            placeholder="Email Address"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            required
-            className="p-3 border rounded"
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            required
-            className="p-3 border rounded"
-          />
-          <button type="submit" className="btn-primary w-full">
-            {mode === "login" ? "Login" : "Sign Up"}
+
+          <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} required className="w-full p-3 bg-gray-700 rounded border border-gray-600 text-white focus:ring-accent focus:border-accent" />
+          
+          <button type="submit" className="w-full btn-primary" disabled={loading}>
+            {loading ? 'Processing...' : (mode === "login" ? "Login" : "Create Account")}
           </button>
         </form>
-        <div className="text-center mt-6">
+
+        <div className="text-center mt-6 text-gray-400">
           {mode === "login" ? (
             <>
-              <span>New user?{" "}</span>
-              <button
-                onClick={() => setMode("signup")}
-                className="text-primary underline font-semibold"
-              >
-                Sign Up
+              <span>New to Gridspark? </span>
+              <button onClick={() => setMode("signup")} className="font-medium text-accent hover:underline">
+                Create an account
               </button>
             </>
           ) : (
             <>
-              <span>Already have an account?{" "}</span>
-              <button
-                onClick={() => setMode("login")}
-                className="text-primary underline font-semibold"
-              >
-                Login
+              <span>Already have an account? </span>
+              <button onClick={() => setMode("login")} className="font-medium text-accent hover:underline">
+                Log In
               </button>
             </>
           )}
         </div>
       </div>
+      {/* Basic styling for the phone input to match your theme */}
+      <style>{`
+        .phone-input-container input {
+          background-color: #374151; /* bg-gray-700 */
+          border: 1px solid #4B5563; /* border-gray-600 */
+          color: white;
+          padding: 0.75rem;
+          border-radius: 0.375rem;
+          width: 100%;
+        }
+        .phone-input-container .PhoneInputCountry {
+          background-color: #374151;
+          border: 1px solid #4B5563;
+          border-radius: 0.375rem 0 0 0.375rem;
+        }
+      `}</style>
     </section>
   );
 };
 
 export default Login;
+

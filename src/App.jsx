@@ -1,4 +1,4 @@
-import React from "react"; // Removed unused useEffect and useState
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Layout Components
@@ -10,7 +10,7 @@ import Home from "./pages/Home.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import Contact from "./pages/Contact.jsx";
 
-// Grouped Pages (from new subfolders with correct paths)
+// Grouped Pages
 import About from "./pages/about/index.jsx";
 import Careers from "./pages/about/Careers.jsx";
 import Partner from "./pages/about/Partner.jsx";
@@ -21,21 +21,19 @@ import Portfolio from "./pages/solutions/Portfolio.jsx";
 import AIDemos from "./pages/solutions/AI-Demos.jsx";
 import CaseStudies from "./pages/solutions/CaseStudies.jsx";
 
+// --- IMPORT YOUR REGISTER COMPONENT ---
 import Login from "./pages/auth/Login.jsx";
+import Register from "./pages/auth/Register.jsx"; // Assuming it's in the same folder as Login
 
+// Legal Pages
 import PrivacyPolicy from './pages/legal/PrivacyPolicy.jsx';
 import Terms from './pages/legal/Terms.jsx';
 import CookiePolicy from './pages/legal/CookiePolicy.jsx';
 
 function App() {
-  // The useEffect and useState for the backend message have been removed for a cleaner UI.
-
   return (
     <Router>
       <Navbar />
-      
-      {/* The backend message div has been removed. */}
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/solutions" element={<Solutions />} />
@@ -44,6 +42,10 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+        
+        {/* --- ADD THE ROUTE FOR YOUR REGISTER PAGE --- */}
+        <Route path="/register" element={<Register />} />
+
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/ai-demos" element={<AIDemos />} />
@@ -60,4 +62,3 @@ function App() {
 }
 
 export default App;
-
