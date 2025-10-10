@@ -5,20 +5,23 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
-// Top-Level Pages (folders with index.jsx)
+// Main Pages
 import Home from "./pages/home/index.jsx";
 import Contact from "./pages/contact/index.jsx";
 import About from "./pages/about/index.jsx";
 import Careers from "./pages/about/Careers.jsx";
 import Partner from "./pages/about/Partner.jsx";
-
 import Expertise from "./pages/expertise/index.jsx";
 import Industries from "./pages/industries/index.jsx";
 import Products from "./pages/products/index.jsx";
 import Resources from "./pages/resources/index.jsx";
 
-// Solutions - import only index.jsx as the main route
+// Solutions
 import Solutions from "./pages/solutions/index.jsx";
+import AIDemos from "./pages/solutions/AI-Demos.jsx";
+import CaseStudies from "./pages/solutions/CaseStudies.jsx";
+import Services from "./pages/solutions/Services.jsx";
+import Portfolio from "./pages/solutions/Portfolio.jsx"; // <-- Added
 
 // Auth Pages
 import Login from "./pages/auth/Login.jsx";
@@ -43,7 +46,12 @@ function App() {
         <Route path="/industries" element={<Industries />} />
         <Route path="/products" element={<Products />} />
         <Route path="/resources" element={<Resources />} />
+        {/* Solutions main and subpages */}
         <Route path="/solutions" element={<Solutions />} />
+        <Route path="/solutions/ai-demos" element={<AIDemos />} />
+        <Route path="/solutions/case-studies" element={<CaseStudies />} />
+        <Route path="/solutions/services" element={<Services />} />
+        <Route path="/solutions/portfolio" element={<Portfolio />} /> {/* <-- Added */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

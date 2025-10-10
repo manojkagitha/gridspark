@@ -5,13 +5,11 @@ import "react-phone-number-input/style.css";
 
 const Login = () => {
   const [mode, setMode] = useState("login"); // 'login' or 'signup'
-
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState(); // Managed by phone-number-input
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -19,7 +17,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   // --- Secure, configurable API base URL ---
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://135.235.136.94:3000/api";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://135.235.136.94:3000/api";
 
   // --- Form submission handler ---
   const handleSubmit = async (e) => {
@@ -67,7 +65,6 @@ const Login = () => {
         <h1 className="text-3xl font-extrabold text-white text-center mb-8">
           {mode === "login" ? "Login to Gridspark" : "Create Your Account"}
         </h1>
-
         {/* Error and success messages */}
         {error && <div className="mb-4 text-center bg-red-500 text-white p-3 rounded">{error}</div>}
         {message && <div className="mb-4 text-center bg-green-500 text-white p-3 rounded">{message}</div>}

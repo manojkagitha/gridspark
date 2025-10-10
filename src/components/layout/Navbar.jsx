@@ -12,10 +12,10 @@ const Navbar = () => {
     {
       label: "Solutions",
       subMenu: [
-        { path: "/services", label: "Services" },
-        { path: "/portfolio", label: "Portfolio" },
-        { path: "/case-studies", label: "Case Studies" },
-        { path: "/ai-demos", label: "AI Demos" },
+        { path: "/solutions/services", label: "Services" },
+        { path: "/solutions/portfolio", label: "Portfolio" },
+        { path: "/solutions/case-studies", label: "Case Studies" },
+        { path: "/solutions/ai-demos", label: "AI Demos" },
       ],
     },
     {
@@ -26,10 +26,9 @@ const Navbar = () => {
         { path: "/careers", label: "Careers" },
       ],
     },
-    { path: "/pricing", label: "Pricing" },
     { path: "/contact", label: "Contact" },
   ];
-  
+
   return (
     <nav className="bg-dark shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-20">
@@ -37,12 +36,12 @@ const Navbar = () => {
           <img src={logo} alt="Logo" className="h-8 mr-2" />
           <span>Gridspark Solutions</span>
         </Link>
-        
+
         {/* --- DESKTOP MENU --- */}
         <div className="hidden md:flex space-x-8 items-center h-full">
           {menuItems.map((item, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="relative h-full flex items-center"
               onMouseEnter={() => setOpenDropdown(item.label)}
               onMouseLeave={() => setOpenDropdown(null)}
@@ -58,32 +57,31 @@ const Navbar = () => {
                 </Link>
               )}
               {item.subMenu && openDropdown === item.label && (
-                // --- FIX IS ON THIS LINE ---
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 -mt-2">
-                    <div className="bg-dark rounded-md shadow-lg py-1">
-                      {item.subMenu.map((subItem) => (
-                        <Link
-                          key={subItem.path}
-                          to={subItem.path}
-                          className="block whitespace-nowrap px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left"
-                          onClick={() => setOpenDropdown(null)}
-                        >
-                          {subItem.label}
-                        </Link>
-                      ))}
-                    </div>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 z-50">
+                  <div className="bg-dark rounded-md shadow-lg py-1">
+                    {item.subMenu.map((subItem) => (
+                      <Link
+                        key={subItem.path}
+                        to={subItem.path}
+                        className="block whitespace-nowrap px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left"
+                        onClick={() => setOpenDropdown(null)}
+                      >
+                        {subItem.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
           ))}
         </div>
-        
+
         <div className="hidden md:flex items-center">
           <Link to="/login" className={`btn-secondary ml-4 ${location.pathname === "/login" ? "ring-2 ring-accent" : ""}`}>
             Login
           </Link>
         </div>
-        
+
         <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden text-2xl text-white">
           {isMobileMenuOpen ? "✕" : "≡"}
         </button>
@@ -97,9 +95,9 @@ const Navbar = () => {
               <div key={item.label}>
                 <h3 className="py-2 text-gray-400 font-bold">{item.label}</h3>
                 {item.subMenu.map(subItem => (
-                   <Link key={subItem.path} to={subItem.path} className="block py-2 pl-4 text-white" onClick={() => setMobileMenuOpen(false)}>
-                     {subItem.label}
-                   </Link>
+                  <Link key={subItem.path} to={subItem.path} className="block py-2 pl-4 text-white" onClick={() => setMobileMenuOpen(false)}>
+                    {subItem.label}
+                  </Link>
                 ))}
               </div>
             ) : (
@@ -118,4 +116,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

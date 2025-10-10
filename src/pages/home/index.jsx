@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Import your revamped, AI-focused components
-import Hero from "../components/sections/Hero";
-import Features from "../components/sections/Features";
+// AI-focused components
+import Hero from "../../components/sections/Hero";
+import TechStackBanner from "../../components/sections/TechStackBanner"; // <-- Add this line
+import Features from "../../components/sections/Features";
+import Newsletter from "../../components/sections/Newsletter";
+import Testimonials from "../../components/sections/Testimonials";
 
-// Other components remain except PricingPlans and Team removed
-import Newsletter from "../components/sections/Newsletter";
-import Testimonials from "../components/sections/Testimonials";
-
-// Updated feature cards to align with the AI theme
+// AI feature cards
 const featureCards = [
   {
     title: "AI Demo Showcase",
@@ -33,8 +32,9 @@ const featureCards = [
 
 const Home = () => (
   <div>
-    {/* --- NEW AI-FOCUSED HERO & FEATURES --- */}
     <Hero />
+    {/* --- Tech logos showcase --- */}
+    <TechStackBanner />
     <Features />
 
     <section className="max-w-5xl mx-auto px-4 py-16">
@@ -53,7 +53,7 @@ const Home = () => (
       </div>
     </section>
 
-    {/* --- REWRITTEN "WHY GRIDSPARK" SECTION --- */}
+    {/* --- Why GridSpark section --- */}
     <section className="max-w-4xl mx-auto px-4 pb-12">
       <h2 className="text-3xl font-bold text-secondary mb-4">Why Gridspark for AI?</h2>
       <p className="text-gray-100 mb-6 text-lg">
