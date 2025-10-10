@@ -17,8 +17,14 @@ const Contact = () => {
             Interested in Gridspark Solutions or have a question for our team?
             Fill out your contact details and we’ll reach out shortly.
           </p>
+          <p className="text-base text-gray-500 mb-2">
+            Email: {" "}
+            <a href="mailto:hello@gridsparksolutions.com" className="text-secondary font-semibold">
+              hello@gridsparksolutions.com
+            </a>
+          </p>
           <p className="text-base text-gray-500">
-            Prefer direct email? <a href="mailto:hello@gridspark.com" className="text-secondary font-semibold">hello@gridspark.com</a>
+            Phone: <span className="text-secondary font-semibold">+1 (945) 998-5494</span>
           </p>
         </div>
         <div>

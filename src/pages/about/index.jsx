@@ -2,31 +2,40 @@ import React from "react";
 
 const About = () => (
   <div className="max-w-4xl mx-auto px-4 py-12">
-    <h1 className="text-3xl font-bold text-accent mb-6">About Gridspark Solutions</h1>
-    <p className="mb-4">
-      <span className="font-semibold">Gridspark Solutions</span> is a technology company focused on delivering next-generation AI and cloud-based solutions to empower organizations of all sizes. We partner with forward-thinking businesses to unlock growth, sharpen competitive edge, and automate operations securely, intelligently, and at scale.
+    <h1 className="text-4xl font-bold text-accent mb-6">About Gridspark Solutions</h1>
+    <p className="mb-6 text-lg leading-relaxed">
+      <span className="font-semibold">Gridspark Solutions</span> is a next-generation technology company committed to revolutionizing industries through artificial intelligence, intelligent automation, and scalable cloud infrastructure. We partner with visionary enterprises to unleash transformative growth, enhance decision-making with data-driven insights, and securely automate complex workflows at scale.
     </p>
-    <h2 className="text-xl font-semibold mt-8 mb-3">Our Mission</h2>
-    <p className="mb-4">
-      To make advanced technology accessible and actionable for every business by providing tailored, scalable, and future-proof solutions.
+
+    <h2 className="text-2xl font-semibold mt-10 mb-4">Our Mission</h2>
+    <p className="mb-6 text-lg leading-relaxed">
+      Our mission is to democratize advanced AI and cloud technologies, making them accessible, ethical, and actionable for businesses of all sizes—enabling measurable impact, sustainable innovation, and superior user experiences.
     </p>
-    <h2 className="text-xl font-semibold mt-8 mb-3">Why Choose Gridspark?</h2>
-    <ul className="list-disc pl-6 mb-4">
-      <li>Expertise in AI, automation, and scalable cloud architecture.</li>
-      <li>Full project lifecycle support: consulting, implementation, and ongoing innovation.</li>
-      <li>Proven track record in delivering ROI through custom-built tools and integrations.</li>
-      <li>Transparent, ethical, and client-focused engagement.</li>
+
+    <h2 className="text-2xl font-semibold mt-10 mb-4">Why Choose Gridspark?</h2>
+    <ul className="list-disc pl-6 mb-6 text-lg">
+      <li>Deep expertise in Large Language Models (LLMs), AI-driven automation, and multi-cloud architectures.</li>
+      <li>End-to-end project delivery: from strategic consulting and ML model development to cloud-native deployment and continuous optimization.</li>
+      <li>Proven impact with enterprise-scale AI solutions spanning healthcare, finance, retail, and media sectors.</li>
+      <li>Commitment to transparency, data privacy, and inclusive innovation for our clients and partners.</li>
     </ul>
-    <h2 className="text-xl font-semibold mt-8 mb-3">Our Core Values</h2>
-    <ul className="list-disc pl-6 mb-4">
-      <li>Integrity and trust</li>
-      <li>Continuous innovation</li>
-      <li>Collaboration and knowledge-sharing</li>
-      <li>Client success is our success</li>
+
+    <h2 className="text-2xl font-semibold mt-10 mb-4">Our Core Values</h2>
+    <ul className="list-disc pl-6 mb-6 text-lg">
+      <li>Integrity, transparency, and client-first collaboration</li>
+      <li>Continuous learning and technological leadership</li>
+      <li>Inclusive innovation and responsible AI ethics</li>
+      <li>Delivering measurable business outcomes and ROI</li>
     </ul>
-    <h2 className="text-xl font-semibold mt-8 mb-3">Leadership & Team</h2>
-    <p>
-      Our diverse team spans engineering, AI research, cloud architecture, UX design, and business consulting. We foster a collaborative startup culture where new solutions, team learning, and customer results always come first.
+
+    <h2 className="text-2xl font-semibold mt-10 mb-4">Our Team</h2>
+    <p className="mb-6 text-lg leading-relaxed">
+      Our diverse team unites software engineers, AI researchers, cloud architects, UX designers, and industry consultants. We cultivate a culture of curiosity and experimentation, fostering cross-functional collaboration to push the boundaries of intelligent automation and data-driven insights.
+    </p>
+
+    <h2 className="text-2xl font-semibold mt-10 mb-4">Innovation & Impact</h2>
+    <p className="mb-6 text-lg leading-relaxed">
+      At Gridspark, we continuously pioneer solutions harnessing generative AI, real-time transcription, and advanced search analytics. Our products and projects empower clients to accelerate digital transformation while maintaining security, scalability, and ethical AI practices.
     </p>
   </div>
 );

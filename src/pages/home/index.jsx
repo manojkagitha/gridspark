@@ -5,10 +5,8 @@ import { Link } from "react-router-dom";
 import Hero from "../components/sections/Hero";
 import Features from "../components/sections/Features";
 
-// Other components remain the same
-import PricingPlans from "../components/sections/PricingPlans";
+// Other components remain except PricingPlans and Team removed
 import Newsletter from "../components/sections/Newsletter";
-import Team from "../components/sections/Team";
 import Testimonials from "../components/sections/Testimonials";
 
 // Updated feature cards to align with the AI theme
@@ -69,12 +67,9 @@ const Home = () => (
       </ul>
     </section>
 
-    <PricingPlans preview />
     <Newsletter />
-    <Team />
     <Testimonials />
   </div>
 );
 
 export default Home;
-

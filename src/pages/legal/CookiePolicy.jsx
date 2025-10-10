@@ -12,57 +12,109 @@ const CookiePolicy = () => {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">What Are Cookies?</h2>
             <p>
-              Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work, or work more efficiently, as well as to provide information to the owners of the site. Cookies help us recognize your device and remember information about your visit, like your preferences, settings, and how you use our website.
+              Cookies are small text files that are placed on your computer or mobile device when you visit a website.
+              They help websites function efficiently and provide useful information to the site owners. Cookies remember your preferences, improve user experience, and enable certain features.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">How We Use Cookies</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Types of Cookies We Use</h2>
             <p className="mb-4">
-              We use cookies for several reasons, which are detailed below. Unfortunately, in most cases, there are no industry-standard options for disabling cookies without completely disabling the functionality and features they add to this site. It is recommended that you leave on all cookies if you are not sure whether you need them or not, in case they are used to provide a service that you use.
+              We use several categories of cookies to enhance your experience:
             </p>
             <ul className="list-disc list-inside space-y-2">
               <li>
-                <strong>Strictly Necessary Cookies:</strong> These are essential for you to browse the website and use its features, such as accessing secure areas of the site. Without these cookies, services like user logins cannot be provided.
+                <strong>Strictly Necessary Cookies:</strong> Essential to operate our website and provide secure access to personalized features, including login and account settings. These cannot be disabled.
               </li>
               <li>
-                <strong>Performance and Analytics Cookies:</strong> These cookies collect information about how you use our website, like which pages you visited and which links you clicked on. None of this information can be used to identify you. It is all aggregated and, therefore, anonymized. Their sole purpose is to improve website functions. This includes cookies from third-party analytics services as long as the cookies are for the exclusive use of the owner of the website visited.
+                <strong>Performance and Analytics Cookies:</strong> Collect anonymized data on website usage and traffic patterns to help us understand how our users interact with the site and to improve performance.
               </li>
               <li>
-                <strong>Functionality Cookies:</strong> These cookies allow our website to remember choices you have made in the past, like what language you prefer or what your user name is so you can log in automatically.
+                <strong>Functionality Cookies:</strong> Remember your preferences such as language settings, theme selections, or login state, to provide a tailored browsing experience.
+              </li>
+              <li>
+                <strong>Advertising and Targeting Cookies:</strong> Used to deliver relevant advertisements and measure the effectiveness of marketing campaigns. These may be set by us or third-party partners.
               </li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Disabling Cookies</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">How We Use Cookies</h2>
             <p>
-              You can prevent the setting of cookies by adjusting the settings on your browser (see your browser's "Help" section for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit. Disabling cookies will usually result in also disabling certain functionality and features of this site. Therefore, it is recommended that you do not disable cookies.
+              Cookies allow us to:
             </p>
+            <ul className="list-disc list-inside space-y-2">
+              <li>Keep you signed in and secure your account</li>
+              <li>Understand how you use our website to improve it</li>
+              <li>Personalize your experience and remember choices</li>
+              <li>Analyze aggregated user behavior for research and development</li>
+              <li>Deliver relevant advertising and promotions</li>
+            </ul>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Third-Party Cookies</h2>
             <p>
-              In some special cases, we also use cookies provided by trusted third parties. For example, this site uses Google Analytics, which is one of the most widespread and trusted analytics solutions on the web, for helping us to understand how you use the site and ways that we can improve your experience. These cookies may track things such as how long you spend on the site and the pages that you visit so we can continue to produce engaging content.
+              We may also use cookies from trusted third-party services such as:
+            </p>
+            <ul className="list-disc list-inside space-y-2">
+              <li><strong>Google Analytics:</strong> Gathers insights on visitor behavior with strict privacy and anonymity protections.</li>
+              <li><strong>Advertising Partners:</strong> Help target and measure ads delivered across the internet.</li>
+              <li><strong>Social Media Platforms:</strong> Enable sharing and integration features on our site.</li>
+            </ul>
+            <p>
+              These providers have their own privacy policies and cookie management controls.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Changes to This Cookie Policy</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Managing Cookies</h2>
             <p>
-              We may update our Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page. You are advised to review this Cookie Policy periodically for any changes. Changes to this Cookie Policy are effective when they are posted on this page.
+              You have options to manage and control cookies:
+            </p>
+            <ul className="list-disc list-inside space-y-2">
+              <li>Most browsers allow you to block or delete cookies via settings or preferences.</li>
+              <li>You can visit <a href="https://www.youronlinechoices.com/" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">youronlinechoices.com</a> to manage advertising preferences.</li>
+              <li>Note that disabling cookies may limit your ability to use certain features of our site.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">Children's Privacy</h2>
+            <p>
+              Our website is not intended for use by individuals under the age of 13. We do not knowingly collect personal information from children without parental consent.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">Your Rights</h2>
+            <p>
+              Depending on your jurisdiction, you may have rights related to your personal data, including:
+            </p>
+            <ul className="list-disc list-inside space-y-2">
+              <li>The right to access and correct your data</li>
+              <li>The right to withdraw consent to data processing</li>
+              <li>The right to request deletion of your data</li>
+              <li>The right to object to certain data processing activities</li>
+            </ul>
+            <p>
+              For any such requests, please contact us as detailed below.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">Policy Updates</h2>
+            <p>
+              We may update this Cookie Policy occasionally to reflect changes in law or operations. Updates will be posted here with the revised date.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
-            <p>
-              If you have any questions about this Cookie Policy, you can contact us:
-            </p>
+            <p>If you have questions about this Cookie Policy or data practices, you can reach us:</p>
             <ul className="list-disc list-inside mt-2">
               <li>By email: <a href="mailto:reachus@gridsparksolutions.com" className="text-accent hover:underline">reachus@gridsparksolutions.com</a></li>
-              <li>By visiting the <Link to="/contact" className="text-accent hover:underline">Contact page</Link> on our website.</li>
+              <li>Via our <Link to="/contact" className="text-accent hover:underline">Contact Page</Link></li>
             </ul>
           </section>
         </div>
