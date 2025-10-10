@@ -1,5 +1,8 @@
 import React from "react";
-import PricingPlans from "../components/PricingPlans";
+
+// --- UPDATED IMPORT ---
+// Path now correctly points to the "sections" subfolder.
+import PricingPlans from "../components/sections/PricingPlans";
 
 const Pricing = () => (
   <section className="section-padding max-w-6xl mx-auto">

@@ -1,28 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
-// Existing pages
+// --- CORRECTED IMPORTS ---
+
+// Layout Components
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+
+// Top-Level Pages
 import Home from "./pages/Home.jsx";
-import Solutions from "./pages/Solutions.jsx";
-import Portfolio from "./pages/Portfolio.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import Contact from "./pages/Contact.jsx";
-import Partner from "./pages/Partner.jsx";
-import Login from "./pages/Login.jsx";
 
-// New suggested pages
-import About from "./pages/About.jsx";
-import Services from "./pages/Services.jsx";
-import AIDemos from "./pages/AI-Demos.jsx";
-import CaseStudies from "./pages/CaseStudies.jsx";
-import Careers from "./pages/Careers.jsx";
+// Grouped Pages (from new subfolders with correct paths)
+import About from "./pages/about/index.jsx"; // Correct path
+import Careers from "./pages/about/Careers.jsx";
+import Partner from "./pages/about/Partner.jsx";
 
-// Import the new legal pages
-import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
-import Terms from './pages/Terms.jsx';
-import CookiePolicy from './pages/CookiePolicy.jsx';
+import Solutions from "./pages/solutions/index.jsx"; // Correct path
+import Services from "./pages/solutions/Services.jsx";
+import Portfolio from "./pages/solutions/Portfolio.jsx";
+import AIDemos from "./pages/solutions/AI-Demos.jsx";
+import CaseStudies from "./pages/solutions/CaseStudies.jsx";
+
+import Login from "./pages/auth/Login.jsx";
+
+import PrivacyPolicy from './pages/legal/PrivacyPolicy.jsx';
+import Terms from './pages/legal/Terms.jsx';
+import CookiePolicy from './pages/legal/CookiePolicy.jsx';
 
 function App() {
   const [backendMessage, setBackendMessage] = useState("Loading...");
@@ -44,7 +49,6 @@ function App() {
         <strong>Backend message:</strong> {backendMessage}
       </div>
       <Routes>
-        {/* Main and legacy routes */}
         <Route path="/" element={<Home />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/partner" element={<Partner />} />
@@ -52,17 +56,14 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
-        {/* Enhanced pages */}
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/ai-demos" element={<AIDemos />} />
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/careers" element={<Careers />} />
-        {/* Legal/policy pages */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
-        {/* Fallback */}
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
