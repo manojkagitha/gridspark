@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from '../../assets/logo.png';
+import logo from '/src/assets/logo.png';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -58,7 +58,8 @@ const Navbar = () => {
                 </Link>
               )}
               {item.subMenu && openDropdown === item.label && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 pt-2">
+                // --- FIX IS ON THIS LINE ---
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 -mt-2">
                     <div className="bg-dark rounded-md shadow-lg py-1">
                       {item.subMenu.map((subItem) => (
                         <Link
