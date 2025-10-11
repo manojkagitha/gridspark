@@ -27,26 +27,46 @@ const studies = [
   },
 ];
 
-const CaseStudies = () => (
-  <div className="max-w-4xl mx-auto px-4 py-12">
-    <h1 className="text-3xl font-bold mb-6 text-accent">Case Studies</h1>
-    <p className="mb-8 text-gray-200">
-      See how Gridspark Solutions helps clients from startups to enterprises realize real business impact with cloud and AI innovation.
-    </p>
-    <div className="grid gap-8">
-      {studies.map((study, idx) => (
-        <div key={idx} className="border border-gray-700 bg-dark rounded-lg p-6 shadow">
-          <h2 className="text-lg font-semibold text-secondary">{study.client}</h2>
-          <hr className="my-3 border-accent" />
-          <p><span className="font-semibold text-accent">Challenge:</span> {study.challenge}</p>
-          <p className="mt-2"><span className="font-semibold text-secondary">Solution:</span> {study.solution}</p>
-          <p className="mt-2"><span className="font-semibold text-primary">Outcome:</span> {study.outcome}</p>
-        </div>
-      ))}
+const CaseStudyCard = ({ client, challenge, solution, outcome }) => (
+  <div className="w-full bg-gray-800/95 px-8 py-8 rounded-2xl shadow-xl border border-yellow-400/20 flex flex-col md:flex-row items-start mb-10 space-y-4 md:space-y-0 md:space-x-10">
+    <div className="flex-1">
+      <h2 className="text-2xl font-bold text-yellow-400 mb-3">{client}</h2>
+      <div className="mb-4">
+        <span className="font-semibold text-yellow-400">Challenge:</span>{" "}
+        <span className="text-gray-300">{challenge}</span>
+      </div>
+      <div className="mb-4">
+        <span className="font-semibold text-blue-400">Solution:</span>{" "}
+        <span className="text-gray-200">{solution}</span>
+      </div>
+      <div>
+        <span className="font-semibold text-purple-400">Outcome:</span>{" "}
+        <span className="text-gray-200">{outcome}</span>
+      </div>
     </div>
-    <p className="mt-8 text-sm text-gray-400">
-      Want to see what we can do for your business? <a href="/contact" className="text-accent underline">Contact us today</a>!
-    </p>
+  </div>
+);
+
+const CaseStudies = () => (
+  <div className="min-h-screen w-full py-16 px-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+    <div className="max-w-5xl mx-auto px-4">
+      <h1 className="text-4xl font-extrabold mb-6 text-yellow-400">Case Studies</h1>
+      <p className="mb-8 text-gray-300">
+        See how Gridspark Solutions helps clients from startups to enterprises realize real business impact with cloud and AI innovation.
+      </p>
+      <div className="flex flex-col gap-6">
+        {studies.map((study, idx) => (
+          <CaseStudyCard key={idx} {...study} />
+        ))}
+      </div>
+      <p className="mt-10 text-sm text-gray-400">
+        Want to see what we can do for your business?{" "}
+        <a href="/contact" className="text-yellow-400 underline">
+          Contact us today
+        </a>
+        !
+      </p>
+    </div>
   </div>
 );
 

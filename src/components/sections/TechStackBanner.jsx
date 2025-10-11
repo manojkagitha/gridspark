@@ -1,13 +1,12 @@
 import React from "react";
 
-// Import each logo from the assets folder
-import llamaLogo from "../../assets/llama.jpg";
-import deepseekLogo from "../../assets/deepseek.jpg";
-import grokLogo from "../../assets/grok.jpg";
-import copilotLogo from "../../assets/microsoft-copilot.jpg";
-import claudeLogo from "../../assets/claude.jpg";
-import azureLogo from "../../assets/azureopenai.jpg";
-import gpt4Logo from "../../assets/gpt-4.jpg";
+import llamaLogo from '/src/assets/llama.png';
+import deepseekLogo from '/src/assets/deepseek.png';
+import grokLogo from '/src/assets/grok.png';
+import copilotLogo from '/src/assets/microsoft-copilot.png';
+import claudeLogo from '/src/assets/claude.png';
+import azureLogo from '/src/assets/azureopenai.png';
+import gpt4Logo from '/src/assets/GPT-4.png';
 
 // List of tech logos and their alt text
 const logos = [
@@ -21,18 +20,38 @@ const logos = [
 ];
 
 const TechStackBanner = () => (
-  <div className="bg-white py-8 px-2 shadow relative z-20">
-    <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-x-8 gap-y-3">
-      {logos.map(logo => (
-        <img
-          key={logo.alt}
-          src={logo.src}
-          alt={logo.alt}
-          className="h-14 md:h-16 object-contain grayscale hover:grayscale-0 transition duration-300"
-          style={{ maxWidth: 120 }}
-        />
-      ))}
+  <div className="bg-dark py-8 px-2 shadow relative z-20 overflow-hidden">
+    {/* Animated wrapper */}
+    <div className="relative w-full">
+      <div className="logo-scroll flex items-center gap-x-12 animate-scroll">
+        {[...logos, ...logos].map((logo, i) => (
+          // Duplicate logos so scroll is continuous
+          <img
+            key={logo.alt + i}
+            src={logo.src}
+            alt={logo.alt}
+            className="h-14 md:h-16 object-contain"
+            style={{ maxWidth: 120 }}
+          />
+        ))}
+      </div>
     </div>
+    {/* Animation CSS */}
+    <style>
+      {`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .logo-scroll {
+          display: flex;
+          width: 200%;
+        }
+        .animate-scroll {
+          animation: scroll 18s linear infinite;
+        }
+      `}
+    </style>
   </div>
 );
 

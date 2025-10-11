@@ -18,7 +18,6 @@ const AppWindowIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-accent"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 4v4"/><path d="M2 8h20"/><path d="M6 4v4"/></svg>
 );
 
-
 const ServiceCard = ({ icon, title, description, items }) => (
   <div className="bg-gray-800 p-8 rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300">
     <div className="flex items-center mb-4">
@@ -66,9 +65,9 @@ const Services = () => {
   ];
 
   return (
-    <div className="bg-dark text-white">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
       {/* Hero Section */}
-      <section className="text-center py-20 bg-gray-900">
+      <section className="text-center py-20">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-extrabold text-white">Our Services</h1>
           <p className="mt-4 text-xl text-gray-300">
@@ -89,7 +88,7 @@ const Services = () => {
       </section>
 
       {/* Our Process Section */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20">
         <div className="max-w-5xl mx-auto text-center px-4">
           <h2 className="text-4xl font-bold mb-4">Our Approach to Innovation</h2>
           <p className="text-lg text-gray-400 mb-12">We follow a proven, collaborative process to ensure your project's success from concept to launch and beyond.</p>
@@ -99,17 +98,17 @@ const Services = () => {
               <h3 className="text-xl font-semibold">Discover & Plan</h3>
               <p className="text-gray-400 mt-2">We dive deep into your goals to create a strategic roadmap.</p>
             </div>
-             <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center">
               <div className="bg-accent text-dark rounded-full h-16 w-16 flex items-center justify-center text-2xl font-bold mb-4">2</div>
               <h3 className="text-xl font-semibold">Design & Prototype</h3>
               <p className="text-gray-400 mt-2">We craft intuitive designs and functional prototypes.</p>
             </div>
-             <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center">
               <div className="bg-accent text-dark rounded-full h-16 w-16 flex items-center justify-center text-2xl font-bold mb-4">3</div>
               <h3 className="text-xl font-semibold">Develop & Test</h3>
               <p className="text-gray-400 mt-2">Our engineers build and rigorously test your solution.</p>
             </div>
-             <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center">
               <div className="bg-accent text-dark rounded-full h-16 w-16 flex items-center justify-center text-2xl font-bold mb-4">4</div>
               <h3 className="text-xl font-semibold">Deploy & Scale</h3>
               <p className="text-gray-400 mt-2">We launch your product and provide ongoing support.</p>

@@ -48,18 +48,18 @@ const expertiseList = [
 ];
 
 const Expertise = () => (
-  <section className="py-20 bg-gradient-to-br from-light via-secondary/10 to-primary/10">
+  <section className="py-20 bg-gray-900 text-white">
     <div className="max-w-6xl mx-auto px-4">
-      <h1 className="text-5xl font-extrabold text-primary mb-8">Our Expertise</h1>
-      <p className="text-xl text-dark mb-12 max-w-3xl">
+      <h1 className="text-5xl font-extrabold text-accent mb-8">Our Expertise</h1>
+      <p className="text-xl text-gray-300 mb-12 max-w-3xl">
         Gridspark Solutions brings deep experience across cloud, DevOps, advanced data engineering, scalable search, and AI-powered analytics. Our specialists enable digital transformation for leading brands.
       </p>
       <div className="grid md:grid-cols-2 gap-8">
         {expertiseList.map(({ title, description, features }) => (
-          <div key={title} className="bg-white rounded-xl shadow-lg p-8 border border-primary/10 flex flex-col">
-            <h2 className="text-2xl font-bold text-secondary mb-2">{title}</h2>
-            <p className="mb-4 text-gray-700">{description}</p>
-            <ul className="list-disc list-inside text-gray-600">
+          <div key={title} className="bg-gray-800 rounded-xl shadow-xl p-8 border border-accent/10 flex flex-col">
+            <h2 className="text-2xl font-bold text-accent mb-2">{title}</h2>
+            <p className="mb-4 text-gray-400">{description}</p>
+            <ul className="list-disc list-inside text-gray-300">
               {features.map((item) => (
                 <li key={item} className="mb-1">{item}</li>
               ))}

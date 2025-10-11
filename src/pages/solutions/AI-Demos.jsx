@@ -11,7 +11,7 @@ const demos = [
         src="https://widgetbot.io/demo"
         className="w-full h-80 rounded-lg border"
       />
-    ), // Replace src with your widget or demo URL if available
+    ),
   },
   {
     title: "Document Summarizer",
@@ -49,33 +49,33 @@ const AIDemos = () => {
   const [activeDemo, setActiveDemo] = useState(0);
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-accent mb-6">AI Demo Showcase</h1>
-      <p className="mb-6">
-        Explore Gridspark's live AI technologies—from chatbots to intelligent automation, document analysis, and more.<br />
-        <span className="text-sm text-gray-400">For custom demos, <a href="/contact" className="text-accent underline">contact us</a>!</span>
-      </p>
-      <div className="flex space-x-3 mb-6">
-        {demos.map((demo, idx) => (
-          <button
-            key={demo.title}
-            onClick={() => setActiveDemo(idx)}
-            className={`px-4 py-2 rounded ${
-              activeDemo === idx
-                ? "bg-accent text-white"
-                : "bg-gray-800 text-gray-300 hover:bg-secondary"
-            }`}
-          >
-            {demo.title}
-          </button>
-        ))}
-      </div>
-      <div className="border rounded p-6 bg-dark shadow-lg min-h-[350px]">
-        <h2 className="text-xl font-semibold text-secondary mb-3">
-          {demos[activeDemo].title}
-        </h2>
-        <p className="mb-5 text-gray-300">{demos[activeDemo].description}</p>
-        <div>{demos[activeDemo].demoComponent}</div>
+    <div className="min-h-screen w-full py-16 px-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+      <div className="max-w-5xl mx-auto px-4">
+        <h1 className="text-4xl font-extrabold text-yellow-400 mb-6">AI Demo Showcase</h1>
+        <p className="mb-8 text-gray-300">
+          Explore Gridspark's live AI technologies—from chatbots to intelligent automation, document analysis, and more.<br />
+          <span className="text-sm text-gray-400">For custom demos, <a href="/contact" className="text-yellow-400 underline">contact us</a>!</span>
+        </p>
+        <div className="flex flex-wrap gap-4 mb-8">
+          {demos.map((demo, idx) => (
+            <button
+              key={demo.title}
+              onClick={() => setActiveDemo(idx)}
+              className={`px-5 py-2 rounded-xl font-medium text-base transition ${
+                activeDemo === idx
+                  ? "bg-yellow-400 text-black shadow"
+                  : "bg-gray-800 text-gray-300 hover:bg-purple-700"
+              }`}
+            >
+              {demo.title}
+            </button>
+          ))}
+        </div>
+        <div className="w-full bg-gray-800/95 px-8 py-8 rounded-2xl shadow-xl border border-yellow-400/20 flex flex-col">
+          <h2 className="text-2xl font-bold text-yellow-400 mb-4">{demos[activeDemo].title}</h2>
+          <p className="mb-6 text-gray-300">{demos[activeDemo].description}</p>
+          <div>{demos[activeDemo].demoComponent}</div>
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from '/src/assets/logo.png';
+import logo from '/src/assets/logo.png'; // Use your HD logo path
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,6 +9,8 @@ const Navbar = () => {
 
   const menuItems = [
     { path: "/", label: "Home" },
+    { path: "/expertise", label: "Expertise" },
+    { path: "/industries", label: "Industries" },
     {
       label: "Solutions",
       subMenu: [
@@ -32,9 +34,8 @@ const Navbar = () => {
   return (
     <nav className="bg-dark shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-20">
-        <Link to="/" className="flex-shrink-0 flex items-center space-x-2 text-white font-extrabold text-2xl font-sans drop-shadow-lg">
-          <img src={logo} alt="Logo" className="h-8 mr-2" />
-          <span>Gridspark Solutions</span>
+        <Link to="/" className="flex-shrink-0 flex items-center">
+          <img src={logo} alt="Logo" className="h-10" />
         </Link>
 
         {/* --- DESKTOP MENU --- */}
@@ -57,7 +58,7 @@ const Navbar = () => {
                 </Link>
               )}
               {item.subMenu && openDropdown === item.label && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 z-50">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 z-50">
                   <div className="bg-dark rounded-md shadow-lg py-1">
                     {item.subMenu.map((subItem) => (
                       <Link
