@@ -29,28 +29,34 @@ const resources = [
 ];
 
 const Resources = () => (
-  <section className="py-20 min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
-    <TechStackBanner />
-    <div className="max-w-6xl mx-auto px-4">
-      <h1 className="text-5xl font-extrabold text-accent mb-8">Resources & Insights</h1>
-      <p className="text-xl text-gray-300 mb-12 max-w-3xl">
-        Explore our collection of authoritative resources, including blogs, whitepapers, webinars, and case studies designed to help you make informed decisions around cloud, AI, and data analytics.
-      </p>
-      <div className="grid md:grid-cols-2 gap-8">
-        {resources.map(({ type, title, description, link }) => (
-          <a
-            href={link}
-            key={title}
-            className="bg-gray-900 rounded-xl shadow-lg p-8 border border-accent/10 flex flex-col hover:shadow-xl transition-shadow hover:-translate-y-1"
-          >
-            <span className="text-sm font-semibold text-accent mb-2">{type}</span>
-            <h2 className="text-2xl font-bold text-accent mb-2">{title}</h2>
-            <p className="text-gray-300">{description}</p>
-          </a>
-        ))}
+  <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white flex flex-col">
+    <section className="pt-8 pb-20 flex-shrink-0">
+      <div className="max-w-6xl mx-auto px-4">
+        <h1 className="text-5xl font-extrabold text-accent mb-8">Resources & Insights</h1>
+        <p className="text-xl text-gray-300 mb-12 max-w-3xl">
+          Explore our collection of authoritative resources, including blogs, whitepapers, webinars, and case studies designed to help you make informed decisions around cloud, AI, and data analytics.
+        </p>
+        <div className="grid md:grid-cols-2 gap-8">
+          {resources.map(({ type, title, description, link }) => (
+            <a
+              href={link}
+              key={title}
+              className="bg-gray-900 rounded-xl shadow-lg p-8 border border-accent/10 flex flex-col hover:shadow-xl transition-shadow hover:-translate-y-1"
+            >
+              <span className="text-sm font-semibold text-accent mb-2">{type}</span>
+              <h2 className="text-2xl font-bold text-accent mb-2">{title}</h2>
+              <p className="text-gray-300">{description}</p>
+            </a>
+          ))}
+        </div>
       </div>
+    </section>
+    {/* TechStackBanner: flush, full-width, BLACK background, zero gap to footer */}
+    <div className="bg-black w-full flex-shrink-0 m-0 p-0" style={{marginTop: 0, marginBottom: 0}}>
+      <TechStackBanner />
     </div>
-  </section>
+    {/* Footer assumed to be bg-black and attaches without visible break */}
+  </div>
 );
 
 export default Resources;
