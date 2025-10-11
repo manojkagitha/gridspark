@@ -2,10 +2,10 @@ import React from 'react';
 
 // Individual showcase item component
 const ShowcaseCard = ({ title, description, tags, imageUrl }) => (
-  <div className="bg-gray-800 rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+  <div className="bg-gray-900 rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 border border-accent/10">
     <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
     <div className="p-6">
-      <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
+      <h3 className="text-2xl font-bold text-accent mb-2">{title}</h3>
       <p className="text-gray-300 mb-4">{description}</p>
       <div className="flex flex-wrap gap-2">
         {tags.map(tag => (
@@ -39,9 +39,9 @@ const AIShowcase = () => {
   ];
 
   return (
-    <section className="bg-dark py-20 px-4">
+    <section className="py-20 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-extrabold text-white mb-4">Our AI in Action</h2>
+        <h2 className="text-4xl font-extrabold text-accent mb-4">Our AI in Action</h2>
         <p className="text-gray-300 text-lg mb-12">We don't just talk about AI—we build intelligent solutions that drive real business results.</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {showcases.map((item) => (

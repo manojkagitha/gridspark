@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TestimonialCard = ({ quote, author, role, company }) => (
-  <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
+  <div className="bg-gray-900 p-8 rounded-lg shadow-lg border border-accent/10">
     <p className="text-gray-300 italic text-lg mb-6">"{quote}"</p>
     <div className="flex items-center">
       <div>
@@ -35,16 +35,16 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="bg-dark py-20 px-4">
+    <section className="py-20 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-extrabold text-white mb-12">Trusted by Industry Leaders</h2>
+        <h2 className="text-4xl font-extrabold text-accent mb-12">Trusted by Industry Leaders</h2>
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} {...testimonial} />
           ))}
         </div>
       </div>
-       <p className="text-center text-gray-500 mt-8 text-sm">
+      <p className="text-center text-gray-400 mt-8 text-sm">
         Note: Customer names and companies have been changed for confidentiality.
       </p>
     </section>

@@ -19,9 +19,8 @@ const Footer = () => (
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-gray-400">
             <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
-            <li><Link to="/services" className="hover:text-accent transition-colors">Services</Link></li>
-            <li><Link to="/case-studies" className="hover:text-accent transition-colors">Case Studies</Link></li>
             <li><Link to="/careers" className="hover:text-accent transition-colors">Careers</Link></li>
+            <li><Link to="/faq" className="hover:text-accent transition-colors">FAQ</Link></li>
             <li><Link to="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
           </ul>
         </div>
@@ -53,11 +52,51 @@ const Footer = () => (
           &copy; {new Date().getFullYear()} All rights reserved.
         </p>
         <div className="flex space-x-4">
-          <a href="https://facebook.com/gridsparksolutions" className="text-gray-400 hover:text-accent transition text-xl" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-          <a href="https://twitter.com/gridspark" className="text-gray-400 hover:text-accent transition text-xl" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-          <a href="https://linkedin.com/company/gridsparksolutions" className="text-gray-400 hover:text-accent transition text-xl" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-          <a href="https://instagram.com/gridsparksolutions" className="text-gray-400 hover:text-accent transition text-xl" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-          <a href="https://github.com/gridspark" className="text-gray-400 hover:text-accent transition text-xl" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+          <a
+            href="https://www.instagram.com/gridsparksolutions/"
+            className="text-gray-400 hover:text-accent transition text-xl"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <FaFacebook />
+          </a>
+          <a
+            href="https://x.com/GridsparkS"
+            className="text-gray-400 hover:text-accent transition text-xl"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X"
+          >
+            <FaTwitter />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/gridsparksolutions/"
+            className="text-gray-400 hover:text-accent transition text-xl"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://www.instagram.com/gridsparksolutions/"
+            className="text-gray-400 hover:text-accent transition text-xl"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://github.com/GridsparkSolutions"
+            className="text-gray-400 hover:text-accent transition text-xl"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <FaGithub />
+          </a>
         </div>
       </div>
     </div>

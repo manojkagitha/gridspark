@@ -7,7 +7,7 @@ const Login = () => {
   const [mode, setMode] = useState("login"); // 'login' or 'signup'
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [phone, setPhone] = useState(); // Managed by phone-number-input
+  const [phone, setPhone] = useState();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -16,10 +16,8 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  // --- Secure, configurable API base URL ---
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://135.235.136.94:3000/api";
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://135.235.136.94:3000/api";
 
-  // --- Form submission handler ---
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -60,14 +58,14 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://135.235.136.94
   };
 
   return (
-    <section className="bg-dark min-h-screen flex items-center justify-center py-12 px-4">
-      <div className="w-full max-w-md bg-gray-800 p-8 rounded-lg shadow-2xl">
-        <h1 className="text-3xl font-extrabold text-white text-center mb-8">
+    <section className="min-h-screen flex items-center justify-center py-12 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+      <div className="w-full max-w-md bg-gray-900/90 p-8 rounded-lg shadow-2xl border border-accent/10">
+        <h1 className="text-3xl font-extrabold text-accent text-center mb-8">
           {mode === "login" ? "Login to Gridspark" : "Create Your Account"}
         </h1>
         {/* Error and success messages */}
-        {error && <div className="mb-4 text-center bg-red-500 text-white p-3 rounded">{error}</div>}
-        {message && <div className="mb-4 text-center bg-green-500 text-white p-3 rounded">{message}</div>}
+        {error && <div className="mb-4 text-center bg-red-600 text-white p-3 rounded">{error}</div>}
+        {message && <div className="mb-4 text-center bg-green-600 text-white p-3 rounded">{message}</div>}
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4" noValidate>
           {mode === "signup" && (
@@ -78,7 +76,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://135.235.136.94
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 required
-                className="w-1/2 p-3 bg-gray-700 rounded border border-gray-600 text-white focus:ring-accent focus:border-accent"
+                className="w-1/2 p-3 bg-gray-800 rounded border border-gray-700 text-white focus:ring-accent focus:border-accent"
                 autoComplete="given-name"
               />
               <input
@@ -87,7 +85,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://135.235.136.94
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 required
-                className="w-1/2 p-3 bg-gray-700 rounded border border-gray-600 text-white focus:ring-accent focus:border-accent"
+                className="w-1/2 p-3 bg-gray-800 rounded border border-gray-700 text-white focus:ring-accent focus:border-accent"
                 autoComplete="family-name"
               />
             </div>
@@ -99,7 +97,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://135.235.136.94
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full p-3 bg-gray-700 rounded border border-gray-600 text-white focus:ring-accent focus:border-accent"
+            className="w-full p-3 bg-gray-800 rounded border border-gray-700 text-white focus:ring-accent focus:border-accent"
             autoComplete="email"
           />
 
@@ -120,11 +118,11 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://135.235.136.94
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full p-3 bg-gray-700 rounded border border-gray-600 text-white focus:ring-accent focus:border-accent"
+            className="w-full p-3 bg-gray-800 rounded border border-gray-700 text-white focus:ring-accent focus:border-accent"
             autoComplete={mode === "login" ? "current-password" : "new-password"}
           />
 
-          <button type="submit" className="w-full btn-primary" disabled={loading}>
+          <button type="submit" className="w-full btn-primary py-3 text-lg" disabled={loading}>
             {loading ? "Processing..." : mode === "login" ? "Login" : "Create Account"}
           </button>
         </form>
@@ -151,16 +149,16 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://135.235.136.94
       {/* Inline styling for phone input */}
       <style>{`
         .phone-input-container input {
-          background-color: #374151; /* bg-gray-700 */
-          border: 1px solid #4B5563; /* border-gray-600 */
+          background-color: #1f2937; /* bg-gray-800 */
+          border: 1px solid #374151; /* border-gray-700 */
           color: white;
           padding: 0.75rem;
           border-radius: 0.375rem;
           width: 100%;
         }
         .phone-input-container .PhoneInputCountry {
-          background-color: #374151;
-          border: 1px solid #4B5563;
+          background-color: #1f2937;
+          border: 1px solid #374151;
           border-radius: 0.375rem 0 0 0.375rem;
         }
       `}</style>

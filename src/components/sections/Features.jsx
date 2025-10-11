@@ -2,12 +2,12 @@ import React from 'react';
 
 // Using inline SVGs for icons
 const FeatureCard = ({ icon, title, description }) => (
-  <div className="bg-gray-800 p-6 rounded-lg text-center">
-    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-accent text-white mx-auto mb-4">
+  <div className="bg-gray-900/90 p-6 rounded-xl shadow-xl text-center border border-accent/20">
+    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-to-r from-indigo-700 via-purple-700 to-indigo-900 text-white mx-auto mb-4">
       {icon}
     </div>
-    <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-    <p className="text-gray-400">{description}</p>
+    <h3 className="text-xl font-bold text-accent mb-2">{title}</h3>
+    <p className="text-gray-300">{description}</p>
   </div>
 );
 
@@ -36,10 +36,10 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-20 px-4 bg-dark">
+    <section id="features" className="py-20 px-4 min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Your End-to-End AI Partner</h2>
-        <p className="text-lg text-gray-400 mb-12">From strategy to deployment, we provide the expertise to make your AI vision a reality.</p>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-accent mb-4">Your End-to-End AI Partner</h2>
+        <p className="text-lg text-gray-300 mb-12">From strategy to deployment, we provide the expertise to make your AI vision a reality.</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {featuresData.map(feature => (
             <FeatureCard key={feature.title} {...feature} />

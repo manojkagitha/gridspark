@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+const API_URL = "http://135.235.136.94:3000/api/register";
+
 const Register = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -16,17 +18,13 @@ const Register = () => {
     const hasUppercase = /[A-Z]/;
     const hasLowercase = /[a-z]/;
     const hasSpecialChar = /[!@#$%^&*]/;
-
-    if (
-      pwd.length < minLength ||
-      !hasNumber.test(pwd) ||
-      !hasUppercase.test(pwd) ||
-      !hasLowercase.test(pwd) ||
-      !hasSpecialChar.test(pwd)
-    ) {
-      return false;
-    }
-    return true;
+    return (
+      pwd.length >= minLength &&
+      hasNumber.test(pwd) &&
+      hasUppercase.test(pwd) &&
+      hasLowercase.test(pwd) &&
+      hasSpecialChar.test(pwd)
+    );
   };
 
   const handleRegister = async (e) => {
@@ -38,39 +36,52 @@ const Register = () => {
       setError("Passwords do not match.");
       return;
     }
-
     if (!validatePassword(password)) {
       setError(
         "Password must be at least 8 characters, including uppercase, lowercase, number, and special character."
       );
       return;
     }
-
+    if (!email || !fullName) {
+      setError("Please enter your name and email.");
+      return;
+    }
     setLoading(true);
 
-    // Simulate registration API call (replace with real backend logic)
-    setTimeout(() => {
-      console.log("Registering with:", { fullName, email, password });
+    // Registration API
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fullName, email, password }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || "Registration failed.");
+      }
+
       alert("Registration successful! Please check your email to verify your account.");
-      setLoading(false);
       navigate("/login");
-    }, 1200);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section className="bg-dark min-h-screen flex items-center justify-center py-12 px-4">
-      <div className="w-full max-w-md bg-gray-800 p-8 rounded-lg shadow-2xl">
-        <h2 className="text-3xl font-extrabold text-white text-center mb-6">
+    <section className="min-h-screen flex items-center justify-center py-12 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+      <div className="w-full max-w-md bg-gray-900/90 p-8 rounded-lg shadow-2xl border border-accent/10">
+        <h2 className="text-3xl font-extrabold text-accent text-center mb-6">
           Create Your Account
         </h2>
-        <p className="text-center text-gray-400 mb-8">
+        <p className="text-center text-gray-300 mb-8">
           Join Gridspark and unlock the future of AI-driven solutions.
         </p>
-
         {error && (
           <p className="bg-red-600 text-white text-center p-3 rounded mb-6">{error}</p>
         )}
-
         <form onSubmit={handleRegister} noValidate>
           <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-2">
             Full Name
@@ -80,12 +91,11 @@ const Register = () => {
             id="fullName"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-            className="w-full p-3 mb-4 bg-gray-700 rounded border border-gray-600 text-white focus:ring-accent focus:border-accent"
+            className="w-full p-3 mb-4 bg-gray-800 rounded border border-gray-700 text-white focus:ring-accent focus:border-accent"
             required
             autoComplete="name"
             placeholder="Your full name"
           />
-
           <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
             Email Address
           </label>
@@ -94,12 +104,11 @@ const Register = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 mb-4 bg-gray-700 rounded border border-gray-600 text-white focus:ring-accent focus:border-accent"
+            className="w-full p-3 mb-4 bg-gray-800 rounded border border-gray-700 text-white focus:ring-accent focus:border-accent"
             required
             autoComplete="email"
             placeholder="you@example.com"
           />
-
           <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-2">
             Password
           </label>
@@ -108,7 +117,7 @@ const Register = () => {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-3 mb-4 bg-gray-700 rounded border border-gray-600 text-white focus:ring-accent focus:border-accent"
+            className="w-full p-3 mb-4 bg-gray-800 rounded border border-gray-700 text-white focus:ring-accent focus:border-accent"
             required
             autoComplete="new-password"
             placeholder="Create a secure password"
@@ -117,11 +126,7 @@ const Register = () => {
           <small id="passwordHelp" className="block text-xs text-gray-400 mb-4">
             Minimum 8 characters, include uppercase, lowercase, number &amp; special character.
           </small>
-
-          <label
-            htmlFor="confirmPassword"
-            className="block text-sm font-medium text-gray-300 mb-2"
-          >
+          <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-300 mb-2">
             Confirm Password
           </label>
           <input
@@ -129,12 +134,11 @@ const Register = () => {
             id="confirmPassword"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className="w-full p-3 mb-6 bg-gray-700 rounded border border-gray-600 text-white focus:ring-accent focus:border-accent"
+            className="w-full p-3 mb-6 bg-gray-800 rounded border border-gray-700 text-white focus:ring-accent focus:border-accent"
             required
             autoComplete="new-password"
             placeholder="Re-enter your password"
           />
-
           <button
             type="submit"
             className="w-full btn-primary py-3 text-lg"
@@ -143,13 +147,9 @@ const Register = () => {
             {loading ? "Creating Account..." : "Sign Up"}
           </button>
         </form>
-
         <p className="text-center text-gray-400 mt-8">
           Already have an account?{" "}
-          <Link
-            to="/login"
-            className="font-medium text-accent hover:underline"
-          >
+          <Link to="/login" className="font-medium text-accent hover:underline">
             Log In
           </Link>
         </p>

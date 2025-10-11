@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from '/src/assets/logo.png'; // Use your HD logo path
+import logo from '/src/assets/logo.png';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,8 +9,8 @@ const Navbar = () => {
 
   const menuItems = [
     { path: "/", label: "Home" },
-    { path: "/expertise", label: "Expertise" },
-    { path: "/industries", label: "Industries" },
+    { path: "/products", label: "Products" },
+    { path: "/resources", label: "Resources" }, // <-- Moved back after Products
     {
       label: "Solutions",
       subMenu: [
@@ -18,12 +18,15 @@ const Navbar = () => {
         { path: "/solutions/portfolio", label: "Portfolio" },
         { path: "/solutions/case-studies", label: "Case Studies" },
         { path: "/solutions/ai-demos", label: "AI Demos" },
+        { path: "/solutions/ai-showcase", label: "AI Showcase" }, // <-- under Solutions
       ],
     },
     {
       label: "About",
       subMenu: [
         { path: "/about", label: "About Us" },
+        { path: "/expertise", label: "Expertise" },
+        { path: "/industries", label: "Industries" },
         { path: "/partner", label: "Partner With Us" },
         { path: "/careers", label: "Careers" },
       ],
@@ -50,7 +53,9 @@ const Navbar = () => {
               {item.subMenu ? (
                 <button className="text-white hover:text-accent focus:outline-none flex items-center">
                   {item.label}
-                  <svg className="ml-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                  <svg className="ml-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
                 </button>
               ) : (
                 <Link to={item.path} className={location.pathname === item.path ? "text-accent font-bold" : "text-white hover:text-accent"}>
@@ -77,9 +82,19 @@ const Navbar = () => {
           ))}
         </div>
 
+        {/* --- LOGIN & REGISTER BUTTONS (DESKTOP) --- */}
         <div className="hidden md:flex items-center">
-          <Link to="/login" className={`btn-secondary ml-4 ${location.pathname === "/login" ? "ring-2 ring-accent" : ""}`}>
+          <Link
+            to="/login"
+            className={`btn-secondary ml-4 ${location.pathname === "/login" ? "ring-2 ring-accent" : ""}`}
+          >
             Login
+          </Link>
+          <Link
+            to="/register"
+            className={`btn-primary ml-2 ${location.pathname === "/register" ? "ring-2 ring-accent" : ""}`}
+          >
+            Register
           </Link>
         </div>
 
@@ -91,7 +106,7 @@ const Navbar = () => {
       {/* --- MOBILE MENU --- */}
       {isMobileMenuOpen && (
         <div className="md:hidden px-4 pb-4 bg-dark">
-          {menuItems.map((item) => (
+          {menuItems.map((item) =>
             item.subMenu ? (
               <div key={item.label}>
                 <h3 className="py-2 text-gray-400 font-bold">{item.label}</h3>
@@ -106,9 +121,12 @@ const Navbar = () => {
                 {item.label}
               </Link>
             )
-          ))}
+          )}
           <Link to="/login" className="block py-2 text-white border-t border-gray-700 mt-2" onClick={() => setMobileMenuOpen(false)}>
             Login
+          </Link>
+          <Link to="/register" className="block py-2 text-white mt-2" onClick={() => setMobileMenuOpen(false)}>
+            Register
           </Link>
         </div>
       )}

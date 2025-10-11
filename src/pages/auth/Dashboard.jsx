@@ -15,28 +15,31 @@ const recentActivities = [
 ];
 
 const Dashboard = () => (
-  <section className="section-padding max-w-5xl mx-auto">
-    <h1 className="text-4xl font-bold text-primary mb-8">Client Dashboard</h1>
-    
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-      {stats.map(({ label, value, icon }) => (
-        <div key={label} className="card flex items-center p-6 shadow-md rounded-lg border border-gray-200">
-          <div className="mr-5 text-3xl">{icon}</div>
-          <div>
-            <div className="text-3xl font-bold">{value}</div>
-            <div className="text-gray-600">{label}</div>
+  <section className="min-h-screen py-10 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-black">
+    <div className="max-w-5xl mx-auto">
+      <h1 className="text-4xl font-bold text-accent mb-10">Client Dashboard</h1>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        {stats.map(({ label, value, icon }) => (
+          <div
+            key={label}
+            className="bg-gray-900/90 flex items-center p-6 shadow-xl rounded-xl border border-accent/20"
+          >
+            <div className="mr-5 text-3xl">{icon}</div>
+            <div>
+              <div className="text-3xl font-bold text-white">{value}</div>
+              <div className="text-gray-400">{label}</div>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
-    
-    <div className="card p-6 shadow-md rounded-lg border border-gray-200">
-      <h2 className="text-xl font-semibold mb-4">Recent Activity</h2>
-      <ul className="text-gray-700 list-disc list-inside">
-        {recentActivities.map(({ id, text }) => (
-          <li key={id} className="mb-2">{text}</li>
         ))}
-      </ul>
+      </div>
+      <div className="bg-gray-900/90 p-6 shadow-xl rounded-xl border border-accent/20">
+        <h2 className="text-xl font-semibold text-accent mb-4">Recent Activity</h2>
+        <ul className="text-gray-300 list-disc list-inside">
+          {recentActivities.map(({ id, text }) => (
+            <li key={id} className="mb-2">{text}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 );

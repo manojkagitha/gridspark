@@ -4,16 +4,21 @@ const FaqItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b-2 border-gray-700 py-4">
+    <div className="border-b border-accent/30 py-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex justify-between items-center text-left text-lg font-semibold text-white focus:outline-none"
       >
         <span>{question}</span>
-        <span className="transform transition-transform duration-300" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>▼</span>
+        <span
+          className={`transform transition-transform duration-300 text-accent`}
+          style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+        >
+          ▼
+        </span>
       </button>
       {isOpen && (
-        <div className="mt-4 text-gray-300">
+        <div className="mt-4 text-gray-300 bg-gray-900/80 rounded-lg px-4 py-4">
           <p>{answer}</p>
         </div>
       )}
@@ -42,10 +47,10 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="bg-dark py-20 px-4">
+    <section className="py-20 px-4 min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-white text-center mb-12">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <h2 className="text-4xl font-extrabold text-accent text-center mb-12">Frequently Asked Questions</h2>
+        <div className="space-y-4 rounded-xl bg-gray-900/70 p-8 border border-accent/10 shadow-xl">
           {faqData.map((item, index) => (
             <FaqItem key={index} question={item.question} answer={item.answer} />
           ))}

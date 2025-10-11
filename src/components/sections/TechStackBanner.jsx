@@ -20,23 +20,22 @@ const logos = [
 ];
 
 const TechStackBanner = () => (
-  <div className="bg-dark py-8 px-2 shadow relative z-20 overflow-hidden">
-    {/* Animated wrapper */}
+  <div className="relative py-10 px-2 shadow-lg z-20 overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-black">
+    {/* Subtle overlay for depth */}
+    <div className="absolute inset-0 bg-black opacity-20 pointer-events-none"></div>
     <div className="relative w-full">
-      <div className="logo-scroll flex items-center gap-x-12 animate-scroll">
+      <div className="logo-scroll flex items-center gap-x-14 md:gap-x-20 animate-scroll">
         {[...logos, ...logos].map((logo, i) => (
-          // Duplicate logos so scroll is continuous
           <img
             key={logo.alt + i}
             src={logo.src}
             alt={logo.alt}
             className="h-14 md:h-16 object-contain"
-            style={{ maxWidth: 120 }}
+            style={{ maxWidth: 120, filter: 'drop-shadow(0 0 10px rgba(0,0,0,0.30))' }}
           />
         ))}
       </div>
     </div>
-    {/* Animation CSS */}
     <style>
       {`
         @keyframes scroll {
@@ -48,7 +47,7 @@ const TechStackBanner = () => (
           width: 200%;
         }
         .animate-scroll {
-          animation: scroll 18s linear infinite;
+          animation: scroll 36s linear infinite;
         }
       `}
     </style>

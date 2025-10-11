@@ -21,16 +21,21 @@ import Solutions from "./pages/solutions/index.jsx";
 import AIDemos from "./pages/solutions/AI-Demos.jsx";
 import CaseStudies from "./pages/solutions/CaseStudies.jsx";
 import Services from "./pages/solutions/Services.jsx";
-import Portfolio from "./pages/solutions/Portfolio.jsx"; // <-- Added
+import Portfolio from "./pages/solutions/Portfolio.jsx";
+import AIShowcase from "./components/sections/AIShowcase.jsx"; // Added for AI Showcase
 
 // Auth Pages
 import Login from "./pages/auth/Login.jsx";
 import Register from "./pages/auth/Register.jsx";
+import Dashboard from "./pages/auth/Dashboard.jsx"; // <-- Add dashboard here
 
 // Legal Pages
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy.jsx";
 import Terms from "./pages/legal/Terms.jsx";
 import CookiePolicy from "./pages/legal/CookiePolicy.jsx";
+
+// FAQ
+import FAQ from "./components/sections/FAQ.jsx";
 
 function App() {
   return (
@@ -51,13 +56,16 @@ function App() {
         <Route path="/solutions/ai-demos" element={<AIDemos />} />
         <Route path="/solutions/case-studies" element={<CaseStudies />} />
         <Route path="/solutions/services" element={<Services />} />
-        <Route path="/solutions/portfolio" element={<Portfolio />} /> {/* <-- Added */}
+        <Route path="/solutions/portfolio" element={<Portfolio />} />
+        <Route path="/solutions/ai-showcase" element={<AIShowcase />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} /> {/* <-- Added dashboard route */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/faq" element={<FAQ />} />
         {/* Fallback to Home for unknown routes */}
         <Route path="*" element={<Home />} />
       </Routes>

@@ -20,17 +20,20 @@ const products = [
 ];
 
 const Products = () => (
-  <section className="py-20 bg-gradient-to-br from-light via-secondary/10 to-primary/10">
+  <section className="py-20 min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
     <div className="max-w-6xl mx-auto px-4">
-      <h1 className="text-5xl font-extrabold text-primary mb-8">Our Products</h1>
-      <p className="text-xl text-dark mb-12 max-w-3xl">
+      <h1 className="text-5xl font-extrabold text-accent mb-8">Our Products</h1>
+      <p className="text-xl text-gray-300 mb-12 max-w-3xl">
         Explore Gridspark Solutions’ suite of scalable products designed for enterprise automation, AI insight, and cloud optimization. Each product can be deployed, customized, and supported by our expert team.
       </p>
       <div className="grid md:grid-cols-2 gap-8">
         {products.map(({ name, description }) => (
-          <div key={name} className="bg-white rounded-xl shadow-lg p-8 border border-primary/10 flex flex-col">
-            <h2 className="text-2xl font-bold text-secondary mb-2">{name}</h2>
-            <p className="mb-2 text-gray-700">{description}</p>
+          <div
+            key={name}
+            className="bg-gray-900 rounded-xl shadow-lg p-8 border border-accent/10 flex flex-col hover:shadow-2xl transition-shadow hover:-translate-y-1"
+          >
+            <h2 className="text-2xl font-bold text-accent mb-2">{name}</h2>
+            <p className="mb-2 text-gray-300">{description}</p>
           </div>
         ))}
       </div>
