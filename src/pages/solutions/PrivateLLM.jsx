@@ -53,15 +53,19 @@ const faqs = [
 
 function PrivateLLM() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white py-16 px-0">
-      <div className="max-w-4xl mx-auto px-6">
-        <h1 className="text-3xl font-extrabold text-purple-300 mb-2">Gridspark Private LLM Deployments</h1>
-        <p className="mb-6 text-lg text-indigo-200">
+    <section className="min-h-screen w-full py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <h1 className="text-5xl font-extrabold text-purple-400 mb-8">
+          Gridspark Private LLM Deployments
+        </h1>
+        <p className="mb-12 text-lg text-gray-300 max-w-3xl">
           Bring generative AI to your own infrastructure—cloud, datacenter, or on-prem—with Gridspark’s secure, fast, and fully customizable LLM stacks. Protect your IP, accelerate workflows, and ensure compliance in every industry.
         </p>
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold text-purple-200 mb-2">Deployment Options & Features</h2>
-          <ul className="list-disc pl-6 space-y-2 text-indigo-100">
+        <div className="mb-10">
+          <h2 className="text-3xl font-semibold text-purple-300 mb-2">
+            Deployment Options & Features
+          </h2>
+          <ul className="list-disc pl-6 space-y-2 text-gray-100">
             <li>Full privacy: all data stays in your infra, zero vendor storage</li>
             <li>Optimized for Azure, AWS, GCP, and private clouds</li>
             <li>GPU, ARM, Apple Silicon, and hybrid cluster support</li>
@@ -71,39 +75,58 @@ function PrivateLLM() {
             <li>No vendor lock-in, portable infra and open standards</li>
           </ul>
         </div>
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold text-purple-200 mb-2">Gridspark LLM Deployment Scenarios</h2>
-          <div className="grid md:grid-cols-2 gap-4">
+        <div className="mb-10">
+          <h2 className="text-3xl font-semibold text-purple-300 mb-2">
+            Gridspark LLM Deployment Scenarios
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
             {deployments.map((item, idx) => (
-              <div key={idx} className="bg-gradient-to-br from-indigo-800 via-purple-800 to-black rounded-xl p-5 border border-indigo-900">
-                <div className="font-bold text-purple-200 mb-1">{item.title}</div>
-                <div className="text-indigo-100">{item.description}</div>
+              <div
+                key={idx}
+                className="bg-gray-900/80 rounded-xl border border-purple-400/20 px-6 py-5 shadow-md"
+              >
+                <div className="font-bold text-purple-200 mb-2">
+                  {item.title}
+                </div>
+                <div className="text-gray-100">
+                  {item.description}
+                </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold text-purple-200 mb-2">FAQ</h2>
-          <div className="space-y-4">
+        <div className="mb-10">
+          <h2 className="text-3xl font-semibold text-purple-300 mb-2">FAQ</h2>
+          <div className="space-y-6">
             {faqs.map((faq, idx) => (
-              <div key={idx}>
-                <div className="font-bold text-purple-300">{faq.question}</div>
-                <div className="text-indigo-100">{faq.answer}</div>
+              <div
+                key={idx}
+                className="bg-gray-900/80 rounded-xl border border-purple-400/20 px-6 py-4 shadow-md"
+              >
+                <div className="font-bold text-purple-200 mb-2">
+                  {faq.question}
+                </div>
+                <div className="text-gray-200">{faq.answer}</div>
               </div>
             ))}
           </div>
         </div>
-        <div className="bg-purple-700/10 border-t border-purple-400/30 mt-10 pt-6 rounded-xl">
-          <h2 className="text-2xl font-bold text-purple-200 mb-2">Deploy Private AI with Gridspark</h2>
-          <p className="mb-4 text-indigo-100">
+        <div className="bg-purple-900/40 border-t border-purple-400/30 mt-12 pt-8 rounded-xl shadow">
+          <h2 className="text-3xl font-bold text-purple-400 mb-4">
+            Deploy Private AI with Gridspark
+          </h2>
+          <p className="mb-4 text-gray-100">
             Our team will scope, provision, and onboard your bespoke LLM stack—end-to-end privacy, performance SLAs, and global coverage.
           </p>
-          <a href="/contact" className="inline-block bg-purple-400 text-black font-semibold px-6 py-2 rounded shadow hover:bg-purple-300 transition">
+          <a
+            href="/contact"
+            className="inline-block bg-yellow-400 text-black font-semibold px-8 py-3 rounded-xl shadow hover:bg-yellow-300 transition"
+          >
             Contact Gridspark Private AI
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

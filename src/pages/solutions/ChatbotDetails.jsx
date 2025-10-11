@@ -30,58 +30,63 @@ const faqs = [
 
 function ChatbotDetails() {
   return (
-    <div className="max-w-4xl mx-auto py-16 px-4 text-white">
-      <h1 className="text-3xl font-extrabold text-yellow-400 mb-2">Gridspark AI Chatbot Solutions</h1>
-      <p className="mb-6 text-lg text-gray-200">
-        Gridspark is reshaping conversational AI for enterprises. Our state-of-the-art chatbot platform blends the newest generative AI models with battle-tested deployment, compliance, and branded UX. From scalable customer-facing bots to advanced internal chat for IT and HR, every Gridspark implementation is unique—optimized for real business outcomes.
-      </p>
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-yellow-300 mb-1">Enterprise-Ready Features</h2>
-        <ul className="list-disc pl-6 space-y-1 text-gray-100">
-          <li>Multi-LLM architecture with smart fallback: ChatGPT, Claude, OSS, and custom models</li>
-          <li>Persistent memory, analytics dashboard, and live session monitoring</li>
-          <li>Omnichannel: Web chat, app embeds, Slack/MS Teams, WhatsApp</li>
-          <li>Custom actions, CRM/API integration, workflow triggers</li>
-          <li>White-label theming, voice & document inputs, multi-language flows</li>
-          <li>Human agent takeover for escalation and triage</li>
-          <li>No data retention by default; full compliance support</li>
-        </ul>
-      </div>
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-yellow-300 mb-1">Recent Success Stories</h2>
-        <ul className="list-[square] pl-6 space-y-1 text-gray-100">
-          <li>
-            Deployed a multi-brand chatbot suite for a retailer, driving 36% faster support resolution and 24/7 multilingual engagement in web and app.
-          </li>
-          <li>
-            Rolled out a secured internal LLM assistant for a financial services provider—compliant with SOC2 and ISO, saving 2000+ analyst hours/year.
-          </li>
-          <li>
-            Built a conversational onboarding assistant for enterprise HR, integrated into Microsoft Teams, with document ingest and Q&A.
-          </li>
-        </ul>
-      </div>
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-yellow-300 mb-1">FAQ</h2>
-        <div className="space-y-4">
-          {faqs.map((faq, idx) => (
-            <div key={idx}>
-              <div className="font-bold text-yellow-200">{faq.question}</div>
-              <div className="text-gray-200">{faq.answer}</div>
-            </div>
-          ))}
+    <section className="min-h-screen w-full py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <h1 className="text-5xl font-extrabold text-purple-400 mb-8">
+          Gridspark AI Chatbot Solutions
+        </h1>
+        <p className="mb-12 text-lg text-gray-300 max-w-3xl">
+          Gridspark is reshaping conversational AI for enterprises. Our state-of-the-art chatbot platform blends the newest generative AI models with battle-tested deployment, compliance, and branded UX. From scalable customer-facing bots to advanced internal chat for IT and HR, every Gridspark implementation is unique—optimized for real business outcomes.
+        </p>
+        <div className="mb-10">
+          <h2 className="text-3xl font-semibold text-purple-300 mb-2">Enterprise-Ready Features</h2>
+          <ul className="list-disc pl-6 space-y-1 text-gray-100">
+            <li>Multi-LLM architecture with smart fallback: ChatGPT, Claude, OSS, and custom models</li>
+            <li>Persistent memory, analytics dashboard, and live session monitoring</li>
+            <li>Omnichannel: Web chat, app embeds, Slack/MS Teams, WhatsApp</li>
+            <li>Custom actions, CRM/API integration, workflow triggers</li>
+            <li>White-label theming, voice & document inputs, multi-language flows</li>
+            <li>Human agent takeover for escalation and triage</li>
+            <li>No data retention by default; full compliance support</li>
+          </ul>
+        </div>
+        <div className="mb-10">
+          <h2 className="text-3xl font-semibold text-purple-300 mb-2">Recent Success Stories</h2>
+          <ul className="list-square pl-6 space-y-1 text-gray-100">
+            <li>
+              Deployed a multi-brand chatbot suite for a retailer, driving 36% faster support resolution and 24/7 multilingual engagement in web and app.
+            </li>
+            <li>
+              Rolled out a secured internal LLM assistant for a financial services provider—compliant with SOC2 and ISO, saving 2000+ analyst hours/year.
+            </li>
+            <li>
+              Built a conversational onboarding assistant for enterprise HR, integrated into Microsoft Teams, with document ingest and Q&A.
+            </li>
+          </ul>
+        </div>
+        <div className="mb-10">
+          <h2 className="text-3xl font-semibold text-purple-300 mb-2">FAQ</h2>
+          <div className="space-y-6">
+            {faqs.map((faq, idx) => (
+              <div key={idx} className="bg-gray-900/80 rounded-xl border border-purple-400/20 px-6 py-4 shadow-md">
+                <div className="font-bold text-purple-200 mb-2">{faq.question}</div>
+                <div className="text-gray-200">{faq.answer}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="bg-purple-900/40 border-t border-purple-400/30 mt-12 pt-8 rounded-xl shadow">
+          <h2 className="text-3xl font-bold text-purple-400 mb-4">Want a custom AI chatbot demo?</h2>
+          <p className="mb-4 text-gray-100">
+            We deliver tailored proof-of-concepts with your data, branding, and real workflow integrations. All projects include detailed onboarding, secure setup, and transparent pricing.
+          </p>
+          <a href="/contact"
+            className="inline-block bg-yellow-400 text-black font-semibold px-8 py-3 rounded-xl shadow hover:bg-yellow-300 transition">
+            Contact Gridspark AI Team
+          </a>
         </div>
       </div>
-      <div className="bg-yellow-900/10 border-t border-yellow-400/30 mt-10 pt-6">
-        <h2 className="text-2xl font-bold text-yellow-400 mb-2">Want a custom AI chatbot demo?</h2>
-        <p className="mb-4 text-gray-200">
-          We deliver tailored proof-of-concepts with your data, branding, and real workflow integrations. All projects include detailed onboarding, secure setup, and transparent pricing.
-        </p>
-        <a href="/contact" className="inline-block bg-yellow-400 text-black font-semibold px-6 py-2 rounded shadow hover:bg-yellow-300 transition">
-          Contact Gridspark AI Team
-        </a>
-      </div>
-    </div>
+    </section>
   );
 }
 

@@ -17,10 +17,10 @@ const Hero = () => (
         We partner with businesses to build custom AI models, automate complex workflows, and unlock transformative growth.
       </p>
       <div className="flex justify-center space-x-4">
-        <Link to="/ai-demos" className="btn-primary">
+        <Link to="/solutions/ai-demos" className="inline-block bg-yellow-400 text-black font-semibold px-7 py-3 rounded-xl shadow hover:bg-yellow-300 transition text-lg">
           Explore AI Demos
         </Link>
-        <Link to="/contact" className="btn-secondary">
+        <Link to="/contact" className="inline-block bg-purple-400 text-black font-semibold px-7 py-3 rounded-xl shadow hover:bg-purple-300 transition text-lg">
           Book a Consultation
         </Link>
       </div>

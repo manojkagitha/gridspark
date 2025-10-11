@@ -1,13 +1,14 @@
 import React from 'react';
 
+// Accent color from your design reference
+const accentClass = "text-[#FFB53A]";
+
 const TestimonialCard = ({ quote, author, role, company }) => (
-  <div className="bg-gray-900 p-8 rounded-lg shadow-lg border border-accent/10">
+  <div className="bg-gray-900 p-8 rounded-xl shadow-xl border border-[#FFB53A]/10">
     <p className="text-gray-300 italic text-lg mb-6">"{quote}"</p>
-    <div className="flex items-center">
-      <div>
-        <p className="font-bold text-white">{author}</p>
-        <p className="text-accent text-sm">{role}, {company}</p>
-      </div>
+    <div>
+      <p className="font-bold text-white">{author}</p>
+      <p className={`${accentClass} text-sm`}>{role}, {company}</p>
     </div>
   </div>
 );
@@ -35,19 +36,17 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-extrabold text-accent mb-12">Trusted by Industry Leaders</h2>
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
-          ))}
-        </div>
+    <div className="max-w-7xl mx-auto text-center px-4">
+      <h2 className={`text-4xl font-extrabold mb-12 ${accentClass}`}>Trusted by Industry Leaders</h2>
+      <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <TestimonialCard key={index} {...testimonial} />
+        ))}
       </div>
       <p className="text-center text-gray-400 mt-8 text-sm">
         Note: Customer names and companies have been changed for confidentiality.
       </p>
-    </section>
+    </div>
   );
 };
 
