@@ -22,12 +22,18 @@ import AIDemos from "./pages/solutions/AI-Demos.jsx";
 import CaseStudies from "./pages/solutions/CaseStudies.jsx";
 import Services from "./pages/solutions/Services.jsx";
 import Portfolio from "./pages/solutions/Portfolio.jsx";
-import AIShowcase from "./components/sections/AIShowcase.jsx"; // Added for AI Showcase
+import AIShowcase from "./components/sections/AIShowcase.jsx";
+
+// AI Detail Pages - ADD THESE FOUR
+import ChatbotDetails from "./pages/solutions/ChatbotDetails.jsx";
+import DocumentAI from "./pages/solutions/DocumentAI.jsx";
+import CrmLeadAI from "./pages/solutions/CrmLeadAI.jsx";
+import PrivateLLM from "./pages/solutions/PrivateLLM.jsx";
 
 // Auth Pages
 import Login from "./pages/auth/Login.jsx";
 import Register from "./pages/auth/Register.jsx";
-import Dashboard from "./pages/auth/Dashboard.jsx"; // <-- Add dashboard here
+import Dashboard from "./pages/auth/Dashboard.jsx";
 
 // Legal Pages
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy.jsx";
@@ -58,10 +64,15 @@ function App() {
         <Route path="/solutions/services" element={<Services />} />
         <Route path="/solutions/portfolio" element={<Portfolio />} />
         <Route path="/solutions/ai-showcase" element={<AIShowcase />} />
+        {/* AI Detail Routes */}
+        <Route path="/solutions/chatbot-details" element={<ChatbotDetails />} />
+        <Route path="/solutions/document-ai" element={<DocumentAI />} />
+        <Route path="/solutions/crm-lead-ai" element={<CrmLeadAI />} />
+        <Route path="/solutions/private-llm" element={<PrivateLLM />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} /> {/* <-- Added dashboard route */}
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
