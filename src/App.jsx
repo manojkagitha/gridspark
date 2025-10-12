@@ -31,7 +31,6 @@ import CrmLeadAI from "./pages/solutions/CrmLeadAI.jsx";
 import PrivateLLM from "./pages/solutions/PrivateLLM.jsx";
 
 // Auth Pages
-import Login from "./pages/auth/Login.jsx";
 import Register from "./pages/auth/Register.jsx";
 import Dashboard from "./pages/auth/Dashboard.jsx";
 
@@ -70,7 +69,6 @@ function App() {
         <Route path="/solutions/crm-lead-ai" element={<CrmLeadAI />} />
         <Route path="/solutions/private-llm" element={<PrivateLLM />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

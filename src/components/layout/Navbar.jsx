@@ -10,7 +10,7 @@ const Navbar = () => {
   const menuItems = [
     { path: "/", label: "Home" },
     { path: "/products", label: "Products" },
-    { path: "/resources", label: "Resources" }, // <-- Moved back after Products
+    { path: "/resources", label: "Resources" },
     {
       label: "Solutions",
       subMenu: [
@@ -18,7 +18,7 @@ const Navbar = () => {
         { path: "/solutions/portfolio", label: "Portfolio" },
         { path: "/solutions/case-studies", label: "Case Studies" },
         { path: "/solutions/ai-demos", label: "AI Demos" },
-        { path: "/solutions/ai-showcase", label: "AI Showcase" }, // <-- under Solutions
+        { path: "/solutions/ai-showcase", label: "AI Showcase" },
       ],
     },
     {
@@ -82,17 +82,15 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* --- LOGIN & REGISTER BUTTONS (DESKTOP) --- */}
+        {/* --- REGISTER BUTTON ONLY (DESKTOP, YELLOW) --- */}
         <div className="hidden md:flex items-center">
           <Link
-            to="/login"
-            className={`btn-secondary ml-4 ${location.pathname === "/login" ? "ring-2 ring-accent" : ""}`}
-          >
-            Login
-          </Link>
-          <Link
             to="/register"
-            className={`btn-primary ml-2 ${location.pathname === "/register" ? "ring-2 ring-accent" : ""}`}
+            className={`ml-2 px-4 py-2 rounded font-semibold transition-colors duration-200 
+              ${location.pathname === "/register"
+                ? "bg-yellow-500 text-black ring-2 ring-yellow-400"
+                : "bg-yellow-400 hover:bg-yellow-500 text-black"
+              }`}
           >
             Register
           </Link>
@@ -122,10 +120,11 @@ const Navbar = () => {
               </Link>
             )
           )}
-          <Link to="/login" className="block py-2 text-white border-t border-gray-700 mt-2" onClick={() => setMobileMenuOpen(false)}>
-            Login
-          </Link>
-          <Link to="/register" className="block py-2 text-white mt-2" onClick={() => setMobileMenuOpen(false)}>
+          <Link
+            to="/register"
+            className="block py-2 mt-2 rounded font-semibold bg-yellow-400 hover:bg-yellow-500 text-black text-center border-t border-gray-700"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             Register
           </Link>
         </div>

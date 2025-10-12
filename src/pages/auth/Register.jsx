@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const API_URL = "http://135.235.136.94:3000/api/register";
 
@@ -7,43 +7,21 @@ const Register = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
-  const validatePassword = (pwd) => {
-    const minLength = 8;
-    const hasNumber = /\d/;
-    const hasUppercase = /[A-Z]/;
-    const hasLowercase = /[a-z]/;
-    const hasSpecialChar = /[!@#$%^&*]/;
-    return (
-      pwd.length >= minLength &&
-      hasNumber.test(pwd) &&
-      hasUppercase.test(pwd) &&
-      hasLowercase.test(pwd) &&
-      hasSpecialChar.test(pwd)
-    );
-  };
 
   const handleRegister = async (e) => {
     e.preventDefault();
     setError(null);
 
-    // Validation
-    if (password !== confirmPassword) {
-      setError("Passwords do not match.");
-      return;
-    }
-    if (!validatePassword(password)) {
-      setError(
-        "Password must be at least 8 characters, including uppercase, lowercase, number, and special character."
-      );
-      return;
-    }
+    // Simple validation: only check length 6+
     if (!email || !fullName) {
       setError("Please enter your name and email.");
+      return;
+    }
+    if (!password || password.length < 6) {
+      setError("Password must be at least 6 characters.");
       return;
     }
     setLoading(true);
@@ -62,7 +40,7 @@ const Register = () => {
       }
 
       alert("Registration successful! Please check your email to verify your account.");
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       setError(error.message);
     } finally {
@@ -117,27 +95,10 @@ const Register = () => {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-3 mb-4 bg-gray-800 rounded border border-gray-700 text-white focus:ring-accent focus:border-accent"
-            required
-            autoComplete="new-password"
-            placeholder="Create a secure password"
-            aria-describedby="passwordHelp"
-          />
-          <small id="passwordHelp" className="block text-xs text-gray-400 mb-4">
-            Minimum 8 characters, include uppercase, lowercase, number &amp; special character.
-          </small>
-          <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-300 mb-2">
-            Confirm Password
-          </label>
-          <input
-            type="password"
-            id="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
             className="w-full p-3 mb-6 bg-gray-800 rounded border border-gray-700 text-white focus:ring-accent focus:border-accent"
             required
             autoComplete="new-password"
-            placeholder="Re-enter your password"
+            placeholder="Create a password (min 6 chars)"
           />
           <button
             type="submit"
@@ -147,12 +108,6 @@ const Register = () => {
             {loading ? "Creating Account..." : "Sign Up"}
           </button>
         </form>
-        <p className="text-center text-gray-400 mt-8">
-          Already have an account?{" "}
-          <Link to="/login" className="font-medium text-accent hover:underline">
-            Log In
-          </Link>
-        </p>
       </div>
     </section>
   );
