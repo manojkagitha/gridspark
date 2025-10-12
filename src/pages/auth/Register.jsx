@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://135.235.136.94:3000/api/register";
+const API_URL = "https://api.gridsparksolutions.com";
 
 const Register = () => {
   const [fullName, setFullName] = useState("");
