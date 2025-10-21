@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from '/src/assets/logo.png';
+import logo from "/src/assets/logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -35,10 +35,20 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-dark shadow-lg sticky top-0 z-50">
+    <nav
+      className="
+        sticky top-0 z-50
+        bg-[var(--color-footer-header-bg)]
+        text-[var(--color-footer-header-text)]
+        border-b border-[var(--color-footer-header-border)]
+        shadow-md
+        transition-colors duration-300
+      "
+    >
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-20">
-        <Link to="/" className="flex-shrink-0 flex items-center">
-          <img src={logo} alt="Logo" className="h-10" />
+        {/* Logo */}
+        <Link to="/" className="flex items-center flex-shrink-0">
+          <img src={logo} alt="Gridspark Logo" className="h-10" />
         </Link>
 
         {/* --- DESKTOP MENU --- */}
@@ -51,28 +61,94 @@ const Navbar = () => {
               onMouseLeave={() => setOpenDropdown(null)}
             >
               {item.subMenu ? (
-                <button className="text-white hover:text-accent focus:outline-none flex items-center">
+                <button
+                  className={`
+                    flex items-center gap-1 px-2 h-full transition-colors duration-150
+                    ${
+                      openDropdown === item.label
+                        ? "text-[var(--color-primary)] font-semibold"
+                        : "hover:text-[var(--color-primary)] text-[var(--color-footer-header-text)] font-medium"
+                    }
+                  `}
+                >
                   {item.label}
-                  <svg className="ml-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  <svg
+                    className={`ml-1 h-5 w-5 transition-transform duration-200 ${
+                      openDropdown === item.label ? "rotate-180 text-[var(--color-primary)]" : ""
+                    }`}
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    viewBox="0 0 24 24"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
                   </svg>
                 </button>
               ) : (
-                <Link to={item.path} className={location.pathname === item.path ? "text-accent font-bold" : "text-white hover:text-accent"}>
+                <Link
+                  to={item.path}
+                  className={`transition-all duration-150 px-2 py-2 rounded ${
+                    location.pathname === item.path
+                      ? "text-[var(--color-primary)] font-bold bg-[var(--color-footer-header-bg)] ring-2 ring-[var(--color-primary)]"
+                      : "text-[var(--color-footer-header-text)] hover:text-[var(--color-primary)]"
+                  }`}
+                >
                   {item.label}
                 </Link>
               )}
+
+              {/* MODERN DROPDOWN MENU */}
               {item.subMenu && openDropdown === item.label && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 z-50">
-                  <div className="bg-dark rounded-md shadow-lg py-1">
+                <div
+                  className="
+                    absolute left-0 top-full w-56
+                    rounded-xl shadow-2xl border border-[var(--color-footer-header-border)]
+                    mt-0
+                    bg-[var(--color-footer-header-bg)] bg-opacity-90
+                    backdrop-blur-md
+                    overflow-hidden
+                    animate-fadeDown
+                  "
+                  style={{ minWidth: 210 }}
+                >
+                  <div>
                     {item.subMenu.map((subItem) => (
                       <Link
                         key={subItem.path}
                         to={subItem.path}
-                        className="block whitespace-nowrap px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left"
                         onClick={() => setOpenDropdown(null)}
+                        className={`
+                          flex items-center gap-2 px-5 py-3 transition-all duration-150
+                          text-[var(--color-footer-header-text)]
+                          hover:text-[var(--color-primary)]
+                          hover:bg-[var(--color-card)]
+                          ${
+                            location.pathname === subItem.path
+                              ? "bg-[var(--color-card)] text-[var(--color-primary)] font-semibold"
+                              : ""
+                          }
+                        `}
+                        style={{
+                          borderLeft: location.pathname === subItem.path ? "3px solid var(--color-primary)" : "3px solid transparent",
+                        }}
                       >
-                        {subItem.label}
+                        <span>{subItem.label}</span>
+                        {location.pathname === subItem.path && (
+                          <svg
+                            className="ml-1 h-4 w-4 text-[var(--color-primary)]"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            viewBox="0 0 24 24"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        )}
                       </Link>
                     ))}
                   </div>
@@ -82,47 +158,86 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* --- REGISTER BUTTON ONLY (DESKTOP, YELLOW) --- */}
+        {/* --- REGISTER BUTTON (DESKTOP) --- */}
         <div className="hidden md:flex items-center">
           <Link
             to="/register"
-            className={`ml-2 px-4 py-2 rounded font-semibold transition-colors duration-200 
-              ${location.pathname === "/register"
-                ? "bg-yellow-500 text-black ring-2 ring-yellow-400"
-                : "bg-yellow-400 hover:bg-yellow-500 text-black"
-              }`}
+            className={`ml-2 btn-primary glow text-[var(--color-footer-header-bg)] px-6 py-2`}
+            style={{ minWidth: 120 }}
           >
             Register
           </Link>
         </div>
 
-        <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden text-2xl text-white">
+        {/* --- MOBILE MENU BUTTON --- */}
+        <button
+          onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+          className="
+            md:hidden text-3xl
+            text-[var(--color-footer-header-text)]
+            transition-colors
+            hover:text-[var(--color-primary)]
+          "
+        >
           {isMobileMenuOpen ? "✕" : "≡"}
         </button>
       </div>
 
       {/* --- MOBILE MENU --- */}
       {isMobileMenuOpen && (
-        <div className="md:hidden px-4 pb-4 bg-dark">
+        <div
+          className="
+            md:hidden px-4 pb-4
+            bg-[var(--color-footer-header-bg)]
+            text-[var(--color-footer-header-text)]
+            border-t border-[var(--color-footer-header-border)]
+            transition-all duration-300
+          "
+        >
           {menuItems.map((item) =>
             item.subMenu ? (
-              <div key={item.label}>
-                <h3 className="py-2 text-gray-400 font-bold">{item.label}</h3>
-                {item.subMenu.map(subItem => (
-                  <Link key={subItem.path} to={subItem.path} className="block py-2 pl-4 text-white" onClick={() => setMobileMenuOpen(false)}>
+              <div key={item.label} className="pb-2">
+                <h3 className="py-2 font-semibold text-[var(--color-primary)]">{item.label}</h3>
+                {item.subMenu.map((subItem) => (
+                  <Link
+                    key={subItem.path}
+                    to={subItem.path}
+                    className={`
+                      block py-2 pl-4 rounded
+                      hover:text-[var(--color-primary)] 
+                      text-[var(--color-footer-header-text)]
+                      ${location.pathname === subItem.path ? "bg-[var(--color-card)] text-[var(--color-primary)] font-semibold" : ""}
+                      transition
+                    `}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
                     {subItem.label}
                   </Link>
                 ))}
               </div>
             ) : (
-              <Link key={item.path} to={item.path} className="block py-2 text-white" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`
+                  block py-2 hover:text-[var(--color-primary)]
+                  text-[var(--color-footer-header-text)]
+                  ${location.pathname === item.path ? "font-bold text-[var(--color-primary)]" : ""}
+                  transition
+                `}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {item.label}
               </Link>
             )
           )}
           <Link
             to="/register"
-            className="block py-2 mt-2 rounded font-semibold bg-yellow-400 hover:bg-yellow-500 text-black text-center border-t border-gray-700"
+            className="
+              block py-2 mt-3 text-center rounded font-semibold
+              btn-primary glow text-[var(--color-footer-header-bg)]
+              transition
+            "
             onClick={() => setMobileMenuOpen(false)}
           >
             Register

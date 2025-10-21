@@ -9,79 +9,214 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black flex items-center text-white">
-      <div className="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center w-full">
+    <section
+      className="
+        min-h-screen flex items-center 
+        py-20 
+        bg-[var(--color-bg)] 
+        text-[var(--color-text)] 
+        transition-colors duration-300
+      "
+    >
+      <div
+        className="
+          max-w-6xl mx-auto px-4 grid md:grid-cols-2 
+          gap-12 items-center w-full
+        "
+      >
+        {/* Left info section */}
         <div>
-          <h1 className="text-5xl font-extrabold mb-6 text-accent">Get in Touch</h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-lg">
-            Interested in Gridspark Solutions or have a question for our team?
-            Fill out your contact details and we’ll reach out shortly.
+          <h1
+            className="
+              text-5xl font-extrabold mb-6
+              text-[var(--color-primary)]
+            "
+          >
+            Let's Build Together
+          </h1>
+          <p className="text-xl mb-6 max-w-lg opacity-85">
+            Have a project in mind or a question? Fill out the form or connect with us directly—one of our team members will reach out within 24 hours.
           </p>
-          <p className="text-base text-gray-400 mb-2">
-            Email:{" "}
-            <a
-              href="mailto:hello@gridsparksolutions.com"
-              className="text-accent font-semibold underline"
-            >
-              hello@gridsparksolutions.com
-            </a>
-          </p>
-          <p className="text-base text-gray-400">
-            Phone: <span className="text-accent font-semibold">+1 (945) 998-5494</span>
-          </p>
+          <div className="card bg-[var(--color-card)] border border-[var(--color-border)] mb-7">
+            <h3 className="text-xl font-bold mb-1 text-[var(--color-primary)]">Contact Details</h3>
+            <p className="text-base opacity-85">
+              Email:{" "}
+              <a
+                href="mailto:hello@gridsparksolutions.com"
+                className="text-[var(--color-primary)] font-semibold focus:underline transition"
+              >
+                hello@gridsparksolutions.com
+              </a>
+            </p>
+            <p className="text-base opacity-85 mt-1">
+              Phone:{" "}
+              <span className="text-[var(--color-primary)] font-semibold">
+                +1 (945) 998-5494
+              </span>
+            </p>
+            <div className="text-xs opacity-60 mt-2">
+              Corporate, privacy, and legal inquiries welcomed.
+            </div>
+            <div className="text-xs mt-1 opacity-60">
+              Response guaranteed within 1 business day.
+            </div>
+          </div>
         </div>
+
+        {/* Right form section */}
         <div>
           {success ? (
-            <div className="bg-green-100 p-8 rounded-lg text-center text-green-800 shadow-lg">
-              Thank you! We’ve received your message and will contact you soon.
+            <div
+              className="
+                p-8 rounded-lg text-center shadow-lg
+                bg-[var(--color-primary)]/10 
+                border border-[var(--color-primary)]
+                text-[var(--color-text)]
+                transition
+              "
+            >
+              Thank you! Your message was received.<br />
+              Our team will contact you within 24 business hours.
             </div>
           ) : (
             <form
-              className="bg-gray-950 p-8 rounded-lg shadow-lg flex flex-col gap-6 border border-accent/10"
               onSubmit={handleSubmit}
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              className="
+                p-8 rounded-lg shadow-lg flex flex-col gap-6
+                bg-[var(--color-card)]
+                border border-[var(--color-border)]
+                transition-colors duration-300
+              "
             >
+              <input type="hidden" name="form-name" value="contact" />
+
               <div>
-                <label className="block font-semibold mb-1 text-gray-200">
-                  Your Name<span className="text-accent">*</span>
+                <label
+                  htmlFor="name"
+                  className="
+                    block mb-2 text-sm font-semibold opacity-90
+                  "
+                >
+                  Full Name <span className="text-[var(--color-primary)]">*</span>
                 </label>
                 <input
                   required
                   name="name"
-                  className="w-full p-3 border rounded bg-gray-800 text-white focus:border-accent"
-                  />
+                  id="name"
+                  autoComplete="name"
+                  className="
+                    w-full p-3 border rounded
+                    bg-[var(--color-bg)]
+                    border-[var(--color-border)]
+                    text-[var(--color-text)]
+                    focus:outline-none
+                    focus:ring-2 focus:ring-[var(--color-primary)]
+                    transition
+                  "
+                />
               </div>
+
               <div>
-                <label className="block font-semibold mb-1 text-gray-200">
-                  Email<span className="text-accent">*</span>
+                <label
+                  htmlFor="email"
+                  className="block mb-2 text-sm font-semibold opacity-90"
+                >
+                  Work Email <span className="text-[var(--color-primary)]">*</span>
                 </label>
                 <input
                   required
                   type="email"
                   name="email"
-                  className="w-full p-3 border rounded bg-gray-800 text-white focus:border-accent"
-                  />
+                  id="email"
+                  autoComplete="email"
+                  className="
+                    w-full p-3 border rounded
+                    bg-[var(--color-bg)]
+                    border-[var(--color-border)]
+                    text-[var(--color-text)]
+                    focus:outline-none
+                    focus:ring-2 focus:ring-[var(--color-primary)]
+                    transition
+                  "
+                />
               </div>
+
               <div>
-                <label className="block font-semibold mb-1 text-gray-200">
-                  Phone<span className="text-accent">*</span>
+                <label
+                  htmlFor="phone"
+                  className="block mb-2 text-sm font-semibold opacity-90"
+                >
+                  Phone <span className="text-[var(--color-primary)]">*</span>
                 </label>
                 <input
                   required
                   type="tel"
                   name="phone"
-                  className="w-full p-3 border rounded bg-gray-800 text-white focus:border-accent"
-                  />
+                  id="phone"
+                  autoComplete="tel"
+                  className="
+                    w-full p-3 border rounded
+                    bg-[var(--color-bg)]
+                    border-[var(--color-border)]
+                    text-[var(--color-text)]
+                    focus:outline-none
+                    focus:ring-2 focus:ring-[var(--color-primary)]
+                    transition
+                  "
+                />
               </div>
+
               <div>
-                <label className="block font-semibold mb-1 text-gray-200">
-                  How can we help?
+                <label
+                  htmlFor="company"
+                  className="block mb-2 text-sm font-semibold opacity-90"
+                >
+                  Company
+                </label>
+                <input
+                  type="text"
+                  name="company"
+                  id="company"
+                  autoComplete="organization"
+                  className="
+                    w-full p-3 border rounded
+                    bg-[var(--color-bg)]
+                    border-[var(--color-border)]
+                    text-[var(--color-text)]
+                    focus:outline-none
+                    focus:ring-2 focus:ring-[var(--color-primary)]
+                    transition
+                  "
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block mb-2 text-sm font-semibold opacity-90"
+                >
+                  How can we help? <span className="text-[var(--color-primary)]">*</span>
                 </label>
                 <textarea
+                  required
                   name="message"
-                  rows={3}
-                  className="w-full p-3 border rounded bg-gray-800 text-white focus:border-accent"
-                  />
+                  id="message"
+                  rows={4}
+                  className="
+                    w-full p-3 border rounded
+                    bg-[var(--color-bg)]
+                    border-[var(--color-border)]
+                    text-[var(--color-text)]
+                    focus:outline-none
+                    focus:ring-2 focus:ring-[var(--color-primary)]
+                    transition
+                  "
+                />
               </div>
+
               <button type="submit" className="btn-primary w-full py-3 text-lg">
                 Send Message
               </button>

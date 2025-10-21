@@ -4,122 +4,195 @@ const useCases = [
   {
     title: "Predictive Lead Scoring",
     description:
-      "Our AI analyzes your CRM and marketing data in real time, resulting in highly accurate scoring for every lead—so your team focuses on prospects that actually convert.",
+      "Our AI analyzes your CRM and marketing data in real time, generating precise lead scores so your team can prioritize prospects that convert.",
   },
   {
     title: "Automated Outreach & Sequencing",
     description:
-      "Smart workflows trigger emails, calls, and next actions based on lead intent and history, reducing chase times and lifting conversion rates.",
+      "Smart workflows trigger emails, calls, and next actions based on lead intent and behavior—reducing chase time and increasing conversions.",
   },
   {
     title: "Integrated Data Enrichment",
     description:
-      "Enrich leads with social, company, news, and web signals automatically. Fill data gaps, flag high-value contacts, and surface buying intent—without agents lifting a finger.",
+      "Enrich leads automatically with social, company, and web activity signals. Close data gaps, flag buying intent, and let AI surface your best opportunities.",
   },
   {
     title: "Adaptive Segmentation & Reporting",
     description:
-      "Dynamic AI-driven segments group leads by predicted value, industry, or urgency. All results flow into live dashboards and custom CRM fields, ready for deeper analysis.",
-  }
+      "Dynamic AI segmentation groups leads by value, urgency, or vertical—feeding real-time dashboards and CRM fields ready for analysis.",
+  },
 ];
 
 const faqs = [
   {
     question: "How does Gridspark's CRM AI integrate with my stack?",
     answer:
-      "Our platform natively connects via API to Salesforce, HubSpot, Zoho, Pipedrive, and any RESTful system. No vendor lock-in, with secure OAuth and granular permissions. Custom connectors available for legacy or proprietary databases.",
+      "Native API integrations with Salesforce, HubSpot, Zoho, and other CRMs. Secure OAuth access and custom connectors ensure zero vendor lock-in and full control.",
   },
   {
     question: "Is the lead scoring transparent and auditable?",
     answer:
-      "Yes. Every scoring rule, data point, and event is explainable. Review scoring logic in your dashboard; export detailed reports to meet compliance and review cycles.",
+      "Yes. Every data point, scoring rule, and model event is logged and explainable. Export detailed compliance-ready reports anytime.",
   },
   {
     question: "What industries benefit most?",
     answer:
-      "Gridspark CRM AI is proven in SaaS, IT services, e-commerce, real estate, financial services, education, and healthcare—wherever high-volume, high-value leads are critical.",
+      "Gridspark CRM AI powers sales success in SaaS, IT services, e-commerce, financial, and real estate industries—where high-value lead flow is critical.",
   },
   {
     question: "Can it automate multi-step campaigns?",
     answer:
-      "Absolutely. Our system recommends and launches follow-up emails, reminders, nurture drips, and task assignments in sync with your CRM and sales cadence.",
+      "Absolutely. Email drips, reminders, enrichment tasks, and follow-ups can be triggered instantly—aligned with your sales cadence.",
   },
   {
     question: "How secure is my lead data?",
     answer:
-      "All data is encrypted in transit and at rest, with regional hosting, full GDPR compliance, and zero third-party data sales. Opt for on-prem or private cloud for maximum control.",
+      "We encrypt all data during transit and at rest, offer regional hosting, and provide full GDPR compliance. Optional private cloud and on-prem deployments are available.",
   },
 ];
 
 function CrmLeadAI() {
   return (
-    <section className="min-h-screen w-full py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+    <section
+      className="
+        min-h-screen w-full py-20
+        bg-[var(--color-bg)] text-[var(--color-text)]
+        transition-colors duration-300
+      "
+    >
       <div className="max-w-6xl mx-auto px-4">
-        <h1 className="text-5xl font-extrabold text-purple-400 mb-8">
-          Gridspark AI CRM Lead Scoring & Automation
+        <h1
+          className="
+            text-5xl font-extrabold mb-8
+            text-[var(--color-primary)]
+          "
+        >
+          Gridspark AI CRM Lead Automation Platform
         </h1>
-        <p className="mb-12 text-lg text-gray-300 max-w-3xl">
-          Drive sales with machine intelligence. Gridspark’s CRM AI platform automatically scores, segments, enriches, and pursues leads using the latest advances in generative and predictive AI, cutting through noise and accelerating your revenue pipeline.
+
+        <p className="mb-12 text-lg max-w-3xl opacity-85">
+          Drive pipeline growth with AI. Gridspark’s CRM AI platform leverages
+          predictive and generative intelligence to score, segment, enrich, and
+          automate outreach—making your entire funnel smarter and faster.
         </p>
+
+        {/* Capabilities */}
         <div className="mb-10">
-          <h2 className="text-3xl font-semibold text-purple-300 mb-2">
+          <h2
+            className="
+              text-3xl font-semibold mb-3
+              text-[var(--color-primary)]
+            "
+          >
             Key Solution Capabilities
           </h2>
-          <ul className="list-disc pl-6 space-y-2 text-gray-100">
-            <li>Real-time AI scoring with configurable rules and feedback</li>
-            <li>Fully automated lead enrichment and data cleansing</li>
-            <li>Multi-step email, call, and meeting automations</li>
-            <li>Custom segments, intent detection, and lifecycle analytics</li>
-            <li>Native integrations with major CRM and marketing platforms</li>
-            <li>Transparent, explainable results for compliance and trust</li>
+          <ul className="list-disc pl-6 space-y-2 opacity-90">
+            <li>Real-time AI scoring with rules feedback</li>
+            <li>Automated lead enrichment and cleansing workflows</li>
+            <li>Multi-channel email, meeting, and follow-up automation</li>
+            <li>Custom segmentation and lifecycle analysis</li>
+            <li>Native integrations across major CRM systems</li>
+            <li>Transparent, auditable scoring and reporting</li>
           </ul>
         </div>
+
+        {/* Use Cases */}
         <div className="mb-10">
-          <h2 className="text-3xl font-semibold text-purple-300 mb-2">
+          <h2
+            className="
+              text-3xl font-semibold mb-2
+              text-[var(--color-primary)]
+            "
+          >
             How Customers Use Gridspark CRM AI
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {useCases.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-gray-900/80 rounded-xl border border-purple-400/20 px-6 py-5 shadow-md"
+                className="
+                  rounded-xl px-6 py-5 shadow-md
+                  bg-[var(--color-card)]
+                  border border-[var(--color-border)]
+                  transition-colors duration-300
+                "
               >
-                <div className="font-bold text-purple-200 mb-2">
+                <div
+                  className="
+                    font-bold mb-2
+                    text-[var(--color-primary)]
+                  "
+                >
                   {item.title}
                 </div>
-                <div className="text-gray-100">
-                  {item.description}
-                </div>
+                <div className="opacity-85">{item.description}</div>
               </div>
             ))}
           </div>
         </div>
+
+        {/* FAQ */}
         <div className="mb-10">
-          <h2 className="text-3xl font-semibold text-purple-300 mb-2">FAQ</h2>
+          <h2
+            className="
+              text-3xl font-semibold mb-4
+              text-[var(--color-primary)]
+            "
+          >
+            FAQ
+          </h2>
           <div className="space-y-6">
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="bg-gray-900/80 rounded-xl border border-purple-400/20 px-6 py-4 shadow-md"
+                className="
+                  rounded-xl border px-6 py-4 shadow-md
+                  bg-[var(--color-card)]
+                  border-[var(--color-border)]
+                  transition-colors duration-300
+                "
               >
-                <div className="font-bold text-purple-200 mb-2">
+                <div
+                  className="
+                    font-bold mb-2
+                    text-[var(--color-primary)]
+                  "
+                >
                   {faq.question}
                 </div>
-                <div className="text-gray-200">{faq.answer}</div>
+                <div className="opacity-85">{faq.answer}</div>
               </div>
             ))}
           </div>
         </div>
-        <div className="bg-purple-900/40 border-t border-purple-400/30 mt-12 pt-8 rounded-xl shadow">
-          <h2 className="text-3xl font-bold text-purple-400 mb-4">
-            Unlock AI-Driven CRM Growth
+
+        {/* CTA */}
+        <div
+          className="
+            mt-12 pt-8 rounded-xl shadow
+            bg-[var(--color-card)]
+            border-t border-[var(--color-border)]
+            transition-colors duration-300
+          "
+        >
+          <h2
+            className="
+              text-3xl font-bold mb-4
+              text-[var(--color-primary)]
+            "
+          >
+            Unlock AI‑Driven CRM Growth
           </h2>
-          <p className="mb-4 text-gray-100">
-            Experience a live demo or start a pilot with your own data—Gridspark provides full POC support, rapid integrations, and performance guarantees.
+          <p className="mb-4 opacity-85">
+            Experience a live demo with your CRM data—Gridspark provides full
+            proof‑of‑concepts, rapid integrations, and measurable ROI.
           </p>
           <a
             href="/contact"
-            className="inline-block bg-yellow-400 text-black font-semibold px-8 py-3 rounded-xl shadow hover:bg-yellow-300 transition"
+            className="
+              inline-block btn-primary mt-2 text-lg
+              font-semibold
+            "
           >
             Contact Gridspark CRM AI Team
           </a>

@@ -1,12 +1,12 @@
 import React from "react";
 
-import llamaLogo from '/src/assets/llama.png';
-import deepseekLogo from '/src/assets/deepseek.png';
-import grokLogo from '/src/assets/grok.png';
-import copilotLogo from '/src/assets/microsoft-copilot.png';
-import claudeLogo from '/src/assets/claude.png';
-import azureLogo from '/src/assets/azureopenai.png';
-import gpt4Logo from '/src/assets/GPT-4.png';
+import llamaLogo from "/src/assets/llama.png";
+import deepseekLogo from "/src/assets/deepseek.png";
+import grokLogo from "/src/assets/grok.png";
+import copilotLogo from "/src/assets/microsoft-copilot.png";
+import claudeLogo from "/src/assets/claude.png";
+import azureLogo from "/src/assets/azureopenai.png";
+import gpt4Logo from "/src/assets/GPT-4.png";
 
 // List of tech logos and their alt text
 const logos = [
@@ -20,9 +20,23 @@ const logos = [
 ];
 
 const TechStackBanner = () => (
-  <div className="relative py-10 px-2 shadow-lg z-20 overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-black">
-    {/* Subtle overlay for depth */}
-    <div className="absolute inset-0 bg-black opacity-20 pointer-events-none"></div>
+  <div
+    className="
+      relative py-10 px-2 shadow-lg z-20 overflow-hidden
+      bg-[var(--color-card)]
+      border-t border-[var(--color-border)]
+      transition-colors duration-300
+    "
+  >
+    {/* Subtle overlay for theme depth */}
+    <div
+      className="
+        absolute inset-0
+        bg-[var(--color-bg)]
+        opacity-10 pointer-events-none
+      "
+    ></div>
+
     <div className="relative w-full">
       <div className="logo-scroll flex items-center gap-x-14 md:gap-x-20 animate-scroll">
         {[...logos, ...logos].map((logo, i) => (
@@ -31,11 +45,17 @@ const TechStackBanner = () => (
             src={logo.src}
             alt={logo.alt}
             className="h-14 md:h-16 object-contain"
-            style={{ maxWidth: 120, filter: 'drop-shadow(0 0 10px rgba(0,0,0,0.30))' }}
+            style={{
+              maxWidth: 120,
+              filter:
+                "drop-shadow(0 0 10px rgba(0, 0, 0, 0.15)) brightness(var(--img-brightness,1))",
+            }}
           />
         ))}
       </div>
     </div>
+
+    {/* Scroll Animation */}
     <style>
       {`
         @keyframes scroll {

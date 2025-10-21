@@ -15,7 +15,6 @@ const Register = () => {
     e.preventDefault();
     setError(null);
 
-    // Simple validation: only check length 6+
     if (!email || !fullName) {
       setError("Please enter your name and email.");
       return;
@@ -24,9 +23,8 @@ const Register = () => {
       setError("Password must be at least 6 characters.");
       return;
     }
-    setLoading(true);
 
-    // Registration API
+    setLoading(true);
     try {
       const response = await fetch(API_URL, {
         method: "POST",
@@ -35,33 +33,66 @@ const Register = () => {
       });
 
       const data = await response.json();
-      if (!response.ok) {
-        throw new Error(data.error || "Registration failed.");
-      }
+      if (!response.ok) throw new Error(data.error || "Registration failed.");
 
       alert("Registration successful! Please check your email to verify your account.");
       navigate("/");
-    } catch (error) {
-      setError(error.message);
+    } catch (err) {
+      setError(err.message);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-12 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
-      <div className="w-full max-w-md bg-gray-900/90 p-8 rounded-lg shadow-2xl border border-accent/10">
-        <h2 className="text-3xl font-extrabold text-accent text-center mb-6">
+    <section
+      className="
+        min-h-screen flex items-center justify-center 
+        py-12 px-4 
+        bg-[var(--color-bg)]
+        text-[var(--color-text)]
+        transition-colors duration-300
+      "
+    >
+      <div
+        className="
+          w-full max-w-md 
+          p-8 rounded-lg shadow-2xl
+          bg-[var(--color-card)] 
+          border border-[var(--color-border)]
+        "
+      >
+        <h2
+          className="
+            text-3xl font-extrabold text-center mb-6
+            text-[var(--color-primary)]
+          "
+        >
           Create Your Account
         </h2>
-        <p className="text-center text-gray-300 mb-8">
+        <p className="text-center mb-8 opacity-80">
           Join Gridspark and unlock the future of AI-driven solutions.
         </p>
+
         {error && (
-          <p className="bg-red-600 text-white text-center p-3 rounded mb-6">{error}</p>
+          <p
+            className="
+              bg-[var(--color-primary)]/10
+              border border-[var(--color-primary)]
+              text-[var(--color-text)]
+              text-center p-3 rounded mb-6
+            "
+          >
+            {error}
+          </p>
         )}
+
         <form onSubmit={handleRegister} noValidate>
-          <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-2">
+          {/* Full Name */}
+          <label
+            htmlFor="fullName"
+            className="block text-sm font-medium mb-2 opacity-90"
+          >
             Full Name
           </label>
           <input
@@ -69,12 +100,24 @@ const Register = () => {
             id="fullName"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-            className="w-full p-3 mb-4 bg-gray-800 rounded border border-gray-700 text-white focus:ring-accent focus:border-accent"
+            className="
+              w-full p-3 mb-4 rounded border
+              bg-[var(--color-bg)]
+              border-[var(--color-border)]
+              text-[var(--color-text)]
+              focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]
+              transition
+            "
             required
             autoComplete="name"
             placeholder="Your full name"
           />
-          <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+
+          {/* Email */}
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium mb-2 opacity-90"
+          >
             Email Address
           </label>
           <input
@@ -82,12 +125,24 @@ const Register = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 mb-4 bg-gray-800 rounded border border-gray-700 text-white focus:ring-accent focus:border-accent"
+            className="
+              w-full p-3 mb-4 rounded border
+              bg-[var(--color-bg)]
+              border-[var(--color-border)]
+              text-[var(--color-text)]
+              focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]
+              transition
+            "
             required
             autoComplete="email"
             placeholder="you@example.com"
           />
-          <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-2">
+
+          {/* Password */}
+          <label
+            htmlFor="password"
+            className="block text-sm font-medium mb-2 opacity-90"
+          >
             Password
           </label>
           <input
@@ -95,11 +150,20 @@ const Register = () => {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-3 mb-6 bg-gray-800 rounded border border-gray-700 text-white focus:ring-accent focus:border-accent"
+            className="
+              w-full p-3 mb-6 rounded border
+              bg-[var(--color-bg)]
+              border-[var(--color-border)]
+              text-[var(--color-text)]
+              focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]
+              transition
+            "
             required
             autoComplete="new-password"
             placeholder="Create a password (min 6 chars)"
           />
+
+          {/* Submit */}
           <button
             type="submit"
             className="w-full btn-primary py-3 text-lg"

@@ -4,123 +4,188 @@ const deployments = [
   {
     title: "Private Cloud LLM Deployments",
     description:
-      "Deploy your own generative AI on Azure, AWS, GCP, or your secure datacenter, with full control over models, endpoints, data, and user authentication."
+      "Deploy your own generative AI stack on Azure, AWS, GCP, or internal clouds—with total control over models, data, endpoints, and authentication.",
   },
   {
-    title: "On-Premises GenAI Stacks",
+    title: "On‑Premises GenAI Stacks",
     description:
-      "Air-gapped, fully internal LLM clusters for finance, healthcare, and R&D organizations that require highest privacy, compliance, and low latency."
+      "Air‑gapped configurations for finance, healthcare, and R&D enterprises demanding privacy, compliance, and ultra‑low latency operations.",
   },
   {
-    title: "ARM64 & Custom Hardware Optimization",
+    title: "ARM64 & Hardware Optimizations",
     description:
-      "Run advanced LLMs on ARM, Apple Silicon, or GPU clusters, compatible with your IT estate. Gridspark handles optimizations for cost, speed, and energy."
+      "Run LLMs efficiently on ARM, Apple Silicon, or GPU clusters. Gridspark custom‑tunes deployments for cost, throughput, and sustainability.",
   },
   {
-    title: "Secure Access & Compliance Integrations",
+    title: "Secure Access & Compliance",
     description:
-      "Integrate with SSO, RBAC, and audit trails. Deploy with multi-region redundancy, ISO/SOC/HIPAA frameworks, and role-based dashboards—no vendor lock-in."
-  }
+      "Integrated SSO, RBAC, and audit‑ready dashboards. Multi‑region redundancy and full ISO/SOC/HIPAA frameworks—no vendor lock‑in.",
+  },
 ];
 
 const faqs = [
   {
     question: "Why run a private LLM?",
     answer:
-      "Private LLMs keep your data, workflows, and intellectual property fully protected. You control access, training, retention, and compliance, unlocking custom use cases without third-party leakage.",
+      "Private LLMs protect sensitive data and IP. You govern access, retention, and compliance, enabling precise, secure use cases without external data exposure.",
   },
   {
     question: "What models and frameworks do you support?",
     answer:
-      "Deploy GPT (open source), LLaMA, Mistral, Falcon, and multimodal/fine-tuned models. Integrations are supported for HuggingFace, Ollama, Nvidia Triton, and custom REST+gRPC endpoints.",
+      "We support GPT (open‑source), LLaMA, Mistral, Falcon, and fine‑tuned variants. Integrations available for HuggingFace, Ollama, and Nvidia Triton endpoints.",
   },
   {
     question: "How does monitoring and scaling work?",
     answer:
-      "Gridspark provides real-time dashboards, usage analytics, autoscaling, and alerting—integrated with your existing observability stack (Prometheus, Azure Monitor, Datadog, etc).",
+      "Gridspark includes real‑time dashboards, usage stats, auto‑scaling, and alerting—integrated with your existing observability stack like Prometheus or Datadog.",
   },
   {
-    question: "Do you support air-gapped or hybrid setups?",
+    question: "Do you support air‑gapped or hybrid setups?",
     answer:
-      "Yes. Gridspark specializes in air-gapped, hybrid, and federated deployments—across sites, regions, and clouds. We automate day-2 ops, patching, and DR failover.",
+      "Yes. We specialize in air‑gapped, multi‑site, and federated environments. Monitoring, patching, compliance, and redundancy are all automated.",
   },
   {
     question: "What’s required to get started?",
     answer:
-      "Just your desired hardware, secure endpoint setup, and business use case. Gridspark provisions, secures, and maintains all infra with transparent onboarding and custom SLAs.",
-  }
+      "Simply provide your infrastructure preferences and security baseline. Gridspark provisions, secures, and maintains stacks with transparent SLAs.",
+  },
 ];
 
 function PrivateLLM() {
   return (
-    <section className="min-h-screen w-full py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+    <section
+      className="
+        min-h-screen w-full py-20
+        bg-[var(--color-bg)] text-[var(--color-text)]
+        transition-colors duration-300
+      "
+    >
       <div className="max-w-6xl mx-auto px-4">
-        <h1 className="text-5xl font-extrabold text-purple-400 mb-8">
+        <h1
+          className="
+            text-5xl font-extrabold mb-8
+            text-[var(--color-primary)]
+          "
+        >
           Gridspark Private LLM Deployments
         </h1>
-        <p className="mb-12 text-lg text-gray-300 max-w-3xl">
-          Bring generative AI to your own infrastructure—cloud, datacenter, or on-prem—with Gridspark’s secure, fast, and fully customizable LLM stacks. Protect your IP, accelerate workflows, and ensure compliance in every industry.
+
+        <p className="mb-12 text-lg max-w-3xl opacity-85">
+          Deploy generative AI securely on your infrastructure—cloud or
+          on‑prem—using Gridspark’s scalable, compliant LLM platforms. Protect
+          intellectual property, enhance workflows, and achieve unmatched
+          performance within your own environment.
         </p>
+
+        {/* Deployment Features */}
         <div className="mb-10">
-          <h2 className="text-3xl font-semibold text-purple-300 mb-2">
+          <h2
+            className="
+              text-3xl font-semibold mb-3
+              text-[var(--color-primary)]
+            "
+          >
             Deployment Options & Features
           </h2>
-          <ul className="list-disc pl-6 space-y-2 text-gray-100">
-            <li>Full privacy: all data stays in your infra, zero vendor storage</li>
-            <li>Optimized for Azure, AWS, GCP, and private clouds</li>
-            <li>GPU, ARM, Apple Silicon, and hybrid cluster support</li>
-            <li>Enterprise SSO, SAML, RBAC, and audit compliance</li>
-            <li>Model serving: GPT, LLaMA2, Mistral, Falcon, custom fine-tuning</li>
-            <li>Full monitoring, usage tracking, and role dashboards</li>
-            <li>No vendor lock-in, portable infra and open standards</li>
+          <ul className="list-disc pl-6 space-y-2 opacity-90">
+            <li>Zero vendor lock‑in, fully portable architecture</li>
+            <li>Optimized for Azure, AWS, GCP, and hybrid setups</li>
+            <li>Secure, private data—never leaving your control</li>
+            <li>Enterprise‑ready SSO, SAML, RBAC, and audit compliance</li>
+            <li>Model serving for GPT, LLaMA2, Mistral, Falcon, and custom fine‑tuning</li>
+            <li>Real‑time monitoring, usage analytics, and dashboards</li>
           </ul>
         </div>
+
+        {/* Deployment Scenarios */}
         <div className="mb-10">
-          <h2 className="text-3xl font-semibold text-purple-300 mb-2">
+          <h2
+            className="
+              text-3xl font-semibold mb-3
+              text-[var(--color-primary)]
+            "
+          >
             Gridspark LLM Deployment Scenarios
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {deployments.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-gray-900/80 rounded-xl border border-purple-400/20 px-6 py-5 shadow-md"
+                className="
+                  rounded-xl px-6 py-5 shadow-md
+                  bg-[var(--color-card)]
+                  border border-[var(--color-border)]
+                  transition-colors duration-300
+                "
               >
-                <div className="font-bold text-purple-200 mb-2">
+                <div className="font-bold mb-2 text-[var(--color-primary)]">
                   {item.title}
                 </div>
-                <div className="text-gray-100">
-                  {item.description}
-                </div>
+                <p className="opacity-85">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
+
+        {/* FAQ Section */}
         <div className="mb-10">
-          <h2 className="text-3xl font-semibold text-purple-300 mb-2">FAQ</h2>
+          <h2
+            className="
+              text-3xl font-semibold mb-4
+              text-[var(--color-primary)]
+            "
+          >
+            FAQ
+          </h2>
           <div className="space-y-6">
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="bg-gray-900/80 rounded-xl border border-purple-400/20 px-6 py-4 shadow-md"
+                className="
+                  rounded-xl border px-6 py-4 shadow-md
+                  bg-[var(--color-card)]
+                  border-[var(--color-border)]
+                  transition-colors duration-300
+                "
               >
-                <div className="font-bold text-purple-200 mb-2">
+                <div className="font-bold mb-2 text-[var(--color-primary)]">
                   {faq.question}
                 </div>
-                <div className="text-gray-200">{faq.answer}</div>
+                <p className="opacity-85">{faq.answer}</p>
               </div>
             ))}
           </div>
         </div>
-        <div className="bg-purple-900/40 border-t border-purple-400/30 mt-12 pt-8 rounded-xl shadow">
-          <h2 className="text-3xl font-bold text-purple-400 mb-4">
+
+        {/* Call-to-Action */}
+        <div
+          className="
+            mt-12 pt-8 rounded-xl shadow
+            bg-[var(--color-card)]
+            border-t border-[var(--color-border)]
+            transition-colors duration-300
+          "
+        >
+          <h2
+            className="
+              text-3xl font-bold mb-4
+              text-[var(--color-primary)]
+            "
+          >
             Deploy Private AI with Gridspark
           </h2>
-          <p className="mb-4 text-gray-100">
-            Our team will scope, provision, and onboard your bespoke LLM stack—end-to-end privacy, performance SLAs, and global coverage.
+          <p className="mb-4 opacity-85">
+            Gridspark handles provisioning, optimization, and ongoing support
+            for your secure, high‑performance LLM deployment—any environment,
+            anywhere.
           </p>
+
           <a
             href="/contact"
-            className="inline-block bg-yellow-400 text-black font-semibold px-8 py-3 rounded-xl shadow hover:bg-yellow-300 transition"
+            className="
+              inline-block btn-primary text-lg
+              font-semibold mt-2
+            "
           >
             Contact Gridspark Private AI
           </a>

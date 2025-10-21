@@ -1,16 +1,34 @@
-import React from 'react';
+import React from "react";
 
-// Accent color from reference image/code
-const accentClass = "text-[#FFB53A]";
-
-// Using inline SVGs for icons
 const FeatureCard = ({ icon, title, description }) => (
-  <div className="bg-gray-900/90 p-7 rounded-2xl shadow-2xl text-left border border-[#FFB53A]/20 hover:-translate-y-1 hover:shadow-accent/30 transition-transform duration-200">
-    <div className="flex items-center justify-center h-14 w-14 rounded-md bg-gradient-to-r from-indigo-800 via-purple-700 to-indigo-900 text-white mb-3">
+  <div
+    className="
+      p-7 rounded-2xl shadow-2xl text-left
+      bg-[var(--color-card)]
+      border border-[var(--color-border)]
+      hover:-translate-y-1 hover:shadow-[var(--color-primary)]/30
+      transition-transform duration-200
+    "
+  >
+    <div
+      className="
+        flex items-center justify-center h-14 w-14 rounded-md mb-3
+        bg-[var(--color-primary)]/20
+        text-[var(--color-primary)]
+        transition-colors duration-300
+      "
+    >
       {icon}
     </div>
-    <h3 className={`text-xl font-extrabold mb-2 ${accentClass}`}>{title}</h3>
-    <p className="text-gray-300 text-base">{description}</p>
+    <h3
+      className="
+        text-xl font-extrabold mb-2
+        text-[var(--color-primary)]
+      "
+    >
+      {title}
+    </h3>
+    <p className="opacity-85">{description}</p>
   </div>
 );
 
@@ -18,12 +36,13 @@ const featuresData = [
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 20l9-5-9-5-9 5 9 5z"/>
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 12V4.5"/>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 20l9-5-9-5-9 5 9 5z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 12V4.5" />
       </svg>
     ),
     title: "Cutting-edge LLM Research",
-    description: "We design, fine-tune, and optimize large language models (LLMs) and multi-modal AIs, exploring prompt engineering, RAG, knowledge distillation, privacy, and robust application of foundation models."
+    description:
+      "We design, fine-tune, and optimize large language models (LLMs) and multi-modal AIs, exploring prompt engineering, RAG, knowledge distillation, privacy, and robust application of foundation models.",
   },
   {
     icon: (
@@ -34,7 +53,8 @@ const featuresData = [
       </svg>
     ),
     title: "Deep Learning Vision Systems",
-    description: "Build AI image and video analytics—object detection, OCR, semantic segmentation, facial analysis, and medical imaging with convolutional and transformer-based architectures."
+    description:
+      "Build AI image and video analytics—object detection, OCR, segmentation, facial analysis, and medical imaging via CNN and transformer-based models.",
   },
   {
     icon: (
@@ -43,7 +63,8 @@ const featuresData = [
       </svg>
     ),
     title: "Autonomous AI Agents",
-    description: "Build intelligent, autonomous agents for enterprise—AI systems that handle scheduling, decision optimization, workflow integrations, and advanced automation for IT, HR, finance, or operations."
+    description:
+      "Develop intelligent autonomous agents for enterprise—systems that optimize workflows, scheduling, and decision-making across IT, HR, and finance.",
   },
   {
     icon: (
@@ -53,27 +74,30 @@ const featuresData = [
       </svg>
     ),
     title: "Generative AI for Enterprise",
-    description: "Automate text generation, content creation, documentation, summarization, and Q&A workflows with scalable, secure, and adaptable GenAI pipelines."
+    description:
+      "Automate text generation, content creation, documentation, and summarization with powerful, secure, and scalable GenAI-driven workflows.",
   },
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth={2}/>
-        <path d="M8 9h8M8 13h2.5" stroke="currentColor" strokeWidth={2}/>
+        <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth={2} />
+        <path d="M8 9h8M8 13h2.5" stroke="currentColor" strokeWidth={2} />
       </svg>
     ),
     title: "Natural Language Search & RAG",
-    description: "Leverage retrieval augmented generation (RAG), neural search, and semantic text embeddings to empower AI-powered support, discovery, and business intelligence over huge document and data lakes."
+    description:
+      "Enable semantic enterprise search and RAG-powered query systems to transform knowledge repositories into intelligent Q&A platforms.",
   },
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 13.875A4.125 4.125 0 0021 10 4.125 4.125 0 0016.875 6 4.125 4.125 0 0013.75 10 4.125 4.125 0 0017 13.875z"/>
-        <path d="M3.95 18.132A8.958 8.958 0 0012 21a8.958 8.958 0 008.05-2.868M12 3a8.958 8.958 0 018.05 2.868M3.95 5.868A8.958 8.958 0 0112 3" stroke="currentColor" strokeWidth={2}/>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 13.875A4.125 4.125 0 0021 10 4.125 4.125 0 0016.875 6 4.125 4.125 0 0013.75 10 4.125 4.125 0 0017 13.875z" />
+        <path d="M3.95 18.132A8.958 8.958 0 0012 21a8.958 8.958 0 008.05-2.868" stroke="currentColor" strokeWidth={2} />
       </svg>
     ),
     title: "Advanced Data Analytics",
-    description: "Mine structured and unstructured data for predictive modeling, forecasting, anomaly detection, and AI-driven reporting—enabling proactive decisions and new business insights."
+    description:
+      "Unlock predictive insights with AI-driven analytics pipelines—forecasting, anomaly detection, and data reporting aligned to enterprise KPIs.",
   },
   {
     icon: (
@@ -83,7 +107,8 @@ const featuresData = [
       </svg>
     ),
     title: "AI Security & Privacy",
-    description: "Secure deployments with privacy-preserving ML, zero-retention pipelines, encrypted inference, access controls, audit trails, and full compliance with HIPAA/GDPR/SOC2 requirements."
+    description:
+      "Build privacy-preserving ML with encrypted inference, zero-retention data pipelines, and full compliance (HIPAA, GDPR, SOC2).",
   },
   {
     icon: (
@@ -92,19 +117,38 @@ const featuresData = [
       </svg>
     ),
     title: "MLOps & AI Infrastructure",
-    description: "End-to-end support for model training, continuous integration, versioning, monitoring, and cost-efficient deployment of machine learning systems at scale in the cloud or on-prem."
-  }
+    description:
+      "Streamline deployment and monitoring of ML systems—versioning, optimization, and automation for scalable AI operations.",
+  },
 ];
 
 const Features = () => (
-  <section id="features" className="pt-12 pb-24 px-4 min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+  <section
+    id="features"
+    className="
+      pt-12 pb-24 px-4 min-h-screen
+      bg-[var(--color-bg)]
+      text-[var(--color-text)]
+      transition-colors duration-300
+    "
+  >
     <div className="max-w-7xl mx-auto">
-      <h2 className={`text-4xl md:text-5xl font-extrabold mb-4 text-center ${accentClass}`}>Innovative AI & Deep Learning Features</h2>
-      <p className="text-lg text-gray-300 mb-14 max-w-3xl mx-auto text-center">
-        From foundational research to applied business impact—discover how our team pushes the boundaries of AI to deliver solutions in natural language, computer vision, automation, security, analytics, and more.
+      <h2
+        className="
+          text-4xl md:text-5xl font-extrabold mb-4 text-center
+          text-[var(--color-primary)]
+        "
+      >
+        Innovative AI & Deep Learning Features
+      </h2>
+      <p className="text-lg mb-14 max-w-3xl mx-auto text-center opacity-85">
+        From foundational research to applied business impact—discover how our
+        team pushes boundaries of AI in natural language, vision, analytics, and
+        automation domains.
       </p>
+
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {featuresData.map(feature => (
+        {featuresData.map((feature) => (
           <FeatureCard key={feature.title} {...feature} />
         ))}
       </div>
