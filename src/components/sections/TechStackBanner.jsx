@@ -1,73 +1,84 @@
 import React from "react";
 
-import llamaLogo from "/src/assets/llama.png";
-import deepseekLogo from "/src/assets/deepseek.png";
-import grokLogo from "/src/assets/grok.png";
-import copilotLogo from "/src/assets/microsoft-copilot.png";
-import claudeLogo from "/src/assets/claude.png";
-import azureLogo from "/src/assets/azureopenai.png";
-import gpt4Logo from "/src/assets/GPT-4.png";
+import linuxLogo from "/src/assets/linux-tux.svg";
+import nextjsLogo from "/src/assets/nextjs-icon.svg";
+import viteLogo from "/src/assets/vitejs.svg";
+import azureLogo from "/src/assets/microsoft-azure.svg";
+import awsLogo from "/src/assets/aws.svg";
+import mongodbLogo from "/src/assets/mongodb.svg";
+import mysqlLogo from "/src/assets/mysql.svg";
+import postgresqlLogo from "/src/assets/postgresql.svg";
+import tailwindLogo from "/src/assets/tailwindcss.svg";
+import vscodeLogo from "/src/assets/visual-studio-code.svg";
+import githubLogo from "/src/assets/github-icon.svg";
+import dockerLogo from "/src/assets/docker-icon.svg";
+import pythonLogo from "/src/assets/python.svg";
+import nodeLogo from "/src/assets/nodejs-icon.svg";
+import createReactAppLogo from "/src/assets/create-react-app.svg";
 
-// List of tech logos and their alt text
 const logos = [
-  { src: llamaLogo, alt: "Llama" },
-  { src: deepseekLogo, alt: "DeepSeek" },
-  { src: grokLogo, alt: "Grok" },
-  { src: copilotLogo, alt: "Microsoft Copilot" },
-  { src: claudeLogo, alt: "Claude" },
-  { src: azureLogo, alt: "Azure OpenAI" },
-  { src: gpt4Logo, alt: "GPT-4" },
+  { src: linuxLogo, alt: "Linux" },
+  { src: nextjsLogo, alt: "Next.js" },
+  { src: viteLogo, alt: "Vite" },
+  { src: azureLogo, alt: "Microsoft Azure" },
+  { src: awsLogo, alt: "AWS" },
+  { src: mongodbLogo, alt: "MongoDB" },
+  { src: mysqlLogo, alt: "MySQL" },
+  { src: postgresqlLogo, alt: "PostgreSQL" },
+  { src: tailwindLogo, alt: "TailwindCSS" },
+  { src: vscodeLogo, alt: "VS Code" },
+  { src: githubLogo, alt: "GitHub" },
+  { src: dockerLogo, alt: "Docker" },
+  { src: pythonLogo, alt: "Python" },
+  { src: nodeLogo, alt: "Node.js" },
+  { src: createReactAppLogo, alt: "Create React App" },
 ];
 
 const TechStackBanner = () => (
   <div
     className="
-      relative py-10 px-2 shadow-lg z-20 overflow-hidden
-      bg-[var(--color-card)]
+      relative py-10 px-2 z-20 overflow-hidden
       border-t border-[var(--color-border)]
       transition-colors duration-300
     "
+    style={{
+      background: "#fff",
+      maskImage:
+        "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+      WebkitMaskImage:
+        "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+    }}
   >
-    {/* Subtle overlay for theme depth */}
-    <div
-      className="
-        absolute inset-0
-        bg-[var(--color-bg)]
-        opacity-10 pointer-events-none
-      "
-    ></div>
+    {/* Removed blur and shadow; white background only */}
 
-    <div className="relative w-full">
-      <div className="logo-scroll flex items-center gap-x-14 md:gap-x-20 animate-scroll">
+    <div className="relative w-full overflow-hidden">
+      <div className="tech-logo-row flex items-center gap-x-14 md:gap-x-20">
         {[...logos, ...logos].map((logo, i) => (
           <img
             key={logo.alt + i}
             src={logo.src}
             alt={logo.alt}
-            className="h-14 md:h-16 object-contain"
+            className="h-14 md:h-16 object-contain transition-all duration-300 opacity-75 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-110"
             style={{
               maxWidth: 120,
-              filter:
-                "drop-shadow(0 0 10px rgba(0, 0, 0, 0.15)) brightness(var(--img-brightness,1))",
+              filter: "brightness(var(--img-brightness,1))",
             }}
+            draggable={false}
           />
         ))}
       </div>
     </div>
 
-    {/* Scroll Animation */}
     <style>
       {`
-        @keyframes scroll {
+        .tech-logo-row {
+          animation: modern-scroll 36s linear infinite;
+          will-change: transform;
+          min-width: max-content;
+        }
+        @keyframes modern-scroll {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
-        }
-        .logo-scroll {
-          display: flex;
-          width: 200%;
-        }
-        .animate-scroll {
-          animation: scroll 36s linear infinite;
         }
       `}
     </style>

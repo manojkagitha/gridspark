@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CookieConsent from "react-cookie-consent";
 
 // Layout Components
 import Navbar from "./components/layout/Navbar";
@@ -78,6 +79,16 @@ function App() {
         {/* Fallback to Home for unknown routes */}
         <Route path="*" element={<Home />} />
       </Routes>
+      <CookieConsent
+        location="bottom"
+        buttonText="Accept"
+        style={{ background: "#101014" }}
+        buttonStyle={{ background: "#ff9100", color: "#fff", borderRadius: "4px", fontWeight: "600" }}
+        expires={365}
+      >
+        This website uses cookies to enhance the user experience.{" "}
+        <a href="/cookie-policy" style={{ color: "#ff9100", textDecoration: "underline" }}>Read our policy</a>.
+      </CookieConsent>
       <Footer />
     </Router>
   );
