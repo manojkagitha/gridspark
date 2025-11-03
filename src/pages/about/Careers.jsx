@@ -111,8 +111,6 @@ const testimonials = [
   },
 ];
 
-const API_ENDPOINT = "https://api.gridsparksolutions.com/careers/apply";
-
 const Careers = () => {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -138,15 +136,26 @@ const Careers = () => {
     }
     setLoading(true);
     try {
-      const response = await fetch(API_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      const formPayload = new FormData();
+      formPayload.append('name', formData.name);
+      formPayload.append('email', formData.email);
+      formPayload.append('position', formData.position);
+      formPayload.append('about', formData.about);
+
+      const response = await fetch('https://formspree.io/f/mwpwzlng', {
+        method: 'POST',
+        body: formPayload,
+        headers: { 'Accept': 'application/json' }
       });
-      if (!response.ok) throw new Error("Failed to submit application.");
-      setSubmitted(true);
+
+      const data = await response.json();
+      if (data.ok) {
+        setSubmitted(true);
+      } else {
+        setError('Failed to submit application.');
+      }
     } catch (err) {
-      setError(err.message || "Unexpected error occurred.");
+      setError(err.message || 'Unexpected error occurred.');
     } finally {
       setLoading(false);
     }

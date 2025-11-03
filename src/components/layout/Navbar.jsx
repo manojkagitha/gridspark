@@ -7,6 +7,7 @@ const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const location = useLocation();
 
+  // Removed "Contact" from menuItems — no "Register" item either
   const menuItems = [
     { path: "/", label: "Home" },
     { path: "/products", label: "Products" },
@@ -31,7 +32,7 @@ const Navbar = () => {
         { path: "/careers", label: "Careers" },
       ],
     },
-    { path: "/contact", label: "Contact" },
+    // No 'Contact', No 'Register'
   ];
 
   return (
@@ -61,6 +62,7 @@ const Navbar = () => {
               onMouseLeave={() => setOpenDropdown(null)}
             >
               {item.subMenu ? (
+                // ... Dropdown logic unchanged ...
                 <button
                   className={`
                     flex items-center gap-1 px-2 h-full transition-colors duration-150
@@ -100,8 +102,8 @@ const Navbar = () => {
                 </Link>
               )}
 
-              {/* MODERN DROPDOWN MENU */}
               {item.subMenu && openDropdown === item.label && (
+                // ... Dropdown code unchanged ...
                 <div
                   className="
                     absolute left-0 top-full w-56
@@ -132,7 +134,10 @@ const Navbar = () => {
                           }
                         `}
                         style={{
-                          borderLeft: location.pathname === subItem.path ? "3px solid var(--color-primary)" : "3px solid transparent",
+                          borderLeft:
+                            location.pathname === subItem.path
+                              ? "3px solid var(--color-primary)"
+                              : "3px solid transparent",
                         }}
                       >
                         <span>{subItem.label}</span>
@@ -158,14 +163,14 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* --- REGISTER BUTTON (DESKTOP) --- */}
+        {/* --- CONTACT BUTTON (far right, desktop) --- */}
         <div className="hidden md:flex items-center">
           <Link
-            to="/register"
+            to="/contact"
             className={`ml-2 btn-primary glow text-[var(--color-footer-header-bg)] px-6 py-2`}
             style={{ minWidth: 120 }}
           >
-            Register
+            Contact
           </Link>
         </div>
 
@@ -206,7 +211,11 @@ const Navbar = () => {
                       block py-2 pl-4 rounded
                       hover:text-[var(--color-primary)] 
                       text-[var(--color-footer-header-text)]
-                      ${location.pathname === subItem.path ? "bg-[var(--color-card)] text-[var(--color-primary)] font-semibold" : ""}
+                      ${
+                        location.pathname === subItem.path
+                          ? "bg-[var(--color-card)] text-[var(--color-primary)] font-semibold"
+                          : ""
+                      }
                       transition
                     `}
                     onClick={() => setMobileMenuOpen(false)}
@@ -222,7 +231,11 @@ const Navbar = () => {
                 className={`
                   block py-2 hover:text-[var(--color-primary)]
                   text-[var(--color-footer-header-text)]
-                  ${location.pathname === item.path ? "font-bold text-[var(--color-primary)]" : ""}
+                  ${
+                    location.pathname === item.path
+                      ? "font-bold text-[var(--color-primary)]"
+                      : ""
+                  }
                   transition
                 `}
                 onClick={() => setMobileMenuOpen(false)}
@@ -231,8 +244,9 @@ const Navbar = () => {
               </Link>
             )
           )}
+          {/* Contact button at the bottom of mobile menu */}
           <Link
-            to="/register"
+            to="/contact"
             className="
               block py-2 mt-3 text-center rounded font-semibold
               btn-primary glow text-[var(--color-footer-header-bg)]
@@ -240,7 +254,7 @@ const Navbar = () => {
             "
             onClick={() => setMobileMenuOpen(false)}
           >
-            Register
+            Contact
           </Link>
         </div>
       )}

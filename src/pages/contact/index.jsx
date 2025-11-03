@@ -2,36 +2,49 @@ import React, { useState } from "react";
 
 const Contact = () => {
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSuccess(true);
+    setLoading(true);
+
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mwpwzlng", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        setSuccess(true);
+      } else {
+        alert("Something went wrong. Please try again or email us directly.");
+      }
+    } catch (error) {
+      alert("Unable to submit. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <section
       className="
-        min-h-screen flex items-center 
-        py-20 
-        bg-[var(--color-bg)] 
-        text-[var(--color-text)] 
+        min-h-screen flex items-center
+        py-20
+        bg-[var(--color-bg)]
+        text-[var(--color-text)]
         transition-colors duration-300
       "
     >
-      <div
-        className="
-          max-w-6xl mx-auto px-4 grid md:grid-cols-2 
-          gap-12 items-center w-full
-        "
-      >
+      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center w-full">
         {/* Left info section */}
         <div>
-          <h1
-            className="
-              text-5xl font-extrabold mb-6
-              text-[var(--color-primary)]
-            "
-          >
+          <h1 className="text-5xl font-extrabold mb-6 text-[var(--color-primary)]">
             Let's Build Together
           </h1>
           <p className="text-xl mb-6 max-w-lg opacity-85">
@@ -69,7 +82,7 @@ const Contact = () => {
             <div
               className="
                 p-8 rounded-lg text-center shadow-lg
-                bg-[var(--color-primary)]/10 
+                bg-[var(--color-primary)]/10
                 border border-[var(--color-primary)]
                 text-[var(--color-text)]
                 transition
@@ -81,9 +94,7 @@ const Contact = () => {
           ) : (
             <form
               onSubmit={handleSubmit}
-              name="contact"
               method="POST"
-              data-netlify="true"
               className="
                 p-8 rounded-lg shadow-lg flex flex-col gap-6
                 bg-[var(--color-card)]
@@ -91,14 +102,10 @@ const Contact = () => {
                 transition-colors duration-300
               "
             >
-              <input type="hidden" name="form-name" value="contact" />
-
               <div>
                 <label
                   htmlFor="name"
-                  className="
-                    block mb-2 text-sm font-semibold opacity-90
-                  "
+                  className="block mb-2 text-sm font-semibold opacity-90"
                 >
                   Full Name <span className="text-[var(--color-primary)]">*</span>
                 </label>
@@ -116,6 +123,7 @@ const Contact = () => {
                     focus:ring-2 focus:ring-[var(--color-primary)]
                     transition
                   "
+                  disabled={loading}
                 />
               </div>
 
@@ -141,6 +149,7 @@ const Contact = () => {
                     focus:ring-2 focus:ring-[var(--color-primary)]
                     transition
                   "
+                  disabled={loading}
                 />
               </div>
 
@@ -166,6 +175,7 @@ const Contact = () => {
                     focus:ring-2 focus:ring-[var(--color-primary)]
                     transition
                   "
+                  disabled={loading}
                 />
               </div>
 
@@ -190,6 +200,7 @@ const Contact = () => {
                     focus:ring-2 focus:ring-[var(--color-primary)]
                     transition
                   "
+                  disabled={loading}
                 />
               </div>
 
@@ -214,11 +225,12 @@ const Contact = () => {
                     focus:ring-2 focus:ring-[var(--color-primary)]
                     transition
                   "
+                  disabled={loading}
                 />
               </div>
 
-              <button type="submit" className="btn-primary w-full py-3 text-lg">
-                Send Message
+              <button type="submit" className="btn-primary w-full py-3 text-lg" disabled={loading}>
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </form>
           )}
