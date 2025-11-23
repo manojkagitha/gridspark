@@ -2,6 +2,16 @@ import React from "react";
 
 const products = [
   {
+    name: "TinyKola – Restaurant AI RMS",
+    description:
+      "Revolutionize your restaurant with TinyKola’s AI-powered Restaurant Management Suite. Tailored for busy Indian eateries, it offers lightning-fast order processing, digital menu updates, secure billing, and automated GST filing. Features include a user-friendly POS, role-based staff controls, real-time AI sales analytics, and seamless inventory management—all supported by offline reliability, advanced security, and 24/7 expert help. Whether you run a cloud kitchen, a fine-dine, or a quick-serve outlet, TinyKola unlocks actionable insights, maximizes margins, and ensures happier staff, delighted customers, and hassle-free compliance.",
+  },
+  {
+    name: "ChecKaro Home Inspection",
+    description:
+      "ChecKaro is Hyderabad’s most trusted home inspection platform. Our certified professionals deploy German & US tech—including wall scanners, borescopes, and thermal imaging—for comprehensive civil, electrical, plumbing, and interior audits. Get a detailed digital report with room-by-room images, defect highlights, and actionable recommendations. Choose from Basic to Premium plans—perfect for pre-purchase, post-renovation, rental, or move-in/move-out inspections. ChecKaro helps you catch hidden issues, save lakhs by rectifying defects early, and live absolutely stress-free. Clients rave about our transparent process, rigorous quality, and expert support—all for the price of peace of mind.",
+  },
+  {
     name: "AI Chat Assistant",
     description:
       "A customizable chatbot that integrates into your platform, handling live Q&A, customer support, and automated scheduling.",
