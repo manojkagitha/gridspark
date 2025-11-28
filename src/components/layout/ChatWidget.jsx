@@ -125,7 +125,7 @@ const ChatWidget = () => {
             {/* Chat Window */}
             <div
                 className={`
-          mb-4 w-80 sm:w-96 bg-[var(--color-bg)] rounded-2xl shadow-2xl overflow-hidden
+          mb-4 w-[calc(100vw-48px)] sm:w-96 bg-[var(--color-bg)] rounded-2xl shadow-2xl overflow-hidden
           transition-all duration-300 origin-bottom-right border border-[var(--color-border)]
           ${isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0 h-0 w-0"}
         `}

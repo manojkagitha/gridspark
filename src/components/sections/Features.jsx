@@ -57,7 +57,7 @@ const featuresData = [
 const Features = () => (
   <section id="features" className="transition-colors duration-300">
     <div className="max-w-7xl mx-auto">
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {featuresData.map((feature) => (
           <FeatureCard key={feature.title} {...feature} />
         ))}

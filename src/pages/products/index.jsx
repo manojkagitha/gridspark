@@ -49,7 +49,7 @@ const Products = () => (
         Explore Gridspark Solutions’ suite of scalable products designed for enterprise automation, AI insight, and cloud optimization. Each product can be deployed, customized, and supported by our expert team.
       </p>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {products.map(({ name, description }, idx) => (
           <div
             key={name}

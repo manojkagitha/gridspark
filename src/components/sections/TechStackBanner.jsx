@@ -42,14 +42,14 @@ const TechStackBanner = () => (
       transition-colors duration-300
     "
     style={{
-      background: "#fff",
+      background: "transparent", // Blended with dark background
       maskImage:
         "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
       WebkitMaskImage:
         "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
     }}
   >
-    {/* Removed blur and shadow; white background only */}
+    {/* Removed blur and shadow; transparent background */}
 
     <div className="relative w-full overflow-hidden">
       <div className="tech-logo-row flex items-center gap-x-14 md:gap-x-20">
@@ -58,10 +58,9 @@ const TechStackBanner = () => (
             key={logo.alt + i}
             src={logo.src}
             alt={logo.alt}
-            className="h-14 md:h-16 object-contain transition-all duration-300 opacity-75 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-110"
+            className="h-14 md:h-16 object-contain transition-all duration-300 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-110 invert hover:invert-0"
             style={{
               maxWidth: 120,
-              filter: "brightness(var(--img-brightness,1))",
             }}
             draggable={false}
           />

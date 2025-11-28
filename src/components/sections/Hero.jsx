@@ -14,7 +14,7 @@ const Hero = () => (
 
       {/* Headline */}
       <div className="relative inline-block mb-8">
-        <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight leading-tight text-white animate-fade-up delay-100">
+        <h1 className="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tight leading-tight text-white animate-fade-up delay-100">
           Building the Future <br />
           with <span className="text-gradient-blue">Intelligent AI</span>
         </h1>

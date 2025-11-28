@@ -48,7 +48,7 @@ const Resources = () => (
           Explore our collection of authoritative resources, including blogs, whitepapers, webinars, and case studies designed to help you make informed decisions around cloud, AI, and data analytics.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {resources.map(({ type, title, description, link }, idx) => (
             <a
               href={link}

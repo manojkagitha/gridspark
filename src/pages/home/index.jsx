@@ -119,7 +119,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
             {products.map((product, idx) => (
               <div
                 key={idx}
@@ -152,7 +152,7 @@ const Home = () => {
           <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12">
             Explore Our <span className="text-gradient-blue">Solutions</span>
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {quickLinks.map(({ icon, title, desc, link }, idx) => (
               <Link
                 key={idx}
@@ -260,7 +260,7 @@ const Home = () => {
             reliable, and scalable applications that deliver real results.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
             <div className="card group p-8 text-left hover:border-blue-500/50">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">

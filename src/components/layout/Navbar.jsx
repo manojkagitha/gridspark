@@ -140,7 +140,7 @@ const Navbar = () => {
 
       {/* --- MOBILE MENU --- */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[var(--color-bg)]/95 backdrop-blur-xl border-t border-[var(--color-border)] absolute w-full">
+        <div className="md:hidden bg-[var(--color-bg)]/95 backdrop-blur-xl border-t border-[var(--color-border)] absolute w-full max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="px-4 pt-4 pb-6 space-y-2">
             {menuItems.map((item, index) => (
               <div key={index}>
