@@ -1,20 +1,28 @@
 import React from "react";
+import { FaStar } from "react-icons/fa";
 
 const TestimonialCard = ({ quote, author, role, company }) => (
-  <div
-    className="
-      p-8 rounded-xl shadow-xl border
-      bg-[var(--color-card)]
-      border-[var(--color-border)]
-      transition-colors duration-300
-    "
-  >
-    <p className="italic text-lg mb-6 opacity-85">"{quote}"</p>
-    <div>
-      <p className="font-bold text-[var(--color-text)]">{author}</p>
-      <p className="text-[var(--color-primary)] text-sm">
-        {role}, {company}
-      </p>
+  <div className="card hover:bg-white/5 hover:border-blue-500/30 text-left">
+    {/* Star Rating */}
+    <div className="flex gap-1 mb-4">
+      {[...Array(5)].map((_, i) => (
+        <FaStar key={i} className="text-yellow-500 text-sm" />
+      ))}
+    </div>
+
+    <p className="text-gray-300 text-base mb-6 leading-relaxed italic">"{quote}"</p>
+
+    <div className="flex items-center gap-3">
+      {/* Avatar placeholder */}
+      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+        {author.charAt(0)}
+      </div>
+      <div>
+        <p className="font-semibold text-white">{author}</p>
+        <p className="text-[var(--color-primary)] text-sm">
+          {role} at {company}
+        </p>
+      </div>
     </div>
   </div>
 );
@@ -23,49 +31,42 @@ const Testimonials = () => {
   const testimonials = [
     {
       quote:
-        "Gridspark transformed our operations. Their AI-driven automation solution cut our manual data entry by 90% and allowed our team to focus on strategic growth. They are true partners, not just developers.",
-      author: "Jane Doe",
-      role: "COO",
-      company: "Innovate Logistics Inc.",
+        "The AI automation solution from Gridspark reduced our processing time by 75%. Their team understood our needs perfectly and delivered beyond expectations.",
+      author: "Rajesh Kumar",
+      role: "Operations Director",
+      company: "TechVentures India",
     },
     {
       quote:
-        "The custom CRM they built for us was a game-changer. It's intuitive, powerful, and perfectly tailored to our sales process. The project was delivered on time, on budget, and exceeded our expectations.",
-      author: "John Smith",
-      role: "VP of Sales",
-      company: "Future Forward Tech",
+        "Working with Gridspark was a game-changer for our business. The custom platform they built is intuitive, scalable, and has significantly improved our workflow efficiency.",
+      author: "Priya Sharma",
+      role: "Head of Product",
+      company: "CloudScale Solutions",
     },
     {
       quote:
-        "Working with the Gridspark team was seamless. Their technical expertise is top-notch, and their ability to translate complex business needs into a functional, elegant cloud solution is unmatched.",
-      author: "Emily White",
-      role: "Founder & CEO",
-      company: "SaaSify Startups",
+        "Their expertise in AI and cloud technologies is exceptional. The team delivered a robust solution that perfectly aligned with our business objectives and timeline.",
+      author: "Amit Patel",
+      role: "CTO",
+      company: "DataFlow Systems",
     },
   ];
 
   return (
     <div className="max-w-7xl mx-auto text-center px-4">
-      <h2
-        className="
-          text-4xl font-extrabold mb-12
-          text-[var(--color-primary)]
-          transition-colors duration-300
-        "
-      >
-        Trusted by Industry Leaders
+      <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
+        What Our <span className="text-gradient-blue">Clients Say</span>
       </h2>
 
-      <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+      <p className="text-gray-400 mb-12 max-w-2xl mx-auto">
+        Trusted by businesses across industries to deliver innovative AI solutions
+      </p>
+
+      <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
         {testimonials.map((testimonial, index) => (
           <TestimonialCard key={index} {...testimonial} />
         ))}
       </div>
-
-      <p className="text-center opacity-70 mt-8 text-sm">
-        Note: Customer names and companies have been changed for
-        confidentiality.
-      </p>
     </div>
   );
 };

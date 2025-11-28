@@ -31,93 +31,65 @@ const studies = [
 ];
 
 const CaseStudyCard = ({ client, challenge, solution, outcome }) => (
-  <div
-    className="
-      w-full px-8 py-8 rounded-2xl shadow-xl flex flex-col md:flex-row items-start mb-10
-      bg-[var(--color-card)] border border-[var(--color-border)]
-      hover:shadow-2xl transition-all duration-300 space-y-4 md:space-y-0 md:space-x-10
-    "
-  >
-    <div className="flex-1">
-      <h2
-        className="
-          text-2xl font-bold mb-3
-          text-[var(--color-primary)]
-        "
-      >
-        {client}
-      </h2>
+  <div className="glass-panel p-8 rounded-2xl border border-[var(--color-border)] hover:border-[var(--color-primary)] transition-all duration-300" data-aos="fade-up">
+    <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex-1">
+        <h2 className="text-2xl font-bold mb-6 text-white border-b border-[var(--color-border)] pb-4">
+          {client}
+        </h2>
 
-      <div className="mb-4">
-        <span
-          className="
-            font-semibold text-[var(--color-primary)]
-          "
-        >
-          Challenge:
-        </span>{" "}
-        <span className="opacity-90">{challenge}</span>
-      </div>
+        <div className="space-y-6">
+          <div>
+            <span className="text-[var(--color-primary)] font-bold text-sm uppercase tracking-wider block mb-2">
+              Challenge
+            </span>
+            <span className="text-gray-300 leading-relaxed">{challenge}</span>
+          </div>
 
-      <div className="mb-4">
-        <span
-          className="
-            font-semibold text-[var(--color-primary-hover)]
-          "
-        >
-          Solution:
-        </span>{" "}
-        <span className="opacity-85">{solution}</span>
-      </div>
+          <div>
+            <span className="text-[var(--color-secondary)] font-bold text-sm uppercase tracking-wider block mb-2">
+              Solution
+            </span>
+            <span className="text-gray-300 leading-relaxed">{solution}</span>
+          </div>
 
-      <div>
-        <span
-          className="
-            font-semibold text-[var(--color-text)]
-          "
-          style={{ opacity: 0.9 }}
-        >
-          Outcome:
-        </span>{" "}
-        <span className="opacity-85">{outcome}</span>
+          <div>
+            <span className="text-green-400 font-bold text-sm uppercase tracking-wider block mb-2">
+              Outcome
+            </span>
+            <span className="text-gray-300 leading-relaxed">{outcome}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 );
 
 const CaseStudies = () => (
-  <section
-    className="
-      min-h-screen w-full py-16 px-0
-      bg-[var(--color-bg)] text-[var(--color-text)]
-      transition-colors duration-300
-    "
-  >
-    <div className="max-w-5xl mx-auto px-4">
-      <h1
-        className="
-          text-4xl font-extrabold mb-6
-          text-[var(--color-primary)]
-        "
-      >
-        Case Studies
+  <section className="min-h-screen w-full pt-24 pb-16 px-0 relative overflow-hidden">
+    {/* Background Elements */}
+    <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+      <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] animate-pulse-glow" />
+    </div>
+
+    <div className="max-w-5xl mx-auto px-4 relative z-10">
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-center" data-aos="fade-up">
+        Case <span className="text-gradient-blue">Studies</span>
       </h1>
 
-      <p className="mb-8 opacity-85">
-        See how Gridspark Solutions helps clients—from startups to
-        enterprises—achieve measurable business value through cloud and
-        AI-driven innovation.
+      <p className="mb-12 text-lg text-gray-400 text-center max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        See how Gridspark Solutions helps clients—from startups to enterprises—achieve measurable business value through cloud and AI-driven innovation.
       </p>
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-8">
         {studies.map((study, idx) => (
           <CaseStudyCard key={idx} {...study} />
         ))}
       </div>
 
-      <p className="mt-10 text-sm opacity-75">
+      <p className="mt-16 text-center text-gray-400" data-aos="fade-up">
         Want to see what we can do for your business?{" "}
-        <a href="/contact" className="link">
+        <a href="/contact" className="text-[var(--color-primary)] font-bold hover:underline">
           Contact us today
         </a>
         .

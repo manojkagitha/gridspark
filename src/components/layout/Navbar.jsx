@@ -1,17 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "/src/assets/logo.png";
+import logo from "/src/assets/gridspark-logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  // Removed "Contact" from menuItems — no "Register" item either
+  // Handle scroll effect for navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const menuItems = [
     { path: "/", label: "Home" },
     { path: "/products", label: "Products" },
-    { path: "/resources", label: "Resources" },
     {
       label: "Solutions",
       subMenu: [
@@ -22,8 +29,9 @@ const Navbar = () => {
         { path: "/solutions/ai-showcase", label: "AI Showcase" },
       ],
     },
+    { path: "/resources", label: "Resources" },
     {
-      label: "About",
+      label: "Company",
       subMenu: [
         { path: "/about", label: "About Us" },
         { path: "/expertise", label: "Expertise" },
@@ -32,230 +40,147 @@ const Navbar = () => {
         { path: "/careers", label: "Careers" },
       ],
     },
-    // No 'Contact', No 'Register'
   ];
 
   return (
     <nav
-      className="
-        sticky top-0 z-50
-        bg-[var(--color-footer-header-bg)]
-        text-[var(--color-footer-header-text)]
-        border-b border-[var(--color-footer-header-border)]
-        shadow-md
-        transition-colors duration-300
-      "
+      className={`
+        fixed top-0 w-full z-50 transition-all duration-300
+        ${scrolled ? "bg-[var(--color-bg)]/80 backdrop-blur-md border-b border-[var(--color-border)] py-3" : "bg-transparent py-5"}
+      `}
     >
-      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center flex-shrink-0">
-          <img src={logo} alt="Gridspark Logo" className="h-10" />
+          <img src={logo} alt="Gridspark Logo" className="h-12 w-auto brand-logo" />
         </Link>
 
         {/* --- DESKTOP MENU --- */}
-        <div className="hidden md:flex space-x-8 items-center h-full">
+        <div className="hidden md:flex items-center space-x-8">
           {menuItems.map((item, index) => (
             <div
               key={index}
-              className="relative h-full flex items-center"
-              onMouseEnter={() => setOpenDropdown(item.label)}
-              onMouseLeave={() => setOpenDropdown(null)}
+              className="relative group h-full flex items-center"
             >
               {item.subMenu ? (
-                // ... Dropdown logic unchanged ...
-                <button
-                  className={`
-                    flex items-center gap-1 px-2 h-full transition-colors duration-150
-                    ${
-                      openDropdown === item.label
-                        ? "text-[var(--color-primary)] font-semibold"
-                        : "hover:text-[var(--color-primary)] text-[var(--color-footer-header-text)] font-medium"
-                    }
-                  `}
-                >
-                  {item.label}
-                  <svg
-                    className={`ml-1 h-5 w-5 transition-transform duration-200 ${
-                      openDropdown === item.label ? "rotate-180 text-[var(--color-primary)]" : ""
-                    }`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    viewBox="0 0 24 24"
+                <>
+                  <button
+                    className="flex items-center gap-1 text-sm font-medium transition-colors duration-200 text-gray-300 group-hover:text-white"
                   >
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </button>
+                    {item.label}
+                    <svg
+                      className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  {/* Dropdown Menu */}
+                  <div className="absolute left-0 top-full pt-4 w-64 dropdown-menu-wrapper">
+                    <div className="dropdown-menu">
+                      {item.subMenu.map((subItem) => (
+                        <Link
+                          key={subItem.path}
+                          to={subItem.path}
+                          className="block px-4 py-3 text-sm text-gray-400 dropdown-item font-medium"
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </>
               ) : (
                 <Link
                   to={item.path}
-                  className={`transition-all duration-150 px-2 py-2 rounded ${
-                    location.pathname === item.path
-                      ? "text-[var(--color-primary)] font-bold bg-[var(--color-footer-header-bg)] ring-2 ring-[var(--color-primary)]"
-                      : "text-[var(--color-footer-header-text)] hover:text-[var(--color-primary)]"
-                  }`}
+                  className={`
+                    text-sm font-medium transition-colors duration-200
+                    ${location.pathname === item.path ? "text-[var(--color-primary)]" : "text-gray-300 hover:text-white"}
+                  `}
                 >
                   {item.label}
                 </Link>
-              )}
-
-              {item.subMenu && openDropdown === item.label && (
-                // ... Dropdown code unchanged ...
-                <div
-                  className="
-                    absolute left-0 top-full w-56
-                    rounded-xl shadow-2xl border border-[var(--color-footer-header-border)]
-                    mt-0
-                    bg-[var(--color-footer-header-bg)] bg-opacity-90
-                    backdrop-blur-md
-                    overflow-hidden
-                    animate-fadeDown
-                  "
-                  style={{ minWidth: 210 }}
-                >
-                  <div>
-                    {item.subMenu.map((subItem) => (
-                      <Link
-                        key={subItem.path}
-                        to={subItem.path}
-                        onClick={() => setOpenDropdown(null)}
-                        className={`
-                          flex items-center gap-2 px-5 py-3 transition-all duration-150
-                          text-[var(--color-footer-header-text)]
-                          hover:text-[var(--color-primary)]
-                          hover:bg-[var(--color-card)]
-                          ${
-                            location.pathname === subItem.path
-                              ? "bg-[var(--color-card)] text-[var(--color-primary)] font-semibold"
-                              : ""
-                          }
-                        `}
-                        style={{
-                          borderLeft:
-                            location.pathname === subItem.path
-                              ? "3px solid var(--color-primary)"
-                              : "3px solid transparent",
-                        }}
-                      >
-                        <span>{subItem.label}</span>
-                        {location.pathname === subItem.path && (
-                          <svg
-                            className="ml-1 h-4 w-4 text-[var(--color-primary)]"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth={2}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            viewBox="0 0 24 24"
-                          >
-                            <polyline points="20 6 9 17 4 12" />
-                          </svg>
-                        )}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
               )}
             </div>
           ))}
         </div>
 
-        {/* --- CONTACT BUTTON (far right, desktop) --- */}
+        {/* --- CONTACT BUTTON (Desktop) --- */}
         <div className="hidden md:flex items-center">
           <Link
             to="/contact"
-            className={`ml-2 btn-primary glow text-[var(--color-footer-header-bg)] px-6 py-2`}
-            style={{ minWidth: 120 }}
+            className="btn-primary text-sm px-6 py-2"
           >
-            Contact
+            Contact Us
           </Link>
         </div>
 
         {/* --- MOBILE MENU BUTTON --- */}
-        <button
-          onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-          className="
-            md:hidden text-3xl
-            text-[var(--color-footer-header-text)]
-            transition-colors
-            hover:text-[var(--color-primary)]
-          "
-        >
-          {isMobileMenuOpen ? "✕" : "≡"}
-        </button>
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-gray-300 hover:text-white focus:outline-none"
+          >
+            <span className="sr-only">Open main menu</span>
+            {isMobileMenuOpen ? (
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* --- MOBILE MENU --- */}
       {isMobileMenuOpen && (
-        <div
-          className="
-            md:hidden px-4 pb-4
-            bg-[var(--color-footer-header-bg)]
-            text-[var(--color-footer-header-text)]
-            border-t border-[var(--color-footer-header-border)]
-            transition-all duration-300
-          "
-        >
-          {menuItems.map((item) =>
-            item.subMenu ? (
-              <div key={item.label} className="pb-2">
-                <h3 className="py-2 font-semibold text-[var(--color-primary)]">{item.label}</h3>
-                {item.subMenu.map((subItem) => (
+        <div className="md:hidden bg-[var(--color-bg)]/95 backdrop-blur-xl border-t border-[var(--color-border)] absolute w-full">
+          <div className="px-4 pt-4 pb-6 space-y-2">
+            {menuItems.map((item, index) => (
+              <div key={index}>
+                {item.subMenu ? (
+                  <>
+                    <div className="px-3 py-2 text-base font-bold text-white">{item.label}</div>
+                    <div className="pl-6 space-y-1 border-l border-gray-700 ml-3">
+                      {item.subMenu.map((subItem) => (
+                        <Link
+                          key={subItem.path}
+                          to={subItem.path}
+                          className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                ) : (
                   <Link
-                    key={subItem.path}
-                    to={subItem.path}
-                    className={`
-                      block py-2 pl-4 rounded
-                      hover:text-[var(--color-primary)] 
-                      text-[var(--color-footer-header-text)]
-                      ${
-                        location.pathname === subItem.path
-                          ? "bg-[var(--color-card)] text-[var(--color-primary)] font-semibold"
-                          : ""
-                      }
-                      transition
-                    `}
+                    to={item.path}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {subItem.label}
+                    {item.label}
                   </Link>
-                ))}
+                )}
               </div>
-            ) : (
+            ))}
+            <div className="pt-6">
               <Link
-                key={item.path}
-                to={item.path}
-                className={`
-                  block py-2 hover:text-[var(--color-primary)]
-                  text-[var(--color-footer-header-text)]
-                  ${
-                    location.pathname === item.path
-                      ? "font-bold text-[var(--color-primary)]"
-                      : ""
-                  }
-                  transition
-                `}
+                to="/contact"
+                className="block w-full text-center btn-primary"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {item.label}
+                Contact Us
               </Link>
-            )
-          )}
-          {/* Contact button at the bottom of mobile menu */}
-          <Link
-            to="/contact"
-            className="
-              block py-2 mt-3 text-center rounded font-semibold
-              btn-primary glow text-[var(--color-footer-header-bg)]
-              transition
-            "
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Contact
-          </Link>
+            </div>
+          </div>
         </div>
       )}
     </nav>

@@ -85,33 +85,21 @@ const AppWindowIcon = () => (
 );
 
 const ServiceCard = ({ icon, title, description, items }) => (
-  <div
-    className="
-      p-8 rounded-lg shadow-xl transition-transform duration-300
-      bg-[var(--color-card)] border border-[var(--color-border)]
-      hover:-translate-y-2
-    "
-  >
-    <div className="flex items-center mb-4">
-      {icon}
-      <h3
-        className="
-          text-2xl font-bold ml-4
-          text-[var(--color-text)]
-        "
-      >
+  <div className="card group hover:border-[var(--color-primary)]/50">
+    <div className="flex items-center mb-6">
+      <div className="p-3 rounded-lg bg-[var(--color-primary)]/10 group-hover:bg-[var(--color-primary)]/20 transition-colors">
+        {icon}
+      </div>
+      <h3 className="text-2xl font-bold ml-4 text-white group-hover:text-[var(--color-primary)] transition-colors">
         {title}
       </h3>
     </div>
-    <p className="mb-6 opacity-85">{description}</p>
+    <p className="mb-6 text-gray-400 leading-relaxed">{description}</p>
     <ul className="space-y-3">
       {items.map((item, index) => (
-        <li key={index} className="flex items-start">
+        <li key={index} className="flex items-start text-gray-300">
           <svg
-            className="
-              h-5 w-5 flex-shrink-0 mr-2 mt-1
-              text-[var(--color-primary)]
-            "
+            className="h-5 w-5 flex-shrink-0 mr-3 mt-1 text-[var(--color-primary)]"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -122,7 +110,7 @@ const ServiceCard = ({ icon, title, description, items }) => (
               clipRule="evenodd"
             />
           </svg>
-          <span className="opacity-85">{item}</span>
+          <span className="text-sm">{item}</span>
         </li>
       ))}
     </ul>
@@ -183,34 +171,28 @@ const Services = () => {
   ];
 
   return (
-    <div
-      className="
-        min-h-screen
-        bg-[var(--color-bg)] text-[var(--color-text)]
-        transition-colors duration-300
-      "
-    >
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div className="absolute top-[-10%] left-[20%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse-glow" />
+        <div className="absolute bottom-[-10%] right-[20%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse-glow delay-1000" />
+      </div>
+
       {/* Hero Section */}
-      <section className="text-center py-20">
+      <section className="text-center pt-32 pb-20 relative z-10" data-aos="fade-up">
         <div className="max-w-4xl mx-auto px-4">
-          <h1
-            className="
-              text-5xl md:text-6xl font-extrabold mb-4
-              text-[var(--color-primary)]
-            "
-          >
-            Our Services
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+            Our <span className="text-gradient-blue">Services</span>
           </h1>
-          <p className="text-xl opacity-85">
-            From AI‑powered applications to cloud engineering, we deliver
-            end‑to‑end innovation.
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            From AI‑powered applications to cloud engineering, we deliver end‑to‑end innovation that scales with your business.
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
+      <section className="py-10 px-4 relative z-10">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
           {servicesData.map((service, index) => (
             <ServiceCard key={index} {...service} />
           ))}
@@ -218,34 +200,22 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20">
-        <div className="max-w-5xl mx-auto text-center px-4">
-          <h2
-            className="
-              text-4xl font-bold mb-4
-              text-[var(--color-primary)]
-            "
-          >
-            Our Approach to Innovation
+      <section className="py-24 relative z-10">
+        <div className="max-w-6xl mx-auto text-center px-4">
+          <h2 className="text-4xl font-bold mb-6 text-white" data-aos="fade-up">
+            Our Approach to <span className="text-gradient-blue">Innovation</span>
           </h2>
-          <p className="text-lg mb-12 opacity-85">
-            We follow a collaborative, proven methodology—delivering success
-            from concept to global deployment.
+          <p className="text-lg text-gray-400 mb-16 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            We follow a collaborative, proven methodology—delivering success from concept to global deployment.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             {["Discover", "Design", "Develop", "Deploy"].map((step, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <div
-                  className="
-                    h-16 w-16 rounded-full flex items-center justify-center mb-4
-                    text-[var(--color-bg)] bg-[var(--color-primary)]
-                    font-bold text-2xl
-                  "
-                >
+              <div key={i} className="flex flex-col items-center group" data-aos="fade-up" data-aos-delay={i * 100 + 200}>
+                <div className="h-20 w-20 rounded-full flex items-center justify-center mb-6 bg-[var(--color-card)] border border-[var(--color-primary)] text-[var(--color-primary)] font-bold text-2xl shadow-[0_0_20px_rgba(59,130,246,0.3)] group-hover:scale-110 transition-transform duration-300">
                   {i + 1}
                 </div>
-                <h3 className="text-xl font-semibold">{step}</h3>
-                <p className="mt-2 opacity-80">
+                <h3 className="text-xl font-bold text-white mb-2">{step}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed max-w-[200px]">
                   {[
                     "Research goals, plan strategy.",
                     "Craft intuitive designs.",
@@ -260,21 +230,15 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="text-center py-20">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2
-            className="
-              text-3xl font-bold mb-4
-              text-[var(--color-primary)]
-            "
-          >
+      <section className="text-center py-24 relative z-10">
+        <div className="max-w-4xl mx-auto px-4 glass-panel p-12 rounded-3xl border border-[var(--color-border)]" data-aos="zoom-in">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
             Have a project in mind?
           </h2>
-          <p className="text-lg opacity-85 mb-8">
-            Turn your vision into a reality. Contact us today for your free
-            consultation.
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            Turn your vision into a reality. Contact us today for your free consultation.
           </p>
-          <Link to="/contact" className="btn-primary text-lg">
+          <Link to="/contact" className="btn-primary text-lg px-10 py-4 shadow-xl hover:shadow-2xl hover:-translate-y-1">
             Get in Touch
           </Link>
         </div>

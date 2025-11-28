@@ -7,7 +7,7 @@ import {
   FaInstagram,
   FaGithub,
 } from "react-icons/fa";
-import logo from "../../assets/logo.png"; // Replace with your transparent HD logo path
+import logo from "../../assets/gridspark-logo.png";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ const Footer = () => {
     setLoading(true);
     const formData = new FormData();
     formData.append("email", email);
-    formData.append("form_for", "newsletter"); // For filtering in Formspree
+    formData.append("form_for", "newsletter");
 
     try {
       const response = await fetch("https://formspree.io/f/mwpwzlng", {
@@ -41,189 +41,105 @@ const Footer = () => {
   };
 
   return (
-    <footer
-      className="
-        bg-[var(--color-footer-header-bg)]
-        text-[var(--color-footer-header-text)]
-        border-t border-[var(--color-footer-header-border)]
-        transition-colors duration-300
-      "
-    >
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        {/* Top Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-[var(--color-bg-alt)] text-gray-300 border-t border-[var(--color-border)] relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Section */}
-          <div>
-            <Link to="/" className="flex items-center mb-4">
-              <img src={logo} alt="Gridspark Logo" className="h-8" />
+          <div className="space-y-4">
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="Gridspark Logo" className="h-10 w-auto brand-logo" />
             </Link>
-            <p className="opacity-80">Brighter Tech. Smarter Businesses.</p>
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+              Empowering businesses with world-class engineering, AI innovation, and scalable cloud solutions.
+            </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Company */}
           <div>
-            <h3
-              className="
-                text-lg font-semibold mb-4
-                text-[var(--color-primary)]
-              "
-            >
-              Quick Links
-            </h3>
-            <ul className="space-y-2 opacity-85">
-              <li>
-                <Link to="/about" className="hover:text-[var(--color-primary)] transition">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/careers" className="hover:text-[var(--color-primary)] transition">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link to="/faq" className="hover:text-[var(--color-primary)] transition">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-[var(--color-primary)] transition">
-                  Contact
-                </Link>
-              </li>
+            <h3 className="text-white font-bold text-lg mb-4">Company</h3>
+            <ul className="space-y-2.5 text-sm text-gray-400">
+              <li><Link to="/about" className="hover:text-[var(--color-primary)] transition-colors">About Us</Link></li>
+              <li><Link to="/careers" className="hover:text-[var(--color-primary)] transition-colors">Careers</Link></li>
+              <li><Link to="/contact" className="hover:text-[var(--color-primary)] transition-colors">Contact Us</Link></li>
+              <li><Link to="/partner" className="hover:text-[var(--color-primary)] transition-colors">Partner Program</Link></li>
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Discover */}
           <div>
-            <h3
-              className="
-                text-lg font-semibold mb-4
-                text-[var(--color-primary)]
-              "
-            >
-              Legal
-            </h3>
-            <ul className="space-y-2 opacity-85">
-              <li>
-                <Link to="/privacy-policy" className="hover:text-[var(--color-primary)] transition">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/terms" className="hover:text-[var(--color-primary)] transition">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link to="/cookie-policy" className="hover:text-[var(--color-primary)] transition">
-                  Cookie Policy
-                </Link>
-              </li>
+            <h3 className="text-white font-bold text-lg mb-4">Discover</h3>
+            <ul className="space-y-2.5 text-sm text-gray-400">
+              <li><Link to="/solutions/services" className="hover:text-[var(--color-primary)] transition-colors">Services</Link></li>
+              <li><Link to="/industries" className="hover:text-[var(--color-primary)] transition-colors">Industries</Link></li>
+              <li><Link to="/expertise" className="hover:text-[var(--color-primary)] transition-colors">Expertise</Link></li>
+              <li><Link to="/products" className="hover:text-[var(--color-primary)] transition-colors">Products</Link></li>
+              <li><Link to="/solutions/portfolio" className="hover:text-[var(--color-primary)] transition-colors">Portfolio</Link></li>
+              <li><Link to="/solutions/ai-demos" className="hover:text-[var(--color-primary)] transition-colors">AI Demos</Link></li>
             </ul>
           </div>
 
           {/* Newsletter */}
           <div>
-            <h3
-              className="
-                text-lg font-semibold mb-4
-                text-[var(--color-primary)]
-              "
-            >
-              Stay Connected
-            </h3>
+            <h3 className="text-white font-bold text-lg mb-4">Stay Connected</h3>
             {success ? (
-              <div className="p-4 rounded-lg bg-[var(--color-primary)]/10 border border-[var(--color-primary)] text-[var(--color-footer-header-text)] text-center">
-                Thank you for joining Gridspark Vanguard!<br />
-                Check your inbox for exclusive breakthroughs and future-of-tech news.
+              <div className="p-4 rounded-lg bg-green-900/20 border border-green-800 text-green-400 text-sm">
+                Thanks for subscribing!
               </div>
             ) : (
-              <form
-                onSubmit={handleNewsletterSubmit}
-                className="transition-colors duration-300"
-              >
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  required
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  className="
-                    w-full px-4 py-2 rounded-lg mb-2
-                    bg-[var(--color-bg)]
-                    border border-[var(--color-footer-header-border)]
-                    text-[var(--color-footer-header-text)]
-                    focus:outline-none
-                    focus:ring-2 focus:ring-[var(--color-primary)]
-                  "
-                  disabled={loading}
-                />
-                <button type="submit" className="btn-primary w-full" disabled={loading}>
-                  {loading ? "Subscribing..." : "Subscribe"}
-                </button>
+              <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+                <p className="text-gray-400 text-sm">Get the latest tech insights.</p>
+                <div className="flex flex-col space-y-2">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    className="w-full px-4 py-2.5 rounded-md bg-[var(--color-bg)] border border-[var(--color-border)] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent text-sm"
+                    disabled={loading}
+                  />
+                  <button
+                    type="submit"
+                    className="w-full px-4 py-2.5 rounded-md bg-[var(--color-primary)] text-white font-semibold text-sm hover:bg-[var(--color-primary-hover)] transition-colors disabled:opacity-50"
+                    disabled={loading}
+                  >
+                    {loading ? "Subscribing..." : "Subscribe"}
+                  </button>
+                </div>
               </form>
             )}
           </div>
         </div>
 
         {/* Bottom Footer */}
-        <div
-          className="
-            mt-12 pt-8 flex flex-col sm:flex-row
-            justify-between items-center
-            border-t border-[var(--color-footer-header-border)]
-          "
-        >
-          <p className="text-sm text-center sm:text-left opacity-70 mb-4 sm:mb-0">
-            © {new Date().getFullYear()} Gridspark Solutions. All rights reserved.
-          </p>
+        <div className="mt-12 pt-6 border-t border-[var(--color-border)] flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+            <p className="text-gray-500 text-sm">
+              © {new Date().getFullYear()} Gridspark Solutions. All rights reserved.
+            </p>
+            <div className="flex gap-6 text-sm text-gray-500">
+              <Link to="/legal/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/legal/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link to="/legal/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
+            </div>
+          </div>
+
           {/* Social Links */}
-          <div className="flex space-x-5 text-xl">
-            <a
-              href="https://facebook.com"
-              className="hover:text-[var(--color-primary)] transition"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <FaFacebook />
+          <div className="flex space-x-6">
+            <a href="https://facebook.com" className="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FaFacebook size={20} />
             </a>
-            <a
-              href="https://x.com/GridsparkS"
-              className="hover:text-[var(--color-primary)] transition"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-            >
-              <FaTwitter />
+            <a href="https://x.com/GridsparkS" className="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <FaTwitter size={20} />
             </a>
-            <a
-              href="https://www.linkedin.com/in/gridsparksolutions/"
-              className="hover:text-[var(--color-primary)] transition"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin />
+            <a href="https://www.linkedin.com/in/gridsparksolutions/" className="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedin size={20} />
             </a>
-            <a
-              href="https://www.instagram.com/gridsparksolutions/"
-              className="hover:text-[var(--color-primary)] transition"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <FaInstagram />
+            <a href="https://www.instagram.com/gridsparksolutions/" className="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FaInstagram size={20} />
             </a>
-            <a
-              href="https://github.com/GridsparkSolutions"
-              className="hover:text-[var(--color-primary)] transition"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <FaGithub />
+            <a href="https://github.com/GridsparkSolutions" className="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <FaGithub size={20} />
             </a>
           </div>
         </div>

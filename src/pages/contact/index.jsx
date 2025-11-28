@@ -32,81 +32,73 @@ const Contact = () => {
   };
 
   return (
-    <section
-      className="
-        min-h-screen flex items-center
-        py-20
-        bg-[var(--color-bg)]
-        text-[var(--color-text)]
-        transition-colors duration-300
-      "
-    >
-      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center w-full">
+    <section className="min-h-screen w-full pt-24 pb-20 relative overflow-hidden flex items-center">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div className="absolute top-[-10%] left-[20%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse-glow" />
+        <div className="absolute bottom-[-10%] right-[20%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse-glow delay-1000" />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center w-full relative z-10">
         {/* Left info section */}
-        <div>
-          <h1 className="text-5xl font-extrabold mb-6 text-[var(--color-primary)]">
-            Let's Build Together
+        <div data-aos="fade-right">
+          <h1 className="text-5xl font-extrabold mb-6 text-white">
+            Let's Build <span className="text-gradient-blue">Together</span>
           </h1>
-          <p className="text-xl mb-6 max-w-lg opacity-85">
+          <p className="text-xl mb-8 max-w-lg text-gray-400 leading-relaxed">
             Have a project in mind or a question? Fill out the form or connect with us directly—one of our team members will reach out within 24 hours.
           </p>
-          <div className="card bg-[var(--color-card)] border border-[var(--color-border)] mb-7">
-            <h3 className="text-xl font-bold mb-1 text-[var(--color-primary)]">Contact Details</h3>
-            <p className="text-base opacity-85">
-              Email:{" "}
-              <a
-                href="mailto:hello@gridsparksolutions.com"
-                className="text-[var(--color-primary)] font-semibold focus:underline transition"
-              >
-                hello@gridsparksolutions.com
-              </a>
-            </p>
-            <p className="text-base opacity-85 mt-1">
-              Phone:{" "}
-              <span className="text-[var(--color-primary)] font-semibold">
-                +1 (945) 998-5494
-              </span>
-            </p>
-            <div className="text-xs opacity-60 mt-2">
-              Corporate, privacy, and legal inquiries welcomed.
+
+          <div className="glass-panel p-8 rounded-2xl border border-[var(--color-border)] mb-7">
+            <h3 className="text-xl font-bold mb-4 text-[var(--color-primary)] border-b border-[var(--color-border)] pb-2">Contact Details</h3>
+            <div className="space-y-4">
+              <p className="text-base text-gray-300 flex items-center">
+                <span className="w-20 text-gray-500 uppercase text-xs font-bold tracking-wider">Email</span>
+                <a
+                  href="mailto:hello@gridsparksolutions.com"
+                  className="text-white font-semibold hover:text-[var(--color-primary)] transition-colors"
+                >
+                  hello@gridsparksolutions.com
+                </a>
+              </p>
+              <p className="text-base text-gray-300 flex items-center">
+                <span className="w-20 text-gray-500 uppercase text-xs font-bold tracking-wider">Phone</span>
+                <span className="text-white font-semibold">
+                  +1 (945) 998-5494
+                </span>
+              </p>
             </div>
-            <div className="text-xs mt-1 opacity-60">
-              Response guaranteed within 1 business day.
+
+            <div className="mt-6 pt-4 border-t border-[var(--color-border)]">
+              <div className="text-xs text-gray-500 mb-1">
+                Corporate, privacy, and legal inquiries welcomed.
+              </div>
+              <div className="text-xs text-[var(--color-primary)] font-medium">
+                Response guaranteed within 1 business day.
+              </div>
             </div>
           </div>
         </div>
 
         {/* Right form section */}
-        <div>
+        <div data-aos="fade-left">
           {success ? (
-            <div
-              className="
-                p-8 rounded-lg text-center shadow-lg
-                bg-[var(--color-primary)]/10
-                border border-[var(--color-primary)]
-                text-[var(--color-text)]
-                transition
-              "
-            >
-              Thank you! Your message was received.<br />
-              Our team will contact you within 24 business hours.
+            <div className="glass-panel p-10 rounded-2xl text-center border border-[var(--color-primary)] shadow-[0_0_30px_rgba(59,130,246,0.2)]">
+              <div className="text-5xl mb-4">🎉</div>
+              <h3 className="text-2xl font-bold text-white mb-2">Message Received!</h3>
+              <p className="text-gray-300">
+                Thank you for reaching out.<br />
+                Our team will contact you within 24 business hours.
+              </p>
             </div>
           ) : (
             <form
               onSubmit={handleSubmit}
               method="POST"
-              className="
-                p-8 rounded-lg shadow-lg flex flex-col gap-6
-                bg-[var(--color-card)]
-                border border-[var(--color-border)]
-                transition-colors duration-300
-              "
+              className="glass-panel p-8 md:p-10 rounded-3xl shadow-2xl flex flex-col gap-6 border border-[var(--color-border)]"
             >
               <div>
-                <label
-                  htmlFor="name"
-                  className="block mb-2 text-sm font-semibold opacity-90"
-                >
+                <label htmlFor="name" className="block mb-2 text-sm font-bold text-gray-300 uppercase tracking-wider">
                   Full Name <span className="text-[var(--color-primary)]">*</span>
                 </label>
                 <input
@@ -114,24 +106,14 @@ const Contact = () => {
                   name="name"
                   id="name"
                   autoComplete="name"
-                  className="
-                    w-full p-3 border rounded
-                    bg-[var(--color-bg)]
-                    border-[var(--color-border)]
-                    text-[var(--color-text)]
-                    focus:outline-none
-                    focus:ring-2 focus:ring-[var(--color-primary)]
-                    transition
-                  "
+                  className="w-full p-4 rounded-xl bg-black/40 border border-[var(--color-border)] text-white placeholder-gray-500 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] transition-all"
+                  placeholder="John Doe"
                   disabled={loading}
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-sm font-semibold opacity-90"
-                >
+                <label htmlFor="email" className="block mb-2 text-sm font-bold text-gray-300 uppercase tracking-wider">
                   Work Email <span className="text-[var(--color-primary)]">*</span>
                 </label>
                 <input
@@ -140,24 +122,14 @@ const Contact = () => {
                   name="email"
                   id="email"
                   autoComplete="email"
-                  className="
-                    w-full p-3 border rounded
-                    bg-[var(--color-bg)]
-                    border-[var(--color-border)]
-                    text-[var(--color-text)]
-                    focus:outline-none
-                    focus:ring-2 focus:ring-[var(--color-primary)]
-                    transition
-                  "
+                  className="w-full p-4 rounded-xl bg-black/40 border border-[var(--color-border)] text-white placeholder-gray-500 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] transition-all"
+                  placeholder="john@company.com"
                   disabled={loading}
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="phone"
-                  className="block mb-2 text-sm font-semibold opacity-90"
-                >
+                <label htmlFor="phone" className="block mb-2 text-sm font-bold text-gray-300 uppercase tracking-wider">
                   Phone <span className="text-[var(--color-primary)]">*</span>
                 </label>
                 <input
@@ -166,24 +138,14 @@ const Contact = () => {
                   name="phone"
                   id="phone"
                   autoComplete="tel"
-                  className="
-                    w-full p-3 border rounded
-                    bg-[var(--color-bg)]
-                    border-[var(--color-border)]
-                    text-[var(--color-text)]
-                    focus:outline-none
-                    focus:ring-2 focus:ring-[var(--color-primary)]
-                    transition
-                  "
+                  className="w-full p-4 rounded-xl bg-black/40 border border-[var(--color-border)] text-white placeholder-gray-500 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] transition-all"
+                  placeholder="+1 (555) 000-0000"
                   disabled={loading}
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="company"
-                  className="block mb-2 text-sm font-semibold opacity-90"
-                >
+                <label htmlFor="company" className="block mb-2 text-sm font-bold text-gray-300 uppercase tracking-wider">
                   Company
                 </label>
                 <input
@@ -191,24 +153,14 @@ const Contact = () => {
                   name="company"
                   id="company"
                   autoComplete="organization"
-                  className="
-                    w-full p-3 border rounded
-                    bg-[var(--color-bg)]
-                    border-[var(--color-border)]
-                    text-[var(--color-text)]
-                    focus:outline-none
-                    focus:ring-2 focus:ring-[var(--color-primary)]
-                    transition
-                  "
+                  className="w-full p-4 rounded-xl bg-black/40 border border-[var(--color-border)] text-white placeholder-gray-500 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] transition-all"
+                  placeholder="Company Name"
                   disabled={loading}
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block mb-2 text-sm font-semibold opacity-90"
-                >
+                <label htmlFor="message" className="block mb-2 text-sm font-bold text-gray-300 uppercase tracking-wider">
                   How can we help? <span className="text-[var(--color-primary)]">*</span>
                 </label>
                 <textarea
@@ -216,21 +168,26 @@ const Contact = () => {
                   name="message"
                   id="message"
                   rows={4}
-                  className="
-                    w-full p-3 border rounded
-                    bg-[var(--color-bg)]
-                    border-[var(--color-border)]
-                    text-[var(--color-text)]
-                    focus:outline-none
-                    focus:ring-2 focus:ring-[var(--color-primary)]
-                    transition
-                  "
+                  className="w-full p-4 rounded-xl bg-black/40 border border-[var(--color-border)] text-white placeholder-gray-500 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] transition-all resize-none"
+                  placeholder="Tell us about your project..."
                   disabled={loading}
                 />
               </div>
 
-              <button type="submit" className="btn-primary w-full py-3 text-lg" disabled={loading}>
-                {loading ? "Sending..." : "Send Message"}
+              <button
+                type="submit"
+                className="btn-primary w-full py-4 text-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+                disabled={loading}
+              >
+                {loading ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </span>
+                ) : "Send Message"}
               </button>
             </form>
           )}

@@ -62,46 +62,33 @@ const industries = [
 ];
 
 const Portfolio = () => (
-  <div
-    className="
-      min-h-screen py-12 px-4
-      bg-[var(--color-bg)]
-      text-[var(--color-text)]
-      transition-colors duration-300
-    "
-  >
+  <div className="min-h-screen pt-24 pb-12 px-4 relative overflow-hidden">
+    {/* Background Elements */}
+    <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+      <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] animate-pulse-glow" />
+    </div>
+
     {/* Hero Section */}
-    <section className="max-w-3xl mx-auto text-center py-8">
-      <h1
-        className="
-          text-4xl md:text-5xl font-extrabold mb-3
-          text-[var(--color-primary)]
-        "
-      >
-        Refining Success, Project by Project
+    <section className="max-w-4xl mx-auto text-center py-12 relative z-10" data-aos="fade-up">
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+        Refining Success, <span className="text-gradient-blue">Project by Project</span>
       </h1>
-      <p className="text-lg md:text-xl opacity-85 mb-6">
-        Gridspark’s portfolio spans AI, automation, and digital innovation for
-        global enterprises.
+      <p className="text-lg md:text-xl text-gray-400 mb-6 max-w-2xl mx-auto">
+        Gridspark’s portfolio spans AI, automation, and digital innovation for global enterprises.
       </p>
     </section>
 
     {/* Stats Section */}
-    <section className="flex flex-wrap justify-center gap-8 mb-10">
+    <section className="flex flex-wrap justify-center gap-8 mb-16 relative z-10" data-aos="fade-up" data-aos-delay="100">
       {portfolioStats.map((stat) => (
         <div
           key={stat.label}
-          className="
-            rounded-xl shadow-lg p-6 w-52 text-center
-            bg-[var(--color-card)]
-            border border-[var(--color-border)]
-            transition-colors duration-300
-          "
+          className="glass-panel rounded-xl p-6 w-52 text-center hover:border-[var(--color-primary)] transition-colors"
         >
-          <div className="text-3xl font-bold mb-1 text-[var(--color-primary)] animate-bounce">
+          <div className="text-4xl font-bold mb-2 text-[var(--color-primary)]">
             {stat.value}
           </div>
-          <div className="uppercase tracking-wide text-sm opacity-85">
+          <div className="uppercase tracking-wide text-xs font-bold text-gray-500">
             {stat.label}
           </div>
         </div>
@@ -109,39 +96,31 @@ const Portfolio = () => (
     </section>
 
     {/* Projects Section */}
-    <section className="max-w-5xl mx-auto mb-14">
-      <h2
-        className="
-          text-2xl md:text-3xl font-bold mb-6
-          text-[var(--color-primary)]
-        "
-      >
+    <section className="max-w-6xl mx-auto mb-20 relative z-10">
+      <h2 className="text-3xl font-bold mb-8 text-center text-white" data-aos="fade-up">
         Featured Projects
       </h2>
       <div className="grid md:grid-cols-3 gap-8">
-        {projects.map((proj) => (
+        {projects.map((proj, idx) => (
           <div
             key={proj.name}
-            className="
-              rounded-lg shadow-md p-6
-              bg-[var(--color-card)]
-              border border-[var(--color-border)]
-              transition-all hover:-translate-y-1 hover:shadow-lg
-            "
+            className="card group"
+            data-aos="fade-up"
+            data-aos-delay={idx * 100}
           >
-            <div
-              className="
-                text-lg font-semibold mb-2
-                text-[var(--color-primary)]
-              "
-            >
+            <div className="text-xl font-bold mb-2 text-white group-hover:text-[var(--color-primary)] transition-colors">
               {proj.name}
             </div>
-            <div className="text-sm opacity-75 mb-2">{proj.sector}</div>
-            <p className="mb-3 opacity-85">{proj.desc}</p>
-            <ul className="list-disc ml-5 space-y-1 opacity-80 text-sm">
+            <div className="text-xs font-bold uppercase tracking-wider text-[var(--color-secondary)] mb-3">
+              {proj.sector}
+            </div>
+            <p className="mb-4 text-gray-400 text-sm leading-relaxed">{proj.desc}</p>
+            <ul className="space-y-2">
               {proj.highlights.map((h, idx) => (
-                <li key={idx}>{h}</li>
+                <li key={idx} className="flex items-start text-xs text-gray-500">
+                  <span className="text-[var(--color-primary)] mr-2">▹</span>
+                  {h}
+                </li>
               ))}
             </ul>
           </div>
@@ -150,34 +129,19 @@ const Portfolio = () => (
     </section>
 
     {/* Testimonials Section */}
-    <section className="max-w-2xl mx-auto mt-8 mb-12">
-      <h2
-        className="
-          text-xl font-bold text-center mb-4
-          text-[var(--color-primary)]
-        "
-      >
+    <section className="max-w-4xl mx-auto mt-8 mb-20 relative z-10" data-aos="fade-up">
+      <h2 className="text-3xl font-bold text-center mb-10 text-white">
         Client Testimonials
       </h2>
-      <div className="space-y-6">
+      <div className="grid md:grid-cols-2 gap-6">
         {testimonials.map((t, idx) => (
-          <div
-            key={idx}
-            className="
-              rounded-lg px-6 py-4 italic shadow
-              bg-[var(--color-card)]
-              border border-[var(--color-border)]
-              opacity-90
-            "
-          >
-            “{t.quote}”
-            <div
-              className="
-                font-medium mt-2 not-italic
-                text-[var(--color-primary)]
-              "
-            >
-              - {t.by}
+          <div key={idx} className="glass-panel rounded-xl p-8 relative">
+            <div className="text-4xl text-[var(--color-primary)] opacity-20 absolute top-4 left-4">“</div>
+            <p className="italic text-gray-300 mb-6 relative z-10 pt-2 text-center leading-relaxed">
+              {t.quote}
+            </p>
+            <div className="font-bold text-center text-[var(--color-primary)] text-sm">
+              — {t.by}
             </div>
           </div>
         ))}
@@ -185,13 +149,8 @@ const Portfolio = () => (
     </section>
 
     {/* Industry Highlights */}
-    <section className="max-w-3xl mx-auto pb-10">
-      <h2
-        className="
-          text-xl font-bold text-center mb-4
-          text-[var(--color-primary)]
-        "
-      >
+    <section className="max-w-4xl mx-auto pb-10 relative z-10" data-aos="fade-up">
+      <h2 className="text-2xl font-bold text-center mb-8 text-gray-400">
         Industries We Transform
       </h2>
       <div className="flex flex-wrap justify-center gap-3">
@@ -199,10 +158,9 @@ const Portfolio = () => (
           <span
             key={industry}
             className="
-              px-4 py-1 rounded-full text-sm
-              bg-[var(--color-card)]
-              border border-[var(--color-border)]
-              opacity-85 transition-colors
+              px-5 py-2 rounded-full text-sm font-medium
+              glass-panel text-gray-300 hover:text-white
+              hover:border-[var(--color-primary)] transition-all cursor-default
             "
           >
             {industry}

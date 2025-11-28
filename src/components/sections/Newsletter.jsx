@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 
-// Accent color from your design system
-const accentClass = "text-[var(--color-primary)]";
-
 const Newsletter = () => {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -12,7 +9,6 @@ const Newsletter = () => {
     setLoading(true);
 
     const formData = new FormData(e.target);
-    // Add a hidden field to identify newsletter submissions on Formspree dashboard
     formData.append("form_for", "newsletter");
 
     try {
@@ -35,44 +31,38 @@ const Newsletter = () => {
   };
 
   return (
-    <div
-      className="
-        max-w-md mx-auto text-center px-8 py-12 rounded-2xl
-        border-2 border-[var(--color-primary)]/25
-        shadow-2xl
-        bg-[var(--color-card)]/70
-        backdrop-blur-lg
-        transition-colors duration-300
-      "
-    >
-      <h2 className={`text-3xl font-extrabold mb-2 ${accentClass}`}>
-        Join the Gridspark Vanguard
+    <div className="glass-panel max-w-md mx-auto text-center px-8 py-10 rounded-2xl shadow-2xl relative overflow-hidden">
+      {/* Glow Effect */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
+
+      <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+        Stay Updated
       </h2>
-      <p className="mb-5 opacity-85 text-[var(--color-text)] text-lg">
-        Be the first to receive bleeding-edge AI drops, private research, and future-of-tech invites.
-        No spam—only the signal.
+      <p className="mb-8 text-gray-400 text-base">
+        Get the latest AI insights and product updates delivered to your inbox.
       </p>
       {success ? (
-        <div className="p-7 rounded-lg bg-[var(--color-primary)]/10 border border-[var(--color-primary)] text-[var(--color-text)] shadow-md transition">
-          Welcome to the AI Vanguard!<br />
-          Watch your inbox for exclusive tech reveals, early access tools, and community missions.
+        <div className="p-6 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400 shadow-sm transition">
+          <div className="font-semibold mb-1">Thanks for subscribing!</div>
+          <div className="text-sm">We'll keep you updated with our latest news.</div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} method="POST" className="flex flex-col gap-5">
+        <form onSubmit={handleSubmit} method="POST" className="flex flex-col gap-4">
           <input
             type="email"
             name="email"
-            placeholder="you@future.ai"
+            placeholder="Enter your email"
             required
             autoComplete="email"
             className="
-              p-3 border rounded w-full
+              px-4 py-3 border rounded-lg w-full
               border-[var(--color-border)]
               bg-[var(--color-bg)]
-              text-[var(--color-text)]
+              text-white
+              placeholder-gray-500
               focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]
-              focus:border-[var(--color-primary)]
-              text-lg
+              focus:border-transparent
+              text-base
               transition
             "
             disabled={loading}
@@ -81,17 +71,15 @@ const Newsletter = () => {
           <button
             type="submit"
             className="
-              w-full py-3 text-lg rounded-lg font-bold tracking-wide uppercase
-              bg-[var(--color-primary)] text-[var(--color-bg)]
-              shadow-xl active:scale-95 hover:brightness-110 transition
-              glow
+              w-full py-3 text-base rounded-lg font-semibold
+              btn-primary
             "
             disabled={loading}
           >
-            {loading ? "Enrolling..." : "Join Now"}
+            {loading ? "Subscribing..." : "Subscribe"}
           </button>
-          <div className="text-xs mt-2 opacity-60">
-            Zero spam. Only the future. Unsubscribe anytime.
+          <div className="text-xs text-gray-500">
+            Unsubscribe anytime. No spam, we promise.
           </div>
         </form>
       )}

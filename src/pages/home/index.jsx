@@ -15,14 +15,23 @@ import {
   FaCloud,
   FaCogs,
   FaFolderOpen,
-  FaSuitcase,
   FaBolt,
   FaBrain,
-  FaIndustry,
-  FaHandshake,
-  FaUserTie,
-  FaBook,
 } from "react-icons/fa";
+
+// Products data
+const products = [
+  {
+    name: "TinyKola – Restaurant AI RMS",
+    description:
+      "Revolutionize your restaurant with TinyKola's AI-powered Restaurant Management Suite. Lightning-fast order processing, digital menu updates, secure billing, and automated GST filing.",
+  },
+  {
+    name: "ChecKaro Home Inspection",
+    description:
+      "Hyderabad's most trusted home inspection platform. Certified professionals deploy German & US tech for comprehensive civil, electrical, plumbing, and interior audits.",
+  },
+];
 
 // Dashboard data
 const stats = [
@@ -49,89 +58,40 @@ const stats = [
 ];
 
 const recentActivities = [
-  { id: 1, text: "✔️ New project “Tinykola ERP” started (Oct 2025)" },
+  { id: 1, text: "✔️ New project 'Tinykola ERP' started (Oct 2025)" },
   { id: 2, text: "✔️ Last invoice paid (Sep 2025)" },
-  { id: 3, text: "✔️ “Web Design Sprint” completed (Aug 2025)" },
+  { id: 3, text: "✔️ 'Web Design Sprint' completed (Aug 2025)" },
 ];
 
-// Section card data for mobile/desktop grid
-const sectionCards = [
+// Quick links
+const quickLinks = [
   {
-    icon: <FaCogs className="text-3xl text-[var(--color-primary)]" />,
+    icon: <FaCogs className="text-4xl text-[var(--color-primary)]" />,
     title: "Services",
-    desc: "Comprehensive engineering, integration, and managed services tailored to accelerate digital transformation.",
+    desc: "Engineering, integration, and managed services.",
     link: "/solutions/services",
   },
   {
-    icon: <FaFolderOpen className="text-3xl text-[var(--color-primary)]" />,
+    icon: <FaFolderOpen className="text-4xl text-[var(--color-primary)]" />,
     title: "Portfolio",
-    desc: "See our proven track of projects—AI apps, data platforms, ML deployments, and cloud solutions.",
+    desc: "AI apps, data platforms, ML deployments.",
     link: "/solutions/portfolio",
   },
   {
-    icon: <FaSuitcase className="text-3xl text-[var(--color-primary)]" />,
-    title: "Case Studies",
-    desc: "Real-world customer success, value delivered, and innovation achieved with Gridspark’s help.",
-    link: "/solutions/case-studies",
-  },
-  {
-    icon: <FaBolt className="text-3xl text-[var(--color-primary)]" />,
+    icon: <FaBolt className="text-4xl text-[var(--color-primary)]" />,
     title: "AI Demos",
-    desc: "Explore live AI demos—see intelligent chatbots, computer vision, analytics, and more in action.",
+    desc: "Live chatbots, computer vision, analytics.",
     link: "/solutions/ai-demos",
   },
   {
-    icon: <FaBrain className="text-3xl text-[var(--color-primary)]" />,
+    icon: <FaBrain className="text-4xl text-[var(--color-primary)]" />,
     title: "AI Showcase",
-    desc: "Cutting-edge AI experiences, unique research and emerging use cases built by our team.",
+    desc: "Cutting-edge AI research and use cases.",
     link: "/solutions/ai-showcase",
-  },
-  {
-    icon: <FaBook className="text-3xl text-[var(--color-primary)]" />,
-    title: "Products",
-    desc: "Discover our range of innovative products, SaaS offerings, automation tools, and accelerators.",
-    link: "/products",
-  },
-  {
-    icon: <FaBook className="text-3xl text-[var(--color-primary)]" />,
-    title: "Resources",
-    desc: "Guides, e-books, technical blogs, knowledge base—empowering your technology journey.",
-    link: "/resources",
-  },
-  {
-    icon: <FaIndustry className="text-3xl text-[var(--color-primary)]" />,
-    title: "Industries",
-    desc: "Expertise across industries—finance, healthcare, retail, logistics, and more.",
-    link: "/industries",
-  },
-  {
-    icon: <FaUserTie className="text-3xl text-[var(--color-primary)]" />,
-    title: "About Us",
-    desc: "Learn about our mission, team, vision, and engineering culture.",
-    link: "/about",
-  },
-  {
-    icon: <FaUserTie className="text-3xl text-[var(--color-primary)]" />,
-    title: "Expertise",
-    desc: "Our core strengths—AI/ML, DevOps, Full-Stack Development, Cloud-native delivery.",
-    link: "/expertise",
-  },
-  {
-    icon: <FaHandshake className="text-3xl text-[var(--color-primary)]" />,
-    title: "Partner With Us",
-    desc: "Business collaboration, technology alliances, and growth together.",
-    link: "/partner",
-  },
-  {
-    icon: <FaUserTie className="text-3xl text-[var(--color-primary)]" />,
-    title: "Careers",
-    desc: "View open roles, our hiring process, and why you should work at Gridspark.",
-    link: "/careers",
   },
 ];
 
 const Home = () => {
-  // Initialize AOS animations on mount
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -141,604 +101,224 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-300">
-      {/* Optional Overlay Pattern */}
-      <div
-        className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Cg%20fill%3D%22%23cccccc%22%20fill-opacity%3D%220.04%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M0%2040L40%200H20L0%2020zM40%2040V20L20%2040z%22/%3E%3C/g%3E%3C/svg%3E')] opacity-30 pointer-events-none"
-      />
+    <div className="relative min-h-screen text-[var(--color-text)]">
 
-      <div className="relative z-10">
-        <div data-aos="fade-down">
-          <Hero />
-        </div>
+      {/* HERO SECTION */}
+      <Hero />
 
-        {/* -- SECTION GRID/SHORTCUTS for all pages -- */}
-        <section className="py-12 px-2 max-w-6xl mx-auto" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-9 text-[var(--color-primary)]">
-            Explore Everything Gridspark Offers
-          </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-7">
-            {sectionCards.map(({ icon, title, desc, link }, idx) => (
+      {/* PRODUCTS SECTION */}
+      <section id="products" className="section-padding relative z-10" data-aos="fade-up">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+              Our <span className="text-gradient-blue">Products</span>
+            </h2>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+              Robust software products, SaaS platforms, and automation tools designed to streamline your business.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
+            {products.map((product, idx) => (
               <div
                 key={idx}
-                className="bg-[var(--color-card)] shadow-lg rounded-xl border border-[var(--color-border)] p-6 flex flex-col h-full justify-between transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
-                data-aos="zoom-in"
+                className="card group hover:bg-white/5"
+                data-aos="fade-up"
                 data-aos-delay={idx * 100}
               >
-                <div>
-                  <div className="mb-3">{icon}</div>
-                  <h3 className="text-xl font-bold mb-2">{title}</h3>
-                  <div className="opacity-75 mb-5 text-base">{desc}</div>
-                </div>
-                <div>
-                  <Link
-                    to={link}
-                    className="inline-block mt-2 text-[var(--color-link)] hover:text-[var(--color-primary)] font-medium transition"
-                  >
-                    Learn More &rarr;
-                  </Link>
-                </div>
+                <h3 className="text-2xl font-bold mb-4 text-[var(--color-primary)] group-hover:text-white transition-colors">
+                  {product.name}
+                </h3>
+                <p className="text-gray-400 leading-relaxed text-base group-hover:text-gray-300">
+                  {product.description}
+                </p>
               </div>
             ))}
           </div>
-        </section>
 
-        {/* SERVICES */}
-        <section
-          id="services"
-          className="py-14 bg-[var(--color-bg)] border-t border-[var(--color-border)]"
-          data-aos="fade-right"
-        >
-          <div className="max-w-5xl mx-auto px-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-5">
-              Services
-            </h2>
-            <p className="mb-6 text-lg opacity-85">
-              Empower your business transformation with our end-to-end
-              engineering, consulting, managed IT, and AI-driven services. We
-              deliver everything from cloud migration to custom solution
-              development, system integration, AI/ML deployment, 24/7 support,
-              and more.
-            </p>
-            <ul className="list-disc px-7 mb-4">
-              <li>Custom Application Development & Integration</li>
-              <li>Cloud Strategy, Migration, & DevOps Automation</li>
-              <li>AI/ML Engineering and Data Science as a Service</li>
-              <li>System Architecture & API Enablement</li>
-              <li>
-                Platform-managed Services (SLA-driven support, monitoring,
-                scaling)
-              </li>
-            </ul>
-            <Link
-              to="/solutions/services"
-              className="btn-primary px-5 py-2 rounded font-semibold mt-4 inline-block"
-            >
-              View All Services
+          <div className="text-center">
+            <Link to="/products" className="btn-primary inline-flex items-center">
+              Explore All Products
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* PORTFOLIO */}
-        <section
-          id="portfolio"
-          className="py-14 bg-[var(--color-card)] border-t border-[var(--color-border)]"
-          data-aos="fade-left"
-        >
-          <div className="max-w-5xl mx-auto px-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-5">
-              Portfolio
-            </h2>
-            <p className="mb-6 text-lg opacity-85">
-              Explore a diverse portfolio—from enterprise AI chatbots and data
-              lakes to retail ML pilots and cloud automation pipelines. Our
-              work spans massive industries, rapid POCs, and long-term digital
-              partnerships.
-            </p>
-            <div className="grid md:grid-cols-2 gap-5">
-              <div className="rounded shadow border bg-[var(--color-bg)] p-4">
-                <b className="text-[var(--color-primary)]">
-                  AI Conversational Platform
-                </b>
-                <div className="opacity-70 text-sm mb-2">BFSI, 2025</div>
-                <p>
-                  AI-powered multilingual chatbot for client onboarding and live
-                  customer support.
-                  <br />
-                  <Link
-                    to="/solutions/portfolio"
-                    className="underline"
-                    tabIndex={0}
-                  >
-                    Details
-                  </Link>
-                </p>
-              </div>
-              <div className="rounded shadow border bg-[var(--color-bg)] p-4">
-                <b className="text-[var(--color-primary)]">
-                  Retail Demand Forecast
-                </b>
-                <div className="opacity-70 text-sm mb-2">Retail, 2025</div>
-                <p>
-                  Machine learning-powered SKU forecasting and supply
-                  optimization system.
-                  <br />
-                  <Link
-                    to="/solutions/portfolio"
-                    className="underline"
-                    tabIndex={0}
-                  >
-                    Details
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CASE STUDIES */}
-        <section
-          id="case-studies"
-          className="py-14 bg-[var(--color-bg)] border-t border-[var(--color-border)]"
-          data-aos="fade-right"
-        >
-          <div className="max-w-5xl mx-auto px-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-5">
-              Case Studies
-            </h2>
-            <p className="mb-6 text-lg opacity-85">
-              Discover how Gridspark delivers business value—from cost savings
-              and risk reduction to speed-to-market—helping our partners win in
-              their markets.
-            </p>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="rounded shadow border bg-[var(--color-card)] p-5">
-                <b className="text-[var(--color-primary)]">
-                  Financial Services: AI KYC Compliance
-                </b>
-                <div className="opacity-70 text-sm mb-2">
-                  Improvement in regulatory compliance time—54%
+      {/* QUICK LINKS / SOLUTIONS */}
+      <section className="section-padding relative z-10" data-aos="fade-up">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12">
+            Explore Our <span className="text-gradient-blue">Solutions</span>
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {quickLinks.map(({ icon, title, desc, link }, idx) => (
+              <Link
+                key={idx}
+                to={link}
+                className="card group flex flex-col items-center text-center hover:bg-blue-600/10 hover:border-blue-500/50"
+                data-aos="fade-up"
+                data-aos-delay={idx * 100}
+              >
+                <div className="mb-4 p-4 bg-white/5 rounded-full group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all duration-300">
+                  {icon}
                 </div>
-                <p>
-                  Automated identity verification with deep learning, OCR, and
-                  workflow optimization.
-                  <br />
-                  <Link
-                    to="/solutions/case-studies"
-                    className="underline"
-                    tabIndex={0}
-                  >
-                    Full Case
-                  </Link>
-                </p>
-              </div>
-              <div className="rounded shadow border bg-[var(--color-card)] p-5">
-                <b className="text-[var(--color-primary)]">
-                  Healthcare: Smart Document Processing
-                </b>
-                <div className="opacity-70 text-sm mb-2">
-                  Reduced onboarding time by 72%
+                <h3 className="text-lg font-bold mb-2 text-white group-hover:text-[var(--color-primary)] transition-colors">{title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="section-padding relative z-10" data-aos="fade-left">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 text-center">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+              Your End-to-End <span className="text-gradient-blue">AI Partner</span>
+            </h2>
+            <p className="max-w-3xl mx-auto text-lg text-gray-400 leading-relaxed">
+              From discovery to deployment, Gridspark drives successful AI
+              initiatives — combining data expertise, engineering rigor, and
+              cloud scalability.
+            </p>
+          </div>
+          <Features />
+        </div>
+      </section>
+
+      {/* Dashboard Snapshot Section */}
+      <section className="section-padding relative z-10" data-aos="fade-right">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
+              Gridspark <span className="text-gradient-blue">Insights</span>
+            </h2>
+            <p className="text-base text-gray-400 max-w-2xl mx-auto">
+              Real-time metrics showcasing the heartbeat of our ecosystem.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            {stats.map(({ label, value, icon }) => (
+              <div
+                key={label}
+                className="card flex flex-col items-center p-6 hover:bg-white/5"
+                data-aos="zoom-in"
+                data-aos-delay={50}
+              >
+                <div className="mb-3 text-3xl">{icon}</div>
+                <div className="text-3xl font-extrabold text-white mb-1">
+                  {value}
                 </div>
-                <p>
-                  Deployed NLP pipelines for insurance providers to extract and
-                  validate claim data.
-                  <br />
-                  <Link
-                    to="/solutions/case-studies"
-                    className="underline"
-                    tabIndex={0}
-                  >
-                    Full Case
-                  </Link>
-                </p>
+                <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">{label}</div>
               </div>
-            </div>
+            ))}
           </div>
-        </section>
 
-        {/* AI DEMOS */}
-        <section
-          id="ai-demos"
-          className="py-14 bg-[var(--color-card)] border-t border-[var(--color-border)]"
-          data-aos="fade-left"
-        >
-          <div className="max-w-5xl mx-auto px-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-5">
-              AI Demos
-            </h2>
-            <p className="mb-6 text-lg opacity-85">
-              See AI in action! Try our latest showcase demos: GPT chatbots,
-              document analyzers, AI summarizers, and more—all running live in
-              your browser.
-            </p>
-            <div className="grid md:grid-cols-2 gap-7">
-              <div className="p-4 rounded shadow border bg-[var(--color-bg)] hover:scale-105 transform transition-all duration-300">
-                <b>Intelligent Chatbot</b>
-                <p>
-                  Conversational assistant demo trained on proprietary company
-                  data.{" "}
-                  <Link to="/solutions/ai-demos" className="underline" tabIndex={0}>
-                    Try now
-                  </Link>
-                </p>
+          <div className="glass-panel rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            {/* Decorative circle */}
+            <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-[var(--color-primary)] rounded-full opacity-20 blur-3xl animate-pulse-glow"></div>
+
+            <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-white">Recent Activity</h3>
+                <ul className="space-y-3">
+                  {recentActivities.map(({ id, text }) => (
+                    <li key={id} className="flex items-center text-gray-300">
+                      <span className="mr-3 text-[var(--color-primary)]">●</span>
+                      {text.replace("✔️ ", "")}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="p-4 rounded shadow border bg-[var(--color-bg)] hover:scale-105 transform transition-all duration-300">
-                <b>Invoice Processor</b>
-                <p>
-                  Upload invoices—NLP pipeline extracts vendor, amount, and due
-                  dates.{" "}
-                  <Link to="/solutions/ai-demos" className="underline" tabIndex={0}>
-                    Try now
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* AI SHOWCASE */}
-        <section
-          id="ai-showcase"
-          className="py-14 bg-[var(--color-bg)] border-t border-[var(--color-border)]"
-          data-aos="fade-right"
-        >
-          <div className="max-w-5xl mx-auto px-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-5">
-              AI Showcase
-            </h2>
-            <p className="mb-8 text-lg opacity-85">
-              Explore our most innovative AI/ML work—prototypes, proof-of-concepts,
-              and next-gen research.
-            </p>
-            <div className="grid md:grid-cols-2 gap-7">
-              <div className="p-5 rounded-xl border shadow bg-[var(--color-card)] hover:shadow-lg transition-shadow duration-300">
-                <b>Private LLM Deployment</b>
-                <div className="text-base opacity-75">
-                  On-prem LLM for secure enterprise use.
-                </div>
-                <Link
-                  to="/solutions/ai-showcase"
-                  className="btn-primary mt-3 px-4 py-2 inline-block rounded font-semibold"
-                >
-                  See Showcase
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* PRODUCTS */}
-        <section
-          id="products"
-          className="py-14 bg-[var(--color-card)] border-t border-[var(--color-border)]"
-          data-aos="fade-left"
-        >
-          <div className="max-w-5xl mx-auto px-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-5">
-              Products
-            </h2>
-            <p className="mb-6 text-lg opacity-85">
-              Discover our robust portfolio of ready-to-use software products,
-              SaaS platforms, and automation tools. Streamline your business with
-              Gridspark's product lineup.
-            </p>
-            <div className="flex flex-wrap gap-5">
-              <div className="bg-[var(--color-bg)] rounded shadow p-5 border w-full sm:w-[45%] md:w-[30%] min-w-[180px] hover:scale-[1.03] transform transition duration-300">
-                <b>Huddle CRM</b>
-                <div className="opacity-75 text-sm mb-1">
-                  AI-powered lightweight CRM for fast-growing teams.
-                </div>
-              </div>
-              <div className="bg-[var(--color-bg)] rounded shadow p-5 border w-full sm:w-[45%] md:w-[30%] min-w-[180px] hover:scale-[1.03] transform transition duration-300">
-                <b>Vision AI</b>
-                <div className="opacity-75 text-sm mb-1">
-                  Computer vision pipeline for document/image analytics.
-                </div>
-              </div>
-            </div>
-            <Link
-              to="/products"
-              className="btn-primary mt-5 px-5 py-2 rounded font-semibold inline-block"
-            >
-              View All Products
-            </Link>
-          </div>
-        </section>
-
-        {/* RESOURCES */}
-        <section
-          id="resources"
-          className="py-14 bg-[var(--color-bg)] border-t border-[var(--color-border)]"
-          data-aos="fade-right"
-        >
-          <div className="max-w-5xl mx-auto px-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-5">
-              Resources
-            </h2>
-            <p className="mb-6 text-lg opacity-85">
-              Level up with our guides, whitepapers, technical blogs, tutorials,
-              and research content.
-            </p>
-            <div className="grid md:grid-cols-2 gap-7">
-              <div className="p-5 rounded border shadow bg-[var(--color-card)]">
-                <b>Guide: Deploy Your First AI Model</b>
-                <div className="opacity-70 mb-1">
-                  Step-by-step instructions for deploying ML models using
-                  Gridspark tools.
-                </div>
-                <Link to="/resources" className="underline" tabIndex={0}>
-                  See all resources
-                </Link>
-              </div>
-              <div className="p-5 rounded border shadow bg-[var(--color-card)]">
-                <b>Blog: Scaling Cloud Infrastructure</b>
-                <div className="opacity-70 mb-1">
-                  Lessons learned and best practices from real-world migrations.
-                </div>
-                <Link to="/resources" className="underline" tabIndex={0}>
-                  See all resources
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* INDUSTRIES */}
-        <section
-          id="industries"
-          className="py-14 bg-[var(--color-card)] border-t border-[var(--color-border)]"
-          data-aos="fade-left"
-        >
-          <div className="max-w-5xl mx-auto px-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-5">
-              Industries
-            </h2>
-            <p className="mb-6 text-lg opacity-85">
-              We bring deep industry expertise to every engagement—from FinTech
-              and Healthcare to Retail, Telecom, and Mobility.
-            </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-2">
-              <li>Finance & Banking</li>
-              <li>Healthcare</li>
-              <li>Retail & Commerce</li>
-              <li>Supply Chain & Logistics</li>
-              <li>Insurance</li>
-              <li>Mobility & Automotive</li>
-            </ul>
-            <Link
-              to="/industries"
-              className="btn-primary mt-5 px-5 py-2 rounded font-semibold inline-block"
-            >
-              See All Industries
-            </Link>
-          </div>
-        </section>
-
-        {/* ABOUT US */}
-        <section
-          id="about"
-          className="py-14 bg-[var(--color-bg)] border-t border-[var(--color-border)]"
-          data-aos="fade-right"
-        >
-          <div className="max-w-5xl mx-auto px-2 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-3">
-              About Us
-            </h2>
-            <p className="mb-6 text-lg opacity-85">
-              Gridspark delivers world-class engineering powered by passion,
-              purpose, and an obsession with client success. Our team blends
-              cross-disciplinary expertise, advanced technology stacks, and a
-              relentless work ethic to solve big problems.
-            </p>
-            <Link
-              to="/about"
-              className="btn-primary mt-3 px-5 py-2 rounded font-semibold inline-block"
-            >
-              Meet the Team
-            </Link>
-          </div>
-        </section>
-
-        {/* EXPERTISE */}
-        <section
-          id="expertise"
-          className="py-14 bg-[var(--color-card)] border-t border-[var(--color-border)]"
-          data-aos="fade-left"
-        >
-          <div className="max-w-5xl mx-auto px-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-5">
-              Expertise
-            </h2>
-            <p className="mb-6 text-lg opacity-85">
-              Our core strengths span software engineering, AI/ML, cloud-native,
-              automation, integration, and product delivery.
-            </p>
-            <ul className="flex flex-wrap gap-4 mb-5 text-base font-medium px-2">
-              <li>AI/ML & Data Science</li>
-              <li>Web & Mobile Apps</li>
-              <li>DevOps & Automation</li>
-              <li>API Engineering</li>
-              <li>Cloud Computing</li>
-              <li>Security & Compliance</li>
-            </ul>
-            <Link
-              to="/expertise"
-              className="btn-primary mt-2 px-5 py-2 rounded font-semibold inline-block"
-            >
-              Our Expertise
-            </Link>
-          </div>
-        </section>
-
-        {/* PARTNER WITH US */}
-        <section
-          id="partner"
-          className="py-14 bg-[var(--color-bg)] border-t border-[var(--color-border)]"
-          data-aos="fade-up"
-        >
-          <div className="max-w-5xl mx-auto px-2 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-4">
-              Partner With Us
-            </h2>
-            <p className="mb-7 text-lg opacity-85">
-              Join hands with Gridspark to build, innovate, and grow faster. We
-              form alliances with top technology companies, service providers,
-              and domain leaders worldwide.
-            </p>
-            <Link
-              to="/partner"
-              className="btn-primary mt-3 px-5 py-2 rounded font-semibold inline-block"
-            >
-              Become a Partner
-            </Link>
-          </div>
-        </section>
-
-        {/* CAREERS */}
-        <section
-          id="careers"
-          className="py-14 bg-[var(--color-card)] border-t border-[var(--color-border)]"
-          data-aos="fade-up"
-        >
-          <div className="max-w-4xl mx-auto px-2 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-3">
-              Careers at Gridspark
-            </h2>
-            <p className="mb-6 text-lg opacity-85">
-              Want to make an impact? We're always hiring engineers, designers,
-              and innovators obsessed with excellence!
-            </p>
-            <Link
-              to="/careers"
-              className="btn-primary mt-3 px-5 py-2 rounded font-semibold inline-block"
-            >
-              View Roles
-            </Link>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section
-          className="py-20 bg-[var(--color-card)] text-[var(--color-text)] border-t border-[var(--color-border)] transition-colors duration-300"
-          data-aos="fade-left"
-        >
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="mb-14 text-center">
-              <h2 className="text-5xl font-extrabold mb-4 text-[var(--color-primary)]">
-                Your End-to-End AI Partner
-              </h2>
-              <p className="max-w-3xl mx-auto text-lg md:text-xl mb-2 opacity-85">
-                From discovery to deployment, Gridspark drives successful AI
-                initiatives — combining data expertise, engineering rigor, and
-                cloud scalability.
-              </p>
-            </div>
-            <Features />
-          </div>
-        </section>
-
-        {/* Dashboard Snapshot Section */}
-        <section
-          className="py-20 bg-[var(--color-bg)] text-[var(--color-text)] border-t border-b border-[var(--color-border)] transition-colors duration-300"
-          data-aos="fade-right"
-        >
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-[var(--color-primary)] mb-3">
-                Gridspark Insights Dashboard
-              </h2>
-              <p className="text-lg opacity-85 max-w-2xl mx-auto">
-                A quick overview of ongoing projects, platform activity, and
-                deployment metrics — showcasing the heartbeat of Gridspark's
-                ecosystem.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-              {stats.map(({ label, value, icon }) => (
-                <div
-                  key={label}
-                  className="flex items-center p-6 shadow-lg rounded-xl border bg-[var(--color-card)] text-[var(--color-text)] transition transform hover:scale-105 duration-300"
-                  data-aos="zoom-in"
-                  data-aos-delay={50}
-                >
-                  <div className="mr-5 text-3xl">{icon}</div>
-                  <div>
-                    <div className="text-3xl font-bold text-[var(--color-text)]">
-                      {value}
-                    </div>
-                    <div className="opacity-70">{label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="p-6 shadow-lg rounded-xl border bg-[var(--color-card)] text-[var(--color-text)] transition">
-              <h3 className="text-xl font-semibold mb-4 text-[var(--color-primary)]">
-                Recent Activity
-              </h3>
-              <ul className="list-disc list-inside opacity-90">
-                {recentActivities.map(({ id, text }) => (
-                  <li key={id} className="mb-2">
-                    {text}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6 text-right">
+              <div className="text-center md:text-right">
+                <h4 className="text-xl font-bold mb-2 text-white">Ready to start?</h4>
+                <p className="text-gray-400 mb-6">Let's discuss your next big project.</p>
                 <Link
                   to="/contact"
-                  className="inline-block px-6 py-2 btn-primary text-base rounded-md font-semibold mt-2"
+                  className="btn-primary inline-block"
                 >
-                  Discuss Your Project →
+                  Discuss Your Project
                 </Link>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Why Gridspark AI */}
-        <section
-          className="pt-16 pb-4 bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-300"
-          data-aos="fade-up"
-        >
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4 text-[var(--color-primary)]">
-              Why Gridspark AI?
-            </h2>
-            <p className="font-medium mb-6 text-lg opacity-85">
-              We combine deep AI development and DevOps to build intelligent,
-              reliable, and scalable applications that deliver real results.
-            </p>
-            <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 text-lg font-semibold mb-10">
-              <div className="flex items-center justify-center">
-                <span className="text-[var(--color-primary)] mr-2 text-2xl">✓</span>
-                <span>Expertise in Large Language Models (LLMs)</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <span className="text-[var(--color-primary)] mr-2 text-2xl">✓</span>
-                <span>End-to-end AI project implementation</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <span className="text-[var(--color-primary)] mr-2 text-2xl">✓</span>
-                <span>Rapid deployment and continuous improvement</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <span className="text-[var(--color-primary)] mr-2 text-2xl">✓</span>
-                <span>Transparent process with measurable ROI</span>
+      {/* Why Gridspark AI */}
+      <section className="section-padding relative z-10" data-aos="fade-up">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+            Why <span className="text-gradient-blue">Gridspark AI?</span>
+          </h2>
+          <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto">
+            We combine deep AI development and DevOps to build intelligent,
+            reliable, and scalable applications that deliver real results.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
+            <div className="card group p-8 text-left hover:border-blue-500/50">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <FaBrain className="text-blue-400 text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-white mb-2 text-lg">LLM Expertise</h3>
+                  <p className="text-gray-400 text-sm">Deep knowledge in Large Language Models and Generative AI</p>
+                </div>
               </div>
             </div>
-            <div className="mt-2 mx-auto max-w-xl">
-              <Newsletter />
+
+            <div className="card group p-8 text-left hover:border-emerald-500/50">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <FaRobot className="text-emerald-400 text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-white mb-2 text-lg">End-to-End Solutions</h3>
+                  <p className="text-gray-400 text-sm">Complete AI implementation from concept to production scale</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="card group p-8 text-left hover:border-purple-500/50">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <FaBolt className="text-purple-400 text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-white mb-2 text-lg">Rapid Deployment</h3>
+                  <p className="text-gray-400 text-sm">Fast delivery with CI/CD pipelines and continuous improvement</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="card group p-8 text-left hover:border-orange-500/50">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <FaChartBar className="text-orange-400 text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-white mb-2 text-lg">Measurable Results</h3>
+                  <p className="text-gray-400 text-sm">Transparent process with clear ROI tracking and milestones</p>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
 
-        {/* Testimonials Section */}
-        <section
-          className="py-12 bg-[var(--color-card)] text-[var(--color-text)] border-t border-[var(--color-border)] transition"
-          data-aos="fade-up"
-        >
-          <Testimonials />
-        </section>
-      </div>
+          <div className="max-w-xl mx-auto">
+            <Newsletter />
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section-padding relative z-10" data-aos="fade-up">
+        <Testimonials />
+      </section>
     </div>
   );
 };

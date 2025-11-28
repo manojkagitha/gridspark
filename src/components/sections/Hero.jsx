@@ -3,96 +3,73 @@ import { Link } from "react-router-dom";
 import Sparkle from "react-sparkle";
 
 const Hero = () => (
-  <section
-    className="
-      relative
-      min-h-screen
-      transition-colors
-      duration-300
-      bg-[var(--color-bg)]
-      text-[var(--color-text)]
-    "
-  >
-    {/* Optional texture overlay */}
-    <div className="
-      absolute inset-0 
-      bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2Fsvg%22%3E%3Cg%20fill%3D%22%23cccccc%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M0%2040L40%200H20L0%2020zM40%2040V20L20%2040z%22/%3E%3C/g%3E%3C/svg%3E')]
-      pointer-events-none
-    "></div>
-
-    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
-      {/* Sparkle-animated headline */}
-      <div className="relative inline-block mb-4">
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight relative z-10">
-          Build What's Next with Generative AI
-        </h1>
-        {/* Sparkle animation (unobtrusive, premium style) */}
-        <span className="pointer-events-none absolute inset-0 flex justify-center items-center z-20">
-          <Sparkle
-            color="white"
-            count={22}
-            minSize={8}
-            maxSize={18}
-            fadeOutSpeed={24}
-            overflowPx={24}
-            newSparkleOnFadeOut
-            style={{ filter: "drop-shadow(0 0 8px #fff7)" }}
-          />
+  <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Badge */}
+      <div className="inline-block mb-6 animate-fade-down">
+        <span className="px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold tracking-wide uppercase backdrop-blur-md">
+          Next-Gen Software Engineering
         </span>
       </div>
 
-      <p className="max-w-3xl mx-auto text-lg md:text-xl mb-8 opacity-80">
-        We partner with businesses to build custom AI models, automate complex workflows, and unlock transformative growth.
-      </p>
-
-      {/* Latest Industry Announcements Section */}
-      <div className="max-w-2xl mx-auto bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 mb-10 opacity-95 shadow-md">
-        <h2 className="text-2xl font-bold mb-2 text-[var(--color-primary)]">
-          Latest News: AI-Assisted Development at GridSpark
-        </h2>
-        <p className="text-lg opacity-90 mb-2">
-          GridSpark is embracing the new frontier in app-building: AI-powered development, inspired by the latest innovations from Google I/O, Microsoft Build, and OpenAI.
-        </p>
-        <p className="text-md opacity-80">
-          Soon, you'll find hands-on guides and community updates spotlighting how advanced AI models, copilots, and multimodal technologies are transforming our workflow. We're empowering users to build, debug, and deploy smarter and faster—making AI a true partner in every step of your project.
-        </p>
+      {/* Headline */}
+      <div className="relative inline-block mb-8">
+        <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight leading-tight text-white animate-fade-up delay-100">
+          Building the Future <br />
+          with <span className="text-gradient-blue">Intelligent AI</span>
+        </h1>
+        <div className="absolute inset-0 pointer-events-none">
+          <Sparkle
+            color="#3B82F6"
+            count={20}
+            minSize={5}
+            maxSize={15}
+            fadeOutSpeed={15}
+            newSparkleOnFadeOut
+          />
+        </div>
       </div>
 
-      <div className="flex justify-center space-x-4">
+      {/* Subheadline */}
+      <p className="max-w-3xl mx-auto text-xl md:text-2xl mb-12 text-gray-400 font-light leading-relaxed animate-fade-up delay-200">
+        We engineer scalable AI solutions that automate workflows,
+        unlock data insights, and drive measurable business growth.
+      </p>
+
+      {/* Call to Action Buttons */}
+      <div className="flex flex-col sm:flex-row justify-center gap-6 animate-fade-up delay-300">
         <Link
           to="/solutions/ai-demos"
-          className="
-            inline-block
-            px-7 py-3
-            rounded-xl
-            font-semibold
-            text-lg
-            shadow
-            transition
-            bg-[var(--color-primary)]
-            text-white
-            hover:bg-[var(--color-primary-hover)]
-          "
+          className="btn-primary text-lg px-10 py-4"
         >
-          Explore AI Demos
+          View Solutions
         </Link>
         <Link
           to="/contact"
-          className="
-            inline-block
-            px-7 py-3
-            rounded-xl
-            font-semibold
-            text-lg
-            shadow
-            transition
-            bg-[var(--color-accent)]
-            text-white
-            hover:bg-[var(--color-primary)]
-          "
+          className="btn-outline text-lg px-10 py-4"
         >
-          Book a Consultation
+          Book Consultation
         </Link>
+      </div>
+
+      {/* Stats/Trust Indicators (Optional) */}
+      <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/5 pt-10 animate-fade-in delay-300">
+        <div>
+          <h4 className="text-3xl font-bold text-white">98%</h4>
+          <p className="text-sm text-gray-500 uppercase tracking-wider">Client Retention</p>
+        </div>
+        <div>
+          <h4 className="text-3xl font-bold text-white">50+</h4>
+          <p className="text-sm text-gray-500 uppercase tracking-wider">Enterprise Projects</p>
+        </div>
+        <div>
+          <h4 className="text-3xl font-bold text-white">24/7</h4>
+          <p className="text-sm text-gray-500 uppercase tracking-wider">Global Support</p>
+        </div>
+        <div>
+          <h4 className="text-3xl font-bold text-white">100%</h4>
+          <p className="text-sm text-gray-500 uppercase tracking-wider">On-Time Delivery</p>
+        </div>
       </div>
     </div>
   </section>

@@ -6,180 +6,312 @@
    Root Color Variables
    ============================== */
 
-/* Light Theme (default) */
 :root {
-  --color-bg: #ffffff;
-  --color-text: #0a0a0a;
-  --color-primary: #2563eb;
-  --color-primary-hover: #1e40af;
-  --color-accent: #111111;
-  --color-accent-hover: #000000;
-  --color-card: #f9fafb;
-  --color-border: #e5e7eb;
+  /* Deep Space Theme (MercDev / BairesDev Hybrid) */
+  --color-bg: #0B0D17;
+  /* Deepest Blue/Black */
+  --color-bg-alt: #111827;
+  /* Slightly lighter for sections */
 
-  /* DARK HEADER/FOOTER COLORS */
-  --color-footer-header-bg: #111111;
-  --color-footer-header-text: #f5f5f5;
-  --color-footer-header-border: #1f1f1f;
-}
+  --color-text: #F3F4F6;
+  /* White/Off-white */
+  --color-text-muted: #9CA3AF;
+  /* Gray-400 */
 
-/* Dark Theme */
-.dark {
-  --color-bg: #000000;
-  --color-text: #f5f5f5;
-  --color-primary: #60a5fa;
-  --color-primary-hover: #3b82f6;
-  --color-accent: #f5f5f5;
-  --color-accent-hover: #e5e5e5;
-  --color-card: #111111;
-  --color-border: #1f1f1f;
+  /* Neon Accents */
+  --color-primary: #3B82F6;
+  /* Bright Blue */
+  --color-primary-hover: #2563EB;
+  --color-primary-glow: rgba(59, 130, 246, 0.5);
 
-  /* Dark header & footer remain consistent */
-  --color-footer-header-bg: #0a0a0a;
-  --color-footer-header-text: #ffffff;
-  --color-footer-header-border: #1f1f1f;
+  --color-secondary: #8B5CF6;
+  /* Violet/Purple for gradients */
+
+  --color-accent: #10B981;
+  /* Emerald Green for success/highlights */
+
+  /* Glassmorphism */
+  --color-card: rgba(30, 41, 59, 0.4);
+  /* Translucent dark blue */
+  --color-border: rgba(255, 255, 255, 0.1);
+
+  /* Layout */
+  --navbar-height: 80px;
 }
 
 /* ==============================
-   Global Layout
+   Global Styles
    ============================== */
 
 body {
-  @apply font-sans transition-colors duration-300;
+  @apply font-sans antialiased;
   background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+  /* Prevent horizontal scroll from animations */
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold tracking-tight;
   color: var(--color-text);
 }
 
-/* Global Link Customization */
-@layer base {
-  a {
-    text-decoration: none;
-    color: var(--color-primary);
-    transition: color 0.25s ease, text-decoration 0.25s ease;
-  }
-  a:hover {
-    text-decoration: underline;
-    color: var(--color-primary-hover);
-  }
-  a:focus-visible {
-    outline: 2px solid var(--color-primary-hover);
-    outline-offset: 2px;
-  }
+p {
+  color: var(--color-text-muted);
 }
 
 /* ==============================
-   Reusable Components
+   Utility Classes
    ============================== */
 
-/* Enhanced Primary Button */
+/* Glass Panel Effect */
+.glass-panel {
+  background: var(--color-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+}
+
+/* Text Gradients */
+.text-gradient {
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(to right, #60A5FA, #3B82F6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Buttons */
 .btn-primary {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-primary-hover)
-  );
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
   color: white;
-  @apply px-6 py-3 rounded-lg font-semibold text-center shadow-lg 
-         transition duration-300 ease-in-out
-         transform hover:-translate-y-0.5 focus:outline-none;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  @apply px-8 py-3 rounded-full font-bold text-center shadow-lg shadow-blue-500/30 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-400;
 }
 
-.btn-primary:hover {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-hover),
-    var(--color-primary)
-  );
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.5);
-}
-
-.btn-primary:active {
-  transform: translateY(1px);
-  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.4);
-}
-
-/* Optional glowing animation for special buttons */
-.btn-primary.glow {
-  position: relative;
-  z-index: 1;
-}
-.btn-primary.glow::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-primary-hover)
-  );
-  border-radius: 0.75rem;
-  z-index: -1;
-  opacity: 0.4;
-  filter: blur(8px);
-  transition: opacity 0.3s ease, filter 0.3s ease;
-}
-.btn-primary.glow:hover::after {
-  opacity: 0.8;
-  filter: blur(12px);
-}
-
-.btn-secondary {
-  background-color: var(--color-accent);
-  color: white;
-  @apply px-6 py-3 rounded-lg font-semibold transition;
-}
-.btn-secondary:hover {
-  background-color: var(--color-accent-hover);
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  @apply px-8 py-3 rounded-full font-bold text-center backdrop-blur-sm transition-all duration-300 ease-in-out hover:bg-white/10 hover:border-white/30;
 }
 
 /* Cards */
 .card {
-  background-color: var(--color-card);
-  border: 1px solid var(--color-border);
-  @apply p-6 rounded-xl shadow-md hover:shadow-lg transition;
+  @apply glass-panel p-6 rounded-2xl transition-all duration-300 hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/10;
 }
 
 /* Section Padding */
 .section-padding {
-  @apply py-16 px-4 md:px-8 lg:px-16;
+  @apply py-20 px-4 md:px-8 lg:px-16;
 }
 
 /* ==============================
-   Header & Footer Styling
+   Animations
    ============================== */
 
-header,
-footer {
-  background-color: var(--color-footer-header-bg);
-  color: var(--color-footer-header-text);
-  border-top: 1px solid var(--color-footer-header-border);
-  border-bottom: 1px solid var(--color-footer-header-border);
-  @apply transition-colors duration-300;
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-header a,
-footer a {
-  color: var(--color-footer-header-text);
-  transition: color 0.25s ease;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-header a:hover,
-footer a:hover {
-  color: var(--color-primary);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-/* Optional social and icon hover states */
-footer svg,
-header svg {
-  color: var(--color-footer-header-text);
-  transition: color 0.25s ease;
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-footer svg:hover,
-header svg:hover {
-  color: var(--color-primary);
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px var(--color-primary-glow);
+  }
+
+  50% {
+    box-shadow: 0 0 40px var(--color-primary-glow);
+  }
+}
+
+.animate-fade-down {
+  animation: fadeDown 0.8s ease-out forwards;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite;
+}
+
+.animate-logo-pulse {
+  animation: logo-pulse 3s infinite;
+}
+
+.brand-logo {
+  /* mix-blend-mode: screen; - Removed as logo is now transparent */
+  filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.3));
+  transition: all 0.3s ease;
+  display: block;
+  max-height: 100%;
+  /* Ensure it fits container */
+}
+
+.brand-logo:hover {
+  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)) brightness(1.1);
+  transform: scale(1.05);
+}
+
+@keyframes logo-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+}
+
+/* Staggered delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Futuristic Dropdown Animation */
+.dropdown-menu-wrapper {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.group:hover .dropdown-menu-wrapper {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-menu {
+  transform-origin: top center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(10px) scale(0.95);
+
+  /* Premium Solid Look */
+  background: #0B0D17;
+  /* Deepest black/blue */
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  /* Subtle blue border */
+  box-shadow:
+    0 10px 40px -10px rgba(0, 0, 0, 0.9),
+    /* Deep drop shadow */
+    0 0 20px -5px rgba(59, 130, 246, 0.2);
+  /* Subtle blue glow */
+  border-radius: 16px;
+  padding: 8px;
+}
+
+.group:hover .dropdown-menu {
+  transform: translateY(0) scale(1);
+}
+
+.dropdown-item {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 2px;
+}
+
+.dropdown-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--color-primary);
+  transform: scaleY(0);
+  transition: transform 0.2s ease;
+  opacity: 0.8;
+}
+
+.dropdown-item:hover::before {
+  transform: scaleY(1);
+}
+
+.dropdown-item:hover {
+  background: rgba(59, 130, 246, 0.1);
+  /* Subtle blue tint */
+  padding-left: 1.5rem;
+  /* Distinct shift */
+  color: white;
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  /* Text glow */
 }

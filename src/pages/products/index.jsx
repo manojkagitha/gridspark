@@ -4,12 +4,12 @@ const products = [
   {
     name: "TinyKola – Restaurant AI RMS",
     description:
-      "Revolutionize your restaurant with TinyKola’s AI-powered Restaurant Management Suite. Tailored for busy Indian eateries, it offers lightning-fast order processing, digital menu updates, secure billing, and automated GST filing. Features include a user-friendly POS, role-based staff controls, real-time AI sales analytics, and seamless inventory management—all supported by offline reliability, advanced security, and 24/7 expert help. Whether you run a cloud kitchen, a fine-dine, or a quick-serve outlet, TinyKola unlocks actionable insights, maximizes margins, and ensures happier staff, delighted customers, and hassle-free compliance.",
+      "AI-powered Restaurant Management Suite for Indian eateries, combining fast billing, digital menus, role-based staff access, and real-time sales analytics to boost margins and simplify daily ops.",
   },
   {
     name: "ChecKaro Home Inspection",
     description:
-      "ChecKaro is Hyderabad’s most trusted home inspection platform. Our certified professionals deploy German & US tech—including wall scanners, borescopes, and thermal imaging—for comprehensive civil, electrical, plumbing, and interior audits. Get a detailed digital report with room-by-room images, defect highlights, and actionable recommendations. Choose from Basic to Premium plans—perfect for pre-purchase, post-renovation, rental, or move-in/move-out inspections. ChecKaro helps you catch hidden issues, save lakhs by rectifying defects early, and live absolutely stress-free. Clients rave about our transparent process, rigorous quality, and expert support—all for the price of peace of mind.",
+      "Hyderabad’s trusted home inspection service using advanced German and US tech to detect civil, electrical, and plumbing issues, delivering detailed digital reports and actionable fixes before you move in.",
   },
   {
     name: "AI Chat Assistant",
@@ -34,55 +34,35 @@ const products = [
 ];
 
 const Products = () => (
-  <section
-    className="
-      py-20 min-h-screen
-      bg-[var(--color-bg)]
-      text-[var(--color-text)]
-      transition-colors duration-300
-    "
-  >
-    <div className="max-w-6xl mx-auto px-4">
-      <h1
-        className="
-          text-5xl font-extrabold mb-8
-          text-[var(--color-primary)]
-        "
-      >
-        Our Products
+  <section className="min-h-screen w-full pt-24 pb-20 relative overflow-hidden">
+    {/* Background Elements */}
+    <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+      <div className="absolute top-[-10%] left-[20%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse-glow" />
+      <div className="absolute bottom-[-10%] right-[20%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse-glow delay-1000" />
+    </div>
+
+    <div className="max-w-6xl mx-auto px-4 relative z-10">
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-8 text-center" data-aos="fade-up">
+        Our <span className="text-gradient-blue">Products</span>
       </h1>
-      <p
-        className="
-          text-xl mb-12 max-w-3xl
-          opacity-85
-        "
-      >
-        Explore Gridspark Solutions’ suite of scalable products designed for
-        enterprise automation, AI insight, and cloud optimization. Each product
-        can be deployed, customized, and supported by our expert team.
+      <p className="text-xl mb-16 max-w-3xl mx-auto text-center text-gray-400 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+        Explore Gridspark Solutions’ suite of scalable products designed for enterprise automation, AI insight, and cloud optimization. Each product can be deployed, customized, and supported by our expert team.
       </p>
 
       <div className="grid md:grid-cols-2 gap-8">
-        {products.map(({ name, description }) => (
+        {products.map(({ name, description }, idx) => (
           <div
             key={name}
-            className="
-              p-8 rounded-xl shadow-lg flex flex-col
-              bg-[var(--color-card)]
-              border border-[var(--color-border)]
-              hover:shadow-2xl hover:-translate-y-1
-              transition-all duration-300
-            "
+            className="glass-panel p-8 rounded-2xl border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300 group"
+            data-aos="fade-up"
+            data-aos-delay={idx * 100}
           >
-            <h2
-              className="
-                text-2xl font-bold mb-2
-                text-[var(--color-primary)]
-              "
-            >
+            <h2 className="text-2xl font-bold mb-4 text-white group-hover:text-[var(--color-primary)] transition-colors">
               {name}
             </h2>
-            <p className="opacity-85">{description}</p>
+            <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+              {description}
+            </p>
           </div>
         ))}
       </div>

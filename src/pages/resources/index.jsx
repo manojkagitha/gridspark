@@ -33,60 +33,39 @@ const resources = [
 ];
 
 const Resources = () => (
-  <div
-    className="
-      min-h-screen flex flex-col
-      bg-[var(--color-bg)]
-      text-[var(--color-text)]
-      transition-colors duration-300
-    "
-  >
-    <section className="pt-8 pb-20 flex-shrink-0">
+  <div className="min-h-screen flex flex-col relative overflow-hidden">
+    {/* Background Elements */}
+    <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+      <div className="absolute top-[-10%] right-[20%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] animate-pulse-glow" />
+    </div>
+
+    <section className="pt-24 pb-20 flex-shrink-0 relative z-10">
       <div className="max-w-6xl mx-auto px-4">
-        <h1
-          className="
-            text-5xl font-extrabold mb-8
-            text-[var(--color-primary)]
-          "
-        >
-          Resources & Insights
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-8 text-center" data-aos="fade-up">
+          Resources & <span className="text-gradient-blue">Insights</span>
         </h1>
-        <p className="text-xl mb-12 max-w-3xl opacity-85">
-          Explore our collection of authoritative resources, including blogs,
-          whitepapers, webinars, and case studies designed to help you make
-          informed decisions around cloud, AI, and data analytics.
+        <p className="text-xl mb-16 max-w-3xl mx-auto text-center text-gray-400 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+          Explore our collection of authoritative resources, including blogs, whitepapers, webinars, and case studies designed to help you make informed decisions around cloud, AI, and data analytics.
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {resources.map(({ type, title, description, link }) => (
+          {resources.map(({ type, title, description, link }, idx) => (
             <a
               href={link}
               key={title}
-              className="
-                p-8 rounded-xl shadow-lg flex flex-col
-                bg-[var(--color-card)]
-                border border-[var(--color-border)]
-                hover:-translate-y-1 hover:shadow-2xl
-                transition-all duration-300
-              "
+              className="glass-panel p-8 rounded-2xl border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] hover:-translate-y-1 transition-all duration-300 group flex flex-col"
+              data-aos="fade-up"
+              data-aos-delay={idx * 100}
             >
-              <span
-                className="
-                  text-sm font-semibold mb-2
-                  text-[var(--color-primary)]
-                "
-              >
+              <span className="text-sm font-bold mb-3 text-[var(--color-secondary)] uppercase tracking-wider">
                 {type}
               </span>
-              <h2
-                className="
-                  text-2xl font-bold mb-2
-                  text-[var(--color-primary)]
-                "
-              >
+              <h2 className="text-2xl font-bold mb-4 text-white group-hover:text-[var(--color-primary)] transition-colors">
                 {title}
               </h2>
-              <p className="opacity-85">{description}</p>
+              <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+                {description}
+              </p>
             </a>
           ))}
         </div>
@@ -94,15 +73,7 @@ const Resources = () => (
     </section>
 
     {/* TechStackBanner: Full width, seamless into footer */}
-    <div
-      className="
-        w-full flex-shrink-0
-        bg-[var(--color-card)]
-        border-t border-[var(--color-border)]
-        transition-colors duration-300
-      "
-      style={{ marginTop: 0, marginBottom: 0 }}
-    >
+    <div className="w-full flex-shrink-0 border-t border-[var(--color-border)] bg-black/20 backdrop-blur-sm">
       <TechStackBanner />
     </div>
   </div>

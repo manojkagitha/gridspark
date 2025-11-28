@@ -30,147 +30,104 @@ const faqs = [
 
 function ChatbotDetails() {
   return (
-    <section
-      className="
-        min-h-screen w-full py-20
-        bg-[var(--color-bg)] text-[var(--color-text)]
-        transition-colors duration-300
-      "
-    >
-      <div className="max-w-6xl mx-auto px-4">
-        <h1
-          className="
-            text-5xl font-extrabold mb-8
-            text-[var(--color-primary)]
-          "
-        >
-          Gridspark AI Chatbot Solutions
+    <section className="min-h-screen w-full pt-24 pb-20 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div className="absolute top-[-10%] left-[20%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse-glow" />
+        <div className="absolute bottom-[-10%] right-[20%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse-glow delay-1000" />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-8 text-center" data-aos="fade-up">
+          Gridspark <span className="text-gradient-blue">AI Chatbot Solutions</span>
         </h1>
 
-        <p
-          className="
-            mb-12 text-lg max-w-3xl
-            opacity-85
-          "
-        >
-          Gridspark is transforming conversational AI for enterprises. Our
-          platform merges modern large language models with robust deployment,
-          compliance, and branded UX. From scalable customer chatbots to secured
-          internal systems, Gridspark solutions bring measurable outcomes.
+        <p className="mb-16 text-lg max-w-3xl mx-auto text-center text-gray-400 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+          Gridspark is transforming conversational AI for enterprises. Our platform merges modern large language models with robust deployment, compliance, and branded UX. From scalable customer chatbots to secured internal systems, Gridspark solutions bring measurable outcomes.
         </p>
 
-        {/* Enterprise features */}
-        <div className="mb-10">
-          <h2
-            className="
-              text-3xl font-semibold mb-3
-              text-[var(--color-primary)]
-            "
-          >
-            Enterprise‑Ready Features
-          </h2>
-          <ul className="list-disc pl-6 space-y-1 opacity-90">
-            <li>Multi-LLM architecture: OpenAI, Claude, OSS & custom models</li>
-            <li>Memory, analytics dashboard, and live monitoring</li>
-            <li>Omnichannel: Web, app, Slack, WhatsApp, Teams</li>
-            <li>Custom workflow triggers & backend integrations</li>
-            <li>White-label branding, voice and document workflows</li>
-            <li>Agent handoff, escalation, and moderation tools</li>
-            <li>No data retention by default; full compliance features</li>
-          </ul>
-        </div>
+        <div className="grid md:grid-cols-2 gap-12 mb-20">
+          {/* Enterprise features */}
+          <div className="glass-panel p-8 rounded-2xl border border-[var(--color-border)]" data-aos="fade-right">
+            <h2 className="text-2xl font-bold mb-6 text-white border-b border-[var(--color-border)] pb-4">
+              Enterprise‑Ready Features
+            </h2>
+            <ul className="space-y-3">
+              {[
+                "Multi-LLM architecture: OpenAI, Claude, OSS & custom models",
+                "Memory, analytics dashboard, and live monitoring",
+                "Omnichannel: Web, app, Slack, WhatsApp, Teams",
+                "Custom workflow triggers & backend integrations",
+                "White-label branding, voice and document workflows",
+                "Agent handoff, escalation, and moderation tools",
+                "No data retention by default; full compliance features"
+              ].map((item, i) => (
+                <li key={i} className="flex items-start text-gray-300">
+                  <span className="text-[var(--color-primary)] mr-3">✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        {/* Success Stories */}
-        <div className="mb-10">
-          <h2
-            className="
-              text-3xl font-semibold mb-3
-              text-[var(--color-primary)]
-            "
-          >
-            Recent Success Stories
-          </h2>
-          <ul className="list-disc pl-6 space-y-1 opacity-90">
-            <li>
-              Retail chatbot suite—36% faster support resolutions, 24/7
-              multilingual engagement across web and mobile apps.
-            </li>
-            <li>
-              Internal LLM assistant for a financial institution—SOC2-compliant,
-              saving 2000+ analyst hours annually.
-            </li>
-            <li>
-              HR onboarding assistant deployed in Microsoft Teams with live
-              document Q&A capabilities.
-            </li>
-          </ul>
+          {/* Success Stories */}
+          <div className="glass-panel p-8 rounded-2xl border border-[var(--color-border)]" data-aos="fade-left">
+            <h2 className="text-2xl font-bold mb-6 text-white border-b border-[var(--color-border)] pb-4">
+              Recent Success Stories
+            </h2>
+            <ul className="space-y-4">
+              <li className="flex items-start text-gray-300">
+                <span className="text-[var(--color-primary)] mr-3">▹</span>
+                <span>
+                  <strong className="text-white">Retail chatbot suite</strong> — 36% faster support resolutions, 24/7 multilingual engagement across web and mobile apps.
+                </span>
+              </li>
+              <li className="flex items-start text-gray-300">
+                <span className="text-[var(--color-primary)] mr-3">▹</span>
+                <span>
+                  <strong className="text-white">Internal LLM assistant</strong> — SOC2-compliant, saving 2000+ analyst hours annually for a financial institution.
+                </span>
+              </li>
+              <li className="flex items-start text-gray-300">
+                <span className="text-[var(--color-primary)] mr-3">▹</span>
+                <span>
+                  <strong className="text-white">HR onboarding assistant</strong> — Deployed in Microsoft Teams with live document Q&A capabilities.
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* FAQ Section */}
-        <div className="mb-10">
-          <h2
-            className="
-              text-3xl font-semibold mb-4
-              text-[var(--color-primary)]
-            "
-          >
-            FAQ
+        <div className="mb-20" data-aos="fade-up">
+          <h2 className="text-3xl font-bold mb-8 text-center text-white">
+            Frequently Asked Questions
           </h2>
-          <div className="space-y-6">
+          <div className="grid gap-6 max-w-4xl mx-auto">
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="
-                  rounded-xl border px-6 py-4 shadow-md
-                  bg-[var(--color-card)]
-                  border-[var(--color-border)]
-                  transition-colors duration-300
-                "
+                className="card group hover:border-[var(--color-primary)]"
               >
-                <h3
-                  className="
-                    font-bold mb-2
-                    text-[var(--color-primary)]
-                  "
-                >
+                <h3 className="font-bold mb-3 text-lg text-white group-hover:text-[var(--color-primary)] transition-colors">
                   {faq.question}
                 </h3>
-                <p className="opacity-85">{faq.answer}</p>
+                <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Call To Action */}
-        <div
-          className="
-            mt-12 pt-8 rounded-xl shadow
-            bg-[var(--color-card)]
-            border-t border-[var(--color-border)]
-            transition-colors duration-300
-          "
-        >
-          <h2
-            className="
-              text-3xl font-bold mb-4
-              text-[var(--color-primary)]
-            "
-          >
+        <div className="glass-panel p-10 rounded-3xl text-center border border-[var(--color-border)] max-w-4xl mx-auto" data-aos="zoom-in">
+          <h2 className="text-3xl font-bold mb-4 text-white">
             Want a Custom AI Chatbot Demo?
           </h2>
-          <p className="mb-4 opacity-85">
-            We deliver tailored proofs‑of‑concept using your data, branding, and
-            integrations. Every project includes onboarding, secure setup, and
-            transparent pricing.
+          <p className="mb-8 text-gray-300 max-w-2xl mx-auto">
+            We deliver tailored proofs‑of‑concept using your data, branding, and integrations. Every project includes onboarding, secure setup, and transparent pricing.
           </p>
 
-          <a
-            href="/contact"
-            className="
-              inline-block btn-primary text-lg
-              font-semibold mt-2
-            "
-          >
+          <a href="/contact" className="btn-primary text-lg px-8 py-3 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-block">
             Contact Gridspark AI Team
           </a>
         </div>

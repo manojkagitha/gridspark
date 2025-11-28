@@ -213,89 +213,68 @@ const AIDemos = () => {
   const handleDescClick = () => navigate(demos[activeDemo].route);
 
   return (
-    <section
-      className="
-        min-h-screen w-full py-20
-        bg-[var(--color-bg)] text-[var(--color-text)]
-        transition-colors duration-300
-      "
-    >
-      <div className="max-w-6xl mx-auto px-4">
-        <h1
-          className="
-            text-5xl font-extrabold mb-8
-            text-[var(--color-primary)]
-          "
-        >
-          Gridspark AI Innovations & Demo Showcase
-        </h1>
-        <p className="mb-12 max-w-3xl opacity-85">
-          Discover Gridspark’s AI breakthroughs — conversational agents, document automation, CRM scoring, and secure LLM deployments. All features adapt to your industry’s security and data needs.
-          <br />
-          <span className="text-sm opacity-70">
-            For a custom demo, <a
-              href="/contact"
-              className={noUnderline + " ml-1"}
-            >
-              contact us
-            </a>.
-          </span>
-        </p>
+    <section className="min-h-screen w-full pt-24 pb-20 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div className="absolute top-[-10%] left-[20%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse-glow" />
+        <div className="absolute bottom-[-10%] right-[20%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse-glow delay-1000" />
+      </div>
 
-        <div className="flex flex-wrap gap-4 mb-8">
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
+        <div className="text-center mb-12" data-aos="fade-up">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
+            Gridspark <span className="text-gradient-blue">AI Innovations</span> & Demo Showcase
+          </h1>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Discover Gridspark’s AI breakthroughs — conversational agents, document automation, CRM scoring, and secure LLM deployments. All features adapt to your industry’s security and data needs.
+          </p>
+          <p className="mt-4 text-sm text-gray-500">
+            For a custom demo, <a href="/contact" className="text-[var(--color-primary)] hover:underline">contact us</a>.
+          </p>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="100">
           {demos.map((demo, idx) => (
             <button
               key={demo.title}
               onClick={() => setActiveDemo(idx)}
-              className={`px-5 py-2 rounded-xl font-medium text-base shadow transition min-w-[180px]
-                ${
-                  activeDemo === idx
-                    ? "bg-[var(--color-primary)] text-[var(--color-bg)] shadow-md"
-                    : "bg-[var(--color-card)] text-[var(--color-text)] hover:text-[var(--color-primary)] hover:bg-[var(--color-border)]/40"
-                }`}
+              className={`
+                px-6 py-3 rounded-full font-bold text-sm transition-all duration-300
+                ${activeDemo === idx
+                  ? "bg-[var(--color-primary)] text-white shadow-[0_0_20px_rgba(59,130,246,0.5)] scale-105"
+                  : "bg-[var(--color-card)] text-gray-400 border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:text-white"}
+              `}
             >
               {demo.title}
             </button>
           ))}
         </div>
 
-        <div
-          className="
-            w-full px-10 py-10 rounded-2xl shadow-2xl mb-10 flex flex-col
-            bg-[var(--color-card)]
-            border border-[var(--color-border)]
-            transition-colors duration-300
-          "
-        >
-          <h2
-            className="
-              text-3xl font-bold mb-4
-              text-[var(--color-primary)]
-            "
-          >
-            {demos[activeDemo].title}
-          </h2>
+        <div className="glass-panel p-8 md:p-12 rounded-3xl border border-[var(--color-border)] shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl font-bold mb-6 text-white">
+                {demos[activeDemo].title}
+              </h2>
 
-          <div
-            className="
-              mb-4 font-semibold cursor-pointer
-              text-[var(--color-primary)]
-              transition
-            "
-            style={{ textDecoration: "none", fontWeight: 500 }}
-            onClick={handleDescClick}
-            role="button"
-            tabIndex={0}
-            title="Click to learn more"
-          >
-            {demos[activeDemo].description}
+              <div
+                className="mb-8 text-gray-300 leading-relaxed cursor-pointer hover:text-white transition-colors"
+                onClick={handleDescClick}
+              >
+                {demos[activeDemo].description}
+              </div>
+
+              <div className="text-gray-400 text-sm">
+                {demos[activeDemo].details}
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-center">
+              <div className="bg-black/30 p-6 rounded-xl border border-[var(--color-border)] backdrop-blur-sm">
+                {demos[activeDemo].demoComponent}
+              </div>
+            </div>
           </div>
-
-          <div className="mb-6">{demos[activeDemo].demoComponent}</div>
-
-          <hr className="my-6 border-[var(--color-border)]" />
-
-          <div className="opacity-90">{demos[activeDemo].details}</div>
         </div>
       </div>
     </section>
