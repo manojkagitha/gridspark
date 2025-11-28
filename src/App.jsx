@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CookieConsent from "react-cookie-consent";
+
 
 // Layout Components
 import Navbar from "./components/layout/Navbar";
@@ -82,59 +82,7 @@ function App() {
         {/* Fallback to Home for unknown routes */}
         <Route path="*" element={<Home />} />
       </Routes>
-      <CookieConsent
-        location="bottom"
-        buttonText="Accept All Cookies"
-        declineButtonText="Decline"
-        enableDeclineButton
-        style={{
-          background: "rgba(11, 13, 23, 0.98)",
-          padding: "20px 40px",
-          alignItems: "center",
-          boxShadow: "0 -4px 20px rgba(0, 0, 0, 0.3)",
-          backdropFilter: "blur(10px)"
-        }}
-        buttonStyle={{
-          background: "var(--color-primary)",
-          color: "#fff",
-          borderRadius: "8px",
-          fontWeight: "600",
-          padding: "10px 24px",
-          fontSize: "14px",
-          border: "none",
-          cursor: "pointer"
-        }}
-        declineButtonStyle={{
-          background: "transparent",
-          color: "#fff",
-          borderRadius: "8px",
-          fontWeight: "600",
-          padding: "10px 24px",
-          fontSize: "14px",
-          border: "1px solid rgba(255, 255, 255, 0.3)",
-          cursor: "pointer"
-        }}
-        contentStyle={{
-          flex: "1 1 300px",
-          margin: "0 20px 0 0"
-        }}
-        expires={365}
-      >
-        <span style={{ fontSize: "14px", lineHeight: "1.6" }}>
-          We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic.
-          By clicking "Accept All Cookies", you consent to our use of cookies.{" "}
-          <a
-            href="/cookie-policy"
-            style={{
-              color: "var(--color-primary)",
-              textDecoration: "underline",
-              fontWeight: "500"
-            }}
-          >
-            Learn more
-          </a>
-        </span>
-      </CookieConsent>
+
       <ChatWidget />
       <Footer />
     </Router>
