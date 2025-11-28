@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 // Existing sections/components
 import Hero from "../../components/sections/Hero";
 import Features from "../../components/sections/Features";
+import ExpertsSection from "../../components/sections/ExpertsSection";
 import Newsletter from "../../components/sections/Newsletter";
 import Testimonials from "../../components/sections/Testimonials";
 import {
@@ -314,6 +315,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Experts Section */}
+      <ExpertsSection />
 
       {/* Testimonials Section */}
       <section className="section-padding relative z-10" data-aos="fade-up">
