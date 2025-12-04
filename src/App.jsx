@@ -19,6 +19,10 @@ import Industries from "./pages/industries/index.jsx";
 import Products from "./pages/products/index.jsx";
 import Resources from "./pages/resources/index.jsx";
 
+// Blog
+import Blog from "./pages/blog/index.jsx";
+import BlogPost from "./pages/blog/BlogPost.jsx";
+
 // Solutions
 import Solutions from "./pages/solutions/index.jsx";
 import AIDemos from "./pages/solutions/AI-Demos.jsx";
@@ -60,6 +64,9 @@ function App() {
         <Route path="/industries" element={<Industries />} />
         <Route path="/products" element={<Products />} />
         <Route path="/resources" element={<Resources />} />
+        {/* Blog routes */}
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         {/* Solutions main and subpages */}
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/solutions/ai-demos" element={<AIDemos />} />

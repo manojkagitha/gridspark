@@ -26,11 +26,17 @@ const products = [
     name: "TinyKola – Restaurant AI RMS",
     description:
       "Revolutionize your restaurant with TinyKola's AI-powered Restaurant Management Suite. Lightning-fast order processing, digital menu updates, secure billing, and automated GST filing.",
+    url: "https://www.tinykola.com/",
+    logo: "/tinykola-logo.svg",
+    badge: "🍽️ TinyKola"
   },
   {
     name: "ChecKaro Home Inspection",
     description:
       "Hyderabad's most trusted home inspection platform. Certified professionals deploy German & US tech for comprehensive civil, electrical, plumbing, and interior audits.",
+    url: "https://checkaro.in/",
+    logo: "https://checkaro.in/favicon.ico",
+    badge: "🏠 ChecKaro"
   },
 ];
 
@@ -121,24 +127,54 @@ const Home = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
             {products.map((product, idx) => (
-              <div
+              <a
                 key={idx}
-                className="card group hover:bg-white/5"
+                href={product.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card group hover:bg-white/5 hover:border-[var(--color-primary)]/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[var(--color-primary)]/20 touch-manipulation active:scale-95"
                 data-aos="fade-up"
                 data-aos-delay={idx * 100}
               >
+                {/* Product Logo */}
+                <div className="mb-6 flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center overflow-hidden p-2 shadow-lg">
+                    <img 
+                      src={product.logo} 
+                      alt={`${product.name} logo`}
+                      className="w-full h-full object-contain"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'block';
+                      }}
+                    />
+                    <span className="text-2xl" style={{display: 'none'}}>{product.badge.split(' ')[0]}</span>
+                  </div>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white text-sm font-bold shadow-lg">
+                    {product.badge.split(' ').slice(1).join(' ')}
+                  </span>
+                </div>
+                
                 <h3 className="text-2xl font-bold mb-4 text-[var(--color-primary)] group-hover:text-white transition-colors">
                   {product.name}
                 </h3>
-                <p className="text-gray-400 leading-relaxed text-base group-hover:text-gray-300">
+                <p className="text-gray-400 leading-relaxed text-base group-hover:text-gray-300 mb-4">
                   {product.description}
                 </p>
-              </div>
+                
+                {/* Visit Link */}
+                <div className="flex items-center gap-2 text-[var(--color-primary)] group-hover:gap-3 transition-all mt-auto">
+                  <span className="text-sm font-semibold">Visit Website</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </div>
+              </a>
             ))}
           </div>
 
           <div className="text-center">
-            <Link to="/products" className="btn-primary inline-flex items-center">
+            <Link to="/products" className="btn-primary inline-flex items-center touch-manipulation active:scale-95">
               Explore All Products
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </Link>

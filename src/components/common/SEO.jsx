@@ -22,7 +22,7 @@ export default function SEO({
 }) {
   const siteName = 'GridSpark Solutions';
   const fullTitle = `${title} | ${siteName}`;
-  const currentUrl = canonical || window.location.href;
+  const currentUrl = canonical || (typeof window !== 'undefined' ? window.location.href : 'https://www.gridsparksolutions.com');
 
   return (
     <Helmet>

@@ -30,6 +30,7 @@ const Navbar = () => {
       ],
     },
     { path: "/resources", label: "Resources" },
+    { path: "/blog", label: "Blog" },
     {
       label: "Company",
       subMenu: [
