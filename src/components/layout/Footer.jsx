@@ -73,6 +73,7 @@ const Footer = () => {
               <li><Link to="/industries" className="hover:text-[var(--color-primary)] transition-colors touch-manipulation block py-1">Industries</Link></li>
               <li><Link to="/expertise" className="hover:text-[var(--color-primary)] transition-colors touch-manipulation block py-1">Expertise</Link></li>
               <li><Link to="/products" className="hover:text-[var(--color-primary)] transition-colors touch-manipulation block py-1">Products</Link></li>
+              <li><Link to="/blog" className="hover:text-[var(--color-primary)] transition-colors touch-manipulation block py-1">Blog</Link></li>
               <li><Link to="/solutions/portfolio" className="hover:text-[var(--color-primary)] transition-colors touch-manipulation block py-1">Portfolio</Link></li>
               <li><Link to="/solutions/ai-demos" className="hover:text-[var(--color-primary)] transition-colors touch-manipulation block py-1">AI Demos</Link></li>
             </ul>
