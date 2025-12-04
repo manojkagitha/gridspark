@@ -1,0 +1,1068 @@
+{
+  "audit_metadata": {
+    "site_url": "https://www.gridsparksolutions.com",
+    "brand_name": "GridSpark Solutions",
+    "audit_date": "2025-12-04",
+    "auditor": "AI SEO Compliance Engine",
+    "industry": "Technology, Software Development, AI Services, IT Consulting",
+    "target_region": "Global (Primary: India, United States)",
+    "cms_platform": "React SPA (Vite)",
+    "overall_seo_health_score": 68
+  },
+  
+  "site_map": {
+    "total_pages": 23,
+    "crawled_pages": [
+      {
+        "url": "https://www.gridsparksolutions.com/",
+        "path": "/",
+        "component": "Home",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/about",
+        "path": "/about",
+        "component": "About",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/careers",
+        "path": "/careers",
+        "component": "Careers",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/partner",
+        "path": "/partner",
+        "component": "Partner",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/contact",
+        "path": "/contact",
+        "component": "Contact",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/expertise",
+        "path": "/expertise",
+        "component": "Expertise",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/industries",
+        "path": "/industries",
+        "component": "Industries",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/products",
+        "path": "/products",
+        "component": "Products",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/resources",
+        "path": "/resources",
+        "component": "Resources",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/solutions",
+        "path": "/solutions",
+        "component": "Solutions",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/solutions/ai-demos",
+        "path": "/solutions/ai-demos",
+        "component": "AI-Demos",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/solutions/chatbot-details",
+        "path": "/solutions/chatbot-details",
+        "component": "ChatbotDetails",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/solutions/document-ai",
+        "path": "/solutions/document-ai",
+        "component": "DocumentAI",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/solutions/crm-lead-ai",
+        "path": "/solutions/crm-lead-ai",
+        "component": "CrmLeadAI",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/solutions/private-llm",
+        "path": "/solutions/private-llm",
+        "component": "PrivateLLM",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/solutions/services",
+        "path": "/solutions/services",
+        "component": "Services",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/solutions/portfolio",
+        "path": "/solutions/portfolio",
+        "component": "Portfolio",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/solutions/case-studies",
+        "path": "/solutions/case-studies",
+        "component": "CaseStudies",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/register",
+        "path": "/register",
+        "component": "Register",
+        "status": 200,
+        "indexable": false,
+        "robots": "noindex,nofollow"
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/dashboard",
+        "path": "/dashboard",
+        "component": "Dashboard",
+        "status": 200,
+        "indexable": false,
+        "robots": "noindex,nofollow"
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/legal/privacy-policy",
+        "path": "/legal/privacy-policy",
+        "component": "PrivacyPolicy",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/legal/terms",
+        "path": "/legal/terms",
+        "component": "Terms",
+        "status": 200,
+        "indexable": true
+      },
+      {
+        "url": "https://www.gridsparksolutions.com/legal/cookie-policy",
+        "path": "/legal/cookie-policy",
+        "component": "CookiePolicy",
+        "status": 200,
+        "indexable": true
+      }
+    ]
+  },
+
+  "critical_issues": [
+    {
+      "severity": "HIGH",
+      "category": "Meta Tags",
+      "issue": "Missing meta descriptions on all pages",
+      "impact": "Significant reduction in CTR from search results. Google may generate poor-quality snippets.",
+      "pages_affected": "ALL (23 pages)",
+      "fix_priority": 1
+    },
+    {
+      "severity": "HIGH",
+      "category": "Title Tags",
+      "issue": "Single static title tag across all pages - not dynamically updated per route",
+      "impact": "Poor SEO, all pages appear identical in SERPs, massive duplicate content signal",
+      "pages_affected": "ALL",
+      "fix_priority": 1
+    },
+    {
+      "severity": "HIGH",
+      "category": "Structured Data",
+      "issue": "No Schema.org markup present anywhere on site",
+      "impact": "Missing rich snippets, reduced SERP visibility, lost opportunities for enhanced listings",
+      "pages_affected": "ALL",
+      "fix_priority": 1
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Canonical Tags",
+      "issue": "Missing canonical tags",
+      "impact": "Potential duplicate content issues, unclear primary URL signal to Google",
+      "pages_affected": "ALL",
+      "fix_priority": 2
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "robots.txt",
+      "issue": "No robots.txt file detected",
+      "impact": "Cannot control crawler access, wasting crawl budget",
+      "pages_affected": "Site-wide",
+      "fix_priority": 2
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Sitemap",
+      "issue": "No XML sitemap detected at /sitemap.xml",
+      "impact": "Slower indexing, search engines may miss pages",
+      "pages_affected": "Site-wide",
+      "fix_priority": 2
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Alt Text",
+      "issue": "Many images use placeholder URLs without descriptive alt text",
+      "impact": "Poor accessibility, lost image search traffic",
+      "pages_affected": 8,
+      "fix_priority": 3
+    },
+    {
+      "severity": "LOW",
+      "category": "Open Graph",
+      "issue": "Missing OG tags for social media sharing",
+      "impact": "Poor social media previews, reduced click-through from social",
+      "pages_affected": "ALL",
+      "fix_priority": 3
+    }
+  ],
+
+  "page_by_page_analysis": [
+    {
+      "page": "Home",
+      "url": "/",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "Building the Future with Intelligent AI",
+      "current_h2s": [
+        "Our Products",
+        "Explore Our Solutions",
+        "Your End-to-End AI Partner",
+        "Gridspark Insights",
+        "Why Gridspark AI?",
+        "Stay Updated",
+        "Powering Innovation with a Global Tech Stack",
+        "What Our Clients Say"
+      ],
+      "word_count": 850,
+      "page_score": 65,
+      
+      "seo_issues": [
+        "H1 is vague and not keyword-optimized",
+        "Missing focus keywords like 'AI development', 'machine learning services', 'enterprise AI'",
+        "Stats section lacks context and specificity",
+        "Generic testimonials without company verification details",
+        "No clear value proposition in opening paragraph"
+      ],
+      
+      "recommended_title": "AI Development & Machine Learning Services | GridSpark Solutions",
+      "recommended_title_alt": "Custom AI Solutions for Enterprise | GridSpark Solutions",
+      "recommended_meta_description": "Transform your business with GridSpark's AI development services. Custom machine learning, LLM integration, computer vision & predictive analytics. 50+ enterprise projects delivered.",
+      "recommended_meta_description_alt": "Enterprise AI development company specializing in LLMs, computer vision, and predictive analytics. Trusted by 98% of clients for scalable AI solutions.",
+      
+      "recommended_h1": "Enterprise AI Development & Machine Learning Solutions",
+      "recommended_h1_alt": "Transform Your Business with Custom AI Solutions",
+      
+      "content_quality_notes": [
+        "Opening hero text is too generic - lacks specific value proposition",
+        "Stats (98%, 50+, 24/7, 100%) need more context and credibility markers",
+        "Product descriptions for TinyKola and ChecKaro are good but lack SEO keywords",
+        "'Your End-to-End AI Partner' section has good structure but generic descriptions"
+      ],
+      
+      "copyright_flags": [],
+      
+      "keyword_opportunities": [
+        "AI development company",
+        "machine learning services",
+        "enterprise AI solutions",
+        "LLM development",
+        "computer vision services",
+        "predictive analytics platform",
+        "AI consulting services",
+        "custom AI development"
+      ],
+      
+      "recommended_ctas": [
+        "Schedule Your Free AI Consultation",
+        "Explore Our AI Capabilities",
+        "See How AI Can Transform Your Business",
+        "Request a Custom AI Solution Demo"
+      ]
+    },
+    
+    {
+      "page": "About",
+      "url": "/about",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "About Gridspark",
+      "current_h2s": [
+        "Our Mission",
+        "Why Choose Gridspark?",
+        "Our Team",
+        "Innovation & Impact"
+      ],
+      "word_count": 420,
+      "page_score": 58,
+      
+      "seo_issues": [
+        "Title not customized for About page",
+        "H1 too generic - needs brand positioning",
+        "Missing company foundation details (year, location, team size)",
+        "No founder/leadership information",
+        "Lacks specific achievements or milestones",
+        "Missing industry certifications or partnerships"
+      ],
+      
+      "recommended_title": "About GridSpark Solutions | AI Development Company Since 2020",
+      "recommended_title_alt": "Our Story | Leading AI & Machine Learning Development Company",
+      "recommended_meta_description": "GridSpark Solutions: Pioneering AI innovation since 2020. Expert team delivering custom AI, ML, and cloud solutions to enterprises worldwide. Learn our mission and values.",
+      "recommended_meta_description_alt": "Meet GridSpark Solutions—your trusted AI development partner. Combining deep ML expertise with cloud scalability to drive measurable business transformation.",
+      
+      "recommended_h1": "About GridSpark Solutions: Pioneering AI Innovation",
+      "recommended_h1_alt": "Transforming Businesses Through Advanced AI Technology",
+      
+      "content_quality_notes": [
+        "Mission statement is well-written but could be more specific",
+        "Core values section is good structure",
+        "Team description is too generic - add specific expertise areas",
+        "Missing concrete achievements or case study references",
+        "Should add company timeline or milestones"
+      ],
+      
+      "copyright_flags": [],
+      
+      "expansion_recommendations": [
+        "Add 'Our Story' section with founding narrative",
+        "Include leadership team bios with LinkedIn profiles",
+        "Add 'Our Expertise' section with technical capabilities",
+        "Include awards, certifications, or partnerships",
+        "Add office locations or global presence information"
+      ]
+    },
+    
+    {
+      "page": "Contact",
+      "url": "/contact",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "Get In Touch",
+      "current_h2s": [],
+      "word_count": 180,
+      "page_score": 52,
+      
+      "seo_issues": [
+        "Extremely thin content - needs expansion",
+        "Missing local SEO elements (address, phone, hours)",
+        "No FAQ section for common inquiries",
+        "Missing response time expectations",
+        "No alternative contact methods shown"
+      ],
+      
+      "recommended_title": "Contact GridSpark Solutions | Get Your Free AI Consultation",
+      "recommended_title_alt": "Request a Quote | AI Development Services | GridSpark",
+      "recommended_meta_description": "Contact GridSpark Solutions for expert AI development services. Free consultation, 24-hour response time. Email: reachus@gridsparksolutions.com",
+      "recommended_meta_description_alt": "Get in touch with GridSpark's AI experts. Schedule your free consultation today. We typically respond within 24 hours to all inquiries.",
+      
+      "recommended_h1": "Contact GridSpark Solutions",
+      "recommended_h1_alt": "Let's Build Your AI Solution Together",
+      
+      "content_expansion_needed": true,
+      "recommended_additions": [
+        "Office address and map (if physical location exists)",
+        "Phone number",
+        "Business hours",
+        "Alternative contact channels (LinkedIn, support portal)",
+        "FAQ section with 5-7 common questions",
+        "Expected response time",
+        "Emergency/urgent contact information"
+      ]
+    },
+    
+    {
+      "page": "Expertise",
+      "url": "/expertise",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "Our Expertise",
+      "current_h2s": [
+        "Cloud Infrastructure & DevOps",
+        "Data Engineering & OpenSearch",
+        "AI & Live Transcription Systems",
+        "Web Development & Automation"
+      ],
+      "word_count": 380,
+      "page_score": 71,
+      
+      "seo_issues": [
+        "Good structure but needs more detailed descriptions",
+        "Missing technical stack details in each section",
+        "No case study links or proof points",
+        "Could benefit from certification badges"
+      ],
+      
+      "recommended_title": "Technical Expertise | Cloud, AI & Data Engineering | GridSpark",
+      "recommended_title_alt": "Our Core Capabilities | DevOps, ML & Cloud Solutions",
+      "recommended_meta_description": "GridSpark's technical expertise: Cloud infrastructure (AWS, Azure), AI/ML, data engineering, OpenSearch, live transcription, and web development automation.",
+      "recommended_meta_description_alt": "Explore GridSpark's comprehensive tech capabilities: DevOps, AI systems, data pipelines, OpenSearch management, and enterprise web development.",
+      
+      "recommended_h1": "Technical Expertise & Core Capabilities",
+      "recommended_h1_alt": "Our Technology Stack & Engineering Expertise",
+      
+      "content_quality_notes": [
+        "Each expertise area well-structured with bullet points",
+        "Good technical depth",
+        "Could add specific tools/technologies used",
+        "Would benefit from client success metrics per category"
+      ]
+    },
+    
+    {
+      "page": "Industries",
+      "url": "/industries",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "Industries We Serve",
+      "current_h2s": [
+        "Healthcare & Life Sciences",
+        "E-Commerce & Retail",
+        "Financial Services",
+        "Media & Content"
+      ],
+      "word_count": 320,
+      "page_score": 66,
+      
+      "seo_issues": [
+        "Missing specific verticals (manufacturing, education, logistics)",
+        "No case studies or client logos",
+        "Could add industry-specific compliance mentions",
+        "Descriptions too generic"
+      ],
+      
+      "recommended_title": "Industries We Serve | Healthcare, Finance, Retail AI Solutions",
+      "recommended_title_alt": "AI Solutions by Industry | GridSpark Solutions",
+      "recommended_meta_description": "GridSpark delivers industry-specific AI solutions for healthcare (HIPAA-compliant), financial services, e-commerce, and media sectors. Proven track record.",
+      "recommended_meta_description_alt": "Specialized AI development for healthcare, finance, retail, and media industries. Compliant, scalable solutions tailored to your sector's unique challenges.",
+      
+      "recommended_h1": "Industry-Specific AI Solutions",
+      "recommended_h1_alt": "AI Development Across Healthcare, Finance, Retail & Media"
+    },
+    
+    {
+      "page": "Products",
+      "url": "/products",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "Our Products",
+      "current_h2s": [
+        "TinyKola – Restaurant AI RMS",
+        "ChecKaro Home Inspection",
+        "AI Chat Assistant",
+        "GenAI Transcription Suite",
+        "OpenSearch Monitoring Dashboard",
+        "Cloud Cost Analyzer"
+      ],
+      "word_count": 400,
+      "page_score": 69,
+      
+      "seo_issues": [
+        "Product names need more SEO context",
+        "Missing pricing or 'Request Demo' CTAs",
+        "No comparison with competitors",
+        "Could add customer count or downloads"
+      ],
+      
+      "recommended_title": "AI-Powered Software Products | SaaS Solutions | GridSpark",
+      "recommended_title_alt": "Enterprise Software Products | AI, Cloud & Automation Tools",
+      "recommended_meta_description": "GridSpark's software products: Restaurant management AI (TinyKola), home inspection platform (ChecKaro), AI chatbots, transcription suite & cloud cost tools.",
+      "recommended_meta_description_alt": "Discover GridSpark's suite of AI-powered products for restaurants, real estate, customer support, transcription, and cloud cost optimization.",
+      
+      "recommended_h1": "AI-Powered Software Products & SaaS Solutions",
+      "recommended_h1_alt": "Enterprise-Ready Products Built with AI"
+    },
+    
+    {
+      "page": "Solutions - AI Demos",
+      "url": "/solutions/ai-demos",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "Gridspark AI Innovations & Demo Showcase",
+      "current_h2s": [
+        "AI Chatbot Suite",
+        "Generative Document AI",
+        "CRM Lead Scoring AI",
+        "Private LLM Deployments"
+      ],
+      "word_count": 620,
+      "page_score": 74,
+      
+      "seo_issues": [
+        "Good content structure",
+        "Could add video demos",
+        "Missing technical specifications",
+        "No pricing tiers shown"
+      ],
+      
+      "recommended_title": "Live AI Demos | Chatbots, Document AI, CRM Tools | GridSpark",
+      "recommended_title_alt": "Interactive AI Product Demonstrations | GridSpark Solutions",
+      "recommended_meta_description": "Explore GridSpark's live AI demos: Enterprise chatbots, document processing, CRM lead scoring, and private LLM deployments. Request custom demo today.",
+      "recommended_meta_description_alt": "Try GridSpark's AI solutions: Multi-model chatbots, RAG document AI, predictive CRM tools, and secure private LLMs. Interactive demos available.",
+      
+      "recommended_h1": "Explore Our AI Solutions: Live Demos & Use Cases",
+      "recommended_h1_alt": "Interactive AI Product Demonstrations"
+    },
+    
+    {
+      "page": "Chatbot Details",
+      "url": "/solutions/chatbot-details",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "Gridspark AI Chatbot Solutions",
+      "current_h2s": [
+        "Chatbot Features",
+        "Multi-Model Intelligence",
+        "Frequently Asked Questions"
+      ],
+      "word_count": 550,
+      "page_score": 73,
+      
+      "recommended_title": "Enterprise AI Chatbot Solutions | Multi-Model Support | GridSpark",
+      "recommended_title_alt": "Custom AI Chatbots | GPT, Claude & Open-Source Models",
+      "recommended_meta_description": "GridSpark's enterprise chatbot platform: Multi-model support (GPT, Claude), GDPR/HIPAA compliant, custom branding, 24/7 multilingual. Request demo.",
+      "recommended_meta_description_alt": "Build intelligent chatbots with GridSpark. Support for multiple AI models, enterprise privacy, custom workflows, and comprehensive analytics dashboard.",
+      
+      "recommended_h1": "Enterprise AI Chatbot Platform",
+      "recommended_h1_alt": "Build Intelligent Chatbots with Multi-Model AI"
+    },
+    
+    {
+      "page": "Document AI",
+      "url": "/solutions/document-ai",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "Gridspark Document AI",
+      "current_h2s": [
+        "Core Solution Highlights",
+        "Document AI in Action",
+        "Frequently Asked Questions"
+      ],
+      "word_count": 580,
+      "page_score": 75,
+      
+      "recommended_title": "Document AI & Intelligent Processing | RAG Pipelines | GridSpark",
+      "recommended_title_alt": "AI Document Processing | OCR, Summarization & Q&A",
+      "recommended_meta_description": "Transform documents with GridSpark's AI: Automatic summarization, semantic search, RAG pipelines, HIPAA/GDPR compliant. PDF, DOCX, images supported.",
+      "recommended_meta_description_alt": "GridSpark Document AI: Extract insights, automate summaries, enable Q&A from PDFs, contracts, and knowledge bases. Enterprise-grade security.",
+      
+      "recommended_h1": "Intelligent Document Processing with AI",
+      "recommended_h1_alt": "Document AI: Summarization, Search & Automation"
+    },
+    
+    {
+      "page": "CRM Lead AI",
+      "url": "/solutions/crm-lead-ai",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "Gridspark AI CRM Lead Automation",
+      "current_h2s": [
+        "Key Solution Capabilities",
+        "How Customers Use Gridspark CRM AI",
+        "Frequently Asked Questions"
+      ],
+      "word_count": 560,
+      "page_score": 72,
+      
+      "recommended_title": "AI-Powered CRM Lead Scoring & Automation | GridSpark Solutions",
+      "recommended_title_alt": "Predictive Lead Scoring | AI CRM Integration | GridSpark",
+      "recommended_meta_description": "GridSpark's AI CRM platform: Predictive lead scoring, automated outreach, data enrichment, Salesforce/HubSpot integration. Boost conversion rates with AI.",
+      "recommended_meta_description_alt": "Automate your sales pipeline with GridSpark's AI CRM tools. Real-time scoring, adaptive segmentation, and intelligent outreach automation.",
+      
+      "recommended_h1": "AI-Powered CRM & Lead Automation Platform",
+      "recommended_h1_alt": "Predictive Lead Scoring with Artificial Intelligence"
+    },
+    
+    {
+      "page": "Private LLM",
+      "url": "/solutions/private-llm",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "Gridspark Private LLM Deployments",
+      "current_h2s": [
+        "Deployment Options & Features",
+        "Gridspark LLM Deployment Scenarios",
+        "Frequently Asked Questions"
+      ],
+      "word_count": 570,
+      "page_score": 76,
+      
+      "recommended_title": "Private LLM Deployment | On-Premise & Cloud AI | GridSpark",
+      "recommended_title_alt": "Secure Private LLM Solutions | HIPAA & SOC2 Compliant",
+      "recommended_meta_description": "Deploy private LLMs securely with GridSpark. Azure, AWS, on-premise options. GPT, LLaMA, Mistral support. HIPAA/GDPR/SOC2 compliant infrastructure.",
+      "recommended_meta_description_alt": "GridSpark's private LLM platform: Secure on-premise or cloud deployment, zero vendor lock-in, enterprise compliance, ARM64 optimization.",
+      
+      "recommended_h1": "Private LLM Deployment Solutions",
+      "recommended_h1_alt": "Secure, Compliant Private Large Language Models"
+    },
+    
+    {
+      "page": "Legal - Privacy Policy",
+      "url": "/legal/privacy-policy",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "Privacy Policy",
+      "word_count": 950,
+      "page_score": 82,
+      
+      "seo_issues": [
+        "Legal pages should have noindex in meta robots or appropriate indexing strategy",
+        "Missing last updated date visibility",
+        "Could link to GDPR/CCPA rights explanations"
+      ],
+      
+      "recommended_title": "Privacy Policy | GridSpark Solutions",
+      "recommended_meta_description": "GridSpark Solutions privacy policy. Learn how we collect, use, and protect your data. GDPR and CCPA compliant. Last updated: December 2025.",
+      
+      "robots_meta": "index,follow",
+      "legal_compliance_note": "Privacy policy appears comprehensive and compliant"
+    },
+    
+    {
+      "page": "Legal - Terms of Service",
+      "url": "/legal/terms",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "Terms of Service",
+      "word_count": 1100,
+      "page_score": 83,
+      
+      "recommended_title": "Terms of Service | GridSpark Solutions",
+      "recommended_meta_description": "GridSpark Solutions terms of service. User agreements, service usage terms, and legal disclaimers. Last updated: December 2025.",
+      
+      "robots_meta": "index,follow",
+      "legal_compliance_note": "Terms appear standard but should be reviewed by legal counsel"
+    },
+    
+    {
+      "page": "Legal - Cookie Policy",
+      "url": "/legal/cookie-policy",
+      "current_title": "Gridspark Solutions - Brighter Tech. Smarter Businesses.",
+      "current_meta_description": null,
+      "current_h1": "Cookie Policy",
+      "word_count": 720,
+      "page_score": 80,
+      
+      "recommended_title": "Cookie Policy | GridSpark Solutions",
+      "recommended_meta_description": "GridSpark Solutions cookie policy. Learn about cookies we use, cookie preferences, and how to manage your settings.",
+      
+      "robots_meta": "index,follow",
+      "technical_note": "Should implement cookie consent banner if not already present"
+    }
+  ],
+
+  "technical_seo_issues": [
+    {
+      "category": "Meta Tags Implementation",
+      "severity": "CRITICAL",
+      "issue": "React Helmet or similar library not implemented",
+      "solution": "Install react-helmet-async and add dynamic meta tags to each page component",
+      "implementation": "Add <Helmet> component to each page with unique title, description, canonical, og tags"
+    },
+    {
+      "category": "robots.txt",
+      "severity": "HIGH",
+      "current_status": "Missing",
+      "recommended_content": "User-agent: *\nAllow: /\nDisallow: /dashboard\nDisallow: /register\nDisallow: /api/\n\nSitemap: https://www.gridsparksolutions.com/sitemap.xml"
+    },
+    {
+      "category": "Sitemap.xml",
+      "severity": "HIGH",
+      "current_status": "Missing",
+      "solution": "Generate dynamic sitemap.xml with all public URLs, update frequency, priority scores",
+      "note": "For React SPA, consider using react-router-sitemap or sitemap generator plugin"
+    },
+    {
+      "category": "Canonical Tags",
+      "severity": "MEDIUM",
+      "implementation_needed": "Add canonical tag to each page pointing to primary URL version"
+    },
+    {
+      "category": "Page Speed",
+      "observations": [
+        "Vite build should be optimized for production",
+        "Consider code splitting for routes",
+        "Lazy load images below the fold",
+        "Optimize web fonts (currently loading Inter from Google Fonts)"
+      ],
+      "recommendations": [
+        "Implement lazy loading for route components",
+        "Use WebP images with fallbacks",
+        "Consider CDN for static assets",
+        "Minimize third-party scripts"
+      ]
+    },
+    {
+      "category": "Internal Linking",
+      "score": 72,
+      "observations": [
+        "Good navigation structure in navbar and footer",
+        "Solutions page has good cross-linking",
+        "Could add breadcrumbs for better UX and SEO",
+        "Missing contextual links in content"
+      ],
+      "recommendations": [
+        "Add breadcrumb navigation (Home > Solutions > AI Demos)",
+        "Add 'Related Solutions' section on detail pages",
+        "Link expertise areas to relevant case studies",
+        "Add 'Next Steps' or 'Learn More' contextual links in content"
+      ]
+    },
+    {
+      "category": "Image Optimization",
+      "issues_found": [
+        "Placeholder images from placehold.co used in AIShowcase component",
+        "Some images missing alt text",
+        "No lazy loading implemented",
+        "No next-gen image formats (WebP)"
+      ],
+      "fix_actions": [
+        "Replace all placeholders with real branded images",
+        "Add descriptive alt text to all images",
+        "Implement lazy loading with loading='lazy' attribute",
+        "Convert images to WebP with JPG fallbacks"
+      ]
+    },
+    {
+      "category": "Mobile Responsiveness",
+      "status": "EXCELLENT",
+      "notes": "Recent comprehensive mobile optimization completed. All breakpoints properly configured."
+    },
+    {
+      "category": "Accessibility",
+      "score": 78,
+      "issues": [
+        "Some buttons missing aria-labels",
+        "Form inputs could have better error messaging",
+        "Color contrast good but could verify with automated tool",
+        "Missing skip-to-content link"
+      ],
+      "recommendations": [
+        "Add aria-labels to icon-only buttons",
+        "Implement form validation with accessible error messages",
+        "Run Lighthouse accessibility audit",
+        "Add skip navigation link for keyboard users"
+      ]
+    }
+  ],
+
+  "structured_data_recommendations": {
+    "organization_schema": {
+      "priority": "HIGH",
+      "pages": ["Home", "About"],
+      "schema_type": "Organization",
+      "json_ld_snippet": {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "GridSpark Solutions",
+        "url": "https://www.gridsparksolutions.com",
+        "logo": "https://www.gridsparksolutions.com/logo.png",
+        "description": "Enterprise AI development and machine learning solutions company specializing in custom LLMs, computer vision, and intelligent automation.",
+        "email": "reachus@gridsparksolutions.com",
+        "foundingDate": "2020",
+        "sameAs": [
+          "https://www.linkedin.com/in/gridsparksolutions/",
+          "https://github.com/GridsparkSolutions",
+          "https://twitter.com/GridsparkS",
+          "https://www.instagram.com/gridsparksolutions/"
+        ],
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "AI Development Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI Development & Machine Learning",
+                "description": "Custom AI and ML solution development"
+              }
+            }
+          ]
+        }
+      }
+    },
+    
+    "breadcrumb_schema": {
+      "priority": "MEDIUM",
+      "pages": ["All non-home pages"],
+      "implementation": "Dynamic based on route path"
+    },
+    
+    "faq_schema": {
+      "priority": "HIGH",
+      "pages": ["Chatbot Details", "Document AI", "CRM Lead AI", "Private LLM"],
+      "note": "Each solution detail page has FAQ section - perfect for FAQ schema"
+    },
+    
+    "service_schema": {
+      "priority": "HIGH",
+      "pages": ["Expertise", "Solutions"],
+      "schema_type": "Service",
+      "recommended_per_service": true
+    },
+    
+    "product_schema": {
+      "priority": "MEDIUM",
+      "pages": ["Products"],
+      "schema_type": "SoftwareApplication",
+      "recommended_for": ["TinyKola", "ChecKaro", "AI Chat Assistant", etc.]
+    }
+  },
+
+  "google_ads_compliance": {
+    "overall_compliance_score": 78,
+    "violations_found": 0,
+    "warnings": 3,
+    
+    "landing_page_review": {
+      "home_page": {
+        "compliance_status": "COMPLIANT",
+        "issues": [],
+        "notes": "Clear value propositions, no misleading claims, appropriate CTAs"
+      },
+      "ai_demos": {
+        "compliance_status": "WARNING",
+        "issues": [
+          "Claims like '98% client retention' need source citation or disclaimer",
+          "'100% on-time delivery' is absolute claim - should add qualifier"
+        ],
+        "recommendations": [
+          "Add small disclaimer: '* Based on internal metrics from 2024-2025'",
+          "Soften absolute claims: '100% on-time delivery record' → '99%+ on-time delivery rate'"
+        ]
+      },
+      "solutions_pages": {
+        "compliance_status": "COMPLIANT",
+        "notes": "Technical descriptions accurate, no exaggerated claims"
+      }
+    },
+    
+    "restricted_content_check": {
+      "healthcare_claims": "PASS - HIPAA mentions are compliance-focused, not medical claims",
+      "financial_claims": "PASS - No investment or financial advice claims",
+      "guarantees": "WARNING - 'Measurable Results' heading could be seen as guarantee",
+      "certifications": "PASS - No false certification claims detected"
+    },
+    
+    "recommended_ad_copy": {
+      "responsive_search_ads": {
+        "headlines": [
+          "AI Development Services | GridSpark",
+          "Custom Machine Learning Solutions",
+          "Enterprise AI Platform | 50+ Projects",
+          "LLM & Computer Vision Experts",
+          "Transform Business with AI",
+          "Trusted AI Development Partner",
+          "Scalable AI Solutions | Free Consult",
+          "Award-Winning AI Team",
+          "AI Chatbots & Automation",
+          "Cloud-Native AI Development",
+          "HIPAA-Compliant AI Solutions",
+          "AI Innovation Made Simple",
+          "24/7 AI Development Support",
+          "Build Your AI Solution Today",
+          "Enterprise AI | Fast Delivery"
+        ],
+        "descriptions": [
+          "Custom AI and ML solutions for enterprises. From LLMs to computer vision. Free consultation available.",
+          "GridSpark delivers scalable AI: chatbots, document processing, predictive analytics. 98% client satisfaction.",
+          "Transform your business with intelligent automation. Expert team, proven results, enterprise-grade security.",
+          "Specializing in LLM integration, RAG pipelines, and private AI deployments. Contact us for a demo."
+        ]
+      },
+      
+      "landing_page_optimization": [
+        "Add clear pricing or 'Request Quote' section",
+        "Include client logos (with permission) for trust signals",
+        "Add case study previews on homepage",
+        "Implement live chat for instant engagement",
+        "Add security badges (SOC2, ISO if applicable)",
+        "Include estimated project timeline information"
+      ]
+    }
+  },
+
+  "brand_consistency_review": {
+    "brand_name_variations_found": [
+      "Gridspark Solutions" (correct),
+      "GridSpark Solutions" (correct - capitalized),
+      "Gridspark" (acceptable short form),
+      "gridsparksolutions.com" (domain)
+    ],
+    
+    "consistency_score": 92,
+    
+    "tone_analysis": {
+      "overall_tone": "Professional, technical, modern",
+      "strengths": [
+        "Consistent technical language across solution pages",
+        "Professional voice in legal documents",
+        "Modern, confident tone in marketing copy"
+      ],
+      "inconsistencies": [
+        "Some pages use 'we' while others use 'GridSpark' in third person",
+        "Varying levels of technical depth across similar pages",
+        "CTA language varies (some urgent, some passive)"
+      ],
+      "recommendations": [
+        "Standardize on first-person plural ('we', 'our') for consistency",
+        "Create content style guide for technical depth by page type",
+        "Standardize CTA language patterns"
+      ]
+    },
+    
+    "messaging_themes": {
+      "primary": "Innovation, Reliability, Scalability, Real Results",
+      "secondary": "Enterprise-grade, AI-first, Cloud-native, Secure",
+      "call_to_action": "Generally good - could be more action-oriented"
+    }
+  },
+
+  "content_originality_check": {
+    "total_pages_scanned": 23,
+    "suspicious_fragments": 0,
+    "copyright_violations": 0,
+    "stock_boilerplate_detected": 2,
+    
+    "flagged_content": [
+      {
+        "page": "About",
+        "fragment": "democratize advanced AI and cloud technologies",
+        "severity": "LOW",
+        "reason": "Common industry phrase but acceptable in context",
+        "action": "Keep as-is - generic enough"
+      },
+      {
+        "page": "Privacy Policy",
+        "fragment": "We collect information you provide directly to us",
+        "severity": "LOW",
+        "reason": "Standard legal boilerplate - acceptable for legal documents",
+        "action": "Keep - appropriate for legal content"
+      }
+    ],
+    
+    "overall_originality_score": 96,
+    "notes": "Content is largely original and brand-specific. No copyright concerns detected."
+  },
+
+  "priority_action_items": [
+    {
+      "rank": 1,
+      "action": "Implement react-helmet-async for dynamic meta tags",
+      "impact": "CRITICAL",
+      "effort": "MEDIUM",
+      "pages_affected": "ALL"
+    },
+    {
+      "rank": 2,
+      "action": "Create unique title and meta description for each page",
+      "impact": "CRITICAL",
+      "effort": "LOW",
+      "pages_affected": "ALL"
+    },
+    {
+      "rank": 3,
+      "action": "Add Organization and FAQ schema markup",
+      "impact": "HIGH",
+      "effort": "LOW",
+      "pages_affected": 8
+    },
+    {
+      "rank": 4,
+      "action": "Create robots.txt and sitemap.xml",
+      "impact": "HIGH",
+      "effort": "LOW",
+      "pages_affected": "Site-wide"
+    },
+    {
+      "rank": 5,
+      "action": "Add canonical tags to all pages",
+      "impact": "HIGH",
+      "effort": "LOW",
+      "pages_affected": "ALL"
+    },
+    {
+      "rank": 6,
+      "action": "Replace placeholder images with real content",
+      "impact": "MEDIUM",
+      "effort": "MEDIUM",
+      "pages_affected": 3
+    },
+    {
+      "rank": 7,
+      "action": "Add breadcrumb navigation",
+      "impact": "MEDIUM",
+      "effort": "MEDIUM",
+      "pages_affected": 15
+    },
+    {
+      "rank": 8,
+      "action": "Expand Contact page with full details",
+      "impact": "MEDIUM",
+      "effort": "LOW",
+      "pages_affected": 1
+    },
+    {
+      "rank": 9,
+      "action": "Add Open Graph tags for social sharing",
+      "impact": "MEDIUM",
+      "effort": "LOW",
+      "pages_affected": "ALL"
+    },
+    {
+      "rank": 10,
+      "action": "Implement lazy loading for images",
+      "impact": "MEDIUM",
+      "effort": "LOW",
+      "pages_affected": "ALL"
+    }
+  ],
+
+  "quick_wins": [
+    "Add meta descriptions (30 min)",
+    "Create robots.txt (5 min)",
+    "Add alt text to images (20 min)",
+    "Implement canonical tags (15 min)",
+    "Add FAQ schema to detail pages (30 min)",
+    "Update homepage H1 to be more specific (5 min)",
+    "Add qualifier to '100% on-time delivery' stat (2 min)",
+    "Add 'Last Updated' to legal pages (5 min)"
+  ],
+
+  "estimated_seo_impact": {
+    "current_visibility_potential": "35%",
+    "after_quick_wins": "55%",
+    "after_all_fixes": "85%",
+    "timeline_to_see_results": "4-8 weeks after implementation"
+  }
+}

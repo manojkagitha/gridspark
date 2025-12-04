@@ -221,28 +221,28 @@ const AIDemos = () => {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
-        <div className="text-center mb-12" data-aos="fade-up">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12" data-aos="fade-up">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 sm:mb-5 md:mb-6">
             Gridspark <span className="text-gradient-blue">AI Innovations</span> & Demo Showcase
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Discover Gridspark’s AI breakthroughs — conversational agents, document automation, CRM scoring, and secure LLM deployments. All features adapt to your industry’s security and data needs.
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
+            Discover Gridspark's AI breakthroughs — conversational agents, document automation, CRM scoring, and secure LLM deployments. All features adapt to your industry's security and data needs.
           </p>
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-500">
             For a custom demo, <a href="/contact" className="text-[var(--color-primary)] hover:underline">contact us</a>.
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="100">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-10 md:mb-12" data-aos="fade-up" data-aos-delay="100">
           {demos.map((demo, idx) => (
             <button
               key={demo.title}
               onClick={() => setActiveDemo(idx)}
               className={`
-                px-6 py-3 rounded-full font-bold text-sm transition-all duration-300
+                px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 touch-manipulation
                 ${activeDemo === idx
                   ? "bg-[var(--color-primary)] text-white shadow-[0_0_20px_rgba(59,130,246,0.5)] scale-105"
-                  : "bg-[var(--color-card)] text-gray-400 border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:text-white"}
+                  : "bg-[var(--color-card)] text-gray-400 border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:text-white active:scale-95"}
               `}
             >
               {demo.title}
@@ -250,27 +250,27 @@ const AIDemos = () => {
           ))}
         </div>
 
-        <div className="glass-panel p-8 md:p-12 rounded-3xl border border-[var(--color-border)] shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-          <div className="grid md:grid-cols-2 gap-12">
+        <div className="glass-panel p-5 sm:p-6 md:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border border-[var(--color-border)] shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-white">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-5 md:mb-6 text-white">
                 {demos[activeDemo].title}
               </h2>
 
               <div
-                className="mb-8 text-gray-300 leading-relaxed cursor-pointer hover:text-white transition-colors"
+                className="mb-6 sm:mb-7 md:mb-8 text-sm sm:text-base text-gray-300 leading-relaxed cursor-pointer hover:text-white transition-colors"
                 onClick={handleDescClick}
               >
                 {demos[activeDemo].description}
               </div>
 
-              <div className="text-gray-400 text-sm">
+              <div className="text-gray-400 text-xs sm:text-sm">
                 {demos[activeDemo].details}
               </div>
             </div>
 
             <div className="flex flex-col justify-center">
-              <div className="bg-black/30 p-6 rounded-xl border border-[var(--color-border)] backdrop-blur-sm">
+              <div className="bg-black/30 p-4 sm:p-5 md:p-6 rounded-xl border border-[var(--color-border)] backdrop-blur-sm">
                 {demos[activeDemo].demoComponent}
               </div>
             </div>

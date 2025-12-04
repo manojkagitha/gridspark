@@ -120,12 +120,12 @@ const ChatWidget = () => {
     return (
         <div
             className="fixed flex flex-col items-end font-sans z-[9999]" // High z-index
-            style={{ bottom: '24px', right: '24px' }}
+            style={{ bottom: '16px', right: '16px' }}
         >
             {/* Chat Window */}
             <div
                 className={`
-          mb-4 w-[calc(100vw-48px)] sm:w-96 bg-[var(--color-bg)] rounded-2xl shadow-2xl overflow-hidden
+          mb-4 w-[calc(100vw-32px)] max-w-[400px] sm:w-96 bg-[var(--color-bg)] rounded-2xl shadow-2xl overflow-hidden
           transition-all duration-300 origin-bottom-right border border-[var(--color-border)]
           ${isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0 h-0 w-0"}
         `}
@@ -154,21 +154,21 @@ const ChatWidget = () => {
                 </div>
 
                 {/* Messages Area */}
-                <div className="p-4 h-96 overflow-y-auto bg-[var(--color-bg-alt)] flex flex-col gap-4">
+                <div className="p-3 sm:p-4 h-[60vh] sm:h-96 max-h-[500px] overflow-y-auto bg-[var(--color-bg-alt)] flex flex-col gap-3 sm:gap-4 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
                     {messages.map((msg, idx) => (
                         <div
                             key={idx}
-                            className={`flex gap-3 ${msg.sender === "user" ? "flex-row-reverse" : ""}`}
+                            className={`flex gap-2 sm:gap-3 ${msg.sender === "user" ? "flex-row-reverse" : ""}`}
                         >
                             <div className={`
-                w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0
+                w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center flex-shrink-0
                 ${msg.sender === "user" ? "bg-[var(--color-primary)]" : "bg-gray-700"}
               `}>
                                 {msg.sender === "user" ? <FaUser className="text-white text-xs" /> : <FaRobot className="text-white text-xs" />}
                             </div>
 
                             <div className={`
-                max-w-[80%] p-3 rounded-2xl text-sm leading-relaxed shadow-sm
+                max-w-[75%] sm:max-w-[80%] p-2.5 sm:p-3 rounded-2xl text-sm leading-relaxed shadow-sm
                 ${msg.sender === "user"
                                     ? "bg-[var(--color-primary)] text-white rounded-tr-none"
                                     : "bg-[var(--color-card)] text-gray-200 border border-[var(--color-border)] rounded-tl-none"}
@@ -184,11 +184,11 @@ const ChatWidget = () => {
                     ))}
 
                     {isTyping && (
-                        <div className="flex gap-3">
-                            <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center flex-shrink-0">
+                        <div className="flex gap-2 sm:gap-3">
+                            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-700 flex items-center justify-center flex-shrink-0">
                                 <FaRobot className="text-white text-xs" />
                             </div>
-                            <div className="bg-[var(--color-card)] p-4 rounded-2xl rounded-tl-none border border-[var(--color-border)] flex gap-1 items-center h-10">
+                            <div className="bg-[var(--color-card)] p-3 sm:p-4 rounded-2xl rounded-tl-none border border-[var(--color-border)] flex gap-1 items-center h-10">
                                 <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
                                 <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
                                 <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce"></span>
@@ -199,25 +199,25 @@ const ChatWidget = () => {
                 </div>
 
                 {/* Input Area */}
-                <form onSubmit={handleSendMessage} className="p-3 bg-[var(--color-bg)] border-t border-[var(--color-border)]">
+                <form onSubmit={handleSendMessage} className="p-2.5 sm:p-3 bg-[var(--color-bg)] border-t border-[var(--color-border)]">
                     <div className="relative flex items-center">
                         <input
                             type="text"
                             placeholder="Ask me anything..."
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
-                            className="w-full pl-4 pr-12 py-3 rounded-xl bg-[var(--color-bg-alt)] border border-[var(--color-border)] text-white placeholder-gray-500 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] text-sm transition-all"
+                            className="w-full pl-3 sm:pl-4 pr-11 sm:pr-12 py-2.5 sm:py-3 rounded-xl bg-[var(--color-bg-alt)] border border-[var(--color-border)] text-white placeholder-gray-500 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] text-sm transition-all"
                         />
                         <button
                             type="submit"
                             disabled={!inputValue.trim() || isTyping}
-                            className="absolute right-2 p-2 bg-[var(--color-primary)] rounded-lg text-white hover:bg-blue-600 disabled:opacity-50 disabled:hover:bg-[var(--color-primary)] transition-colors"
+                            className="absolute right-2 p-2 bg-[var(--color-primary)] rounded-lg text-white hover:bg-blue-600 disabled:opacity-50 disabled:hover:bg-[var(--color-primary)] transition-colors touch-manipulation active:scale-95"
                         >
                             <FaPaperPlane className="text-xs" />
                         </button>
                     </div>
-                    <div className="text-center mt-2">
-                        <p className="text-[10px] text-gray-500">Powered by Gridspark AI • v2.0</p>
+                    <div className="text-center mt-1.5 sm:mt-2">
+                        <p className="text-[9px] sm:text-[10px] text-gray-500">Powered by Gridspark AI • v2.0</p>
                     </div>
                 </form>
             </div>
@@ -226,14 +226,14 @@ const ChatWidget = () => {
             <button
                 onClick={toggleChat}
                 className={`
-          w-14 h-14 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5)] flex items-center justify-center transition-all duration-300 hover:scale-110 z-[9999]
+          w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5)] flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-[9999] touch-manipulation
           ${isOpen ? "bg-gray-700 rotate-90" : "bg-[var(--color-primary)] animate-bounce-slow"}
         `}
             >
                 {isOpen ? (
-                    <FaTimes className="text-white text-xl" />
+                    <FaTimes className="text-white text-lg sm:text-xl" />
                 ) : (
-                    <FaRobot className="text-white text-2xl" />
+                    <FaRobot className="text-white text-xl sm:text-2xl" />
                 )}
             </button>
         </div>

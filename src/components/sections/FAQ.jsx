@@ -6,7 +6,7 @@ const FaqItem = ({ question, answer }) => {
   return (
     <div
       className="
-        border-b py-4 
+        border-b py-3 sm:py-4 
         border-[var(--color-border)]
         transition-colors duration-300
       "
@@ -15,16 +15,17 @@ const FaqItem = ({ question, answer }) => {
         onClick={() => setIsOpen(!isOpen)}
         className="
           w-full flex justify-between items-center text-left 
-          text-lg font-semibold
+          text-base sm:text-lg font-semibold
           text-[var(--color-text)]
           focus:outline-none transition-colors duration-300
+          touch-manipulation active:scale-[0.99] p-1
         "
       >
         <span>{question}</span>
         <span
           className="
             transform transition-transform duration-300 
-            text-[var(--color-primary)]
+            text-[var(--color-primary)] flex-shrink-0 ml-2
           "
           style={{
             transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
@@ -37,12 +38,12 @@ const FaqItem = ({ question, answer }) => {
       {isOpen && (
         <div
           className="
-            mt-4 px-4 py-4 rounded-lg 
+            mt-3 sm:mt-4 px-3 sm:px-4 py-3 sm:py-4 rounded-lg 
             bg-[var(--color-card)]
             text-[var(--color-text)]
             border border-[var(--color-border)]
             opacity-90
-            transition-colors duration-300
+            transition-colors duration-300 text-sm sm:text-base
           "
         >
           <p>{answer}</p>
@@ -79,7 +80,7 @@ const FAQ = () => {
   return (
     <section
       className="
-        py-20 px-4 min-h-screen
+        py-12 sm:py-16 md:py-20 px-4 min-h-screen
         bg-[var(--color-bg)]
         text-[var(--color-text)]
         transition-colors duration-300
@@ -88,7 +89,7 @@ const FAQ = () => {
       <div className="max-w-4xl mx-auto">
         <h2
           className="
-            text-4xl font-extrabold text-center mb-12
+            text-3xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-10 md:mb-12
             text-[var(--color-primary)]
           "
         >
@@ -97,7 +98,7 @@ const FAQ = () => {
 
         <div
           className="
-            space-y-4 rounded-xl p-8 shadow-xl
+            space-y-3 sm:space-y-4 rounded-xl p-4 sm:p-6 md:p-8 shadow-xl
             bg-[var(--color-card)]
             border border-[var(--color-border)]
             transition-colors duration-300

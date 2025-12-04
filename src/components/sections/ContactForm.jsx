@@ -2,8 +2,8 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <section className="section-padding">
-      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section className="py-12 sm:py-16 md:py-20 px-4">
+      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
         {/* Contact Info Section */}
         <div>
           <h2 className="text-4xl font-extrabold mb-4 text-primary">

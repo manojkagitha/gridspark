@@ -48,7 +48,7 @@ const Register = () => {
     <section
       className="
         min-h-screen flex items-center justify-center 
-        py-12 px-4 
+        py-8 sm:py-10 md:py-12 px-4 
         bg-[var(--color-bg)]
         text-[var(--color-text)]
         transition-colors duration-300
@@ -57,20 +57,20 @@ const Register = () => {
       <div
         className="
           w-full max-w-md 
-          p-8 rounded-lg shadow-2xl
+          p-6 sm:p-8 rounded-lg shadow-2xl
           bg-[var(--color-card)] 
           border border-[var(--color-border)]
         "
       >
         <h2
           className="
-            text-3xl font-extrabold text-center mb-6
+            text-2xl sm:text-3xl font-extrabold text-center mb-4 sm:mb-6
             text-[var(--color-primary)]
           "
         >
           Create Your Account
         </h2>
-        <p className="text-center mb-8 opacity-80">
+        <p className="text-center mb-6 sm:mb-8 opacity-80 text-sm sm:text-base">
           Join Gridspark and unlock the future of AI-driven solutions.
         </p>
 
@@ -80,7 +80,7 @@ const Register = () => {
               bg-[var(--color-primary)]/10
               border border-[var(--color-primary)]
               text-[var(--color-text)]
-              text-center p-3 rounded mb-6
+              text-center p-3 rounded mb-4 sm:mb-6 text-sm
             "
           >
             {error}
@@ -91,7 +91,7 @@ const Register = () => {
           {/* Full Name */}
           <label
             htmlFor="fullName"
-            className="block text-sm font-medium mb-2 opacity-90"
+            className="block text-xs sm:text-sm font-medium mb-2 opacity-90"
           >
             Full Name
           </label>
@@ -101,12 +101,12 @@ const Register = () => {
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             className="
-              w-full p-3 mb-4 rounded border
+              w-full p-2.5 sm:p-3 mb-3 sm:mb-4 rounded border
               bg-[var(--color-bg)]
               border-[var(--color-border)]
               text-[var(--color-text)]
               focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]
-              transition
+              transition text-sm sm:text-base touch-manipulation
             "
             required
             autoComplete="name"
@@ -116,7 +116,7 @@ const Register = () => {
           {/* Email */}
           <label
             htmlFor="email"
-            className="block text-sm font-medium mb-2 opacity-90"
+            className="block text-xs sm:text-sm font-medium mb-2 opacity-90"
           >
             Email Address
           </label>
@@ -126,12 +126,12 @@ const Register = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="
-              w-full p-3 mb-4 rounded border
+              w-full p-2.5 sm:p-3 mb-3 sm:mb-4 rounded border
               bg-[var(--color-bg)]
               border-[var(--color-border)]
               text-[var(--color-text)]
               focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]
-              transition
+              transition text-sm sm:text-base touch-manipulation
             "
             required
             autoComplete="email"
@@ -141,7 +141,7 @@ const Register = () => {
           {/* Password */}
           <label
             htmlFor="password"
-            className="block text-sm font-medium mb-2 opacity-90"
+            className="block text-xs sm:text-sm font-medium mb-2 opacity-90"
           >
             Password
           </label>
@@ -151,12 +151,12 @@ const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="
-              w-full p-3 mb-6 rounded border
+              w-full p-2.5 sm:p-3 mb-4 sm:mb-6 rounded border
               bg-[var(--color-bg)]
               border-[var(--color-border)]
               text-[var(--color-text)]
               focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]
-              transition
+              transition text-sm sm:text-base touch-manipulation
             "
             required
             autoComplete="new-password"
@@ -166,7 +166,7 @@ const Register = () => {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full btn-primary py-3 text-lg"
+            className="w-full btn-primary py-2.5 sm:py-3 text-base sm:text-lg touch-manipulation active:scale-95 transition-transform"
             disabled={loading}
           >
             {loading ? "Creating Account..." : "Sign Up"}

@@ -53,14 +53,14 @@ const Products = () => (
         {products.map(({ name, description }, idx) => (
           <div
             key={name}
-            className="glass-panel p-8 rounded-2xl border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300 group"
+            className="glass-panel p-5 sm:p-6 md:p-8 rounded-2xl border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300 group"
             data-aos="fade-up"
             data-aos-delay={idx * 100}
           >
-            <h2 className="text-2xl font-bold mb-4 text-white group-hover:text-[var(--color-primary)] transition-colors">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-white group-hover:text-[var(--color-primary)] transition-colors">
               {name}
             </h2>
-            <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+            <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
               {description}
             </p>
           </div>

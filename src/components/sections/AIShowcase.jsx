@@ -13,19 +13,19 @@ const ShowcaseCard = ({ title, description, tags, imageUrl }) => (
       dark:text-[var(--color-text)]
     "
   >
-    <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
-    <div className="p-6">
+    <img src={imageUrl} alt={title} className="w-full h-40 sm:h-48 object-cover" />
+    <div className="p-4 sm:p-5 md:p-6">
       <h3
         className="
-          text-2xl font-bold mb-2
+          text-lg sm:text-xl md:text-2xl font-bold mb-2
           text-[var(--color-primary)] 
           dark:text-[var(--color-primary)]
         "
       >
         {title}
       </h3>
-      <p className="opacity-80 mb-4">{description}</p>
-      <div className="flex flex-wrap gap-2">
+      <p className="opacity-80 mb-3 sm:mb-4 text-xs sm:text-sm md:text-base">{description}</p>
+      <div className="flex flex-wrap gap-1.5 sm:gap-2">
         {tags.map((tag) => (
           <span
             key={tag}
@@ -72,7 +72,7 @@ const AIShowcase = () => {
   return (
     <section
       className="
-        py-20 px-4
+        py-12 sm:py-16 md:py-20 px-4
         bg-[var(--color-bg)] text-[var(--color-text)]
         dark:bg-[var(--color-bg)] dark:text-[var(--color-text)]
         transition-colors duration-300
@@ -81,18 +81,18 @@ const AIShowcase = () => {
       <div className="max-w-7xl mx-auto text-center">
         <h2
           className="
-            text-4xl font-extrabold mb-4
+            text-3xl sm:text-4xl font-extrabold mb-3 sm:mb-4
             text-[var(--color-primary)] 
             dark:text-[var(--color-primary)]
           "
         >
           Our AI in Action
         </h2>
-        <p className="text-lg mb-12 opacity-80">
+        <p className="text-base sm:text-lg mb-8 sm:mb-10 md:mb-12 opacity-80 px-4">
           We don't just talk about AI—we build intelligent solutions that drive
           real business results.
         </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
           {showcases.map((item) => (
             <ShowcaseCard key={item.title} {...item} />
           ))}

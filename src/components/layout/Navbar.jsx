@@ -51,8 +51,8 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="flex items-center flex-shrink-0">
-          <img src={logo} alt="Gridspark Logo" className="h-12 w-auto brand-logo" />
+        <Link to="/" className="flex items-center flex-shrink-0 touch-manipulation">
+          <img src={logo} alt="Gridspark Logo" className="h-10 sm:h-12 w-auto brand-logo" />
         </Link>
 
         {/* --- DESKTOP MENU --- */}
@@ -122,7 +122,9 @@ const Navbar = () => {
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-gray-300 hover:text-white focus:outline-none"
+            className="text-gray-300 hover:text-white focus:outline-none p-2 touch-manipulation active:scale-95 transition-transform"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
           >
             <span className="sr-only">Open main menu</span>
             {isMobileMenuOpen ? (
@@ -140,19 +142,19 @@ const Navbar = () => {
 
       {/* --- MOBILE MENU --- */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[var(--color-bg)]/95 backdrop-blur-xl border-t border-[var(--color-border)] absolute w-full max-h-[calc(100vh-80px)] overflow-y-auto">
-          <div className="px-4 pt-4 pb-6 space-y-2">
+        <div className="md:hidden bg-[var(--color-bg)]/95 backdrop-blur-xl border-t border-[var(--color-border)] absolute w-full max-h-[calc(100vh-80px)] overflow-y-auto overscroll-contain">
+          <div className="px-4 pt-4 pb-6 space-y-2 safe-area-bottom">
             {menuItems.map((item, index) => (
               <div key={index}>
                 {item.subMenu ? (
                   <>
-                    <div className="px-3 py-2 text-base font-bold text-white">{item.label}</div>
-                    <div className="pl-6 space-y-1 border-l border-gray-700 ml-3">
+                    <div className="px-3 py-2.5 text-base font-bold text-white touch-manipulation">{item.label}</div>
+                    <div className="pl-4 sm:pl-6 space-y-1 border-l-2 border-gray-700 ml-3">
                       {item.subMenu.map((subItem) => (
                         <Link
                           key={subItem.path}
                           to={subItem.path}
-                          className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5"
+                          className="block px-3 py-2.5 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 active:bg-white/10 transition-colors touch-manipulation"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {subItem.label}
@@ -163,7 +165,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     to={item.path}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5"
+                    className="block px-3 py-2.5 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 transition-colors touch-manipulation"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
@@ -171,10 +173,10 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <div className="pt-6">
+            <div className="pt-6 pb-2">
               <Link
                 to="/contact"
-                className="block w-full text-center btn-primary"
+                className="block w-full text-center btn-primary touch-manipulation active:scale-95 transition-transform"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact Us

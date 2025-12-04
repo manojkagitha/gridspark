@@ -2,12 +2,12 @@ import React from "react";
 import { FaBrain, FaEye, FaRobot, FaMagic, FaSearch, FaChartLine, FaShieldAlt, FaCogs } from "react-icons/fa";
 
 const FeatureCard = ({ icon, title, description }) => (
-  <div className="card group flex flex-col items-center text-center hover:bg-white/5 hover:border-blue-500/50">
-    <div className="mb-4 p-3 bg-blue-500/10 rounded-full group-hover:bg-blue-500/20 transition-colors">
+  <div className="card group flex flex-col items-center text-center hover:bg-white/5 hover:border-blue-500/50 transition-all cursor-default">
+    <div className="mb-3 sm:mb-4 p-2.5 sm:p-3 bg-blue-500/10 rounded-full group-hover:bg-blue-500/20 transition-colors">
       {icon}
     </div>
-    <h3 className="text-lg font-bold mb-2 text-white group-hover:text-[var(--color-primary)] transition-colors">{title}</h3>
-    <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
+    <h3 className="text-base sm:text-lg font-bold mb-1.5 sm:mb-2 text-white group-hover:text-[var(--color-primary)] transition-colors">{title}</h3>
+    <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{description}</p>
   </div>
 );
 
@@ -57,7 +57,7 @@ const featuresData = [
 const Features = () => (
   <section id="features" className="transition-colors duration-300">
     <div className="max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
         {featuresData.map((feature) => (
           <FeatureCard key={feature.title} {...feature} />
         ))}

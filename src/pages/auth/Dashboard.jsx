@@ -17,7 +17,7 @@ const recentActivities = [
 const Dashboard = () => (
   <section
     className="
-      min-h-screen py-10 px-4
+      min-h-screen py-8 sm:py-10 px-4 sm:px-6
       bg-[var(--color-bg)]
       text-[var(--color-text)]
       transition-colors duration-300
@@ -26,7 +26,7 @@ const Dashboard = () => (
     <div className="max-w-5xl mx-auto">
       <h1
         className="
-          text-4xl font-bold mb-10
+          text-3xl sm:text-4xl font-bold mb-8 sm:mb-10
           text-[var(--color-primary)]
           transition-colors duration-300
         "
@@ -35,29 +35,30 @@ const Dashboard = () => (
       </h1>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
         {stats.map(({ label, value, icon }) => (
           <div
             key={label}
             className="
-              flex items-center p-6 shadow-xl rounded-xl
+              flex items-center p-4 sm:p-5 md:p-6 shadow-xl rounded-xl
               border border-[var(--color-border)]
               bg-[var(--color-card)]
               text-[var(--color-text)]
               transition-colors duration-300
+              hover:border-[var(--color-primary)]
             "
           >
-            <div className="mr-5 text-3xl">{icon}</div>
+            <div className="mr-3 sm:mr-4 md:mr-5 text-2xl sm:text-3xl flex-shrink-0">{icon}</div>
             <div>
               <div
                 className="
-                  text-3xl font-bold
+                  text-2xl sm:text-3xl font-bold
                   text-[var(--color-text)]
                 "
               >
                 {value}
               </div>
-              <div className="opacity-70">{label}</div>
+              <div className="opacity-70 text-xs sm:text-sm">{label}</div>
             </div>
           </div>
         ))}
@@ -66,7 +67,7 @@ const Dashboard = () => (
       {/* Recent Activity Section */}
       <div
         className="
-          p-6 shadow-xl rounded-xl
+          p-4 sm:p-5 md:p-6 shadow-xl rounded-xl
           border border-[var(--color-border)]
           bg-[var(--color-card)]
           text-[var(--color-text)]
@@ -75,13 +76,13 @@ const Dashboard = () => (
       >
         <h2
           className="
-            text-xl font-semibold mb-4
+            text-lg sm:text-xl font-semibold mb-3 sm:mb-4
             text-[var(--color-primary)]
           "
         >
           Recent Activity
         </h2>
-        <ul className="list-disc list-inside opacity-90">
+        <ul className="list-disc list-inside opacity-90 space-y-2 text-sm sm:text-base">
           {recentActivities.map(({ id, text }) => (
             <li key={id} className="mb-2">
               {text}

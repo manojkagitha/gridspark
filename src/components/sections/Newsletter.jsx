@@ -31,14 +31,14 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="glass-panel max-w-md mx-auto text-center px-8 py-10 rounded-2xl shadow-2xl relative overflow-hidden">
+    <div className="glass-panel max-w-md mx-auto text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 rounded-2xl shadow-2xl relative overflow-hidden">
       {/* Glow Effect */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
 
-      <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-white">
         Stay Updated
       </h2>
-      <p className="mb-8 text-gray-400 text-base">
+      <p className="mb-6 sm:mb-8 text-gray-400 text-sm sm:text-base">
         Get the latest AI insights and product updates delivered to your inbox.
       </p>
       {success ? (
@@ -47,7 +47,7 @@ const Newsletter = () => {
           <div className="text-sm">We'll keep you updated with our latest news.</div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} method="POST" className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit} method="POST" className="flex flex-col gap-3 sm:gap-4">
           <input
             type="email"
             name="email"
@@ -55,15 +55,15 @@ const Newsletter = () => {
             required
             autoComplete="email"
             className="
-              px-4 py-3 border rounded-lg w-full
+              px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg w-full
               border-[var(--color-border)]
               bg-[var(--color-bg)]
               text-white
               placeholder-gray-500
               focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]
               focus:border-transparent
-              text-base
-              transition
+              text-sm sm:text-base
+              transition touch-manipulation
             "
             disabled={loading}
           />
@@ -71,8 +71,8 @@ const Newsletter = () => {
           <button
             type="submit"
             className="
-              w-full py-3 text-base rounded-lg font-semibold
-              btn-primary
+              w-full py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-semibold
+              btn-primary touch-manipulation active:scale-95
             "
             disabled={loading}
           >

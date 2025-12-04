@@ -8,17 +8,17 @@ const techRows = [
 
 const ExpertsSection = () => {
     return (
-        <div className="py-20 overflow-hidden relative">
+        <div className="py-12 sm:py-16 md:py-20 overflow-hidden relative">
 
             {/* Heading */}
-            <div className="text-center mb-12 relative z-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <div className="text-center mb-8 sm:mb-10 md:mb-12 relative z-10 px-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                     Powering Innovation with a <span className="text-[var(--color-primary)]">Global Tech Stack</span>
                 </h2>
             </div>
 
             {/* Scrolling Rows */}
-            <div className="flex flex-col gap-8 relative z-0">
+            <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 relative z-0">
                 {techRows.map((row, rowIndex) => (
                     <div
                         key={rowIndex}
@@ -35,7 +35,7 @@ const ExpertsSection = () => {
                             {[...row, ...row, ...row].map((tech, i) => (
                                 <span
                                     key={`${tech}-${i}`}
-                                    className="text-2xl md:text-4xl font-bold text-gray-600 hover:text-white transition-colors duration-300 cursor-default select-none"
+                                    className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-600 hover:text-white transition-colors duration-300 cursor-default select-none"
                                 >
                                     {tech}
                                 </span>

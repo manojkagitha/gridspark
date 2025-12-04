@@ -37,7 +37,7 @@ const logos = [
 const TechStackBanner = () => (
   <div
     className="
-      relative py-10 px-2 z-20 overflow-hidden
+      relative py-6 sm:py-8 md:py-10 px-2 z-20 overflow-hidden
       border-t border-[var(--color-border)]
       transition-colors duration-300
     "
@@ -52,13 +52,13 @@ const TechStackBanner = () => (
     {/* Removed blur and shadow; transparent background */}
 
     <div className="relative w-full overflow-hidden">
-      <div className="tech-logo-row flex items-center gap-x-14 md:gap-x-20">
+      <div className="tech-logo-row flex items-center gap-x-8 sm:gap-x-12 md:gap-x-14 lg:gap-x-20">
         {[...logos, ...logos].map((logo, i) => (
           <img
             key={logo.alt + i}
             src={logo.src}
             alt={logo.alt}
-            className="h-14 md:h-16 object-contain transition-all duration-300 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-110 invert hover:invert-0"
+            className="h-10 sm:h-12 md:h-14 lg:h-16 object-contain transition-all duration-300 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-110 invert hover:invert-0"
             style={{
               maxWidth: 120,
             }}

@@ -201,45 +201,45 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {stats.map(({ label, value, icon }) => (
               <div
                 key={label}
-                className="card flex flex-col items-center p-6 hover:bg-white/5"
+                className="card flex flex-col items-center p-4 sm:p-5 md:p-6 hover:bg-white/5 hover:border-[var(--color-primary)]/30 transition-all"
                 data-aos="zoom-in"
                 data-aos-delay={50}
               >
-                <div className="mb-3 text-3xl">{icon}</div>
-                <div className="text-3xl font-extrabold text-white mb-1">
+                <div className="mb-2 sm:mb-3 text-2xl sm:text-3xl">{icon}</div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-white mb-1">
                   {value}
                 </div>
-                <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">{label}</div>
+                <div className="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wide text-center">{label}</div>
               </div>
             ))}
           </div>
 
-          <div className="glass-panel rounded-3xl p-8 md:p-12 relative overflow-hidden">
+          <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 relative overflow-hidden">
             {/* Decorative circle */}
-            <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-[var(--color-primary)] rounded-full opacity-20 blur-3xl animate-pulse-glow"></div>
+            <div className="absolute top-0 right-0 -mr-16 -mt-16 w-48 sm:w-64 h-48 sm:h-64 bg-[var(--color-primary)] rounded-full opacity-20 blur-3xl animate-pulse-glow"></div>
 
-            <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-white">Recent Activity</h3>
-                <ul className="space-y-3">
+            <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 sm:gap-8">
+              <div className="flex-1">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">Recent Activity</h3>
+                <ul className="space-y-2 sm:space-y-3">
                   {recentActivities.map(({ id, text }) => (
-                    <li key={id} className="flex items-center text-gray-300">
-                      <span className="mr-3 text-[var(--color-primary)]">●</span>
-                      {text.replace("✔️ ", "")}
+                    <li key={id} className="flex items-start text-sm sm:text-base text-gray-300">
+                      <span className="mr-2 sm:mr-3 text-[var(--color-primary)] flex-shrink-0 mt-1">●</span>
+                      <span>{text.replace("✔️ ", "")}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="text-center md:text-right">
-                <h4 className="text-xl font-bold mb-2 text-white">Ready to start?</h4>
-                <p className="text-gray-400 mb-6">Let's discuss your next big project.</p>
+              <div className="text-left md:text-right w-full md:w-auto">
+                <h4 className="text-lg sm:text-xl font-bold mb-2 text-white">Ready to start?</h4>
+                <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6">Let's discuss your next big project.</p>
                 <Link
                   to="/contact"
-                  className="btn-primary inline-block"
+                  className="btn-primary inline-block text-sm sm:text-base touch-manipulation active:scale-95"
                 >
                   Discuss Your Project
                 </Link>
@@ -252,59 +252,59 @@ const Home = () => {
       {/* Why Gridspark AI */}
       <section className="section-padding relative z-10" data-aos="fade-up">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 sm:mb-6">
             Why <span className="text-gradient-blue">Gridspark AI?</span>
           </h2>
-          <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-400 mb-8 sm:mb-12 max-w-3xl mx-auto px-4">
             We combine deep AI development and DevOps to build intelligent,
             reliable, and scalable applications that deliver real results.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            <div className="card group p-8 text-left hover:border-blue-500/50">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <FaBrain className="text-blue-400 text-xl" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-16">
+            <div className="card group p-5 sm:p-6 md:p-8 text-left hover:border-blue-500/50 transition-all">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <FaBrain className="text-blue-400 text-lg sm:text-xl" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white mb-2 text-lg">LLM Expertise</h3>
-                  <p className="text-gray-400 text-sm">Deep knowledge in Large Language Models and Generative AI</p>
+                  <h3 className="font-bold text-white mb-1.5 sm:mb-2 text-base sm:text-lg">LLM Expertise</h3>
+                  <p className="text-gray-400 text-xs sm:text-sm">Deep knowledge in Large Language Models and Generative AI</p>
                 </div>
               </div>
             </div>
 
-            <div className="card group p-8 text-left hover:border-emerald-500/50">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <FaRobot className="text-emerald-400 text-xl" />
+            <div className="card group p-5 sm:p-6 md:p-8 text-left hover:border-emerald-500/50 transition-all">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <FaRobot className="text-emerald-400 text-lg sm:text-xl" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white mb-2 text-lg">End-to-End Solutions</h3>
-                  <p className="text-gray-400 text-sm">Complete AI implementation from concept to production scale</p>
+                  <h3 className="font-bold text-white mb-1.5 sm:mb-2 text-base sm:text-lg">End-to-End Solutions</h3>
+                  <p className="text-gray-400 text-xs sm:text-sm">Complete AI implementation from concept to production scale</p>
                 </div>
               </div>
             </div>
 
-            <div className="card group p-8 text-left hover:border-purple-500/50">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <FaBolt className="text-purple-400 text-xl" />
+            <div className="card group p-5 sm:p-6 md:p-8 text-left hover:border-purple-500/50 transition-all">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-purple-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <FaBolt className="text-purple-400 text-lg sm:text-xl" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white mb-2 text-lg">Rapid Deployment</h3>
-                  <p className="text-gray-400 text-sm">Fast delivery with CI/CD pipelines and continuous improvement</p>
+                  <h3 className="font-bold text-white mb-1.5 sm:mb-2 text-base sm:text-lg">Rapid Deployment</h3>
+                  <p className="text-gray-400 text-xs sm:text-sm">Fast delivery with CI/CD pipelines and continuous improvement</p>
                 </div>
               </div>
             </div>
 
-            <div className="card group p-8 text-left hover:border-orange-500/50">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <FaChartBar className="text-orange-400 text-xl" />
+            <div className="card group p-5 sm:p-6 md:p-8 text-left hover:border-orange-500/50 transition-all">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-orange-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <FaChartBar className="text-orange-400 text-lg sm:text-xl" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white mb-2 text-lg">Measurable Results</h3>
-                  <p className="text-gray-400 text-sm">Transparent process with clear ROI tracking and milestones</p>
+                  <h3 className="font-bold text-white mb-1.5 sm:mb-2 text-base sm:text-lg">Measurable Results</h3>
+                  <p className="text-gray-400 text-xs sm:text-sm">Transparent process with clear ROI tracking and milestones</p>
                 </div>
               </div>
             </div>
