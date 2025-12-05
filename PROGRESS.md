@@ -27,7 +27,8 @@
 - [x] Google Analytics 4 (GA4) implementation - ID: G-MPX7FKHZRL
 - [x] Google Search Console verification - Code: yLglEZlmVWY95Buz7whXU_abg3uQhBJ8wv8SHMxnRAE
 - [x] Microsoft Clarity tracking - Project ID: ugn3w522wl
-- [x] Facebook Pixel code prepared (pending Pixel ID)
+- [x] GDPR-compliant consent banner with Google Consent Mode v2
+- [ ] Facebook Pixel activation (waiting for Pixel ID)
 
 ---
 
@@ -41,6 +42,7 @@
 ## 📋 PENDING TASKS
 
 ### High Priority
+- [x] Implement GDPR-compliant consent banner with Google Consent Mode v2
 - [ ] Get Facebook Pixel ID from Facebook Events Manager
 - [ ] Test website performance and Core Web Vitals
 - [ ] Submit XML sitemap to Google Search Console
