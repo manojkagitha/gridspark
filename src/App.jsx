@@ -7,6 +7,7 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import ChatWidget from "./components/layout/ChatWidget";
 import AnimatedBackground from "./components/layout/AnimatedBackground";
+import ConsentBanner from "./components/layout/ConsentBanner";
 
 // Main Pages
 import Home from "./pages/home/index.jsx";
@@ -92,6 +93,7 @@ function App() {
 
       <ChatWidget />
       <Footer />
+      <ConsentBanner />
     </Router>
   );
 }
