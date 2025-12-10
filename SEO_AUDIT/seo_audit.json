@@ -835,7 +835,7 @@
       "priority": "MEDIUM",
       "pages": ["Products"],
       "schema_type": "SoftwareApplication",
-      "recommended_for": ["TinyKola", "ChecKaro", "AI Chat Assistant", etc.]
+      "recommended_for": ["TinyKola", "ChecKaro", "AI Chat Assistant"]
     }
   },
 
@@ -914,11 +914,17 @@
 
   "brand_consistency_review": {
     "brand_name_variations_found": [
-      "Gridspark Solutions" (correct),
-      "GridSpark Solutions" (correct - capitalized),
-      "Gridspark" (acceptable short form),
-      "gridsparksolutions.com" (domain)
+      "Gridspark Solutions",
+      "GridSpark Solutions",
+      "Gridspark",
+      "gridsparksolutions.com"
     ],
+    "brand_name_notes": {
+      "Gridspark Solutions": "correct",
+      "GridSpark Solutions": "correct - capitalized",
+      "Gridspark": "acceptable short form",
+      "gridsparksolutions.com": "domain"
+    },
     
     "consistency_score": 92,
     

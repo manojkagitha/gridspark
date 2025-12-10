@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SEO from "../../components/common/SEO";
 
 const Contact = () => {
   const [success, setSuccess] = useState(false);
@@ -31,8 +32,38 @@ const Contact = () => {
     }
   };
 
+  // Structured data for contact page
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact GridSpark Solutions",
+    "description": "Get in touch with GridSpark Solutions for AI-powered business solutions. Contact us for custom chatbots, document intelligence, and private LLM deployment services.",
+    "url": "https://www.gridsparksolutions.com/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "GridSpark Solutions",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-XXXXXXXXXX",
+        "contactType": "Customer Service",
+        "availableLanguage": "English",
+        "contactOption": "TollFree"
+      }
+    }
+  };
+
   return (
-    <section className="min-h-screen w-full pt-20 sm:pt-24 pb-12 sm:pb-20 relative overflow-hidden flex items-center">
+    <>
+      <SEO
+        title="Contact Us"
+        description="Get in touch with GridSpark Solutions for AI-powered business solutions. Contact us for custom chatbots, document intelligence, and private LLM deployment services."
+        keywords="contact GridSpark, AI solutions contact, business inquiry, custom AI development, chatbot consultation, document AI contact"
+        canonical="https://www.gridsparksolutions.com/contact"
+        ogType="website"
+        schema={contactPageSchema}
+      />
+
+      <section className="min-h-screen w-full pt-20 sm:pt-24 pb-12 sm:pb-20 relative overflow-hidden flex items-center">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
         <div className="absolute top-[-10%] left-[20%] w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse-glow" />

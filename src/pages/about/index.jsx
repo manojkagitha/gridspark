@@ -1,7 +1,34 @@
 import React from "react";
+import SEO from "../../components/common/SEO";
 
-const About = () => (
-  <section className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20 relative overflow-hidden">
+const About = () => {
+  // Structured data for about page
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About GridSpark Solutions",
+    "description": "Learn about GridSpark Solutions - revolutionizing industries through artificial intelligence, intelligent automation, and scalable cloud infrastructure.",
+    "url": "https://www.gridsparksolutions.com/about",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "GridSpark Solutions",
+      "description": "AI-powered business solutions company specializing in custom chatbots, document intelligence, and private LLM deployment.",
+      "foundingDate": "2024"
+    }
+  };
+
+  return (
+    <>
+      <SEO
+        title="About Us"
+        description="Learn about GridSpark Solutions - revolutionizing industries through artificial intelligence, intelligent automation, and scalable cloud infrastructure."
+        keywords="about GridSpark, AI company, business automation, cloud infrastructure, artificial intelligence solutions, company mission"
+        canonical="https://www.gridsparksolutions.com/about"
+        ogType="website"
+        schema={aboutPageSchema}
+      />
+
+      <section className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20 relative overflow-hidden">
     {/* Background Elements */}
     <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
       <div className="absolute top-[-10%] right-[-5%] w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse-glow" />
@@ -90,6 +117,8 @@ const About = () => (
       </div>
     </div>
   </section>
-);
+    </>
+  );
+};
 
 export default About;

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import SEO from "../../components/common/SEO";
 
 // Existing sections/components
 import Hero from "../../components/sections/Hero";
@@ -107,8 +108,74 @@ const Home = () => {
     });
   }, []);
 
+  // Structured data for organization
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GridSpark Solutions",
+    "url": "https://www.gridsparksolutions.com",
+    "logo": "https://www.gridsparksolutions.com/logo.png",
+    "description": "Transform your business with custom AI chatbots, document intelligence, and private LLM deployment. Enterprise-grade AI solutions for modern companies.",
+    "foundingDate": "2024",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-XXXXXXXXXX",
+      "contactType": "Customer Service",
+      "availableLanguage": "English"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/gridspark-solutions",
+      "https://github.com/manojkagitha"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Solutions Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom AI Chatbots",
+            "description": "Intelligent conversational AI solutions for customer service and business automation"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Document Intelligence",
+            "description": "AI-powered document processing and data extraction solutions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Private LLM Deployment",
+            "description": "Secure deployment of large language models for enterprise applications"
+          }
+        }
+      ]
+    }
+  };
+
   return (
-    <div className="relative min-h-screen text-[var(--color-text)]">
+    <>
+      <SEO
+        title="AI-Powered Business Solutions"
+        description="Transform your business with custom AI chatbots, document intelligence, and private LLM deployment. Enterprise-grade AI solutions for modern companies."
+        keywords="AI solutions, chatbot development, document AI, private LLM, business automation, AI consulting, machine learning, enterprise software"
+        canonical="https://www.gridsparksolutions.com/"
+        ogType="website"
+        ogImage="https://www.gridsparksolutions.com/og-default.jpg"
+        schema={organizationSchema}
+      />
+
+      <div className="relative min-h-screen text-[var(--color-text)]">
 
       {/* HERO SECTION */}
       <Hero />
