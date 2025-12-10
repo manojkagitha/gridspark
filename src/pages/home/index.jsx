@@ -427,6 +427,7 @@ const Home = () => {
         <Testimonials />
       </section>
     </div>
+    </>
   );
 };
 
