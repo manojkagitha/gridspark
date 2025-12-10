@@ -4,59 +4,108 @@ const ConsentBanner = () => {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    // Check if user has already made a choice
-    const consentChoice = localStorage.getItem('gdpr-consent');
-    if (!consentChoice) {
-      setShowBanner(true);
-    }
+    // Small delay to ensure gtag is loaded
+    const timer = setTimeout(() => {
+      const consentChoice = localStorage.getItem('gdpr-consent');
+      console.log('Consent choice from localStorage:', consentChoice);
+
+      if (!consentChoice) {
+        console.log('No consent choice found, showing banner');
+        setShowBanner(true);
+      } else {
+        console.log('Consent choice found, hiding banner');
+        setShowBanner(false);
+      }
+    }, 1000); // 1 second delay
+
+    return () => clearTimeout(timer);
   }, []);
 
   const acceptAllCookies = () => {
-    // Update Google Consent Mode
-    window.gtag('consent', 'update', {
-      'ad_storage': 'granted',
-      'ad_user_data': 'granted',
-      'ad_personalization': 'granted',
-      'analytics_storage': 'granted',
-      'functionality_storage': 'granted',
-      'personalization_storage': 'granted'
-    });
+    console.log('Accept All button clicked');
+    try {
+      // Update Google Consent Mode
+      if (window.gtag) {
+        window.gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted',
+          'functionality_storage': 'granted',
+          'personalization_storage': 'granted'
+        });
+        console.log('Consent updated: Accept All');
+      } else {
+        console.warn('gtag not available');
+      }
 
-    // Store user choice
-    localStorage.setItem('gdpr-consent', 'accepted');
-    setShowBanner(false);
+      // Store user choice
+      localStorage.setItem('gdpr-consent', 'accepted');
+      setShowBanner(false);
+    } catch (error) {
+      console.error('Error accepting all cookies:', error);
+      // Still hide banner and store choice even if gtag fails
+      localStorage.setItem('gdpr-consent', 'accepted');
+      setShowBanner(false);
+    }
   };
 
   const rejectAllCookies = () => {
-    // Keep denied state for non-essential cookies
-    window.gtag('consent', 'update', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'functionality_storage': 'denied',
-      'personalization_storage': 'denied'
-    });
+    console.log('Reject All button clicked');
+    try {
+      // Keep denied state for non-essential cookies
+      if (window.gtag) {
+        window.gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied',
+          'functionality_storage': 'denied',
+          'personalization_storage': 'denied'
+        });
+        console.log('Consent updated: Reject All');
+      } else {
+        console.warn('gtag not available');
+      }
 
-    // Store user choice
-    localStorage.setItem('gdpr-consent', 'rejected');
-    setShowBanner(false);
+      // Store user choice
+      localStorage.setItem('gdpr-consent', 'rejected');
+      setShowBanner(false);
+    } catch (error) {
+      console.error('Error rejecting cookies:', error);
+      // Still hide banner and store choice even if gtag fails
+      localStorage.setItem('gdpr-consent', 'rejected');
+      setShowBanner(false);
+    }
   };
 
   const acceptEssentialOnly = () => {
-    // Grant only essential cookies
-    window.gtag('consent', 'update', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'functionality_storage': 'granted',
-      'personalization_storage': 'denied'
-    });
+    console.log('Essential Only button clicked');
+    try {
+      // Grant only essential cookies
+      if (window.gtag) {
+        window.gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied',
+          'functionality_storage': 'granted',
+          'personalization_storage': 'denied'
+        });
+        console.log('Consent updated: Essential Only');
+      } else {
+        console.warn('gtag not available');
+      }
 
-    // Store user choice
-    localStorage.setItem('gdpr-consent', 'essential-only');
-    setShowBanner(false);
+      // Store user choice
+      localStorage.setItem('gdpr-consent', 'essential-only');
+      setShowBanner(false);
+    } catch (error) {
+      console.error('Error accepting essential cookies:', error);
+      // Still hide banner and store choice even if gtag fails
+      localStorage.setItem('gdpr-consent', 'essential-only');
+      setShowBanner(false);
+    }
   };
 
   if (!showBanner) return null;
