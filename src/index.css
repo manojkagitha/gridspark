@@ -7,11 +7,9 @@
    ============================== */
 
 :root {
-  /* Deep Space Theme (MercDev / BairesDev Hybrid) */
-  --color-bg: #0B0D17;
-  /* Deepest Blue/Black */
-  --color-bg-alt: #111827;
-  /* Slightly lighter for sections */
+  /* Theme Configuration */
+  --color-bg: #0B0D17;    /* Primary Background */
+  --color-bg-alt: #111827; /* Secondary Background */
 
   --color-text: #F3F4F6;
   /* White/Off-white */

@@ -1,0 +1,36 @@
+import{j as e,L as s}from"./index-zUn8u5fx.js";const r=()=>e.jsx("div",{className:`
+        min-h-screen
+        bg-[var(--color-bg)]
+        text-[var(--color-text)]
+        transition-colors duration-300
+      `,children:e.jsxs("div",{className:"max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16",children:[e.jsx("h1",{className:`
+            text-4xl font-extrabold mb-6
+            text-[var(--color-primary)]
+          `,children:"Cookie Policy for Gridspark Solutions"}),e.jsx("p",{className:"opacity-75 mb-8",children:"Last updated: October 10, 2025"}),e.jsxs("div",{className:"space-y-8",children:[e.jsxs("section",{children:[e.jsx("h2",{className:`
+                text-2xl font-bold mb-4
+                text-[var(--color-primary)]
+              `,children:"What Are Cookies?"}),e.jsx("p",{className:"opacity-85",children:"Cookies are small text files that are placed on your computer or mobile device when you visit a website. They help websites function efficiently and provide useful information to the site owners. Cookies remember your preferences, improve user experience, and enable certain features."})]}),e.jsxs("section",{children:[e.jsx("h2",{className:`
+                text-2xl font-bold mb-4
+                text-[var(--color-primary)]
+              `,children:"Types of Cookies We Use"}),e.jsx("p",{className:"mb-4 opacity-85",children:"We use several categories of cookies to enhance your experience:"}),e.jsxs("ul",{className:"list-disc list-inside space-y-2 opacity-90",children:[e.jsxs("li",{children:[e.jsx("strong",{children:"Strictly Necessary Cookies:"})," Essential to operate our website and provide secure access to personalized features, including login and account settings. These cannot be disabled."]}),e.jsxs("li",{children:[e.jsx("strong",{children:"Performance and Analytics Cookies:"})," Collect anonymized data on website usage and traffic patterns to help us understand how our users interact with the site and to improve performance."]}),e.jsxs("li",{children:[e.jsx("strong",{children:"Functionality Cookies:"})," Remember your preferences such as language settings, theme selections, or login state, to provide a tailored browsing experience."]}),e.jsxs("li",{children:[e.jsx("strong",{children:"Advertising and Targeting Cookies:"})," Used to deliver relevant advertisements and measure the effectiveness of marketing campaigns. These may be set by us or third-party partners."]})]})]}),e.jsxs("section",{children:[e.jsx("h2",{className:`
+                text-2xl font-bold mb-4
+                text-[var(--color-primary)]
+              `,children:"How We Use Cookies"}),e.jsx("p",{className:"opacity-85",children:"Cookies allow us to:"}),e.jsxs("ul",{className:"list-disc list-inside space-y-2 opacity-90",children:[e.jsx("li",{children:"Keep you signed in and secure your account"}),e.jsx("li",{children:"Understand how you use our website to improve it"}),e.jsx("li",{children:"Personalize your experience and remember choices"}),e.jsx("li",{children:"Analyze aggregated user behavior for R&D"}),e.jsx("li",{children:"Deliver relevant advertising and promotions"})]})]}),e.jsxs("section",{children:[e.jsx("h2",{className:`
+                text-2xl font-bold mb-4
+                text-[var(--color-primary)]
+              `,children:"Third-Party Cookies"}),e.jsx("p",{className:"opacity-85",children:"We may also use cookies from trusted third-party services such as:"}),e.jsxs("ul",{className:"list-disc list-inside space-y-2 opacity-90",children:[e.jsxs("li",{children:[e.jsx("strong",{children:"Google Analytics:"})," Gathers insights on visitor behavior with strict privacy and anonymity protections."]}),e.jsxs("li",{children:[e.jsx("strong",{children:"Advertising Partners:"})," Help target and measure ads delivered across the internet."]}),e.jsxs("li",{children:[e.jsx("strong",{children:"Social Media Platforms:"})," Enable sharing and integration features on our site."]})]}),e.jsx("p",{className:"opacity-85",children:"These providers have their own privacy policies and cookie management controls."})]}),e.jsxs("section",{children:[e.jsx("h2",{className:`
+                text-2xl font-bold mb-4
+                text-[var(--color-primary)]
+              `,children:"Managing Cookies"}),e.jsx("p",{className:"opacity-85",children:"You have options to manage and control cookies:"}),e.jsxs("ul",{className:"list-disc list-inside space-y-2 opacity-90",children:[e.jsx("li",{children:"Most browsers allow you to block or delete cookies via settings or preferences."}),e.jsxs("li",{children:["You can visit"," ",e.jsx("a",{href:"https://www.youronlinechoices.com/",className:"text-[var(--color-primary)] hover:underline",target:"_blank",rel:"noopener noreferrer",children:"youronlinechoices.com"})," ","to manage advertising preferences."]}),e.jsx("li",{children:"Note that disabling cookies may limit your ability to use certain features of our site."})]})]}),e.jsxs("section",{children:[e.jsx("h2",{className:`
+                text-2xl font-bold mb-4
+                text-[var(--color-primary)]
+              `,children:"Children's Privacy"}),e.jsx("p",{className:"opacity-85",children:"Our website is not intended for use by individuals under the age of 13. We do not knowingly collect personal information from children without parental consent."})]}),e.jsxs("section",{children:[e.jsx("h2",{className:`
+                text-2xl font-bold mb-4
+                text-[var(--color-primary)]
+              `,children:"Your Rights"}),e.jsx("p",{className:"opacity-85",children:"Depending on your jurisdiction, you may have rights related to your personal data, including:"}),e.jsxs("ul",{className:"list-disc list-inside space-y-2 opacity-90",children:[e.jsx("li",{children:"The right to access and correct your data"}),e.jsx("li",{children:"The right to withdraw consent to data processing"}),e.jsx("li",{children:"The right to request deletion of your data"}),e.jsx("li",{children:"The right to object to certain data processing activities"})]}),e.jsx("p",{className:"opacity-85",children:"For any such requests, please contact us as detailed below."})]}),e.jsxs("section",{children:[e.jsx("h2",{className:`
+                text-2xl font-bold mb-4
+                text-[var(--color-primary)]
+              `,children:"Policy Updates"}),e.jsx("p",{className:"opacity-85",children:"We may update this Cookie Policy occasionally to reflect changes in law or operations. Updates will be posted here with the revised date."})]}),e.jsxs("section",{children:[e.jsx("h2",{className:`
+                text-2xl font-bold mb-4
+                text-[var(--color-primary)]
+              `,children:"Contact Us"}),e.jsx("p",{className:"opacity-85",children:"If you have questions about this Cookie Policy or data practices, you can reach us:"}),e.jsxs("ul",{className:"list-disc list-inside mt-2 opacity-90",children:[e.jsxs("li",{children:["By email:"," ",e.jsx("a",{href:"mailto:reachus@gridsparksolutions.com",className:"text-[var(--color-primary)] hover:underline",children:"reachus@gridsparksolutions.com"})]}),e.jsxs("li",{children:["Via our"," ",e.jsx(s,{to:"/contact",className:"text-[var(--color-primary)] hover:underline",children:"Contact Page"})]})]})]})]})]})});export{r as default};

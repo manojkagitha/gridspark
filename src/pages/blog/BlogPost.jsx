@@ -35,14 +35,14 @@ export default function BlogPost() {
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
       whatsapp: `https://wa.me/?text=${encodeURIComponent(shareTitle + ' ' + shareUrl)}`
     };
-    
+
     if (platform === 'copy') {
       navigator.clipboard.writeText(shareUrl).then(() => {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       });
     } else {
-      window.open(urls[platform], '_blank', 'width=600,height=400');
+      window.open(urls[platform], '_blank', 'width=600,height=400,noopener,noreferrer');
     }
   };
 
@@ -65,7 +65,7 @@ export default function BlogPost() {
     <div className="min-h-screen pt-16 sm:pt-20 pb-12 sm:pb-20 relative z-10">
       {/* Scroll Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-gray-800/50 z-50">
-        <div 
+        <div
           className="h-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] transition-all duration-150 ease-out"
           style={{ width: `${scrollProgress}%` }}
         />
@@ -83,11 +83,11 @@ export default function BlogPost() {
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-[var(--color-bg)]"></div>
           </>
         )}
-        
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl h-full relative z-10">
           {/* Back Link */}
-          <Link 
-            to="/blog" 
+          <Link
+            to="/blog"
             className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors pt-6 sm:pt-8 group touch-manipulation"
           >
             <FiArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -110,7 +110,7 @@ export default function BlogPost() {
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6 drop-shadow-2xl">
                   {post.title}
                 </h1>
-                
+
                 {/* Meta */}
                 <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-white/90">
                   <div className="flex items-center gap-2">
@@ -133,7 +133,7 @@ export default function BlogPost() {
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Article Content */}
           <article className="flex-1 max-w-4xl">
-            <div 
+            <div
               className="article-content prose prose-lg prose-invert max-w-none"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
