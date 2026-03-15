@@ -3,12 +3,16 @@ import { generativeAISoftwareDevelopment } from './generative-ai-software-develo
 import { aiEthicsEnterpriseImplementation } from './ai-ethics-enterprise-implementation';
 import { llmIntegrationEnterpriseApplications } from './llm-integration-enterprise-applications';
 import { computerVisionBusinessApplications } from './computer-vision-business-applications';
+import { aiForSmallBusinessesAffordableTools } from './ai-for-small-businesses-affordable-tools';
+import { whyGridsparkRightAIPartner } from './why-gridspark-solutions-right-ai-partner';
 
 export const aiArticles = [
   futureOfAIEnterpriseSoftware2025,
   generativeAISoftwareDevelopment,
   aiEthicsEnterpriseImplementation,
   llmIntegrationEnterpriseApplications,
-  computerVisionBusinessApplications
+  computerVisionBusinessApplications,
+  aiForSmallBusinessesAffordableTools,
+  whyGridsparkRightAIPartner
 ];
 
