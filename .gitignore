@@ -1,0 +1,17 @@
+# macOS system files
+.DS_Store
+src/.DS_Store
+src/assets/.DS_Store
+._*
+**/.DS_Store
+
+# Environment & secrets
+.env
+manojkagitha
+manojkagitha.pub
+
+# Dependencies
+node_modules
+
+# Draft source files (large binaries)
+_drafts/*.docx

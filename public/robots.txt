@@ -1,0 +1,29 @@
+# GridSpark Solutions - robots.txt
+# Updated: December 4, 2025
+
+# Allow all well-behaved crawlers
+User-agent: *
+Allow: /
+
+# Disallow authentication and internal pages
+Disallow: /dashboard
+Disallow: /register
+Disallow: /login
+Disallow: /api/
+Disallow: /admin
+
+# Allow specific important paths
+Allow: /solutions/
+Allow: /about
+Allow: /contact
+Allow: /expertise
+Allow: /industries
+Allow: /products
+Allow: /resources
+
+# Crawl-delay for bots (prevents server overload)
+User-agent: *
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://www.gridsparksolutions.com/sitemap.xml
