@@ -88,8 +88,11 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
 
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/legal/terms" element={<Terms />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/legal/cookie-policy" element={<CookiePolicy />} />
           <Route path="/faq" element={<FAQ />} />
 
           {/* Fallback to Home for unknown routes */}
