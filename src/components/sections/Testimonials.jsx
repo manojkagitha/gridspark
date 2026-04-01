@@ -50,6 +50,20 @@ const Testimonials = () => {
       role: "CTO",
       company: "DataFlow Systems",
     },
+    {
+      quote:
+        "Gridspark's AI sales agent reduced our sales cycle by 40%. It autonomously researches leads, drafts outreach, and schedules meetings — our reps just show up prepared.",
+      author: "Neha Gupta",
+      role: "VP of Sales",
+      company: "ScaleUp Tech",
+    },
+    {
+      quote:
+        "The multi-agent system they built for our operations team handles everything from ticket routing to customer follow-ups. We've saved 2000+ hours annually.",
+      author: "Vikram Singh",
+      role: "Director of Operations",
+      company: "NexGen Finance",
+    },
   ];
 
   return (

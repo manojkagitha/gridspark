@@ -168,6 +168,18 @@ const Services = () => {
         "Third‑Party Integrations",
       ],
     },
+    {
+      icon: <BrainCircuitIcon />,
+      title: "AI Agent Development",
+      description:
+        "Design and deploy autonomous AI agents and multi-agent orchestration systems for enterprise automation.",
+      items: [
+        "Autonomous Sales & Support Agents",
+        "Multi-Agent Orchestration (LangGraph, CrewAI)",
+        "Tool-Using Agents with CRM Integration",
+        "Human-in-the-Loop Workflows & Guardrails",
+      ],
+    },
   ];
 
   return (

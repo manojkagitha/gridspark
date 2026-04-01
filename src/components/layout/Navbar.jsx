@@ -22,6 +22,7 @@ const Navbar = () => {
     {
       label: "Solutions",
       subMenu: [
+        { path: "/solutions/ai-agents", label: "AI Agents" },
         { path: "/solutions/services", label: "Services" },
         { path: "/solutions/portfolio", label: "Portfolio" },
         { path: "/solutions/case-studies", label: "Case Studies" },

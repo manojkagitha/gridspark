@@ -31,7 +31,12 @@ const logos = [
   { src: dockerLogo, alt: "Docker" },
   { src: pythonLogo, alt: "Python" },
   { src: nodeLogo, alt: "Node.js" },
-  { src: createReactAppLogo, alt: "Create React App" },
+  { src: createReactAppLogo, alt: "React" },
+];
+
+const textLogos = [
+  "GPT-4o", "Claude 3.7", "Gemini 2.0", "LLaMA 3.3", "Mistral",
+  "LangGraph", "CrewAI", "Ollama", "HuggingFace", "Kubernetes",
 ];
 
 const TechStackBanner = () => (
@@ -64,6 +69,14 @@ const TechStackBanner = () => (
             }}
             draggable={false}
           />
+        ))}
+        {[...textLogos, ...textLogos].map((name, i) => (
+          <span
+            key={name + i}
+            className="text-sm sm:text-base md:text-lg font-bold text-gray-500 hover:text-[var(--color-primary)] transition-colors duration-300 whitespace-nowrap cursor-default select-none"
+          >
+            {name}
+          </span>
         ))}
       </div>
     </div>

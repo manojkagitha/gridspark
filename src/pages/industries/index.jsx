@@ -41,6 +41,46 @@ const industries = [
       "Content Recommendation Engines",
     ],
   },
+  {
+    name: "Real Estate & Property",
+    description:
+      "AI-driven property valuation, lead capture agents, virtual tour automation, and CRM intelligence for real estate firms.",
+    solutions: [
+      "AI Property Valuation Models",
+      "Lead Capture & Nurture Agents",
+      "Virtual Tour Automation",
+    ],
+  },
+  {
+    name: "Legal & Compliance",
+    description:
+      "Contract analysis agents, regulatory monitoring, e-discovery automation, and compliance reporting for legal teams.",
+    solutions: [
+      "AI Contract Review & Analysis",
+      "Regulatory Monitoring Agents",
+      "Automated Compliance Reports",
+    ],
+  },
+  {
+    name: "Manufacturing & Supply Chain",
+    description:
+      "Predictive maintenance, inventory optimization agents, quality assurance AI, and supply chain visibility dashboards.",
+    solutions: [
+      "Predictive Maintenance AI",
+      "Inventory Optimization Agents",
+      "Quality Assurance Automation",
+    ],
+  },
+  {
+    name: "SaaS & Technology",
+    description:
+      "AI feature integration for SaaS platforms, DevOps agents, user behavior analytics, and intelligent product recommendations.",
+    solutions: [
+      "AI Feature Integration",
+      "DevOps & Monitoring Agents",
+      "User Behavior Analytics",
+    ],
+  },
 ];
 
 const Industries = () => (

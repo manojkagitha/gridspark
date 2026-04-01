@@ -31,23 +31,23 @@ export const products = [
 
 export const stats = [
     {
-        label: "Active Projects",
-        value: "12",
+        label: "Enterprise Projects",
+        value: "50+",
         icon: <FaChartBar className="text-[var(--color-primary)]" />,
     },
     {
-        label: "Enterprise Users",
-        value: "140+",
+        label: "Businesses Served",
+        value: "200+",
         icon: <FaUser className="text-[var(--color-primary)]" />,
     },
     {
-        label: "AI Models Deployed",
-        value: "7",
+        label: "AI Agents Deployed",
+        value: "15+",
         icon: <FaRobot className="text-[var(--color-primary)]" />,
     },
     {
-        label: "Cloud Services Active",
-        value: "5",
+        label: "Automated Actions",
+        value: "7M+",
         icon: <FaCloud className="text-[var(--color-primary)]" />,
     },
 ];

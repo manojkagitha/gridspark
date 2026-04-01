@@ -36,6 +36,7 @@ const ChatbotDetails = lazy(() => import("./pages/solutions/ChatbotDetails.jsx")
 const DocumentAI = lazy(() => import("./pages/solutions/DocumentAI.jsx"));
 const CrmLeadAI = lazy(() => import("./pages/solutions/CrmLeadAI.jsx"));
 const PrivateLLM = lazy(() => import("./pages/solutions/PrivateLLM.jsx"));
+const AIAgents = lazy(() => import("./pages/solutions/AIAgents.jsx"));
 
 // Lazy Load Auth & Contact
 const Contact = lazy(() => import("./pages/contact/index.jsx"));
@@ -76,6 +77,7 @@ function App() {
           <Route path="/solutions/services" element={<Services />} />
           <Route path="/solutions/portfolio" element={<Portfolio />} />
           <Route path="/solutions/ai-showcase" element={<AIShowcase />} />
+          <Route path="/solutions/ai-agents" element={<AIAgents />} />
 
           {/* AI Detail Routes */}
           <Route path="/solutions/chatbot-details" element={<ChatbotDetails />} />

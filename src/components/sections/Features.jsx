@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBrain, FaEye, FaRobot, FaMagic, FaSearch, FaChartLine, FaShieldAlt, FaCogs } from "react-icons/fa";
+import { FaBrain, FaEye, FaRobot, FaMagic, FaSearch, FaChartLine, FaShieldAlt, FaCogs, FaProjectDiagram, FaMicrophone } from "react-icons/fa";
 
 const FeatureCard = ({ icon, title, description }) => (
   <div className="card group flex flex-col items-center text-center hover:bg-white/5 hover:border-blue-500/50 transition-all cursor-default">
@@ -44,20 +44,30 @@ const featuresData = [
   },
   {
     icon: <FaShieldAlt className="text-blue-400 text-2xl" />,
-    title: "AI Security",
-    description: "Build privacy-preserving ML with encrypted inference and full compliance (HIPAA, GDPR, SOC2).",
+    title: "Responsible AI & Compliance",
+    description: "Build trustworthy AI with bias auditing, explainability, encrypted inference, and full compliance (HIPAA, GDPR, SOC2).",
   },
   {
     icon: <FaCogs className="text-blue-400 text-2xl" />,
     title: "MLOps Infrastructure",
     description: "Streamline deployment and monitoring of ML systems with versioning, optimization, and automation.",
   },
+  {
+    icon: <FaProjectDiagram className="text-blue-400 text-2xl" />,
+    title: "Multi-Agent Orchestration",
+    description: "Design LangGraph, CrewAI, and AutoGen-based multi-agent pipelines for complex, multi-step business workflows.",
+  },
+  {
+    icon: <FaMicrophone className="text-blue-400 text-2xl" />,
+    title: "Voice AI & Multimodal",
+    description: "Build voice assistants, speech-to-text systems, and vision+language multimodal agents for real-world interactions.",
+  },
 ];
 
 const Features = () => (
   <section id="features" className="transition-colors duration-300">
     <div className="max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
         {featuresData.map((feature) => (
           <FeatureCard key={feature.title} {...feature} />
         ))}

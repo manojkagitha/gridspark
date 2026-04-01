@@ -17,6 +17,7 @@ import {
   FaCloud,
   FaBolt,
   FaBrain,
+  FaProjectDiagram,
 } from "react-icons/fa";
 
 // Data
@@ -38,7 +39,7 @@ const Home = () => {
     "name": "GridSpark Solutions",
     "url": "https://www.gridsparksolutions.com",
     "logo": "https://www.gridsparksolutions.com/logo.png",
-    "description": "Transform your business with custom AI chatbots, document intelligence, and private LLM deployment. Enterprise-grade AI solutions for modern companies.",
+    "description": "Build autonomous AI agents, multi-agent systems, and GenAI-powered CRM solutions. Enterprise-grade agentic AI for sales automation, customer support, and intelligent workflows.",
     "foundingDate": "2024",
     "contactPoint": {
       "@type": "ContactPoint",
@@ -58,6 +59,22 @@ const Home = () => {
       "@type": "OfferCatalog",
       "name": "AI Solutions Services",
       "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Autonomous AI Agents",
+            "description": "Build and deploy intelligent AI agents for sales, support, operations, and multi-agent orchestration"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI CRM & Sales Automation",
+            "description": "AI sales agents that autonomously research leads, draft outreach, and manage pipeline health"
+          }
+        },
         {
           "@type": "Offer",
           "itemOffered": {
@@ -89,9 +106,9 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="AI-Powered Business Solutions"
-        description="Transform your business with custom AI chatbots, document intelligence, and private LLM deployment. Enterprise-grade AI solutions for modern companies."
-        keywords="AI solutions, chatbot development, document AI, private LLM, business automation, AI consulting, machine learning, enterprise software"
+        title="AI Agents & GenAI-Powered Business Solutions"
+        description="Build autonomous AI agents, multi-agent systems, and GenAI-powered CRM solutions. Enterprise-grade agentic AI for sales automation, customer support, and intelligent workflows."
+        keywords="AI agents, agentic AI, AI agent development company, multi-agent systems, autonomous AI, CRM AI automation, GenAI solutions, LangGraph, CrewAI, private LLM, enterprise AI, business automation"
         canonical="https://www.gridsparksolutions.com/"
         ogType="website"
         ogImage="https://www.gridsparksolutions.com/og-default.jpg"
@@ -271,16 +288,35 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Why Gridspark AI */}
+        {/* Why Agentic AI */}
         <section className="section-padding relative z-10" data-aos="fade-up">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 sm:mb-6">
-              Why <span className="text-gradient-blue">Gridspark AI?</span>
+              Why <span className="text-gradient-blue">Agentic AI?</span>
             </h2>
             <p className="text-base sm:text-lg text-gray-400 mb-8 sm:mb-12 max-w-3xl mx-auto px-4">
-              We combine deep AI development and DevOps to build intelligent,
-              reliable, and scalable applications that deliver real results.
+              The future of software isn't just smart — it's autonomous. Here's how agentic AI
+              changes everything compared to traditional approaches.
             </p>
+
+            {/* Comparison Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+              <div className="card p-5 sm:p-6 text-left opacity-50">
+                <div className="text-2xl mb-3">📋</div>
+                <h3 className="font-bold text-gray-500 mb-2 text-base sm:text-lg">Traditional Software</h3>
+                <p className="text-gray-600 text-xs sm:text-sm">Rule-based, brittle, requires manual updates for every edge case</p>
+              </div>
+              <div className="card p-5 sm:p-6 text-left opacity-60">
+                <div className="text-2xl mb-3">🤖</div>
+                <h3 className="font-bold text-gray-400 mb-2 text-base sm:text-lg">Standard AI</h3>
+                <p className="text-gray-500 text-xs sm:text-sm">Reactive, single-task, no memory or multi-step reasoning</p>
+              </div>
+              <div className="card p-5 sm:p-6 text-left border-[var(--color-primary)] bg-blue-500/5">
+                <div className="text-2xl mb-3">🧠</div>
+                <h3 className="font-bold text-[var(--color-primary)] mb-2 text-base sm:text-lg">Agentic AI ✅</h3>
+                <p className="text-gray-300 text-xs sm:text-sm">Autonomous, multi-step, tool-using, self-improving, production-ready</p>
+              </div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-16">
               <div className="card group p-5 sm:p-6 md:p-8 text-left hover:border-blue-500/50 transition-all">
@@ -289,8 +325,8 @@ const Home = () => {
                     <FaBrain className="text-blue-400 text-lg sm:text-xl" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-white mb-1.5 sm:mb-2 text-base sm:text-lg">LLM Expertise</h3>
-                    <p className="text-gray-400 text-xs sm:text-sm">Deep knowledge in Large Language Models and Generative AI</p>
+                    <h3 className="font-bold text-white mb-1.5 sm:mb-2 text-base sm:text-lg">LLM & GenAI Expertise</h3>
+                    <p className="text-gray-400 text-xs sm:text-sm">Deep knowledge in Large Language Models, RAG, and Generative AI</p>
                   </div>
                 </div>
               </div>
@@ -301,8 +337,8 @@ const Home = () => {
                     <FaRobot className="text-emerald-400 text-lg sm:text-xl" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-white mb-1.5 sm:mb-2 text-base sm:text-lg">End-to-End Solutions</h3>
-                    <p className="text-gray-400 text-xs sm:text-sm">Complete AI implementation from concept to production scale</p>
+                    <h3 className="font-bold text-white mb-1.5 sm:mb-2 text-base sm:text-lg">Autonomous AI Agents</h3>
+                    <p className="text-gray-400 text-xs sm:text-sm">Multi-agent orchestration with LangGraph, CrewAI, and AutoGen</p>
                   </div>
                 </div>
               </div>
@@ -310,11 +346,11 @@ const Home = () => {
               <div className="card group p-5 sm:p-6 md:p-8 text-left hover:border-purple-500/50 transition-all">
                 <div className="flex items-start gap-3 sm:gap-4">
                   <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-purple-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <FaBolt className="text-purple-400 text-lg sm:text-xl" />
+                    <FaProjectDiagram className="text-purple-400 text-lg sm:text-xl" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-white mb-1.5 sm:mb-2 text-base sm:text-lg">Rapid Deployment</h3>
-                    <p className="text-gray-400 text-xs sm:text-sm">Fast delivery with CI/CD pipelines and continuous improvement</p>
+                    <h3 className="font-bold text-white mb-1.5 sm:mb-2 text-base sm:text-lg">Agentic CRM & Sales</h3>
+                    <p className="text-gray-400 text-xs sm:text-sm">AI Sales Agents that research, outreach, and close — autonomously</p>
                   </div>
                 </div>
               </div>

@@ -2,12 +2,35 @@ import React from "react";
 
 const useCases = [
   {
+    title: "Autonomous Sales Agent",
+    description:
+      "AI that researches prospects, drafts personalized outreach, schedules meetings, and follows up — all without human intervention. Save 8+ hours per rep per week.",
+  },
+  {
+    title: "Meeting Prep Agent",
+    description:
+      "Auto-briefs sales reps before every call using CRM history, LinkedIn intel, company news, and past interactions. Walk into every meeting ready.",
+  },
+  {
+    title: "Pipeline Intelligence",
+    description:
+      "AI monitors deal health in real time, flags at-risk opportunities, suggests next-best actions, and forecasts revenue with 95%+ accuracy.",
+  },
+  {
+    title: "Auto-Enrichment Agent",
+    description:
+      "Continuously enriches contacts from LinkedIn, web signals, news, and intent data. Close data gaps automatically and surface buying signals.",
+  },
+  {
     title: "Predictive Lead Scoring",
     description:
-      "Our AI analyzes your CRM and marketing data in real time, generating precise lead scores so your team can prioritize prospects that convert.",
+      "AI analyzes CRM and marketing data in real time, generating precise lead scores so your team can prioritize prospects that convert.",
   },
   {
     title: "Automated Outreach & Sequencing",
+    description:
+      "Smart workflows trigger emails, calls, and next actions based on lead intent and behavior — reducing chase time and increasing conversions by 3x.",
+  },
     description:
       "Smart workflows trigger emails, calls, and next actions based on lead intent and behavior—reducing chase time and increasing conversions.",
   },
@@ -62,27 +85,31 @@ function CrmLeadAI() {
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-8 text-center" data-aos="fade-up">
-          Gridspark <span className="text-gradient-blue">AI CRM Lead Automation</span>
+          Gridspark <span className="text-gradient-blue">AI Sales Agent & CRM Intelligence</span>
         </h1>
 
         <p className="mb-16 text-lg max-w-3xl mx-auto text-center text-gray-400 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-          Drive pipeline growth with AI. Gridspark’s CRM AI platform leverages predictive and generative intelligence to score, segment, enrich, and automate outreach—making your entire funnel smarter and faster.
+          Turn your CRM into an intelligent, agentic system. Gridspark's AI Sales Agents autonomously research leads, draft outreach,
+          schedule meetings, monitor pipeline health, and enrich contacts — making your entire sales engine smarter and faster.
         </p>
 
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           {/* Capabilities */}
           <div className="glass-panel p-8 rounded-2xl border border-[var(--color-border)]" data-aos="fade-right">
             <h2 className="text-2xl font-bold mb-6 text-white border-b border-[var(--color-border)] pb-4">
-              Key Solution Capabilities
+              AI Sales Agent Capabilities
             </h2>
             <ul className="space-y-3">
               {[
-                "Real-time AI scoring with rules feedback",
-                "Automated lead enrichment and cleansing workflows",
+                "Autonomous lead research, outreach, and follow-up",
+                "Real-time AI scoring with explainable rules feedback",
+                "Meeting prep agent — auto-briefs before every call",
+                "Pipeline health monitoring with at-risk deal alerts",
+                "Auto-enrichment from LinkedIn, web, and intent signals",
                 "Multi-channel email, meeting, and follow-up automation",
-                "Custom segmentation and lifecycle analysis",
-                "Native integrations across major CRM systems",
-                "Transparent, auditable scoring and reporting"
+                "Native integrations: Salesforce, HubSpot, Zoho, Pipedrive",
+                "Transparent, auditable scoring and compliance reporting",
+                "Save 8+ hours/week per sales rep, 3x faster lead response"
               ].map((item, i) => (
                 <li key={i} className="flex items-start text-gray-300">
                   <span className="text-[var(--color-primary)] mr-3">✓</span>
@@ -95,7 +122,7 @@ function CrmLeadAI() {
           {/* Use Cases */}
           <div className="space-y-6" data-aos="fade-left">
             <h2 className="text-2xl font-bold mb-6 text-white text-center md:text-left">
-              How Customers Use Gridspark CRM AI
+              How AI Sales Agents Transform Your Pipeline
             </h2>
             {useCases.map((item, idx) => (
               <div
@@ -134,13 +161,13 @@ function CrmLeadAI() {
         {/* CTA */}
         <div className="glass-panel p-10 rounded-3xl text-center border border-[var(--color-border)] max-w-4xl mx-auto" data-aos="zoom-in">
           <h2 className="text-3xl font-bold mb-4 text-white">
-            Unlock AI‑Driven CRM Growth
+            Deploy Your AI Sales Agent
           </h2>
           <p className="mb-8 text-gray-300 max-w-2xl mx-auto">
-            Experience a live demo with your CRM data—Gridspark provides full proof‑of‑concepts, rapid integrations, and measurable ROI.
+            Experience a live demo with your CRM data — Gridspark builds autonomous sales agents that deliver measurable ROI from week one.
           </p>
           <a href="/contact" className="btn-primary text-lg px-8 py-3 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-block">
-            Contact Gridspark CRM AI Team
+            Contact Gridspark AI Sales Team
           </a>
         </div>
       </div>

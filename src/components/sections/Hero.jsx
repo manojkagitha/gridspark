@@ -8,15 +8,16 @@ const Hero = () => (
       {/* Badge */}
       <div className="inline-block mb-4 sm:mb-6 animate-fade-down">
         <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs sm:text-sm font-semibold tracking-wide uppercase backdrop-blur-md">
-          Next-Gen Software Engineering
+          Agentic AI · Gen AI · Modern CRM
         </span>
       </div>
 
       {/* Headline */}
       <div className="relative inline-block mb-6 sm:mb-8">
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight leading-tight text-white animate-fade-up delay-100">
-          Building the Future <br />
-          with <span className="text-gradient-blue">Intelligent AI</span>
+          We Build <span className="text-gradient-blue">Intelligent AI Agents</span>
+          <br />
+          for Modern Business
         </h1>
         <div className="absolute inset-0 pointer-events-none">
           <Sparkle
@@ -32,8 +33,8 @@ const Hero = () => (
 
       {/* Subheadline */}
       <p className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 md:mb-12 text-gray-400 font-light leading-relaxed animate-fade-up delay-200 px-2">
-        We engineer scalable AI solutions that automate workflows,
-        unlock data insights, and drive measurable business growth.
+        We engineer autonomous AI agents, multi-agent workflows, and GenAI-powered CRM solutions
+        that automate operations, unlock data insights, and drive measurable business growth.
       </p>
 
       {/* Call to Action Buttons */}
@@ -63,12 +64,12 @@ const Hero = () => (
           <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wider">Enterprise Projects</p>
         </div>
         <div>
-          <h4 className="text-2xl sm:text-3xl font-bold text-white">24/7</h4>
-          <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wider">Global Support</p>
+          <h4 className="text-2xl sm:text-3xl font-bold text-white">15+</h4>
+          <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wider">AI Agents Deployed</p>
         </div>
         <div>
-          <h4 className="text-2xl sm:text-3xl font-bold text-white">100%</h4>
-          <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wider">On-Time Delivery</p>
+          <h4 className="text-2xl sm:text-3xl font-bold text-white">7M+</h4>
+          <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wider">Automated Actions</p>
         </div>
       </div>
     </div>

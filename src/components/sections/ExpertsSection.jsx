@@ -2,8 +2,8 @@ import React from "react";
 
 const techRows = [
     ["Node.js", "Java", "React", ".NET", "Python", "C#", "Rails", "Next.js", "TypeScript"],
-    ["Swift", "Angular", "PHP", "Android", "iOS", "Golang", "Vue.js", "C++", "Ruby"],
-    ["Kotlin", "Flutter", "AWS", "Azure", "Docker", "Kubernetes", "Terraform", "GraphQL", "Redis"]
+    ["LangGraph", "CrewAI", "AutoGen", "OpenAI", "Claude", "Gemini", "HuggingFace", "Ollama", "LLaMA"],
+    ["Kubernetes", "Docker", "AWS", "Azure", "Terraform", "GraphQL", "Redis", "Flutter", "Golang"]
 ];
 
 const ExpertsSection = () => {
