@@ -131,7 +131,7 @@ const ConsentBanner = () => {
   if (!showBanner || !isInitialized) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-[var(--color-bg)] border-t border-[var(--color-border)] shadow-lg" role="dialog" aria-label="Cookie Preferences">
+    <div className="fixed bottom-0 left-0 right-0 z-[10000] bg-[var(--color-bg)] border-t border-[var(--color-border)] shadow-lg" role="dialog" aria-label="Cookie Preferences">
       <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
           <div className="flex-1">
