@@ -119,14 +119,14 @@ const ChatWidget = () => {
 
     return (
         <div
-            className="fixed flex flex-col items-end font-sans z-[9999]" // High z-index
+            className="fixed flex flex-col items-end font-sans z-[9999] pointer-events-none" // High z-index
             style={{ bottom: '16px', right: '16px' }}
         >
             {/* Chat Window */}
             <div
                 className={`
           mb-4 w-[calc(100vw-32px)] max-w-[400px] sm:w-96 bg-[var(--color-bg)] rounded-2xl shadow-2xl overflow-hidden
-          transition-all duration-300 origin-bottom-right border border-[var(--color-border)]
+          transition-all duration-300 origin-bottom-right border border-[var(--color-border)] pointer-events-auto
           ${isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0 h-0 w-0"}
         `}
             >
@@ -226,7 +226,7 @@ const ChatWidget = () => {
             <button
                 onClick={toggleChat}
                 className={`
-          w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5)] flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-[9999] touch-manipulation
+          w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5)] flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-[9999] touch-manipulation pointer-events-auto
           ${isOpen ? "bg-gray-700 rotate-90" : "bg-[var(--color-primary)] animate-bounce-slow"}
         `}
             >
